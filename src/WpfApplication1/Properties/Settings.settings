@@ -1,0 +1,66 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AssetBuilder.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="StoreIfNeg" Type="System.String" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="PreviousWebService" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AvailableLanguages" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AvailableTargets" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="UpgradeSettings" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="RiskEntry" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="HideTranslationInheritance" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="McKessonReleaseName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Enter release name here</Value>
+    </Setting>
+    <Setting Name="McKessonReleaseDescription" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Enter description here</Value>
+    </Setting>
+    <Setting Name="McKesson_Mode" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AvailableSources" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AssetBuilder_Data_Data" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://apps.expert-24.com/webbuilder/data.asmx</Value>
+    </Setting>
+    <Setting Name="EncyclopaediaLink" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/Encyclopaedia/DisplayArticle</Value>
+    </Setting>
+    <Setting Name="WebService" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://apps.expert-24.com/webbuilder/data.asmx</Value>
+    </Setting>
+    <Setting Name="HelpUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://apps.expert-24.com/help/Expert-24_Help.htm</Value>
+    </Setting>
+    <Setting Name="TextAssetLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://apps.expert-24.com/TextAssets/</Value>
+    </Setting>
+    <Setting Name="Secret" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ClientID" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SaaSIdentity" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SaaSEndpoint" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

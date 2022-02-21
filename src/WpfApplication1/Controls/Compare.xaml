@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="AssetBuilder.Controls.Compare"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AssetBuilder.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.ColumnSpan="3">
+            <Button DockPanel.Dock="Right" Width="80" Click="Close_OnClick">Close</Button>
+            <ComboBox x:Name="AssetType" Width="100">
+                <ComboBoxItem Content="Algo" Tag="1"/>
+                <ComboBoxItem Content="Question" Tag="2"/>
+                <ComboBoxItem Content="Answer" Tag="3"/>
+                <ComboBoxItem Content="Conclusion" Tag="4"/>
+                <ComboBoxItem Content="Bullet" Tag="5"/>
+            </ComboBox>
+            <TextBox Width="60" x:Name="AssetID"></TextBox>
+            <Button Visibility="Collapsed" Content="Populate" Width="75"></Button>
+            <ComboBox>
+                <ComboBoxItem Content="Line" Tag="1"/>
+                <ComboBoxItem Content="Word" Tag="2"/>
+            </ComboBox>
+        </DockPanel>
+        <ListBox Grid.RowSpan="2" Grid.Row="1" x:Name="Versions" SelectionMode="Multiple" SelectionChanged="VersionsSelected"></ListBox>
+        <GridSplitter Grid.Row="1" Grid.Column="0" Width="3" Grid.RowSpan="2" ></GridSplitter>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="Past" TextWrapping="Wrap"></TextBox>
+        <TextBox Grid.Column="2" x:Name="Current" TextWrapping="Wrap" Margin="0,23,0,1" Grid.RowSpan="2"/>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="PastLine"></TextBox>
+        <TextBox Grid.Row="2" Grid.Column="2" x:Name="CurrentLine"></TextBox>
+    </Grid>
+</UserControl>

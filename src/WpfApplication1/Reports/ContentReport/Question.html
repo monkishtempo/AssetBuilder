@@ -1,0 +1,22 @@
+﻿<div id="asset-@NewGuid.1@">
+    <!-- Start Question @NewGuid.1@ -->
+    <div class="w3-row w3-container w3-padding w3-hover-light-grey question">
+        <!-- remove start --><div class="w3-right w3-xlarge">
+            <a href="up:@NewGuid.1@:Question" style="text-decoration:none;">
+                <i class="fa fa-arrow-circle-up w3-text-green"></i>
+            </a>
+            <a href="down:@NewGuid.1@:Question" style="text-decoration:none;">
+                <i class="fa fa-arrow-circle-down w3-text-blue"></i>
+            </a>
+            <a href="remove:@NewGuid.1@:Question" style="text-decoration:none;">
+                <i class="fa fa-window-close w3-text-red"></i>
+            </a>
+        </div><!-- remove end -->
+        @Tables.TableQuestion@
+        <div><b><i>Question #@AssetID@</i></b> <span>@Expert@</span></div>
+        <div style="white-space:pre-wrap;"><b>@NLText@</b>@?Explanation.AssetExplanation@</div>
+        <div class="w3-padding">@Answers.Answer@@?IsMultiSelect.None@</div>
+        @Comment@
+    </div>
+    <!-- End Question @NewGuid.1@ -->
+</div>

@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="AssetBuilder.Algo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DockPanel Background="#FF3D765B">
+        <WrapPanel>
+            <Label Content="13023)" FontSize="14.667" Margin="5" />
+            <CheckBox Margin="5" Content="Hello" FontSize="14.667" VerticalContentAlignment="Center" />
+        </WrapPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <Label Content="Algo Name" Width="170"/>
+            <TextBox x:Name="txtAlgoName" Text="{Binding XPath=Algo_Name}" TextWrapping="Wrap"/>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <Label Content="Keywords" Width="170"/>
+            <TextBox x:Name="txtKeywords" Text="{Binding XPath=Keywords}" TextWrapping="Wrap"/>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <Label Content="References" Width="170"/>
+            <TextBox x:Name="txtReferences" Text="{Binding XPath=References}" TextWrapping="Wrap"/>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <Label Content="Destination" Width="170"/>
+            <TextBox x:Name="txtDestination" Text="{Binding XPath=Destination}" TextWrapping="Wrap"/>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <Label Content="Word Merge (after with)" Width="170"/>
+            <TextBox x:Name="txtWord_Merge" Text="{Binding XPath=Word_Merge}" TextWrapping="Wrap"/>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <Label Content="Word Merge (problem name)" Width="170"/>
+            <TextBox x:Name="txtWM2" Text="{Binding XPath=WM2}" TextWrapping="Wrap"/>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <Label Content="Last Review Date" Width="170"/>
+            <TextBox x:Name="txtDate_Last_Reviewed" Text="{Binding XPath=Date_Last_Reviewed}" TextWrapping="Wrap"/>
+        </DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DockPanel Grid.Column="0">
+                <Label Content="Ages" Width="170"/>
+                <TextBox x:Name="txtAges" Text="{Binding XPath=Ages}" TextWrapping="Wrap"/>
+            </DockPanel>
+            <DockPanel Grid.Column="1">
+                <Label Content="Assessment Type" Width="170"/>
+                <TextBox x:Name="txtAssessment" Text="{Binding XPath=Assessment}" TextWrapping="Wrap"/>
+            </DockPanel>
+        </Grid>
+    </DockPanel>
+</UserControl>

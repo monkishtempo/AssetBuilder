@@ -1,0 +1,57 @@
+﻿<con:ABRibbonWindow x:Class="AssetBuilder.Controls.TableEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:r="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
+		xmlns:me="clr-namespace:AssetBuilder" 
+		xmlns:con="clr-namespace:AssetBuilder.Controls" 
+        Title="TableEdit" 
+        x:Name="Window"
+        Width="923" Height="345" Icon="/images/Windows-Table-icon.png" ShowInTaskbar="True" ShowActivated="True" Loaded="Window_Loaded">
+	<Grid x:Name="LayoutRoot">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<r:Ribbon x:Name="Ribbon">
+			<r:Ribbon.CommandBindings>
+				<CommandBinding Command="con:TableEdit.cmdAddRow" CanExecute="AddRow_CanExecute" Executed="AddRow_Executed" />
+                <CommandBinding Command="con:TableEdit.cmdDeleteRow" CanExecute="DeleteRow_CanExecute" Executed="DeleteRow_Executed" />
+				<CommandBinding Command="con:TableEdit.cmdInsertRow" CanExecute="InsertRow_CanExecute" Executed="InsertRow_Executed" />
+				<CommandBinding Command="con:TableEdit.cmdRefresh" CanExecute="Refresh_CanExecute" Executed="Refresh_Executed" />
+				<CommandBinding Command="con:TableEdit.cmdCancelChanges" CanExecute="CancelChanges_CanExecute" Executed="CancelChanges_Executed" />
+                <CommandBinding Command="con:TableEdit.cmdSaveChanges" CanExecute="SaveChanges_CanExecute" Executed="SaveChanges_Executed" />
+                <CommandBinding Command="con:TableEdit.cmdScriptTable" CanExecute="ScriptTable_CanExecute" Executed="ScriptTable_Executed" />
+                <CommandBinding Command="con:TableEdit.cmdCopyScript" CanExecute="CopyScript_CanExecute" Executed="CopyScript_Executed" />
+                <CommandBinding Command="con:TableEdit.cmdSaveScript" CanExecute="SaveScript_CanExecute" Executed="SaveScript_Executed" />
+            </r:Ribbon.CommandBindings>
+			<r:Ribbon.ApplicationMenu>
+				<r:RibbonApplicationMenu Visibility="Collapsed"/>
+			</r:Ribbon.ApplicationMenu>
+			<r:RibbonTab x:Name="HomeTab" Header="Table">
+				<r:RibbonGroup x:Name="tblFunctions" Header="Table Functions">
+					<r:RibbonButton Command="con:TableEdit.cmdAddRow" Label="Add Row" ToolTip="{me:Info Image='/images/Add_32x32.png',Title='Add Row to Table',Body=AddTableRowToolTip}" LargeImageSource="/images/Add_32x32.png"/>
+					<r:RibbonButton Command="con:TableEdit.cmdDeleteRow" Label="Delete Row" ToolTip="{me:Info Image='/images/Delete_32x32.png',Title='Delete Selected Row(s) from Table',Body=DeleteTableRowToolTip}" LargeImageSource="/images/Delete_32x32.png"/>
+					<r:RibbonButton Visibility="Collapsed" Command="con:TableEdit.cmdInsertRow" Label="Insert Row" ToolTip="{me:Info Image='/images/Insert_32x32.png',Title='Insert Row into Table',Body=InsertRowToolTip}" LargeImageSource="/images/Insert_32x32.png"/>
+					<r:RibbonButton Command="con:TableEdit.cmdRefresh" Label="Refresh" ToolTip="{me:Info Image='/images/Refresh_32x32.png',Title='Refresh Table',Body=RefreshTableToolTip}" LargeImageSource="/images/Refresh_32x32.png"/>
+					<r:RibbonButton Command="con:TableEdit.cmdCancelChanges" Label="Cancel Changes" ToolTip="{me:Info Image='/images/Cancel_32x32.png',Title='Cancel Changes',Body=CancelChangesToolTip}" LargeImageSource="/images/Cancel_32x32.png"/>
+                    <r:RibbonButton Command="con:TableEdit.cmdSaveChanges" Label="Save Changes" ToolTip="{me:Info Image='/images/Save-icon.png',Title='Save Changes',Body=SaveChangesToolTip}" LargeImageSource="/images/Save-icon.png"/>
+                </r:RibbonGroup>
+				<r:RibbonGroup x:Name="grpTableSelector" Header="Tables">
+					<StackPanel>
+						<TextBlock Text="Select database table to edit"/>
+						<Rectangle Height="1" HorizontalAlignment="Stretch" Stroke="Blue" Margin="0,6,0,6" StrokeThickness="1" />
+						<ComboBox ToolTip="{me:Info Image=/images/Windows-Table-icon.png,Body=SelectTableToolTip, Title='Select Algos by Type'}" SelectionChanged="cmbTableList_SelectionChanged" x:Name="cmbTableList" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="202" />
+					</StackPanel>
+				</r:RibbonGroup>
+				<r:RibbonGroup x:Name="tblScript" Header="Script">
+					<r:RibbonButton Command="con:TableEdit.cmdScriptTable" Label="Script Table" ToolTip="{me:Info Image=/images/Script-icon.png,Body=ScriptTableToolTip, Title='Script Table'}" LargeImageSource="/images/Script-icon.png" x:Name="rbtGenerateScript" />
+                    <r:RibbonButton Command="con:TableEdit.cmdCopyScript" Label="Copy to Clipboard" ToolTip="{me:Info Image=/images/Copy_32x32.png,Body=CopyScriptToolTip, Title='Copy Script'}" LargeImageSource="/images/Copy_32x32.png" />
+					<r:RibbonButton Command="con:TableEdit.cmdSaveScript" Label="Save Script" ToolTip="{me:Info Image='/images/Save-icon.png',Title='Save Script',Body=SaveScriptToolTip}" LargeImageSource="/images/Save-icon.png"/>
+				</r:RibbonGroup>
+			</r:RibbonTab>
+		</r:Ribbon>
+		<DockPanel Name="grid" Grid.Row="1">
+		</DockPanel>
+	</Grid>
+</con:ABRibbonWindow>

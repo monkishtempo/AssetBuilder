@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="AssetBuilder.Controls.linkControl"
+	xmlns:me="clr-namespace:AssetBuilder"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Height="100" Width="530">
+    <UserControl.Resources>
+        <Style TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="IsReadOnly" Value="True">
+                    <Setter Property="Background" Value="{StaticResource ReadOnly}" />
+                </Trigger>
+                <Trigger Property="IsReadOnly" Value="False">
+                    <Setter Property="Background" Value="{StaticResource Editable}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="{StaticResource DialogBackground}">
+        <DockPanel x:Name="pnlWebService" Visibility="Collapsed" Margin="0,0,0,100" Height="25" VerticalAlignment="Bottom">
+            <Label ToolTip="{me:Info Title='Web Service',Body=WebServiceToolTip}" Margin="12,0,6,0" Width="120" Height="28" Content="Web Service:" HorizontalContentAlignment="Right"></Label>
+            <ComboBox x:Name="cmbWebService" ToolTip="{me:Info Title='Web Service',Body=WebServiceToolTip}" Width="380" IsEditable="True" HorizontalAlignment="Left"></ComboBox>
+        </DockPanel>
+        <TextBox x:FieldModifier="public" Visibility="Collapsed" Height="23" Margin="138,0,12,143" Name="txtMessage" VerticalAlignment="Bottom" />
+        <ComboBox x:FieldModifier="public" Visibility="Collapsed" Height="23" Margin="138,0,12,114" Name="cmbLevel" VerticalAlignment="bottom" SelectedValuePath="Tag">
+            <ComboBoxItem Content="Urgent" Tag="1" />
+            <ComboBoxItem Content="Significant" Tag="2" />
+            <ComboBoxItem Content="Minor" Tag="3" />
+            <ComboBoxItem Content="Unknown" Tag="4" />
+        </ComboBox>
+        <TextBox x:FieldModifier="public" Visibility="Collapsed" TextWrapping="Wrap" Height="72" Margin="138,0,12,36" Name="txtDescription" VerticalAlignment="Bottom" />
+        <TextBox x:FieldModifier="public" Visibility="Collapsed" Height="23" Margin="328,0,12,143" Name="txtMessageTranslation" VerticalAlignment="Bottom" IsReadOnly="True" />
+        <ComboBox x:FieldModifier="public" Visibility="Collapsed" Height="23" Margin="328,0,12,114" Name="cmbLevelTranslation" VerticalAlignment="Bottom" IsEnabled="False" SelectedValuePath="Tag">
+            <ComboBoxItem Content="Urgent" Tag="1" />
+            <ComboBoxItem Content="Significant" Tag="2" />
+            <ComboBoxItem Content="Minor" Tag="3" />
+            <ComboBoxItem Content="Unknown" Tag="4" />
+            <ComboBoxItem Content="Ambulance" Tag="0" />
+        </ComboBox>
+        <Grid x:Name="AdditionalFields" x:FieldModifier="public" Visibility="Visible" Margin="0,0,0,87">
+        </Grid>
+        <TextBox x:FieldModifier="public" Visibility="Collapsed" TextWrapping="Wrap" Height="72" Margin="328,0,12,36" Name="txtDescriptionTranslation" VerticalAlignment="Bottom" IsReadOnly="True" />
+        <TextBox x:FieldModifier="public" Height="23" Margin="138,0,12,65" Name="txtDisplay" VerticalAlignment="Bottom" />
+        <TextBox x:FieldModifier="public" Margin="138,0,12,36" Name="txtAddress" Height="23" VerticalAlignment="Bottom" />
+        <TextBox x:FieldModifier="public" Visibility="Collapsed" Margin="328,0,12,36" Name="txtTranslation" Height="104" VerticalAlignment="Bottom" IsReadOnly="True" />
+        <PasswordBox x:FieldModifier="public" Visibility="Collapsed" Margin="138,0,12,36" Name="txtPassword" Height="23" VerticalAlignment="Bottom" />
+        <Button x:FieldModifier="public" Height="23" Margin="219,0,0,7" Name="btnOK" VerticalAlignment="Bottom" Width="75" IsDefault="True" HorizontalAlignment="Left">OK</Button>
+        <Button x:FieldModifier="public" Height="23" Margin="138,0,0,7" Name="btnCancel" VerticalAlignment="Bottom" Width="75" IsCancel="True" HorizontalAlignment="Left">Cancel</Button>
+        <Button Visibility="Collapsed" x:FieldModifier="public" Height="23" Margin="300,0,0,7" Name="btnProperties" VerticalAlignment="Bottom" Width="75" HorizontalAlignment="Left">Properties</Button>
+        <Label x:FieldModifier="public" Height="28" Margin="12,0,0,60" Name="lblDisplay" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="120" HorizontalContentAlignment="Right">Text to Display:</Label>
+        <Label x:FieldModifier="public" HorizontalAlignment="Left" Margin="12,0,0,31" Name="lblAddress" Width="120" Height="28" VerticalAlignment="Bottom" HorizontalContentAlignment="Right">Address:</Label>
+        <Label x:FieldModifier="public" Visibility="Collapsed" Height="28" Margin="12,0,0,114" Name="lblLevel" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="120" HorizontalContentAlignment="Right">Severity:</Label>
+        <Frame Visibility="Collapsed" Name="forgotPassword" VerticalAlignment="Bottom" Height="18" Margin="424,0,0,8" HorizontalAlignment="Left" Width="94">
+            <Frame.Content>
+                <Hyperlink NavigateUri="mailto:toolkit.support@healthhero.com">Forgot password?</Hyperlink>
+            </Frame.Content>
+        </Frame>
+        <Frame ToolTip="{me:Info Title=Permissions,Body=PermissionsToolTip,Width=600}" Visibility="Collapsed" Name="permissions" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="120" Height="17.96" Margin="7,0,12,7">
+            <Frame.Content>
+                <WrapPanel>
+                    <Image Margin="0,0,6,0" Source="/images/help.png"/>
+                    <TextBlock>Permissions</TextBlock>
+                </WrapPanel>
+            </Frame.Content>
+        </Frame>
+    </Grid>
+</UserControl>

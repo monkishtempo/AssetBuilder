@@ -1,0 +1,48 @@
+﻿<con:ABRibbonWindow x:Class="AssetBuilder.DebugOutput"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    	xmlns:r="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary" 
+        xmlns:con="clr-namespace:AssetBuilder.Controls"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:me="clr-namespace:AssetBuilder" 
+        Title="Debug Output" Height="453" Width="914">
+	<con:ABRibbonWindow.CommandBindings>
+        <CommandBinding Command="Copy" Executed="CommandBinding_Executed" />
+        <CommandBinding Command="me:CustomCommands.CopySQL" Executed="CommandBinding_Executed" />
+    </con:ABRibbonWindow.CommandBindings>
+	<con:ABRibbonWindow.InputBindings>
+        <KeyBinding Key="C" Modifiers="Control" Command="Copy"/>
+        <KeyBinding Key="C" Modifiers="Control" Command="me:CustomCommands.CopySQL"/>
+    </con:ABRibbonWindow.InputBindings>
+	<DockPanel>
+		<r:Ribbon DockPanel.Dock="Top" x:Name="rbnApplication">
+			<r:RibbonTab Header="Options">
+				<r:RibbonGroup x:Name="grpScript1" Header="Debug" Visibility="Visible">
+					<r:RibbonButton Label="Clear" ToolTip="{me:Info Image=/images/New_32x32.png,Body=ClearDebugWindowToolTip, Title='Clear Debug Window'}" LargeImageSource="/images/New_32x32.png" x:Name="rbtClearDebug" Click="rbtClearDebug_Click" />
+					<r:RibbonToggleButton Label="Render as HTML" ToolTip="{me:Info Image=/images/HTML_32x32.png,Body=RenderHTMLToolTip, Title='Render as HTML'}" LargeImageSource="/images/HTML_32x32.png" x:Name="rbtRenderHTML" Click="rbtRenderHTML_Click" />
+                    <r:RibbonButton Label="Current Asset" ToolTip="{me:Info Image=/images/Assets.png,Body=DebugAssetWindowToolTip, Title='Display Current Asset XML'}" LargeImageSource="/images/Assets.png" x:Name="rbtShowAsset" Click="rbtShowAsset_Click" />
+                </r:RibbonGroup>
+			</r:RibbonTab>
+		</r:Ribbon>
+        <StatusBar DockPanel.Dock="Bottom" Height="25" FontSize="14">
+            <StatusBarItem>
+                <TextBlock Name="StatusContent" />
+            </StatusBarItem>
+        </StatusBar>
+        <Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<ListBox Name="output" SelectionChanged="output_SelectionChanged">
+				<ListBox.ContextMenu>
+					<ContextMenu Loaded="ContextMenu_Loaded">
+                        <MenuItem Header="_Copy" CommandParameter="1" Click="MenuItem_Click" InputGestureText="Ctrl+C"/>
+                        <MenuItem Header="_Copy SQL" CommandParameter="2" Click="MenuItem_Click" InputGestureText="Ctrl+Shift+C"/>
+                    </ContextMenu>
+				</ListBox.ContextMenu>
+            </ListBox>
+			<GridSplitter HorizontalAlignment="Right" />
+			<WebBrowser Grid.Column="1" Name="webBrowser1"/>
+        </Grid>
+    </DockPanel>
+</con:ABRibbonWindow>

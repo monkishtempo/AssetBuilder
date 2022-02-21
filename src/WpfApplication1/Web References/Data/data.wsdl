@@ -1,0 +1,2420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="OptumGetUmichData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraversalID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OptumGetUmichDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptumGetUmichDataResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getHealthAssessmentData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraversalID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RiskForAge" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Conclusions" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getHealthAssessmentDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getHealthAssessmentDataResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PathwaysGetSnapshot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CallID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PathwaysGetSnapshotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PathwaysGetSnapshotResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSnapshot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CallID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSnapshotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSnapshotResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSnapshot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CallID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSnapshotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateSnapshotResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HealthgradesGetSnapshot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraversalID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HealthgradesGetSnapshotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HealthgradesGetSnapshotResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getLanguage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AssetType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AssetID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getLanguageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getLanguageResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setLanguage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AssetType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AssetID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Content">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setLanguageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="setLanguageResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchLanguage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AssetType" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="SearchType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="search" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="searchLanguageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="searchLanguageResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OptumGetSnapshot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraversalID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OptumGetSnapshotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptumGetSnapshotResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OptumSaveSnapshot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraversalID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OptumSaveSnapshotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptumSaveSnapshotResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OptumPushToEHP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraversalID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OptumPushToEHPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptumPushToEHPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OptumPrepopHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="post" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MemberID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TraversalID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OptumPrepopHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptumPrepopHistoryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validateContent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="algos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validateContentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="validateContentResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="processQuestion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="rerender" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="currentNode">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="Form">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="TraversalID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MemberID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="CallID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="NonExclusiveTableNone" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="WriteProcessed" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="processQuestionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="processQuestionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getQuestionString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="question" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CallID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TraversalID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MemberID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartAlgoID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartNodeID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Counter" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getQuestionStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getQuestionStringResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevGetValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraversalID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="QuestionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="AnswerID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevGetValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DevGetValueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevGenderText">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevGenderTextResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DevGenderTextResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevTestEval">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="s" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevTestEvalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DevTestEvalResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevGetInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="procedure" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DevGetInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DevGetInfoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Publish">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AlgoID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="User_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="target" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PublishResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PublishResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="exportAlgo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="target" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="algos" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="exportAlgoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="exportAlgoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="generateSQL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="algos" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="loadalgo" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="source" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="generateSQLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="generateSQLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OptumGetSF12Score">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraversalID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OptumGetSF12ScoreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OptumGetSF12ScoreResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TableUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="table" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TableUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TableUpdateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="procedure" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="args" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDataResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getQuestion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="question">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="CallID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TraversalID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MemberID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartAlgoID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="StartNodeID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Counter" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getQuestionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getQuestionResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="tns:ArrayOfKeyValuePairOfStringObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfKeyValuePairOfStringObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KeyValuePairOfStringObject" type="tns:KeyValuePairOfStringObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KeyValuePairOfStringObject" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="double" type="s:double" />
+      <s:element name="ArrayOfKeyValuePairOfStringObject" nillable="true" type="tns:ArrayOfKeyValuePairOfStringObject" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="OptumGetUmichDataSoapIn">
+    <wsdl:part name="parameters" element="tns:OptumGetUmichData" />
+  </wsdl:message>
+  <wsdl:message name="OptumGetUmichDataSoapOut">
+    <wsdl:part name="parameters" element="tns:OptumGetUmichDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="getHealthAssessmentDataSoapIn">
+    <wsdl:part name="parameters" element="tns:getHealthAssessmentData" />
+  </wsdl:message>
+  <wsdl:message name="getHealthAssessmentDataSoapOut">
+    <wsdl:part name="parameters" element="tns:getHealthAssessmentDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="PathwaysGetSnapshotSoapIn">
+    <wsdl:part name="parameters" element="tns:PathwaysGetSnapshot" />
+  </wsdl:message>
+  <wsdl:message name="PathwaysGetSnapshotSoapOut">
+    <wsdl:part name="parameters" element="tns:PathwaysGetSnapshotResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSnapshotSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSnapshot" />
+  </wsdl:message>
+  <wsdl:message name="GetSnapshotSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSnapshotResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateSnapshotSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateSnapshot" />
+  </wsdl:message>
+  <wsdl:message name="CreateSnapshotSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateSnapshotResponse" />
+  </wsdl:message>
+  <wsdl:message name="HealthgradesGetSnapshotSoapIn">
+    <wsdl:part name="parameters" element="tns:HealthgradesGetSnapshot" />
+  </wsdl:message>
+  <wsdl:message name="HealthgradesGetSnapshotSoapOut">
+    <wsdl:part name="parameters" element="tns:HealthgradesGetSnapshotResponse" />
+  </wsdl:message>
+  <wsdl:message name="getLanguageSoapIn">
+    <wsdl:part name="parameters" element="tns:getLanguage" />
+  </wsdl:message>
+  <wsdl:message name="getLanguageSoapOut">
+    <wsdl:part name="parameters" element="tns:getLanguageResponse" />
+  </wsdl:message>
+  <wsdl:message name="setLanguageSoapIn">
+    <wsdl:part name="parameters" element="tns:setLanguage" />
+  </wsdl:message>
+  <wsdl:message name="setLanguageSoapOut">
+    <wsdl:part name="parameters" element="tns:setLanguageResponse" />
+  </wsdl:message>
+  <wsdl:message name="searchLanguageSoapIn">
+    <wsdl:part name="parameters" element="tns:searchLanguage" />
+  </wsdl:message>
+  <wsdl:message name="searchLanguageSoapOut">
+    <wsdl:part name="parameters" element="tns:searchLanguageResponse" />
+  </wsdl:message>
+  <wsdl:message name="OptumGetSnapshotSoapIn">
+    <wsdl:part name="parameters" element="tns:OptumGetSnapshot" />
+  </wsdl:message>
+  <wsdl:message name="OptumGetSnapshotSoapOut">
+    <wsdl:part name="parameters" element="tns:OptumGetSnapshotResponse" />
+  </wsdl:message>
+  <wsdl:message name="OptumSaveSnapshotSoapIn">
+    <wsdl:part name="parameters" element="tns:OptumSaveSnapshot" />
+  </wsdl:message>
+  <wsdl:message name="OptumSaveSnapshotSoapOut">
+    <wsdl:part name="parameters" element="tns:OptumSaveSnapshotResponse" />
+  </wsdl:message>
+  <wsdl:message name="OptumPushToEHPSoapIn">
+    <wsdl:part name="parameters" element="tns:OptumPushToEHP" />
+  </wsdl:message>
+  <wsdl:message name="OptumPushToEHPSoapOut">
+    <wsdl:part name="parameters" element="tns:OptumPushToEHPResponse" />
+  </wsdl:message>
+  <wsdl:message name="OptumPrepopHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:OptumPrepopHistory" />
+  </wsdl:message>
+  <wsdl:message name="OptumPrepopHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:OptumPrepopHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="validateContentSoapIn">
+    <wsdl:part name="parameters" element="tns:validateContent" />
+  </wsdl:message>
+  <wsdl:message name="validateContentSoapOut">
+    <wsdl:part name="parameters" element="tns:validateContentResponse" />
+  </wsdl:message>
+  <wsdl:message name="processQuestionSoapIn">
+    <wsdl:part name="parameters" element="tns:processQuestion" />
+  </wsdl:message>
+  <wsdl:message name="processQuestionSoapOut">
+    <wsdl:part name="parameters" element="tns:processQuestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getQuestionStringSoapIn">
+    <wsdl:part name="parameters" element="tns:getQuestionString" />
+  </wsdl:message>
+  <wsdl:message name="getQuestionStringSoapOut">
+    <wsdl:part name="parameters" element="tns:getQuestionStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="DevGetValueSoapIn">
+    <wsdl:part name="parameters" element="tns:DevGetValue" />
+  </wsdl:message>
+  <wsdl:message name="DevGetValueSoapOut">
+    <wsdl:part name="parameters" element="tns:DevGetValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="DevGenderTextSoapIn">
+    <wsdl:part name="parameters" element="tns:DevGenderText" />
+  </wsdl:message>
+  <wsdl:message name="DevGenderTextSoapOut">
+    <wsdl:part name="parameters" element="tns:DevGenderTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="DevTestEvalSoapIn">
+    <wsdl:part name="parameters" element="tns:DevTestEval" />
+  </wsdl:message>
+  <wsdl:message name="DevTestEvalSoapOut">
+    <wsdl:part name="parameters" element="tns:DevTestEvalResponse" />
+  </wsdl:message>
+  <wsdl:message name="DevGetInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:DevGetInfo" />
+  </wsdl:message>
+  <wsdl:message name="DevGetInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:DevGetInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="PublishSoapIn">
+    <wsdl:part name="parameters" element="tns:Publish" />
+  </wsdl:message>
+  <wsdl:message name="PublishSoapOut">
+    <wsdl:part name="parameters" element="tns:PublishResponse" />
+  </wsdl:message>
+  <wsdl:message name="exportAlgoSoapIn">
+    <wsdl:part name="parameters" element="tns:exportAlgo" />
+  </wsdl:message>
+  <wsdl:message name="exportAlgoSoapOut">
+    <wsdl:part name="parameters" element="tns:exportAlgoResponse" />
+  </wsdl:message>
+  <wsdl:message name="generateSQLSoapIn">
+    <wsdl:part name="parameters" element="tns:generateSQL" />
+  </wsdl:message>
+  <wsdl:message name="generateSQLSoapOut">
+    <wsdl:part name="parameters" element="tns:generateSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="OptumGetSF12ScoreSoapIn">
+    <wsdl:part name="parameters" element="tns:OptumGetSF12Score" />
+  </wsdl:message>
+  <wsdl:message name="OptumGetSF12ScoreSoapOut">
+    <wsdl:part name="parameters" element="tns:OptumGetSF12ScoreResponse" />
+  </wsdl:message>
+  <wsdl:message name="TableUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:TableUpdate" />
+  </wsdl:message>
+  <wsdl:message name="TableUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:TableUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDataSoapIn">
+    <wsdl:part name="parameters" element="tns:getData" />
+  </wsdl:message>
+  <wsdl:message name="getDataSoapOut">
+    <wsdl:part name="parameters" element="tns:getDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="getQuestionSoapIn">
+    <wsdl:part name="parameters" element="tns:getQuestion" />
+  </wsdl:message>
+  <wsdl:message name="getQuestionSoapOut">
+    <wsdl:part name="parameters" element="tns:getQuestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="OptumGetUmichDataHttpGetIn">
+    <wsdl:part name="TraversalID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OptumGetUmichDataHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="getHealthAssessmentDataHttpGetIn">
+    <wsdl:part name="TraversalID" type="s:string" />
+    <wsdl:part name="RiskForAge" type="s:string" />
+    <wsdl:part name="Conclusions" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="getHealthAssessmentDataHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="PathwaysGetSnapshotHttpGetIn">
+    <wsdl:part name="CallID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PathwaysGetSnapshotHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetSnapshotHttpGetIn">
+    <wsdl:part name="CallID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSnapshotHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="CreateSnapshotHttpGetIn">
+    <wsdl:part name="CallID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateSnapshotHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HealthgradesGetSnapshotHttpGetIn">
+    <wsdl:part name="TraversalID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HealthgradesGetSnapshotHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="getLanguageHttpGetIn">
+    <wsdl:part name="AssetType" type="s:string" />
+    <wsdl:part name="AssetID" type="s:string" />
+    <wsdl:part name="Language" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getLanguageHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="searchLanguageHttpGetIn">
+    <wsdl:part name="AssetType" type="s:string" />
+    <wsdl:part name="SearchType" type="s:string" />
+    <wsdl:part name="Language" type="s:string" />
+    <wsdl:part name="search" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="searchLanguageHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="OptumGetSnapshotHttpGetIn">
+    <wsdl:part name="TraversalID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OptumGetSnapshotHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="OptumSaveSnapshotHttpGetIn">
+    <wsdl:part name="TraversalID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OptumSaveSnapshotHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OptumPushToEHPHttpGetIn">
+    <wsdl:part name="TraversalID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OptumPushToEHPHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OptumPrepopHistoryHttpGetIn">
+    <wsdl:part name="post" type="s:string" />
+    <wsdl:part name="MemberID" type="s:string" />
+    <wsdl:part name="TraversalID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OptumPrepopHistoryHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="validateContentHttpGetIn">
+    <wsdl:part name="algos" type="s:string" />
+    <wsdl:part name="source" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="validateContentHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="getQuestionStringHttpGetIn">
+    <wsdl:part name="question" type="s:string" />
+    <wsdl:part name="CallID" type="s:string" />
+    <wsdl:part name="TraversalID" type="s:string" />
+    <wsdl:part name="MemberID" type="s:string" />
+    <wsdl:part name="StartAlgoID" type="s:string" />
+    <wsdl:part name="StartNodeID" type="s:string" />
+    <wsdl:part name="Counter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getQuestionStringHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DevGetValueHttpGetIn">
+    <wsdl:part name="TraversalID" type="s:string" />
+    <wsdl:part name="QuestionID" type="s:string" />
+    <wsdl:part name="AnswerID" type="s:string" />
+    <wsdl:part name="Value" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DevGetValueHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DevGenderTextHttpGetIn">
+    <wsdl:part name="s" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DevGenderTextHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DevTestEvalHttpGetIn">
+    <wsdl:part name="s" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DevTestEvalHttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="DevGetInfoHttpGetIn">
+    <wsdl:part name="procedure" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DevGetInfoHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="PublishHttpGetIn">
+    <wsdl:part name="AlgoID" type="s:string" />
+    <wsdl:part name="User_Name" type="s:string" />
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="target" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PublishHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="exportAlgoHttpGetIn">
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="target" type="s:string" />
+    <wsdl:part name="algos" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="exportAlgoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="generateSQLHttpGetIn">
+    <wsdl:part name="algos" type="s:string" />
+    <wsdl:part name="loadalgo" type="s:string" />
+    <wsdl:part name="source" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="generateSQLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OptumGetSF12ScoreHttpGetIn">
+    <wsdl:part name="TraversalID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OptumGetSF12ScoreHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TableUpdateHttpGetIn">
+    <wsdl:part name="table" type="s:string" />
+    <wsdl:part name="data" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TableUpdateHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="getDataHttpGetIn">
+    <wsdl:part name="procedure" type="s:string" />
+    <wsdl:part name="args" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="getDataHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfKeyValuePairOfStringObject" />
+  </wsdl:message>
+  <wsdl:message name="OptumGetUmichDataHttpPostIn">
+    <wsdl:part name="TraversalID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OptumGetUmichDataHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="getHealthAssessmentDataHttpPostIn">
+    <wsdl:part name="TraversalID" type="s:string" />
+    <wsdl:part name="RiskForAge" type="s:string" />
+    <wsdl:part name="Conclusions" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="getHealthAssessmentDataHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="PathwaysGetSnapshotHttpPostIn">
+    <wsdl:part name="CallID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PathwaysGetSnapshotHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetSnapshotHttpPostIn">
+    <wsdl:part name="CallID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetSnapshotHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="CreateSnapshotHttpPostIn">
+    <wsdl:part name="CallID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateSnapshotHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HealthgradesGetSnapshotHttpPostIn">
+    <wsdl:part name="TraversalID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="HealthgradesGetSnapshotHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="getLanguageHttpPostIn">
+    <wsdl:part name="AssetType" type="s:string" />
+    <wsdl:part name="AssetID" type="s:string" />
+    <wsdl:part name="Language" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getLanguageHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="searchLanguageHttpPostIn">
+    <wsdl:part name="AssetType" type="s:string" />
+    <wsdl:part name="SearchType" type="s:string" />
+    <wsdl:part name="Language" type="s:string" />
+    <wsdl:part name="search" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="searchLanguageHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="OptumGetSnapshotHttpPostIn">
+    <wsdl:part name="TraversalID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OptumGetSnapshotHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="OptumSaveSnapshotHttpPostIn">
+    <wsdl:part name="TraversalID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OptumSaveSnapshotHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OptumPushToEHPHttpPostIn">
+    <wsdl:part name="TraversalID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OptumPushToEHPHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OptumPrepopHistoryHttpPostIn">
+    <wsdl:part name="post" type="s:string" />
+    <wsdl:part name="MemberID" type="s:string" />
+    <wsdl:part name="TraversalID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OptumPrepopHistoryHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="validateContentHttpPostIn">
+    <wsdl:part name="algos" type="s:string" />
+    <wsdl:part name="source" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="validateContentHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="getQuestionStringHttpPostIn">
+    <wsdl:part name="question" type="s:string" />
+    <wsdl:part name="CallID" type="s:string" />
+    <wsdl:part name="TraversalID" type="s:string" />
+    <wsdl:part name="MemberID" type="s:string" />
+    <wsdl:part name="StartAlgoID" type="s:string" />
+    <wsdl:part name="StartNodeID" type="s:string" />
+    <wsdl:part name="Counter" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getQuestionStringHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="DevGetValueHttpPostIn">
+    <wsdl:part name="TraversalID" type="s:string" />
+    <wsdl:part name="QuestionID" type="s:string" />
+    <wsdl:part name="AnswerID" type="s:string" />
+    <wsdl:part name="Value" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DevGetValueHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DevGenderTextHttpPostIn">
+    <wsdl:part name="s" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DevGenderTextHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DevTestEvalHttpPostIn">
+    <wsdl:part name="s" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DevTestEvalHttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="DevGetInfoHttpPostIn">
+    <wsdl:part name="procedure" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DevGetInfoHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="PublishHttpPostIn">
+    <wsdl:part name="AlgoID" type="s:string" />
+    <wsdl:part name="User_Name" type="s:string" />
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="target" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PublishHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="exportAlgoHttpPostIn">
+    <wsdl:part name="source" type="s:string" />
+    <wsdl:part name="target" type="s:string" />
+    <wsdl:part name="algos" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="exportAlgoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="generateSQLHttpPostIn">
+    <wsdl:part name="algos" type="s:string" />
+    <wsdl:part name="loadalgo" type="s:string" />
+    <wsdl:part name="source" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="generateSQLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="OptumGetSF12ScoreHttpPostIn">
+    <wsdl:part name="TraversalID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="OptumGetSF12ScoreHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TableUpdateHttpPostIn">
+    <wsdl:part name="table" type="s:string" />
+    <wsdl:part name="data" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TableUpdateHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="getDataHttpPostIn">
+    <wsdl:part name="procedure" type="s:string" />
+    <wsdl:part name="args" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="getDataHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfKeyValuePairOfStringObject" />
+  </wsdl:message>
+  <wsdl:portType name="DataSoap">
+    <wsdl:operation name="OptumGetUmichData">
+      <wsdl:input message="tns:OptumGetUmichDataSoapIn" />
+      <wsdl:output message="tns:OptumGetUmichDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getHealthAssessmentData">
+      <wsdl:input message="tns:getHealthAssessmentDataSoapIn" />
+      <wsdl:output message="tns:getHealthAssessmentDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PathwaysGetSnapshot">
+      <wsdl:input message="tns:PathwaysGetSnapshotSoapIn" />
+      <wsdl:output message="tns:PathwaysGetSnapshotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSnapshot">
+      <wsdl:input message="tns:GetSnapshotSoapIn" />
+      <wsdl:output message="tns:GetSnapshotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSnapshot">
+      <wsdl:input message="tns:CreateSnapshotSoapIn" />
+      <wsdl:output message="tns:CreateSnapshotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HealthgradesGetSnapshot">
+      <wsdl:input message="tns:HealthgradesGetSnapshotSoapIn" />
+      <wsdl:output message="tns:HealthgradesGetSnapshotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLanguage">
+      <wsdl:input message="tns:getLanguageSoapIn" />
+      <wsdl:output message="tns:getLanguageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setLanguage">
+      <wsdl:input message="tns:setLanguageSoapIn" />
+      <wsdl:output message="tns:setLanguageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchLanguage">
+      <wsdl:input message="tns:searchLanguageSoapIn" />
+      <wsdl:output message="tns:searchLanguageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OptumGetSnapshot">
+      <wsdl:input message="tns:OptumGetSnapshotSoapIn" />
+      <wsdl:output message="tns:OptumGetSnapshotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OptumSaveSnapshot">
+      <wsdl:input message="tns:OptumSaveSnapshotSoapIn" />
+      <wsdl:output message="tns:OptumSaveSnapshotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OptumPushToEHP">
+      <wsdl:input message="tns:OptumPushToEHPSoapIn" />
+      <wsdl:output message="tns:OptumPushToEHPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OptumPrepopHistory">
+      <wsdl:input message="tns:OptumPrepopHistorySoapIn" />
+      <wsdl:output message="tns:OptumPrepopHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validateContent">
+      <wsdl:input message="tns:validateContentSoapIn" />
+      <wsdl:output message="tns:validateContentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="processQuestion">
+      <wsdl:input message="tns:processQuestionSoapIn" />
+      <wsdl:output message="tns:processQuestionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuestionString">
+      <wsdl:input message="tns:getQuestionStringSoapIn" />
+      <wsdl:output message="tns:getQuestionStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevGetValue">
+      <wsdl:input message="tns:DevGetValueSoapIn" />
+      <wsdl:output message="tns:DevGetValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevGenderText">
+      <wsdl:input message="tns:DevGenderTextSoapIn" />
+      <wsdl:output message="tns:DevGenderTextSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevTestEval">
+      <wsdl:input message="tns:DevTestEvalSoapIn" />
+      <wsdl:output message="tns:DevTestEvalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevGetInfo">
+      <wsdl:input message="tns:DevGetInfoSoapIn" />
+      <wsdl:output message="tns:DevGetInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Publish">
+      <wsdl:input message="tns:PublishSoapIn" />
+      <wsdl:output message="tns:PublishSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="exportAlgo">
+      <wsdl:input message="tns:exportAlgoSoapIn" />
+      <wsdl:output message="tns:exportAlgoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="generateSQL">
+      <wsdl:input message="tns:generateSQLSoapIn" />
+      <wsdl:output message="tns:generateSQLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OptumGetSF12Score">
+      <wsdl:input message="tns:OptumGetSF12ScoreSoapIn" />
+      <wsdl:output message="tns:OptumGetSF12ScoreSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TableUpdate">
+      <wsdl:input message="tns:TableUpdateSoapIn" />
+      <wsdl:output message="tns:TableUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getData">
+      <wsdl:input message="tns:getDataSoapIn" />
+      <wsdl:output message="tns:getDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuestion">
+      <wsdl:input message="tns:getQuestionSoapIn" />
+      <wsdl:output message="tns:getQuestionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="DataHttpGet">
+    <wsdl:operation name="OptumGetUmichData">
+      <wsdl:input message="tns:OptumGetUmichDataHttpGetIn" />
+      <wsdl:output message="tns:OptumGetUmichDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getHealthAssessmentData">
+      <wsdl:input message="tns:getHealthAssessmentDataHttpGetIn" />
+      <wsdl:output message="tns:getHealthAssessmentDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PathwaysGetSnapshot">
+      <wsdl:input message="tns:PathwaysGetSnapshotHttpGetIn" />
+      <wsdl:output message="tns:PathwaysGetSnapshotHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSnapshot">
+      <wsdl:input message="tns:GetSnapshotHttpGetIn" />
+      <wsdl:output message="tns:GetSnapshotHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSnapshot">
+      <wsdl:input message="tns:CreateSnapshotHttpGetIn" />
+      <wsdl:output message="tns:CreateSnapshotHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HealthgradesGetSnapshot">
+      <wsdl:input message="tns:HealthgradesGetSnapshotHttpGetIn" />
+      <wsdl:output message="tns:HealthgradesGetSnapshotHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLanguage">
+      <wsdl:input message="tns:getLanguageHttpGetIn" />
+      <wsdl:output message="tns:getLanguageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchLanguage">
+      <wsdl:input message="tns:searchLanguageHttpGetIn" />
+      <wsdl:output message="tns:searchLanguageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OptumGetSnapshot">
+      <wsdl:input message="tns:OptumGetSnapshotHttpGetIn" />
+      <wsdl:output message="tns:OptumGetSnapshotHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OptumSaveSnapshot">
+      <wsdl:input message="tns:OptumSaveSnapshotHttpGetIn" />
+      <wsdl:output message="tns:OptumSaveSnapshotHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OptumPushToEHP">
+      <wsdl:input message="tns:OptumPushToEHPHttpGetIn" />
+      <wsdl:output message="tns:OptumPushToEHPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OptumPrepopHistory">
+      <wsdl:input message="tns:OptumPrepopHistoryHttpGetIn" />
+      <wsdl:output message="tns:OptumPrepopHistoryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validateContent">
+      <wsdl:input message="tns:validateContentHttpGetIn" />
+      <wsdl:output message="tns:validateContentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuestionString">
+      <wsdl:input message="tns:getQuestionStringHttpGetIn" />
+      <wsdl:output message="tns:getQuestionStringHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevGetValue">
+      <wsdl:input message="tns:DevGetValueHttpGetIn" />
+      <wsdl:output message="tns:DevGetValueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevGenderText">
+      <wsdl:input message="tns:DevGenderTextHttpGetIn" />
+      <wsdl:output message="tns:DevGenderTextHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevTestEval">
+      <wsdl:input message="tns:DevTestEvalHttpGetIn" />
+      <wsdl:output message="tns:DevTestEvalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevGetInfo">
+      <wsdl:input message="tns:DevGetInfoHttpGetIn" />
+      <wsdl:output message="tns:DevGetInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Publish">
+      <wsdl:input message="tns:PublishHttpGetIn" />
+      <wsdl:output message="tns:PublishHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="exportAlgo">
+      <wsdl:input message="tns:exportAlgoHttpGetIn" />
+      <wsdl:output message="tns:exportAlgoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="generateSQL">
+      <wsdl:input message="tns:generateSQLHttpGetIn" />
+      <wsdl:output message="tns:generateSQLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OptumGetSF12Score">
+      <wsdl:input message="tns:OptumGetSF12ScoreHttpGetIn" />
+      <wsdl:output message="tns:OptumGetSF12ScoreHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TableUpdate">
+      <wsdl:input message="tns:TableUpdateHttpGetIn" />
+      <wsdl:output message="tns:TableUpdateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getData">
+      <wsdl:input message="tns:getDataHttpGetIn" />
+      <wsdl:output message="tns:getDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="DataHttpPost">
+    <wsdl:operation name="OptumGetUmichData">
+      <wsdl:input message="tns:OptumGetUmichDataHttpPostIn" />
+      <wsdl:output message="tns:OptumGetUmichDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getHealthAssessmentData">
+      <wsdl:input message="tns:getHealthAssessmentDataHttpPostIn" />
+      <wsdl:output message="tns:getHealthAssessmentDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PathwaysGetSnapshot">
+      <wsdl:input message="tns:PathwaysGetSnapshotHttpPostIn" />
+      <wsdl:output message="tns:PathwaysGetSnapshotHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSnapshot">
+      <wsdl:input message="tns:GetSnapshotHttpPostIn" />
+      <wsdl:output message="tns:GetSnapshotHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSnapshot">
+      <wsdl:input message="tns:CreateSnapshotHttpPostIn" />
+      <wsdl:output message="tns:CreateSnapshotHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HealthgradesGetSnapshot">
+      <wsdl:input message="tns:HealthgradesGetSnapshotHttpPostIn" />
+      <wsdl:output message="tns:HealthgradesGetSnapshotHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLanguage">
+      <wsdl:input message="tns:getLanguageHttpPostIn" />
+      <wsdl:output message="tns:getLanguageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="searchLanguage">
+      <wsdl:input message="tns:searchLanguageHttpPostIn" />
+      <wsdl:output message="tns:searchLanguageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OptumGetSnapshot">
+      <wsdl:input message="tns:OptumGetSnapshotHttpPostIn" />
+      <wsdl:output message="tns:OptumGetSnapshotHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OptumSaveSnapshot">
+      <wsdl:input message="tns:OptumSaveSnapshotHttpPostIn" />
+      <wsdl:output message="tns:OptumSaveSnapshotHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OptumPushToEHP">
+      <wsdl:input message="tns:OptumPushToEHPHttpPostIn" />
+      <wsdl:output message="tns:OptumPushToEHPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OptumPrepopHistory">
+      <wsdl:input message="tns:OptumPrepopHistoryHttpPostIn" />
+      <wsdl:output message="tns:OptumPrepopHistoryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="validateContent">
+      <wsdl:input message="tns:validateContentHttpPostIn" />
+      <wsdl:output message="tns:validateContentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuestionString">
+      <wsdl:input message="tns:getQuestionStringHttpPostIn" />
+      <wsdl:output message="tns:getQuestionStringHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevGetValue">
+      <wsdl:input message="tns:DevGetValueHttpPostIn" />
+      <wsdl:output message="tns:DevGetValueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevGenderText">
+      <wsdl:input message="tns:DevGenderTextHttpPostIn" />
+      <wsdl:output message="tns:DevGenderTextHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevTestEval">
+      <wsdl:input message="tns:DevTestEvalHttpPostIn" />
+      <wsdl:output message="tns:DevTestEvalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DevGetInfo">
+      <wsdl:input message="tns:DevGetInfoHttpPostIn" />
+      <wsdl:output message="tns:DevGetInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Publish">
+      <wsdl:input message="tns:PublishHttpPostIn" />
+      <wsdl:output message="tns:PublishHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="exportAlgo">
+      <wsdl:input message="tns:exportAlgoHttpPostIn" />
+      <wsdl:output message="tns:exportAlgoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="generateSQL">
+      <wsdl:input message="tns:generateSQLHttpPostIn" />
+      <wsdl:output message="tns:generateSQLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OptumGetSF12Score">
+      <wsdl:input message="tns:OptumGetSF12ScoreHttpPostIn" />
+      <wsdl:output message="tns:OptumGetSF12ScoreHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TableUpdate">
+      <wsdl:input message="tns:TableUpdateHttpPostIn" />
+      <wsdl:output message="tns:TableUpdateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getData">
+      <wsdl:input message="tns:getDataHttpPostIn" />
+      <wsdl:output message="tns:getDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DataSoap" type="tns:DataSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OptumGetUmichData">
+      <soap:operation soapAction="http://tempuri.org/OptumGetUmichData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHealthAssessmentData">
+      <soap:operation soapAction="http://tempuri.org/getHealthAssessmentData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PathwaysGetSnapshot">
+      <soap:operation soapAction="http://tempuri.org/PathwaysGetSnapshot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSnapshot">
+      <soap:operation soapAction="http://tempuri.org/GetSnapshot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSnapshot">
+      <soap:operation soapAction="http://tempuri.org/CreateSnapshot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HealthgradesGetSnapshot">
+      <soap:operation soapAction="http://tempuri.org/HealthgradesGetSnapshot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLanguage">
+      <soap:operation soapAction="http://tempuri.org/getLanguage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setLanguage">
+      <soap:operation soapAction="http://tempuri.org/setLanguage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchLanguage">
+      <soap:operation soapAction="http://tempuri.org/searchLanguage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumGetSnapshot">
+      <soap:operation soapAction="http://tempuri.org/OptumGetSnapshot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumSaveSnapshot">
+      <soap:operation soapAction="http://tempuri.org/OptumSaveSnapshot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumPushToEHP">
+      <soap:operation soapAction="http://tempuri.org/OptumPushToEHP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumPrepopHistory">
+      <soap:operation soapAction="http://tempuri.org/OptumPrepopHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateContent">
+      <soap:operation soapAction="http://tempuri.org/validateContent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="processQuestion">
+      <soap:operation soapAction="http://tempuri.org/processQuestion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuestionString">
+      <soap:operation soapAction="http://tempuri.org/getQuestionString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevGetValue">
+      <soap:operation soapAction="http://tempuri.org/DevGetValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevGenderText">
+      <soap:operation soapAction="http://tempuri.org/DevGenderText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevTestEval">
+      <soap:operation soapAction="http://tempuri.org/DevTestEval" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevGetInfo">
+      <soap:operation soapAction="http://tempuri.org/DevGetInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Publish">
+      <soap:operation soapAction="http://tempuri.org/Publish" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportAlgo">
+      <soap:operation soapAction="http://tempuri.org/exportAlgo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generateSQL">
+      <soap:operation soapAction="http://tempuri.org/generateSQL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumGetSF12Score">
+      <soap:operation soapAction="http://tempuri.org/OptumGetSF12Score" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TableUpdate">
+      <soap:operation soapAction="http://tempuri.org/TableUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getData">
+      <soap:operation soapAction="http://tempuri.org/getData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuestion">
+      <soap:operation soapAction="http://tempuri.org/getQuestion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DataSoap12" type="tns:DataSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OptumGetUmichData">
+      <soap12:operation soapAction="http://tempuri.org/OptumGetUmichData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHealthAssessmentData">
+      <soap12:operation soapAction="http://tempuri.org/getHealthAssessmentData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PathwaysGetSnapshot">
+      <soap12:operation soapAction="http://tempuri.org/PathwaysGetSnapshot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSnapshot">
+      <soap12:operation soapAction="http://tempuri.org/GetSnapshot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSnapshot">
+      <soap12:operation soapAction="http://tempuri.org/CreateSnapshot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HealthgradesGetSnapshot">
+      <soap12:operation soapAction="http://tempuri.org/HealthgradesGetSnapshot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLanguage">
+      <soap12:operation soapAction="http://tempuri.org/getLanguage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setLanguage">
+      <soap12:operation soapAction="http://tempuri.org/setLanguage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchLanguage">
+      <soap12:operation soapAction="http://tempuri.org/searchLanguage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumGetSnapshot">
+      <soap12:operation soapAction="http://tempuri.org/OptumGetSnapshot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumSaveSnapshot">
+      <soap12:operation soapAction="http://tempuri.org/OptumSaveSnapshot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumPushToEHP">
+      <soap12:operation soapAction="http://tempuri.org/OptumPushToEHP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumPrepopHistory">
+      <soap12:operation soapAction="http://tempuri.org/OptumPrepopHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateContent">
+      <soap12:operation soapAction="http://tempuri.org/validateContent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="processQuestion">
+      <soap12:operation soapAction="http://tempuri.org/processQuestion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuestionString">
+      <soap12:operation soapAction="http://tempuri.org/getQuestionString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevGetValue">
+      <soap12:operation soapAction="http://tempuri.org/DevGetValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevGenderText">
+      <soap12:operation soapAction="http://tempuri.org/DevGenderText" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevTestEval">
+      <soap12:operation soapAction="http://tempuri.org/DevTestEval" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevGetInfo">
+      <soap12:operation soapAction="http://tempuri.org/DevGetInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Publish">
+      <soap12:operation soapAction="http://tempuri.org/Publish" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportAlgo">
+      <soap12:operation soapAction="http://tempuri.org/exportAlgo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generateSQL">
+      <soap12:operation soapAction="http://tempuri.org/generateSQL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumGetSF12Score">
+      <soap12:operation soapAction="http://tempuri.org/OptumGetSF12Score" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TableUpdate">
+      <soap12:operation soapAction="http://tempuri.org/TableUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getData">
+      <soap12:operation soapAction="http://tempuri.org/getData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuestion">
+      <soap12:operation soapAction="http://tempuri.org/getQuestion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DataHttpGet" type="tns:DataHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="OptumGetUmichData">
+      <http:operation location="/OptumGetUmichData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHealthAssessmentData">
+      <http:operation location="/getHealthAssessmentData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PathwaysGetSnapshot">
+      <http:operation location="/PathwaysGetSnapshot" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSnapshot">
+      <http:operation location="/GetSnapshot" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSnapshot">
+      <http:operation location="/CreateSnapshot" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HealthgradesGetSnapshot">
+      <http:operation location="/HealthgradesGetSnapshot" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLanguage">
+      <http:operation location="/getLanguage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchLanguage">
+      <http:operation location="/searchLanguage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumGetSnapshot">
+      <http:operation location="/OptumGetSnapshot" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumSaveSnapshot">
+      <http:operation location="/OptumSaveSnapshot" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumPushToEHP">
+      <http:operation location="/OptumPushToEHP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumPrepopHistory">
+      <http:operation location="/OptumPrepopHistory" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateContent">
+      <http:operation location="/validateContent" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuestionString">
+      <http:operation location="/getQuestionString" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevGetValue">
+      <http:operation location="/DevGetValue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevGenderText">
+      <http:operation location="/DevGenderText" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevTestEval">
+      <http:operation location="/DevTestEval" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevGetInfo">
+      <http:operation location="/DevGetInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Publish">
+      <http:operation location="/Publish" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportAlgo">
+      <http:operation location="/exportAlgo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generateSQL">
+      <http:operation location="/generateSQL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumGetSF12Score">
+      <http:operation location="/OptumGetSF12Score" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TableUpdate">
+      <http:operation location="/TableUpdate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getData">
+      <http:operation location="/getData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DataHttpPost" type="tns:DataHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="OptumGetUmichData">
+      <http:operation location="/OptumGetUmichData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getHealthAssessmentData">
+      <http:operation location="/getHealthAssessmentData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PathwaysGetSnapshot">
+      <http:operation location="/PathwaysGetSnapshot" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSnapshot">
+      <http:operation location="/GetSnapshot" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSnapshot">
+      <http:operation location="/CreateSnapshot" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HealthgradesGetSnapshot">
+      <http:operation location="/HealthgradesGetSnapshot" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLanguage">
+      <http:operation location="/getLanguage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchLanguage">
+      <http:operation location="/searchLanguage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumGetSnapshot">
+      <http:operation location="/OptumGetSnapshot" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumSaveSnapshot">
+      <http:operation location="/OptumSaveSnapshot" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumPushToEHP">
+      <http:operation location="/OptumPushToEHP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumPrepopHistory">
+      <http:operation location="/OptumPrepopHistory" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="validateContent">
+      <http:operation location="/validateContent" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuestionString">
+      <http:operation location="/getQuestionString" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevGetValue">
+      <http:operation location="/DevGetValue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevGenderText">
+      <http:operation location="/DevGenderText" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevTestEval">
+      <http:operation location="/DevTestEval" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DevGetInfo">
+      <http:operation location="/DevGetInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Publish">
+      <http:operation location="/Publish" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="exportAlgo">
+      <http:operation location="/exportAlgo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generateSQL">
+      <http:operation location="/generateSQL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OptumGetSF12Score">
+      <http:operation location="/OptumGetSF12Score" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TableUpdate">
+      <http:operation location="/TableUpdate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getData">
+      <http:operation location="/getData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Data">
+    <wsdl:port name="DataSoap" binding="tns:DataSoap">
+      <soap:address location="http://localhost/webbuilder/data.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DataSoap12" binding="tns:DataSoap12">
+      <soap12:address location="http://localhost/webbuilder/data.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DataHttpGet" binding="tns:DataHttpGet">
+      <http:address location="http://localhost/webbuilder/data.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DataHttpPost" binding="tns:DataHttpPost">
+      <http:address location="http://localhost/webbuilder/data.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

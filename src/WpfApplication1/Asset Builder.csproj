@@ -1,0 +1,1288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{113F1375-AFB9-4274-881A-91511D893E54}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AssetBuilder</RootNamespace>
+    <AssemblyName>AssetBuilder</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+    <ManifestCertificateThumbprint>434806BEFDCAABDB88BAC7C4E7F239AE958EA17B</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Asset Builder_12_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <StartupObject>AssetBuilder.Program</StartupObject>
+    <SignAssembly>true</SignAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <Utf8Output>true</Utf8Output>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>c:\wwwroot\apps_expert-24_com\ABTemp\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>https://apps.expert-24.com/ABTemp/</InstallUrl>
+    <ProductName>Asset Builder</ProductName>
+    <PublisherName>Expert-24</PublisherName>
+    <ApplicationRevision>865</ApplicationRevision>
+    <ApplicationVersion>4.5.5.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>blocks-icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Asset Builder_1_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CryptoExtension, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>_Library\CryptoExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Curve, Version=1.0.6541.30007, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Curve\Curve\bin\Debug\Curve.dll</HintPath>
+    </Reference>
+    <Reference Include="ExpertData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fa8096d32abda15e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>_Library\ExpertData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Visio, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 11.0\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Visio.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>F:\Windows\assembly\GAC\Microsoft.Office.Interop.Word\12.0.0.0__71e9bce111e9429c\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.1020.30, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1020.30\lib\net45\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.1020.30, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1020.30\lib\net45\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.1020.30, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.1020.30\lib\net45\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WpfXmlGrid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7d7840a6ee116a67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>_Library\WpfXmlGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="XmlGrid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=feddb5cc1922f1be, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>_Library\XmlGrid.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Classes\Environment.cs" />
+    <Compile Include="Classes\HandlerClasses.cs" />
+    <Compile Include="Classes\HtmlReport.cs" />
+    <Compile Include="Classes\JNode.cs" />
+    <Compile Include="Classes\KeyEqualityComparer.cs" />
+    <Compile Include="Classes\OtherReport.cs" />
+    <Compile Include="Classes\ParamDictionary.cs" />
+    <Compile Include="Classes\SaaS.cs" />
+    <Compile Include="Classes\ScriptDebugger.cs" />
+    <Compile Include="Compare\Compare.xaml.cs">
+      <DependentUpon>Compare.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Compare\LogicCompare.cs" />
+    <Compile Include="Controls\AssetControls\CMAP.cs" />
+    <Compile Include="Controls\ConclusionMap\Action.cs" />
+    <Compile Include="Controls\ConclusionMap\ActionDefinition.cs" />
+    <Compile Include="Controls\ConclusionMap\ComparisonOperator.cs" />
+    <Compile Include="Controls\ConclusionMap\Map.cs" />
+    <Compile Include="Controls\ConclusionMap\Rule.cs" />
+    <Compile Include="Controls\ConclusionMap\Trigger.cs" />
+    <Compile Include="Controls\ConclusionMap\Xaml\Action.xaml.cs">
+      <DependentUpon>Action.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ConclusionMap\Xaml\Map.xaml.cs">
+      <DependentUpon>Map.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ConclusionMap\Xaml\Rule.xaml.cs">
+      <DependentUpon>Rule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ConclusionMap\Xaml\Trigger.xaml.cs">
+      <DependentUpon>Trigger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Custom\AssetBuilderPropertiesEditor.xaml.cs">
+      <DependentUpon>AssetBuilderPropertiesEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Custom\EditableTextBlock.xaml.cs">
+      <DependentUpon>EditableTextBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Custom\EditableTreeView.xaml.cs">
+      <DependentUpon>EditableTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Custom\ExecuteReportDialog.xaml.cs">
+      <DependentUpon>ExecuteReportDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Custom\TreeViewSource.cs" />
+    <Compile Include="Reports\CompareReport.cs" />
+    <Compile Include="Reports\ConclusionSummary\ConclusionSummary.cs" />
+    <Compile Include="Reports\ContentReport\Content.cs" />
+    <Compile Include="Reports\ContentReport\ContentReport.cs" />
+    <Compile Include="Reports\DispositionChange\DispositionChange.cs" />
+    <Compile Include="Reports\LanguageSummary\LanguageSummary.cs" />
+    <Compile Include="Reports\LanguageSummary\LanguageSummaryReport.cs" />
+    <Compile Include="Reports\ReportBase.cs" />
+    <Compile Include="Reports\ReportPayload.cs" />
+    <Compile Include="Controls\AssetControls\AuditItem.cs" />
+    <Compile Include="Controls\AssetControls\Question.cs" />
+    <Compile Include="Controls\AssetControls\Questiontest.xaml.cs">
+      <DependentUpon>Questiontest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AuditTrail.xaml.cs">
+      <DependentUpon>AuditTrail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Compare.xaml.cs">
+      <DependentUpon>Compare.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Custom\CheckableItem.cs" />
+    <Compile Include="Controls\Custom\CustomPropertyControl.xaml.cs">
+      <DependentUpon>CustomPropertyControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Progress.xaml.cs">
+      <DependentUpon>Progress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\HtmlReport.cs" />
+    <Compile Include="Reports\XmlReportBase.cs" />
+    <Compile Include="Window2.xaml.cs">
+      <DependentUpon>Window2.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CodeAssociation\CodeAssociation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Compare\Compare.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ABToolTip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\AlgoLoader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\AlgoTracker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\AssetControls\Algo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\AssetControls\Goal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\AssetControls\inherits.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\AssetControls\Questiontest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\AssetControls\Usage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\AuditTrail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BulletLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Compare.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ConclusionMap\Xaml\Action.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ConclusionMap\Xaml\Map.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ConclusionMap\Xaml\Rule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ConclusionMap\Xaml\Trigger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\countIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Custom\AssetBuilderPropertiesEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Custom\CustomPropertyControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Custom\EditableTextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Custom\EditableTreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Custom\ExecuteReportDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FindReplace.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\InputBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\linkControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\NLInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Progress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\prompt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PromptWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Bubble.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Properties.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\recentItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\richPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SplitTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TableEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Waiting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CurveVisualiser\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DebugOutput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="qcat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RiskCalc\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Simple Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TableGrid\AutoUpdateDataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="uTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Window1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\ControlTree.cs" />
+    <Compile Include="Classes\Converters.cs" />
+    <Compile Include="Classes\Extension.cs" />
+    <Compile Include="Classes\Info.cs" />
+    <Compile Include="Classes\IntelListMakers.cs" />
+    <Compile Include="Classes\VisioInterface.cs" />
+    <Compile Include="CodeAssociation\CodeAssociation.xaml.cs">
+      <DependentUpon>CodeAssociation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ABRibbonWindow.cs" />
+    <Compile Include="Controls\ABToolTip.xaml.cs">
+      <DependentUpon>ABToolTip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AlgoTracker.xaml.cs">
+      <DependentUpon>AlgoTracker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AssetControls\Goal.xaml.cs">
+      <DependentUpon>Goal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AssetControls\Group.cs" />
+    <Compile Include="Controls\AssetControls\inherits.xaml.cs">
+      <DependentUpon>inherits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AssetControls\Map.cs" />
+    <Compile Include="Controls\AssetControls\TextAsset.cs" />
+    <Compile Include="Controls\AssetControls\Title.cs" />
+    <Compile Include="Controls\ABWindow.cs" />
+    <Compile Include="Controls\countIndicator.xaml.cs">
+      <DependentUpon>countIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomMessageBox.designer.cs">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\InputBox.xaml.cs">
+      <DependentUpon>InputBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Intel.cs" />
+    <Compile Include="Controls\Properties.xaml.cs">
+      <DependentUpon>Properties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QuestionAnswer.cs" />
+    <Compile Include="Controls\recentItem.xaml.cs">
+      <DependentUpon>recentItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\richPopup.xaml.cs">
+      <DependentUpon>richPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SplitTextBox.xaml.cs">
+      <DependentUpon>SplitTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TableEdit.xaml.cs">
+      <DependentUpon>TableEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Waiting.xaml.cs">
+      <DependentUpon>Waiting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CurveVisualiser\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CurveVisualiser\TransparentControlWindow.cs" />
+    <Compile Include="DebugOutput.xaml.cs">
+      <DependentUpon>DebugOutput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="qcat.xaml.cs">
+      <DependentUpon>qcat.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Reports\Report.cs" />
+    <Compile Include="RiskCalc\classes\Algo.cs" />
+    <Compile Include="RiskCalc\classes\Answer.cs" />
+    <Compile Include="RiskCalc\classes\Asset.cs" />
+    <Compile Include="RiskCalc\classes\Conclusion.cs" />
+    <Compile Include="RiskCalc\classes\Evaluator.cs" />
+    <Compile Include="RiskCalc\classes\History.cs" />
+    <Compile Include="RiskCalc\classes\Question.cs" />
+    <Compile Include="RiskCalc\classes\Result.cs" />
+    <Compile Include="RiskCalc\classes\Stop.cs" />
+    <Compile Include="RiskCalc\classes\Transfer.cs" />
+    <Compile Include="RiskCalc\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RiskCalc\RiskHistory.cs" />
+    <Compile Include="TableGrid\AutoUpdateDataGrid.xaml.cs">
+      <DependentUpon>AutoUpdateDataGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\Data\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Window2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\SecurityContext.cs" />
+    <Compile Include="Controls\AlgoLoader.xaml.cs">
+      <DependentUpon>AlgoLoader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AssetControls\Algo.xaml.cs">
+      <DependentUpon>Algo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AssetControls\assetControl.cs" />
+    <Compile Include="Controls\AssetControls\Algo.cs" />
+    <Compile Include="Controls\AssetControls\Answer.cs" />
+    <Compile Include="Controls\AssetControls\ButtonStrip.cs" />
+    <Compile Include="Controls\AssetControls\Conclusion.cs" />
+    <Compile Include="Controls\AssetControls\Bullet.cs" />
+    <Compile Include="Controls\Adorners.cs" />
+    <Compile Include="Controls\AssetControls\findControl.cs" />
+    <Compile Include="Controls\AssetControls\nlwControl.cs" />
+    <Compile Include="Controls\AssetControls\usageControl.cs" />
+    <Compile Include="Controls\AssetControls\Usage.xaml.cs">
+      <DependentUpon>Usage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ComUtility.cs" />
+    <Compile Include="Controls\ABRichTextBox.cs" />
+    <Compile Include="Controls\BulletLine.xaml.cs">
+      <DependentUpon>BulletLine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FindReplace.xaml.cs">
+      <DependentUpon>FindReplace.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GridLengthAnimation.cs" />
+    <Compile Include="Controls\NLExtensions.cs" />
+    <Compile Include="Controls\linkControl.xaml.cs">
+      <DependentUpon>linkControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NLInfo.xaml.cs">
+      <DependentUpon>NLInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NLTest.cs" />
+    <Compile Include="Controls\prompt.xaml.cs">
+      <DependentUpon>prompt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PromptWindow.xaml.cs">
+      <DependentUpon>PromptWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Bubble.xaml.cs">
+      <DependentUpon>Bubble.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="uTextBox.xaml.cs">
+      <DependentUpon>uTextBox.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\CustomMessageBox.resx">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Asset Builder_10_TemporaryKey.pfx" />
+    <None Include="Asset Builder_11_TemporaryKey.pfx" />
+    <None Include="Asset Builder_12_TemporaryKey.pfx" />
+    <None Include="Asset Builder_1_TemporaryKey.pfx" />
+    <None Include="Asset Builder_2_TemporaryKey.pfx" />
+    <None Include="Asset Builder_3_TemporaryKey.pfx" />
+    <None Include="Asset Builder_4_TemporaryKey.pfx" />
+    <None Include="Asset Builder_5_TemporaryKey.pfx" />
+    <None Include="Asset Builder_6_TemporaryKey.pfx" />
+    <None Include="Asset Builder_7_TemporaryKey.pfx" />
+    <None Include="Asset Builder_8_TemporaryKey.pfx" />
+    <None Include="Asset Builder_9_TemporaryKey.pfx" />
+    <None Include="Asset Builder_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\System.Xml.XmlNode.datasource" />
+    <None Include="Web References\Data\data.wsdl" />
+    <None Include="Web References\Data\KeyValuePairOfStringObject.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\Data\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="WpfApplication1_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="asset.xsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Web References\Data\data.disco" />
+    <Resource Include="images\Assets.png" />
+    <Resource Include="images\Compare_32x32.png" />
+    <Resource Include="images\Clock_32x32.png" />
+    <Resource Include="images\doctorlink-logo.png" />
+    <Resource Include="images\EnableNurse_32x32.png" />
+    <Resource Include="images\traversal72x72.png" />
+    <Resource Include="images\addSettings_32x32.png" />
+    <Resource Include="images\check32x32.png" />
+    <Resource Include="images\checklist32x32.png" />
+    <Resource Include="images\brush_32x32.png" />
+    <Resource Include="images\nurse-32x32.png" />
+    <Resource Include="images\DisableNurse_32x32.png" />
+    <Resource Include="images\blocks-icon.ico" />
+    <Resource Include="blocks-icon.ico" />
+    <Content Include="Compare\Content\Asset.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Compare\Content\Comment.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="images\map_32x32.png" />
+    <Resource Include="images\finder.png" />
+    <Resource Include="images\healthhero-logo.png" />
+    <Content Include="Html\Finder.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="images\adhoc.png" />
+    <Resource Include="images\Folder-Open-icon.png" />
+    <Resource Include="images\1.png" />
+    <Resource Include="images\2.png" />
+    <Resource Include="images\3.png" />
+    <Resource Include="images\flag.png" />
+    <Content Include="Reports\ContentReport\TableQuestion.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\LanguageSummary\Error.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Compare\Content\Field.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Compare\Content\Layout.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Compare\Content\RenderBody.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Compare\Content\Section.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Compare\Url\Asset.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Compare\Url\Field.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Compare\Url\Layout.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Compare\Url\RenderBody.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Compare\Url\Section.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\ConclusionSummary\Transfer.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\ConclusionSummary\Layout.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\ConclusionSummary\Conclusion.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\ConclusionSummary\RenderBody.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\ContentReport\AssetExplanation.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\ContentReport\Comment.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\ContentReport\layout.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\ContentReport\Answer.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\ContentReport\Conclusion.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\ContentReport\None.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\ContentReport\Question.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\ContentReport\RenderConclusions.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\ContentReport\RenderQuestions.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\DispositionChange\DispDetail.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\DispositionChange\DispPanel.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\DispositionChange\Detail.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\DispositionChange\Group.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\DispositionChange\Layout.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\DispositionChange\List.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\DispositionChange\RenderBody.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\LanguageSummary\Change.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\LanguageSummary\Diff.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\LanguageSummary\layout.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\LanguageSummary\OneColumn.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\LanguageSummary\ShowDiffs.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\LanguageSummary\AssetType.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\LanguageSummary\TwoColumn.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\TextAssets.xsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="_Library\Curve.dll" />
+    <None Include="_Library\Curve.pdb" />
+    <None Include="_Library\ExpertData.dll" />
+    <None Include="_Library\ExpertData.pdb" />
+    <None Include="_Library\WpfXmlGrid.dll" />
+    <None Include="_Library\WpfXmlGrid.pdb" />
+    <None Include="_Library\XmlGrid.dll" />
+    <None Include="_Library\XmlGrid.pdb" />
+    <Resource Include="images\EMR_48x48.png" />
+    <Resource Include="images\Properties_32x32.png" />
+    <Resource Include="images\Error_32x32.png" />
+    <Resource Include="images\Transfers_32x32.png" />
+    <Resource Include="images\Text_32x32.png" />
+    <Resource Include="images\group_32x32.png" />
+    <Resource Include="images\group_update_32x32.png" />
+    <Content Include="McKesson\McKesson.xsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="_Library\CryptoExtension.dll" />
+    <None Include="_Library\Microsoft.Windows.Shell.dll" />
+    <None Include="_Library\RibbonControlsLibrary.dll" />
+    <Resource Include="images\New_32x32.png" />
+    <Resource Include="images\HTML_32x32.png" />
+    <Resource Include="images\123_inactive.png" />
+    <Resource Include="images\barchart_inactive.png" />
+    <Resource Include="images\linechart_inactive.png" />
+    <Resource Include="images\DisableHTML_32x32.png" />
+    <Resource Include="images\EnableHTML_32x32.png" />
+    <Resource Include="images\Add_16x16.png" />
+    <Resource Include="images\Add_32x32.png" />
+    <Resource Include="images\Cancel_16x16.png" />
+    <Resource Include="images\Cancel_32x32.png" />
+    <Resource Include="images\Windows-Table-icon.png" />
+    <Resource Include="images\Graph_32x32.png" />
+    <Resource Include="images\spreadsheet_32x32.png" />
+    <Resource Include="images\Title_32x32.png" />
+    <Resource Include="images\Funnel_disabled.png" />
+    <Resource Include="images\Funnel_enabled.png" />
+    <Resource Include="images\Funnel-icon.png" />
+    <Resource Include="images\AssetReport.png" />
+    <Resource Include="images\AssetReportLanguage.png" />
+    <Content Include="Reports\McKessonSelfcareListing.xsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Reports\McKessonAssetReport.xsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Reports\McKessonAlgoSummary.xsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Reports\XmlTable\Comment.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\XmlTable\Layout.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\XmlTable\RenderBody.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\XmlTable\Table.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\XmlTable\Field.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\XmlTable\Row.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\XmlTable\Value.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RiskCalc\Xml\LifeExpectancy.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RiskCalc\Xml\ConditionOffset.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Resource Include="Splash2022.png" />
+    <Content Include="Xml.xsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Resource Include="images\Help_16x16.png" />
+    <Resource Include="images\Script-assets_32x32.png" />
+    <Resource Include="images\DropAssets.png" />
+    <Resource Include="images\Disable_Move_32x32.png" />
+    <Resource Include="images\Enable_Move_32x32.png" />
+    <Resource Include="images\Down_32x32.png" />
+    <Resource Include="images\Up_32x32.png" />
+    <Resource Include="images\UK-icon.png" />
+    <Resource Include="images\Forward-icon_16x16.png" />
+    <Resource Include="images\Forward-icon_32x32.png" />
+    <Resource Include="images\move-icon.png" />
+    <Resource Include="images\script-grey.png" />
+    <Resource Include="images\script-xml.png" />
+    <Resource Include="images\Bug-icon_32x32.png" />
+    <Content Include="Reports\Conclusion.xsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Resource Include="images\Globe_32x32.png" />
+    <Content Include="Reports\ConclusionSummary.xsl">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AssetReport.xsl">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\MostPopularConclusion.xsl">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\MostPopularQuestionAnswer.xsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\SummaryTitle.xsl">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\QuestionAnswer.xsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Resource Include="Reports\WordML.xml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="images\conclusions_32x32.png" />
+    <Resource Include="images\concsum_32x32.png" />
+    <Resource Include="images\qandas_32x32.png" />
+    <Resource Include="images\Reconcile_32x32.png" />
+    <Resource Include="images\reports-icon.png" />
+    <Resource Include="images\ConclusionCount_32x32.png" />
+    <Resource Include="images\QuestionCount_32x32.png" />
+    <Content Include="Reports\CheckOld.xsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Resource Include="images\Track.png" />
+    <Resource Include="images\application-remove-icon.png" />
+    <Resource Include="images\Information_16x16.png" />
+    <Resource Include="images\alert-icon.png" />
+    <Resource Include="images\close2.png" />
+    <Resource Include="images\home-small.png" />
+    <Resource Include="Builder.ico" />
+    <Resource Include="images\AutoSave_32x32.png" />
+    <Resource Include="images\AutoSave_16x16.png" />
+    <Resource Include="images\algos_16x16.png" />
+    <Resource Include="images\algos_32x32.png" />
+    <Resource Include="Expert-24.ico" />
+    <Resource Include="images\addButton.png" />
+    <Content Include="images\Builder.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="images\comment_16x16.png" />
+    <Resource Include="images\comment_32x32.png" />
+    <Resource Include="images\Copy_16x16.png" />
+    <Resource Include="images\Copy_32x32.png" />
+    <Resource Include="images\clearButton.png" />
+    <Content Include="images\cross.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="images\Play_16x16.png" />
+    <Resource Include="images\Settings_16x16.png" />
+    <Resource Include="images\Settings_32x32.png" />
+    <Resource Include="images\Font-icon.png" />
+    <Resource Include="images\Font-icon_small.png" />
+    <Resource Include="images\disablecomment_16x16.png" />
+    <Resource Include="images\disablecomment_32x32.png" />
+    <Resource Include="images\expert-24_rgb_100x37px.jpg" />
+    <Resource Include="images\Cut_16x16.png" />
+    <Resource Include="images\Cut_32x32.png" />
+    <Resource Include="images\Paste_16x16.png" />
+    <Resource Include="images\Paste_32x32.png" />
+    <Resource Include="images\expert_logo.jpg" />
+    <Resource Include="images\expert_logo2.jpg" />
+    <Resource Include="images\expert_logo.png" />
+    <Resource Include="images\DisableLanguage16x16.png" />
+    <Resource Include="images\DisableLanguage32x32.png" />
+    <Resource Include="images\EnableLanguage16x16.png" />
+    <Resource Include="images\EnableLanguage32x32.png" />
+    <Resource Include="images\DisableEditTranslation16x16.png" />
+    <Resource Include="images\DisableEditTranslation32x32.png" />
+    <Resource Include="images\EnableEditTranslation16x16.png" />
+    <Resource Include="images\EnableEditTranslation32x32.png" />
+    <Resource Include="images\NewBlocks.ico" />
+    <Resource Include="images\NewBlocks.png" />
+    <Resource Include="images\NewBlocks_Small.png" />
+    <Resource Include="images\Help_48x48.png" />
+    <Resource Include="images\deleteButton.png" />
+    <Resource Include="images\editButton.png" />
+    <Resource Include="images\listButton.png" />
+    <Resource Include="images\Play-icon.png" />
+    <Resource Include="images\Refresh-icon.png" />
+    <Resource Include="images\Script-icon.png" />
+    <Resource Include="images\Remove-icon.png" />
+    <Resource Include="images\Schedule-icon.png" />
+    <Resource Include="images\Save-icon.png" />
+    <Content Include="images\Tick.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="images\DragMany16x16.png" />
+    <Resource Include="images\DragMany.png" />
+    <Resource Include="images\NoValidation_16x16.png" />
+    <Resource Include="images\NoValidation_32x32.png" />
+    <Resource Include="images\Validation_16x16.png" />
+    <Resource Include="images\Validation_32x32.png" />
+    <Resource Include="images\DisableSpelling_16x16.png" />
+    <Resource Include="images\NoDisableSpelling_16x16.png" />
+    <Resource Include="images\DisableSpelling_32x32.png" />
+    <Resource Include="images\NoDisableSpelling_32x32.png" />
+    <Resource Include="images\Picture_16x16.png" />
+    <Resource Include="images\Picture_32x32.png" />
+    <Resource Include="images\YouTube_32x32.png" />
+    <Resource Include="images\HyperLink_32x32.png" />
+    <Resource Include="images\Download_16x16.png" />
+    <Resource Include="images\Download_32x32.png" />
+    <Resource Include="images\Insert_32x32.png" />
+    <Resource Include="images\EnablePriority_32x32.png" />
+    <Resource Include="images\NoEnablePriority_32x32.png" />
+    <Resource Include="images\NoAutoSave_16x16.png" />
+    <Resource Include="images\NoShowDisabled_16x16.png" />
+    <Resource Include="images\Refresh_16x16.png" />
+    <Resource Include="images\Refresh_32x32.png" />
+    <Resource Include="images\ShowDisabled_16x16.png" />
+    <Resource Include="images\UpdateAssets_16x16.png" />
+    <Resource Include="images\UpdateAssets_32x32.png" />
+    <Resource Include="images\Check_16x16.png" />
+    <Resource Include="images\Check_32x32.png" />
+    <Resource Include="images\Delete_16x16.png" />
+    <Resource Include="images\Delete_32x32.png" />
+    <Resource Include="images\NoAutoSave_32x32.png" />
+    <Resource Include="images\NoShowDisabled_32x32.png" />
+    <Resource Include="images\Rename_16x16.png" />
+    <Resource Include="images\Rename_32x32.png" />
+    <Resource Include="images\ShowDisabled_32x32.png" />
+    <Resource Include="images\EnablePriority.png" />
+    <Resource Include="images\down.png" />
+    <Resource Include="images\up.png" />
+    <Resource Include="images\times.png" />
+    <Resource Include="images\Synchronize_32x32.png" />
+    <Resource Include="images\Synchronize_16x16.png" />
+    <Resource Include="images\Synchronize_256x256.png" />
+    <Resource Include="images\Redo-icon-small.png" />
+    <Resource Include="images\Undo-icon-small.png" />
+    <Resource Include="images\Redo-icon.png" />
+    <Resource Include="images\Undo-icon.png" />
+    <Resource Include="images\Close.png" />
+    <Resource Include="images\Ends.png" />
+    <Resource Include="images\Equals.png" />
+    <Resource Include="images\Starts.png" />
+    <Resource Include="images\Contains.png" />
+    <Resource Include="images\home.png" />
+    <Resource Include="images\Bullet.png" />
+    <Resource Include="images\Algo.png" />
+    <Resource Include="images\Answer.png" />
+    <Resource Include="images\Conclusion.png" />
+    <Resource Include="images\Question.png" />
+    <Resource Include="images\Close.bmp" />
+    <Resource Include="images\paste.ico" />
+    <Resource Include="images\copy.ico" />
+    <Resource Include="images\cut.ico" />
+    <Resource Include="Expert-24.png" />
+    <Resource Include="images\AddNew.png" />
+    <Resource Include="images\Backup.png" />
+    <Resource Include="images\Bank.png" />
+    <Resource Include="images\BudgetReport.png" />
+    <Resource Include="images\Calc.png" />
+    <Resource Include="images\CashFlowReport.png" />
+    <Resource Include="images\Clear.png" />
+    <Resource Include="images\Coins.png" />
+    <Resource Include="images\Copy.png" />
+    <Resource Include="images\CreditCards.png" />
+    <Resource Include="images\Cut.png" />
+    <Resource Include="images\delete.png" />
+    <Resource Include="images\Help.png" />
+    <Resource Include="images\Paste.png" />
+    <Resource Include="images\Reconcile.png" />
+    <Resource Include="images\Transfer.png" />
+    <Resource Include="images\TrendReport.png" />
+    <Resource Include="images\Wave.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="AssetBuilder.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="ExpertData.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="RiskCalc\Xml\ConditionOffset.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="RiskCalc\Xml\LifeExpectancy.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="WpfXmlGrid.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="XmlGrid.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <FileAssociation Include=".builder">
+      <Visible>False</Visible>
+      <Description>Asset Builder asset file</Description>
+      <Progid>AssetBuilder</Progid>
+      <DefaultIcon>images\Builder.ico</DefaultIcon>
+    </FileAssociation>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="_deploy\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost/webbuilder/data.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\Data\</RelPath>
+      <UpdateFromURL>http://localhost/webbuilder/data.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>AssetBuilder_Data_Data</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="..\ObjCompare\StringCompare.projitems" Label="Shared" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.1020.30\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.1020.30\build\Microsoft.Web.WebView2.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.1020.30\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.1020.30\build\Microsoft.Web.WebView2.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

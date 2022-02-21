@@ -1,0 +1,1431 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:me="clr-namespace:AssetBuilder"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:local="clr-namespace:AssetBuilder.AssetControls" 
+	xmlns:cmap="clr-namespace:ConclusionMap.Controls" 
+	xmlns:clr="clr-namespace:System;assembly=mscorlib" 
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:AssetBuilder_Controls="clr-namespace:AssetBuilder.Controls" mc:Ignorable="d">
+
+    <Style TargetType="{x:Type local:Algo}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:assetControl}">
+                    <Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                        <DockPanel x:Name="mainPanel">
+                            <DockPanel.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0"/>
+                                    <GradientStop Color="#FF96E8FF" Offset="1"/>
+                                </LinearGradientBrush>
+                            </DockPanel.Background>
+                            <DockPanel DockPanel.Dock="Top" Height="28" VerticalAlignment="Center">
+                                <Image Source="/AssetBuilder;Component/images/Algo.png"/>
+                                <TextBlock VerticalAlignment="Center"><InlineUIContainer>
+										<TextBlock Text=" Algo - "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=AlgoID}"/>
+									</InlineUIContainer></TextBlock>
+                                <TextBlock TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"><InlineUIContainer>
+										<TextBlock Text="Last edited : "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=datetimestamp}"/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text=" by "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=username}"/>
+									</InlineUIContainer></TextBlock>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="Top">
+                                <local:ButtonStrip Margin="0,0,0,0" x:Name="buttonStrip"/>
+                            </DockPanel>
+                            <Grid>
+                                <DockPanel x:Name="assetDockPanel" Margin="0" LastChildFill="False">
+                                    <Grid DockPanel.Dock="Top">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <DockPanel Grid.Column="1">
+                                            <Label Content="Ages" ToolTip="{me:Info Body=AlgoAgesToolTip, Image=/images/Algo.png, Title=Ages}" Width="170" HorizontalContentAlignment="Right"/>
+                                            <TextBox x:Name="txtAges" Text="{Binding XPath=Ages}" TextWrapping="Wrap"/>
+                                        </DockPanel>
+                                        <DockPanel Grid.Column="0">
+                                            <Label Content="Assessment Type" ToolTip="{me:Info Body=AlgoTypeToolTip, Image=/images/Algo.png, Title=Assessment Type}" Width="170" HorizontalContentAlignment="Right"/>
+                                            <ComboBox x:Name="cmbAssessment" SelectedValue="{Binding XPath=Assessment}" SelectedValuePath="ID" DisplayMemberPath="Value"/>
+                                        </DockPanel>
+                                    </Grid>
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="Algo Name" ToolTip="{me:Info Body=AlgoNameToolTip, Image=/images/Algo.png, Title=Algo Name}" Width="170" HorizontalContentAlignment="Right"/>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="{DynamicResource NormalColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource InheritanceColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource LanguageColumn}"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBox Grid.Column="0" x:Name="txtExpert" Text="{Binding XPath=Algo_Name}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                            <me:inherits Grid.Column="1" x:Name="listExpert" />
+                                            <TextBox Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" x:Name="txtExpertLanguage" Text="{Binding XPath=Algo_Name}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                        </Grid>
+                                    </DockPanel>
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label x:Name="KeywordLabel" Content="Keywords" ToolTip="{me:Info Body=AlgoKeywordsToolTip, Image=/images/Algo.png, Title=Keywords}" Width="170" HorizontalContentAlignment="Right"/>
+                                        <TextBox x:Name="txtKeywords" Text="{Binding XPath=Keywords}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                    </DockPanel>
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="References" ToolTip="{me:Info Body=AlgoReferencesToolTip, Image=/images/Algo.png, Title=References}" Width="170" HorizontalContentAlignment="Right"/>
+                                        <TextBox x:Name="txtReferences" Text="{Binding XPath=References}" TextWrapping="Wrap"/>
+                                    </DockPanel>
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="Destination" ToolTip="{me:Info Body=AlgoDestinationToolTip, Image=/images/Algo.png, Title=Destination}" Width="170" HorizontalContentAlignment="Right"/>
+                                        <TextBox x:Name="txtDestination" Text="{Binding XPath=Destination}" TextWrapping="Wrap"/>
+                                    </DockPanel>
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="Word Merge 1" ToolTip="{me:Info Body=AlgoWordMerge1ToolTip, Image=/images/Algo.png, Title=Word Merge 1}" Width="170" HorizontalContentAlignment="Right"/>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="{DynamicResource NormalColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource InheritanceColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource LanguageColumn}"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBox Grid.Column="0" x:Name="txtWord_Merge" Text="{Binding XPath=Word_Merge}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                            <me:inherits Grid.Column="1" x:Name="listWord_Merge" />
+                                            <TextBox Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" x:Name="txtWord_MergeLanguage" Text="{Binding XPath=Word_Merge}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                        </Grid>
+                                    </DockPanel>
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="Word Merge 2" ToolTip="{me:Info Body=AlgoWordMerge2ToolTip, Image=/images/Algo.png, Title=Word Merge 2}" Width="170" HorizontalContentAlignment="Right"/>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="{DynamicResource NormalColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource InheritanceColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource LanguageColumn}"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBox Grid.Column="0" x:Name="txtWM2" Text="{Binding XPath=WM2}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                            <me:inherits Grid.Column="1" x:Name="listWM2" />
+                                            <TextBox Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" x:Name="txtWM2Language" Text="{Binding XPath=WM2}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                        </Grid>
+                                    </DockPanel>
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="Last Review Date" ToolTip="{me:Info Body=AlgoLastReviewDateToolTip, Image=/images/Algo.png, Title=Last Review Date}" Width="170" HorizontalContentAlignment="Right"/>
+                                        <TextBox Grid.Column="0" x:Name="txtDate_Last_Reviewed" Text="{Binding XPath=Date_Last_Reviewed}" TextWrapping="Wrap"/>
+                                    </DockPanel>
+                                </DockPanel>
+                                <local:usageControl Visibility="Hidden" x:Name="usageDockPanel" HorizontalAlignment="Right"/>
+                                <local:nlwControl Visibility="Hidden" x:Name="nlwDockPanel" HorizontalAlignment="Right" />
+                                <local:findControl Visibility="Hidden" x:Name="findDockPanel" HorizontalAlignment="Right" />
+                                <Image x:Name="CompareLanguage" Visibility="Hidden" Source="/AssetBuilder;Component/images/Compare_32x32.png" Width="32" Height="32" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                            </Grid>
+                        </DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FF1D2068" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="14.667"/>
+    </Style>
+
+    <Style TargetType="{x:Type local:Question}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:assetControl}">
+                    <Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                        <DockPanel x:Name="mainPanel">
+                            <DockPanel.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0"/>
+                                    <GradientStop Color="#FFBFF4C3" Offset="1"/>
+                                </LinearGradientBrush>
+                            </DockPanel.Background>
+                            <DockPanel DockPanel.Dock="Top" Height="28" VerticalAlignment="Center">
+                                <Image Source="/AssetBuilder;Component/images/Question.png"/>
+                                <TextBlock VerticalAlignment="Center"><InlineUIContainer>
+										<TextBlock Text=" Question - "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=QuestionID}"/>
+									</InlineUIContainer></TextBlock>
+                                <TextBlock TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"><InlineUIContainer>
+										<TextBlock Text="Last edited : "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=datetimestamp}"/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text=" by "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=username}"/>
+									</InlineUIContainer></TextBlock>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="Top">
+                                <local:ButtonStrip Margin="0,0,0,0" x:Name="buttonStrip"/>
+                            </DockPanel>
+                            <Grid>
+                                <DockPanel x:Name="assetDockPanel" Margin="0">
+                                    <Grid DockPanel.Dock="Top">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Grid.Column="0">
+                                            <DockPanel>
+                                                <Label Content="Type" ToolTip="{me:Info Body=QuestionTypeToolTip, Image=/images/Question.png, Title=Type}" Width="170" HorizontalContentAlignment="Right"/>
+                                                <ComboBox TabIndex="0" x:Name="cmbType" SelectedValue="{Binding XPath=QuestTypeID}" SelectedValuePath="ID" DisplayMemberPath="Value"/>
+                                            </DockPanel>
+                                            <DockPanel x:Name="pnlHistory">
+                                                <Label Content="History" ToolTip="{me:Info Body=QuestionHistoryToolTip, Image=/images/Question.png, Title=History}" Width="170" HorizontalContentAlignment="Right"/>
+                                                <ComboBox TabIndex="1" x:Name="cmbHistory" SelectedValue="{Binding XPath=Question_State}" SelectedValuePath="ID" DisplayMemberPath="Value"/>
+                                            </DockPanel>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="1">
+                                            <DockPanel x:Name="pnlCounter">
+                                                <Label Content="Counter" ToolTip="{me:Info Body=QuestionCounterToolTip, Image=/images/Question.png, Title=Counter}" Width="170" HorizontalContentAlignment="Right"/>
+                                                <TextBox TabIndex="2" x:Name="txtCounter" Text="{Binding XPath=Counter}" TextWrapping="Wrap"/>
+                                            </DockPanel>
+                                            <DockPanel x:Name="pnlUserLanguageCheck" Visibility="Collapsed">
+                                                <Label Content="Sub Type" ToolTip="{me:Info Body=UserLanguageCheckToolTip, Image=/images/Question.png, Title='User/Language Check Sub Type'}" Width="170" HorizontalContentAlignment="Right"/>
+                                                <ComboBox TabIndex="2" x:Name="cmbULCounter" SelectedValue="{Binding XPath=Counter}" SelectedValuePath="ID" DisplayMemberPath="Value" />
+                                            </DockPanel>
+                                            <DockPanel x:Name="pnlComments">
+                                                <Label Content="Comments" ToolTip="{me:Info Body=QuestionCommentsToolTip, Image=/images/Question.png, Title=Comments}" Width="170" HorizontalContentAlignment="Right"/>
+                                                <ComboBox TabIndex="3" x:Name="cmbComments" SelectedValue="{Binding XPath=Comments}" SelectedValuePath="ID" DisplayMemberPath="Value"/>
+                                            </DockPanel>
+                                        </StackPanel>
+                                    </Grid>
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="Expert" ToolTip="{me:Info Body=QuestionExpertToolTip, Image=/images/Question.png, Title=Expert}" Width="170" HorizontalContentAlignment="Right"/>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="{DynamicResource NormalColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource InheritanceColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource LanguageColumn}"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBox TabIndex="4" Grid.Column="0" x:Name="txtExpert" Text="{Binding XPath=Clinical_Statement}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                            <me:inherits Grid.Column="1" x:Name="listExpert" />
+                                            <TextBox TabIndex="9" Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" x:Name="txtExpertLanguage" Text="{Binding XPath=Clinical_Statement}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                        </Grid>
+                                    </DockPanel>
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="Summary" ToolTip="{me:Info Body=QuestionSummaryToolTip, Image=/images/Question.png, Title=Summary}" Width="170" HorizontalContentAlignment="Right"/>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="{DynamicResource NormalColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource InheritanceColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource LanguageColumn}"/>
+                                            </Grid.ColumnDefinitions>
+                                            <DockPanel Grid.Column="0">
+                                                <Image x:Name="alertLay" Visibility="Collapsed" Height="24" Width="24" Source="/AssetBuilder;Component/images/alert-icon.png">
+                                                    <Image.ToolTip>
+                                                        <TextBlock Width="300" TextWrapping="Wrap"><Run Text="Please note that the default should ideally remain with an * since this field will not be stored to the database."/></TextBlock>
+                                                    </Image.ToolTip>
+                                                </Image>
+                                                <TextBox TabIndex="5" x:Name="txtSummary" Text="{Binding XPath=Lay_Statement}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                            </DockPanel>
+                                            <me:inherits Grid.Column="1" x:Name="listSummary" />
+                                            <TextBox TabIndex="10" Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" x:Name="txtSummaryLanguage" Text="{Binding XPath=Lay_Statement}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                        </Grid>
+                                    </DockPanel>
+                                    <DockPanel DockPanel.Dock="Bottom">
+                                        <Label Content="Builder Info" ToolTip="{me:Info Body=QuestionBuilderInfoToolTip, Image=/images/Question.png, Title=Builder Info}" Width="170" HorizontalContentAlignment="Right"/>
+                                        <TextBox TabIndex="8" x:Name="txtRisk" Text="{Binding XPath=Rules_Out}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                    </DockPanel>
+                                    <Grid DockPanel.Dock="Bottom">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <DockPanel Grid.Row="1">
+                                            <Label Content="Explanation" ToolTip="{me:Info Body=QuestionExplanationToolTip, Image=/images/Question.png, Title=Explanation}" Width="170" HorizontalContentAlignment="Right"/>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="{DynamicResource NormalColumn}"/>
+                                                    <ColumnDefinition Width="{DynamicResource InheritanceColumn}"/>
+                                                    <ColumnDefinition Width="{DynamicResource LanguageColumn}"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBox TabIndex="7" Grid.Column="0" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" x:Name="txtExplanation" Text="{Binding XPath=Explanation}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                                <me:inherits Grid.Column="1" x:Name="listExplanation" />
+                                                <TextBox TabIndex="12" Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" x:Name="txtExplanationLanguage" Text="{Binding XPath=Explanation}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                            </Grid>
+                                        </DockPanel>
+                                        <DockPanel Grid.Row="0">
+                                            <Label Content="Question" ToolTip="{me:Info Body=QuestionQuestionToolTip, Image=/images/Question.png, Title=Question}" Width="170" HorizontalContentAlignment="Right"/>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="{DynamicResource NormalColumn}"/>
+                                                    <ColumnDefinition Width="{DynamicResource InheritanceColumn}"/>
+                                                    <ColumnDefinition Width="{DynamicResource LanguageColumn}"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBox TabIndex="6" Grid.Column="0" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" x:Name="txtQuestion" Text="{Binding XPath=Question}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                                <me:inherits Grid.Column="1" x:Name="listQuestion" />
+                                                <TextBox TabIndex="11" Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" x:Name="txtQuestionLanguage" Text="{Binding XPath=Question}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                            </Grid>
+                                        </DockPanel>
+                                    </Grid>
+                                </DockPanel>
+                                <local:usageControl Visibility="Hidden" x:Name="usageDockPanel" HorizontalAlignment="Right"/>
+                                <local:nlwControl Visibility="Hidden" x:Name="nlwDockPanel" HorizontalAlignment="Right" />
+                                <local:findControl Visibility="Hidden" x:Name="findDockPanel" HorizontalAlignment="Right" />
+                                <Image x:Name="CompareLanguage" Visibility="Hidden" Source="/AssetBuilder;Component/images/Compare_32x32.png" Width="32" Height="32" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                            </Grid>
+                        </DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FF1D2068" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="14.667"/>
+    </Style>
+
+    <Style TargetType="{x:Type local:Answer}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:assetControl}">
+                    <Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                        <DockPanel x:Name="mainPanel">
+                            <DockPanel.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="#FFF7F9FF" Offset="0.5"/>
+                                    <GradientStop Color="#FFF0F0F0" Offset="1"/>
+                                    <GradientStop Color="White" Offset="0.008"/>
+                                    <GradientStop Color="White"/>
+                                </LinearGradientBrush>
+                            </DockPanel.Background>
+                            <DockPanel DockPanel.Dock="Top" Height="28" VerticalAlignment="Center">
+                                <Image Source="/AssetBuilder;Component/images/Answer.png"/>
+                                <TextBlock VerticalAlignment="Center"><InlineUIContainer>
+										<TextBlock Text=" Answer - "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=AnsID}"/>
+									</InlineUIContainer></TextBlock>
+                                <TextBlock TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"><InlineUIContainer>
+										<TextBlock Text="Last edited : "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=datetimestamp}"/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text=" by "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=username}"/>
+									</InlineUIContainer></TextBlock>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="Top">
+                                <local:ButtonStrip Margin="0,0,0,0" x:Name="buttonStrip"/>
+                            </DockPanel>
+                            <Grid>
+                                <DockPanel x:Name="assetDockPanel" Margin="0">
+                                    <Grid DockPanel.Dock="Top">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <DockPanel Grid.Column="0">
+                                            <DockPanel DockPanel.Dock="Top">
+                                                <Label Content="Answer Type" ToolTip="{me:Info Body=AnswerTypeToolTip, Image=/images/Answer.png, Title=Answer Type}" Width="170" HorizontalContentAlignment="Right"/>
+                                                <ComboBox x:Name="cmbAnsType" SelectedValue="{Binding XPath=AnsTypeID}" SelectedValuePath="ID" DisplayMemberPath="Value"/>
+                                            </DockPanel>
+                                            <DockPanel x:Name="pnlStoreIfNeg" DockPanel.Dock="Top">
+                                                <Label Content="Store if Negative" ToolTip="{me:Info Body=AnswerStoreifNegativeToolTip, Image=/images/Answer.png, Title=Store if Negative}" Width="170" VerticalAlignment="Center" HorizontalContentAlignment="Right"/>
+                                                <CheckBox x:Name="txtStoreIfNeg" IsChecked="{Binding XPath=StoreIfNeg}" VerticalAlignment="Center"/>
+                                            </DockPanel>
+                                        </DockPanel>
+                                        <DockPanel x:Name="pnlMinMax" Grid.Column="1">
+                                            <DockPanel DockPanel.Dock="Top">
+                                                <Label Content="Greater or equal" ToolTip="{me:Info Body=AnswerGreaterToolTip, Image=/images/Answer.png, Title=Greater or equal}" Width="300" HorizontalContentAlignment="Right"/>
+                                                <TextBox x:Name="txtMinValue" Text="{Binding XPath=Min_Value}" TextWrapping="Wrap"/>
+                                            </DockPanel>
+                                            <DockPanel DockPanel.Dock="Top">
+                                                <Label Content="Less than" ToolTip="{me:Info Body=AnswerLessToolTip, Image=/images/Answer.png, Title=Less than}" Width="300" HorizontalContentAlignment="Right"/>
+                                                <TextBox x:Name="txtMaxValue" Text="{Binding XPath=Max_Value}" TextWrapping="Wrap"/>
+                                            </DockPanel>
+                                            <DockPanel DockPanel.Dock="Top">
+                                                <Label Content="Multiplier" ToolTip="{me:Info Body=AnswerMultiplierToolTip, Image=/images/Answer.png, Title=Multiplier}" Width="300" HorizontalContentAlignment="Right"/>
+                                                <Button x:Name="updateButton" ToolTip="{me:Info Body=AnswerSetTextToolTip, Image=/images/Answer.png, Title='Set Text'}" Content="Set Text" Width="80" HorizontalAlignment="Right" DockPanel.Dock="Right"/>
+                                                <DockPanel Visibility="Collapsed" x:Name="graphButton" HorizontalAlignment="Right" DockPanel.Dock="Right">
+                                                    <Button x:Name="graphButtonInner" ToolTip="{me:Info Body=AnswerGraphToolTip, Image=/images/Graph_32x32.png, Title='Create graph formula'}" Width="29">
+                                                        <Image Source="/AssetBuilder;component/images/Graph_32x32.png" />
+                                                    </Button>
+                                                </DockPanel>
+                                                <ComboBox x:Name="cmbMultiplier" SelectedValue="{Binding XPath=Multiplier}" SelectedValuePath="MultID" DisplayMemberPath="Value"/>
+                                            </DockPanel>
+                                        </DockPanel>
+                                        <DockPanel Visibility="Collapsed" x:Name="pnlMinMaxText" Grid.Column="1">
+                                            <DockPanel DockPanel.Dock="Top">
+                                                <Label Content="Minimum Characters" ToolTip="{me:Info Body=AnswerMinToolTip, Image=/images/Answer.png, Title=Minimum Characters}" Width="300" HorizontalContentAlignment="Right"/>
+                                                <TextBox x:Name="txtMinValueText" Text="{Binding XPath=Min_Value}" TextWrapping="Wrap"/>
+                                            </DockPanel>
+                                            <DockPanel DockPanel.Dock="Top">
+                                                <Label Content="Maximum Characters (0=unvalidated)" ToolTip="{me:Info Body=AnswerMaxToolTip, Image=/images/Answer.png, Title=Maximum Characters}" Width="300" HorizontalContentAlignment="Right" />
+                                                <TextBox x:Name="txtMaxValueText" Text="{Binding XPath=Max_Value}" TextWrapping="Wrap" />
+                                            </DockPanel>
+                                            <DockPanel DockPanel.Dock="Top">
+                                                <Label Content="Multiplier" Width="300" ToolTip="{me:Info Body=AnswerMultiplierToolTip, Image=/images/Answer.png, Title=Multiplier}" HorizontalContentAlignment="Right"/>
+                                                <ComboBox x:Name="cmbMultiplierText" SelectedValue="{Binding XPath=Multiplier}" SelectedValuePath="MultID" DisplayMemberPath="Value"/>
+                                            </DockPanel>
+                                        </DockPanel>
+                                    </Grid>
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="Expert" Width="170" ToolTip="{me:Info Body=AnswerExpertToolTip, Image=/images/Answer.png, Title=Expert}" HorizontalContentAlignment="Right"/>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="{DynamicResource NormalColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource InheritanceColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource LanguageColumn}"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBox Grid.Column="0" x:Name="txtExpert" Text="{Binding XPath=Clinical_Answer}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                            <me:inherits Grid.Column="1" x:Name="listExpert" />
+                                            <TextBox Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" x:Name="txtExpertLanguage" Text="{Binding XPath=Clinical_Answer}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                        </Grid>
+                                    </DockPanel>
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="Summary" Width="170" ToolTip="{me:Info Body=AnswerSummaryToolTip, Image=/images/Answer.png, Title=Summary}" HorizontalContentAlignment="Right"/>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="{DynamicResource NormalColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource InheritanceColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource LanguageColumn}"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBox Grid.Column="0" x:Name="txtSummary" Text="{Binding XPath=Lay_Answer}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                            <me:inherits Grid.Column="1" x:Name="listSummary" />
+                                            <TextBox Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" x:Name="txtSummaryLanguage" Text="{Binding XPath=Lay_Statement}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                        </Grid>
+                                    </DockPanel>
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="Answer" Width="170" ToolTip="{me:Info Body=AnswerAnswerToolTip, Image=/images/Answer.png, Title=Answer}" HorizontalContentAlignment="Right"/>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="{DynamicResource NormalColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource InheritanceColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource LanguageColumn}"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBox Grid.Column="0" x:Name="txtAnswer" Text="{Binding XPath=Answer_Text}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                            <me:inherits Grid.Column="1" x:Name="listAnswer" />
+                                            <TextBox Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" x:Name="txtAnswerLanguage" Text="{Binding XPath=Answer}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                        </Grid>
+                                    </DockPanel>
+                                    <DockPanel DockPanel.Dock="Bottom">
+                                        <Label Content="Explanation" Width="170" ToolTip="{me:Info Body=AnswerExplanationToolTip, Image=/images/Answer.png, Title=Explanation}" HorizontalContentAlignment="Right"/>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="{DynamicResource NormalColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource InheritanceColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource LanguageColumn}"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBox Grid.Column="0" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" x:Name="txtExplanation" Text="{Binding XPath=Explanation}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                            <me:inherits Grid.Column="1" x:Name="listExplanation" />
+                                            <TextBox Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" x:Name="txtExplanationLanguage" Text="{Binding XPath=Explanation}" TextWrapping="Wrap" SpellCheck.IsEnabled="True"/>
+                                        </Grid>
+                                    </DockPanel>
+                                </DockPanel>
+                                <local:usageControl Visibility="Hidden" x:Name="usageDockPanel" HorizontalAlignment="Right"/>
+                                <local:nlwControl Visibility="Hidden" x:Name="nlwDockPanel" HorizontalAlignment="Right" />
+                                <local:findControl Visibility="Hidden" x:Name="findDockPanel" HorizontalAlignment="Right" />
+                                <Image x:Name="CompareLanguage" Visibility="Hidden" Source="/AssetBuilder;Component/images/Compare_32x32.png" Width="32" Height="32" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                            </Grid>
+                        </DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFD8DE5A" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="14.667"/>
+    </Style>
+
+    <Style TargetType="{x:Type local:Conclusion}">
+        <Style.Resources>
+            <me:GreaterThan x:Key="greaterThan" />
+            <me:DateConverter x:Key="dateConverter" />
+            <Style TargetType="{x:Type Image}">
+                <Style.Triggers>
+                    <Trigger Property="IsEnabled" Value="False">
+                        <Setter Property="Opacity" Value="0.25"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="{x:Type Label}" x:Key="bulletUse">
+                <Setter Property="Visibility" Value="Hidden" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding XPath=BulletCount, Converter={StaticResource greaterThan}, ConverterParameter=0}" Value="True">
+                        <Setter Property="Visibility" Value="Visible" />
+                        <Setter Property="ToolTipService.ShowDuration" Value="600000"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Style.Resources>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:assetControl}">
+                    <Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                        <DockPanel x:Name="mainPanel">
+                            <DockPanel.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0"/>
+                                    <GradientStop Color="#FFFEFFB9" Offset="1"/>
+                                </LinearGradientBrush>
+                            </DockPanel.Background>
+                            <DockPanel DockPanel.Dock="Top" Height="28" VerticalAlignment="Center">
+                                <Image Source="/AssetBuilder;Component/images/Conclusion.png"/>
+                                <TextBlock VerticalAlignment="Center"><InlineUIContainer>
+										<TextBlock Text=" Conclusion - "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=RecID}"/>
+									</InlineUIContainer></TextBlock>
+                                <TextBlock TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"><InlineUIContainer>
+										<TextBlock Text="Last edited : "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=datetimestamp}"/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text=" by "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=username}"/>
+									</InlineUIContainer></TextBlock>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="Top">
+                                <local:ButtonStrip Margin="0,0,0,0" x:Name="buttonStrip"/>
+                            </DockPanel>
+                            <Grid>
+                                <DockPanel x:Name="assetDockPanel" Margin="0">
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <CheckBox Margin="170, 0, 0, 0" x:Name="chkInformation" IsChecked="{Binding XPath=Information}" VerticalAlignment="Center" TabIndex="8" />
+                                        <Label x:Name="lblInformation" Content="Information" ToolTip="{me:Info Body=ConclusionInformationToolTip, Image=/images/Conclusion.png, Title=Information}" />
+                                        <Label x:Name="lblWatchout" Visibility="Collapsed" Content="Watchout Condition" ToolTip="{me:Info Body=ConclusionWatchoutToolTip, Image=/images/Conclusion.png, Title='Watchout Condition'}" />
+                                        <CheckBox Margin="30, 0, 0, 0" x:Name="chkSilent" IsChecked="{Binding XPath=Silent}" VerticalAlignment="Center" TabIndex="7" ToolTipService.IsEnabled="True"/>
+                                        <Label x:Name="lblSilent" Content="Silent" ToolTip="{me:Info Body=ConclusionSilentToolTip, Image=/images/Conclusion.png, Title=Silent}" />
+                                        <Label x:Name="lblSelfCare" Visibility="Collapsed" Content="Self Care" ToolTip="{me:Info Body=ConclusionSelfCareToolTip, Image=/images/Conclusion.png, Title='Self Care'}" />
+                                        <Label Content="Ages" Width="170" ToolTip="{me:Info Body=ConclusionAgesToolTip, Image=/images/Conclusion.png, Title=Ages}" HorizontalContentAlignment="Right"/>
+                                        <TextBox x:Name="txtAges" Text="{Binding XPath=Ages}" TextWrapping="Wrap" TabIndex="6"/>
+                                    </DockPanel>
+                                    <!--<DockPanel DockPanel.Dock="Top">
+								<Label Content="Consultant" Width="170" HorizontalContentAlignment="Right"/>
+								<ComboBox x:Name="cmbConsultant" SelectedValue="{Binding XPath=ConsultantID}" TabIndex="0" SelectedValuePath="ID" DisplayMemberPath="Value"/>
+							</DockPanel>-->
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="Expert" Width="170" ToolTip="{me:Info Body=ConclusionExpertToolTip, Image=/images/Conclusion.png, Title=Expert}" HorizontalContentAlignment="Right"/>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="{DynamicResource NormalColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource InheritanceColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource LanguageColumn}"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBox Grid.Column="0" x:Name="txtExpert" Text="{Binding XPath=Possible_Condition}" TextWrapping="Wrap" TabIndex="1" SpellCheck.IsEnabled="True"/>
+                                            <me:inherits Grid.Column="1" x:Name="listExpert" />
+                                            <TextBox Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" x:Name="txtExpertLanguage" Text="{Binding XPath=Possible_Condition}" TextWrapping="Wrap" TabIndex="1" SpellCheck.IsEnabled="True"/>
+                                        </Grid>
+                                    </DockPanel>
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="Lay" Width="170" ToolTip="{me:Info Body=ConclusionSummaryToolTip, Image=/images/Conclusion.png, Title=Lay}" HorizontalContentAlignment="Right"/>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="{DynamicResource NormalColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource InheritanceColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource LanguageColumn}"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBox Grid.Column="0" x:Name="txtSummary" Text="{Binding XPath=Lay_Condition}" TextWrapping="Wrap" TabIndex="2" SpellCheck.IsEnabled="True"/>
+                                            <me:inherits Grid.Column="1" x:Name="listSummary" />
+                                            <TextBox Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" x:Name="txtSummaryLanguage" Text="{Binding XPath=Lay_Statement}" TextWrapping="Wrap" TabIndex="2" SpellCheck.IsEnabled="True"/>
+                                        </Grid>
+                                    </DockPanel>
+                                    <!--<DockPanel DockPanel.Dock="Bottom">
+								<Label Content="Recommendation" Width="170" HorizontalContentAlignment="Right"/>
+								<TextBox x:Name="txtRecommendation" Text="{Binding XPath=Self_CareID}" TextWrapping="Wrap" TabIndex="5"/>
+							</DockPanel>-->
+                                    <Grid DockPanel.Dock="Bottom" x:Name="brokenGrid">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition x:Name="contentRow" Height="100*"/>
+                                            <RowDefinition x:Name="bulletRow" Height="0*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <DockPanel Grid.Row="0">
+                                                <Label Content="Explanation" Width="170" ToolTip="{me:Info Body=ConclusionExplanationToolTip, Image=/images/Conclusion.png, Title=Explanation}" HorizontalContentAlignment="Right"/>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="{DynamicResource NormalColumn}"/>
+                                                        <ColumnDefinition Width="{DynamicResource InheritanceColumn}"/>
+                                                        <ColumnDefinition Width="{DynamicResource LanguageColumn}"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBox Grid.Column="0" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" x:Name="txtExplanation" Text="{Binding XPath=Explanation}" TextWrapping="Wrap" TabIndex="3" SpellCheck.IsEnabled="True"/>
+                                                    <me:inherits Grid.Column="1" x:Name="listExplanation" />
+                                                    <TextBox Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" x:Name="txtExplanationLanguage" Text="{Binding XPath=Explanation}" TextWrapping="Wrap" TabIndex="3" SpellCheck.IsEnabled="True"/>
+                                                </Grid>
+                                            </DockPanel>
+                                            <DockPanel Grid.Row="1">
+                                                <Label Content="More Detail" Width="170" ToolTip="{me:Info Body=ConclusionMoreDetailToolTip, Image=/images/Conclusion.png, Title=More Detail}" HorizontalContentAlignment="Right" />
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="{DynamicResource NormalColumn}"/>
+                                                        <ColumnDefinition Width="{DynamicResource InheritanceColumn}"/>
+                                                        <ColumnDefinition Width="{DynamicResource LanguageColumn}"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBox Grid.Column="0" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" x:Name="txtMoreDetail" Text="{Binding XPath=More_Detail}" TextWrapping="Wrap" TabIndex="4" SpellCheck.IsEnabled="True"/>
+                                                    <me:inherits Grid.Column="1" x:Name="listMoreDetail" />
+                                                    <TextBox Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" x:Name="txtMoreDetailLanguage" Text="{Binding XPath=More_Detail}" TextWrapping="Wrap" TabIndex="4" SpellCheck.IsEnabled="True"/>
+                                                </Grid>
+                                            </DockPanel>
+                                            <Canvas Grid.Row="1">
+                                                <Label Style="{StaticResource bulletUse}" Canvas.Bottom="0" Canvas.Left="1">
+                                                    <Label.ToolTip>
+                                                        <Grid Width="300">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="38" />
+                                                                <ColumnDefinition Width="*" />
+                                                            </Grid.ColumnDefinitions>
+                                                            <Image Grid.Column="0" Source="/images/Bullet.png" VerticalAlignment="Top" Margin="6,6,0,6"/>
+                                                            <StackPanel Grid.Column="1">
+                                                                <Label Grid.Column="1" FontWeight="Bold" Margin="6,6,6,0">
+                                                                    <TextBlock>Bullet Use</TextBlock>
+                                                                </Label>
+                                                                <Label Grid.Column="1" Margin="6,0,6,6" Style="{DynamicResource ToolTipStyle}">
+                                                                    <StackPanel>
+                                                                        <TextBlock>
+																			<Run>The bullets for this conclusion where last changed at </Run>
+																			<Run Foreground="Red" Text="{Binding XPath=BulletDate, Converter={StaticResource dateConverter}, ConverterParameter='yyyy-MM-dd HH:mm:ss'}" />
+																			<Run>. This only applies to additions, removals and reordering of Bullets within this conclusion. It does not track the text changes of the bullets themselves.</Run>
+                                                                        </TextBlock>
+                                                                        <Rectangle Height="1" HorizontalAlignment="Stretch" Stroke="Blue" Margin="0,6,0,6" StrokeThickness="1" />
+                                                                        <TextBlock>
+																			<Run>Note: The number of bullets is displayed next to the button above.</Run>
+                                                                        </TextBlock>
+                                                                    </StackPanel>
+                                                                </Label>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </Label.ToolTip>
+                                                    <TextBlock FontSize="12">
+														<Run Text="Last edited : "/>
+														<Run Foreground="Red" Text="{Binding XPath=BulletDate, Converter={StaticResource dateConverter}}"/>
+                                                    </TextBlock>
+                                                </Label>
+                                                <Button Width="100" Visibility="Visible" x:Name="ebtnBullet" Content="Show Bullets" ToolTip="{me:Info Body=ShowBulletsToolTip, Image=/images/Bullet.png, Title=Show Bullets}" Margin="0" VerticalAlignment="Bottom" Canvas.Bottom="26" Canvas.Left="6"/>
+                                                <Button Width="100" Visibility="Collapsed" x:Name="ebtnHideBullet" Content="Hide Bullets" ToolTip="{me:Info Body=HideBulletsToolTip, Image=/images/Bullet.png, Title=Hide Bullets}" Margin="0" VerticalAlignment="Bottom" Canvas.Bottom="26" Canvas.Left="6"/>
+                                                <AssetBuilder_Controls:countIndicator x:Name="bulletCount" Number="{Binding XPath=BulletCount}" VerticalAlignment="Bottom" Canvas.Bottom="42" Canvas.Left="98" Height="24" />
+                                            </Canvas>
+                                        </Grid>
+                                        <GridSplitter IsEnabled="False" Grid.Row="1" HorizontalAlignment="Stretch" x:Name="gridSplitter1" Height="3" VerticalAlignment="Top" Cursor="SizeNS" />
+                                        <DockPanel Grid.Row="1">
+                                            <WrapPanel DockPanel.Dock="Bottom">
+                                                <Button x:Name="btnAddBullet" ToolTip="{me:Info Body=AddBulletsToolTip, Image=/images/Add_32x32.png, Title='Add Bullets'}" Height="24" Margin="5,5,0,5">
+                                                    <DockPanel>
+                                                        <Image Source="/images/Add_16x16.png" Margin="0,0,5,0"/>
+                                                        <TextBlock><Run Text="Add Bullets"/></TextBlock>
+                                                    </DockPanel>
+                                                </Button>
+                                                <Button x:Name="btnRemoveBullet" ToolTip="{me:Info Body=RemoveBulletToolTip, Image=/images/Delete_32x32.png, Title='Remove Bullets'}" Height="24" Margin="5,5,0,5">
+                                                    <DockPanel>
+                                                        <Image Source="/images/Delete_16x16.png" Margin="0,0,5,0"/>
+                                                        <TextBlock><Run Text="Remove Bullet"/></TextBlock>
+                                                    </DockPanel>
+                                                </Button>
+                                                <Button x:Name="btnRemoveAllBullets" ToolTip="{me:Info Body=RemoveAllBulletsToolTip, Image=/images/Cancel_32x32.png, Title='Remove All Bullets'}" Height="24" Margin="5,5,0,5">
+                                                    <DockPanel>
+                                                        <Image Source="/images/Cancel_16x16.png" Margin="0,0,5,0"/>
+                                                        <TextBlock><Run Text="Remove All Bullets"/></TextBlock>
+                                                    </DockPanel>
+                                                </Button>
+                                                <Button x:Name="btnMoveBulletUp" ToolTip="{me:Info Body=MoveUpBulletToolTip, Image=/images/Up_32x32.png, Title='Move Bullet Up'}" Height="24" Margin="5,5,0,5">
+                                                    <DockPanel>
+                                                        <Image Source="/images/up.png" Margin="0,0,5,0"/>
+                                                        <TextBlock><Run Text="Move Up"/></TextBlock>
+                                                    </DockPanel>
+                                                </Button>
+                                                <Button x:Name="btnMoveBulletDown" ToolTip="{me:Info Body=MoveDownBulletToolTip, Image=/images/Down_32x32.png, Title='Move Bullet Down'}" Height="24" Margin="5,5,0,5">
+                                                    <DockPanel>
+                                                        <Image Source="/images/down.png" Margin="0,0,5,0"/>
+                                                        <TextBlock><Run Text="Move Down"/></TextBlock>
+                                                    </DockPanel>
+                                                </Button>
+                                            </WrapPanel>
+                                            <ScrollViewer Margin="0,3,0,0" VerticalScrollBarVisibility="Auto">
+                                                <StackPanel x:Name="bulletPanel" Background="Transparent" AllowDrop="True" VerticalAlignment="Stretch" />
+                                            </ScrollViewer>
+                                        </DockPanel>
+                                    </Grid>
+                                </DockPanel>
+                                <local:usageControl Visibility="Hidden" x:Name="usageDockPanel" HorizontalAlignment="Right"/>
+                                <local:nlwControl Visibility="Hidden" x:Name="nlwDockPanel" HorizontalAlignment="Right" />
+                                <local:findControl Visibility="Hidden" x:Name="findDockPanel" HorizontalAlignment="Right" />
+                                <Image x:Name="CompareLanguage" Visibility="Hidden" Source="/AssetBuilder;Component/images/Compare_32x32.png" Width="32" Height="32" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                            </Grid>
+                        </DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFD8DE5A" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="14.667"/>
+    </Style>
+
+    <Style TargetType="{x:Type local:Bullet}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:assetControl}">
+                    <Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                        <DockPanel x:Name="mainPanel">
+                            <DockPanel.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.004"/>
+                                    <GradientStop Color="#FFE8A6FF" Offset="1"/>
+                                </LinearGradientBrush>
+                            </DockPanel.Background>
+                            <DockPanel DockPanel.Dock="Top" Height="28" VerticalAlignment="Center">
+                                <Image Source="/AssetBuilder;Component/images/Bullet.png"/>
+                                <TextBlock VerticalAlignment="Center"><InlineUIContainer>
+										<TextBlock Text=" Bullet - "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=BPID}"/>
+									</InlineUIContainer></TextBlock>
+                                <TextBlock TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"><InlineUIContainer>
+										<TextBlock Text="Last edited : "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=datetimestamp}"/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text=" by "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=username}"/>
+									</InlineUIContainer></TextBlock>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="Top">
+                                <local:ButtonStrip Margin="0,0,0,0" x:Name="buttonStrip"/>
+                            </DockPanel>
+                            <Grid>
+                                <DockPanel x:Name="assetDockPanel" Margin="0">
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="Bullet Point Text" Width="170" ToolTip="{me:Info Body=BulletTextToolTip, Image=/images/Bullet.png, Title=Bullet Point Text}" HorizontalContentAlignment="Right"/>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="{DynamicResource NormalColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource InheritanceColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource LanguageColumn}"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBox Grid.Column="0" x:Name="txtBPText" Text="{Binding XPath=BP_TEXT}" TextWrapping="Wrap" TabIndex="1" SpellCheck.IsEnabled="True"/>
+                                            <me:inherits Grid.Column="1" x:Name="listBPText" />
+                                            <TextBox Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" x:Name="txtBPTextLanguage" Text="{Binding XPath=BP_TEXT}" TextWrapping="Wrap" TabIndex="1" SpellCheck.IsEnabled="True"/>
+                                        </Grid>
+                                    </DockPanel>
+                                </DockPanel>
+                                <local:usageControl Visibility="Hidden" x:Name="usageDockPanel" HorizontalAlignment="Right"/>
+                                <local:nlwControl Visibility="Hidden" x:Name="nlwDockPanel" HorizontalAlignment="Right" />
+                                <local:findControl Visibility="Hidden" x:Name="findDockPanel" HorizontalAlignment="Right" />
+                                <Image x:Name="CompareLanguage" Visibility="Hidden" Source="/AssetBuilder;Component/images/Compare_32x32.png" Width="32" Height="32" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                            </Grid>
+                        </DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFD8DE5A" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="14.667"/>
+    </Style>
+
+    <Style TargetType="{x:Type local:Title}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:assetControl}">
+                    <Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                        <DockPanel x:Name="mainPanel">
+                            <DockPanel.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.004"/>
+                                    <GradientStop Color="#FFFFA6A6" Offset="1"/>
+                                </LinearGradientBrush>
+                            </DockPanel.Background>
+                            <DockPanel DockPanel.Dock="Top" Height="28" VerticalAlignment="Center">
+                                <Image Source="/AssetBuilder;Component/images/Title_32x32.png"/>
+                                <TextBlock VerticalAlignment="Center"><InlineUIContainer>
+										<TextBlock Text=" Title - "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=TITLEID}"/>
+									</InlineUIContainer></TextBlock>
+                                <TextBlock TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"><InlineUIContainer>
+										<TextBlock Text="Last loaded : "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=datetimestamp}"/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text=" by "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=username}"/>
+									</InlineUIContainer></TextBlock>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="Top">
+                                <local:ButtonStrip Margin="0,0,0,0" x:Name="buttonStrip"/>
+                            </DockPanel>
+                            <Grid>
+                                <DockPanel x:Name="assetDockPanel" Margin="0">
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="Title Text" Width="170" ToolTip="{me:Info Body=TitleTextToolTip, Image=/images/Title_32x32.png, Title='Title Text'}" HorizontalContentAlignment="Right"/>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="{DynamicResource NormalColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource InheritanceColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource LanguageColumn}"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBox Grid.Column="0" x:Name="txtTitle" Text="{Binding XPath=Title}" TextWrapping="Wrap" TabIndex="1" SpellCheck.IsEnabled="True"/>
+                                            <me:inherits Grid.Column="1" x:Name="listTitle" />
+                                            <TextBox Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" x:Name="txtTitleLanguage" Text="{Binding XPath=Title}" TextWrapping="Wrap" TabIndex="1" SpellCheck.IsEnabled="True"/>
+                                        </Grid>
+                                    </DockPanel>
+                                </DockPanel>
+                                <local:usageControl Visibility="Hidden" x:Name="usageDockPanel" HorizontalAlignment="Right"/>
+                                <local:nlwControl Visibility="Hidden" x:Name="nlwDockPanel" HorizontalAlignment="Right" />
+                                <local:findControl Visibility="Hidden" x:Name="findDockPanel" HorizontalAlignment="Right" />
+                                <Image x:Name="CompareLanguage" Visibility="Hidden" Source="/AssetBuilder;Component/images/Compare_32x32.png" Width="32" Height="32" Margin="5" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                            </Grid>
+                        </DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFD8DE5A" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="14.667"/>
+    </Style>
+
+    <Style TargetType="{x:Type local:TextAsset}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:assetControl}">
+                    <Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                        <DockPanel x:Name="mainPanel">
+                            <DockPanel.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.004"/>
+                                    <GradientStop Color="#FFFFA6A6" Offset="1"/>
+                                </LinearGradientBrush>
+                            </DockPanel.Background>
+                            <DockPanel DockPanel.Dock="Top" Height="28" VerticalAlignment="Center">
+                                <Image Source="/AssetBuilder;Component/images/Text_32x32.png"/>
+                                <TextBlock VerticalAlignment="Center"><InlineUIContainer>
+										<TextBlock Text=" TextAsset - "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=TextAssetID}"/>
+									</InlineUIContainer></TextBlock>
+                                <TextBlock TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"><InlineUIContainer>
+										<TextBlock Text="Last loaded : "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=datetimestamp}"/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text=" by "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=username}"/>
+									</InlineUIContainer></TextBlock>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="Top">
+                                <local:ButtonStrip Margin="0,0,0,0" x:Name="buttonStrip"/>
+                            </DockPanel>
+                            <Grid>
+                                <DockPanel x:Name="assetDockPanel" Margin="0">
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="Filename" Width="170" ToolTip="{me:Info Body=TextAssetFilenameToolTip, Image=/images/Title_32x32.png, Title='Text Asset Filename'}" HorizontalContentAlignment="Right"/>
+                                        <TextBox x:Name="txtFilename" Text="{Binding XPath=Filename}" TextWrapping="Wrap" TabIndex="1" />
+                                    </DockPanel>
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="Content" Width="170" ToolTip="{me:Info Body=TextAssetContentToolTip, Image=/images/Title_32x32.png, Title='Text Asset Content'}" HorizontalContentAlignment="Right"/>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="{DynamicResource NormalColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource InheritanceColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource LanguageColumn}"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBox Grid.Column="0" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="txtContent" Text="{Binding XPath=Content}" TextWrapping="Wrap" TabIndex="1" SpellCheck.IsEnabled="True" AcceptsReturn="True"/>
+                                            <!--<me:inherits Grid.Column="1" x:Name="listContent" />
+                                            <TextBox Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" x:Name="txtContentLanguage" Text="{Binding XPath=Title}" TextWrapping="Wrap" TabIndex="1" SpellCheck.IsEnabled="True"/>-->
+                                        </Grid>
+                                    </DockPanel>
+                                </DockPanel>
+                                <local:usageControl Visibility="Hidden" x:Name="usageDockPanel" HorizontalAlignment="Right"/>
+                                <local:nlwControl Visibility="Hidden" x:Name="nlwDockPanel" HorizontalAlignment="Right" />
+                                <local:findControl Visibility="Hidden" x:Name="findDockPanel" HorizontalAlignment="Right" />
+                            </Grid>
+                        </DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFD8DE5A" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="14.667"/>
+    </Style>
+
+    <Style TargetType="{x:Type local:Map}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:assetControl}">
+                    <Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                        <DockPanel x:Name="mainPanel">
+                            <DockPanel.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.004"/>
+                                    <GradientStop Color="#FF981717" Offset="1"/>
+                                </LinearGradientBrush>
+                            </DockPanel.Background>
+                            <DockPanel DockPanel.Dock="Top" Height="28" VerticalAlignment="Center">
+                                <Image Source="/AssetBuilder;Component/images/EMR_48x48.png"/>
+                                <TextBlock VerticalAlignment="Center"><InlineUIContainer>
+										<TextBlock Text=" Title - "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=MapID}"/>
+									</InlineUIContainer></TextBlock>
+                                <TextBlock TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"><InlineUIContainer>
+										<TextBlock Text="Last loaded : "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=datetimestamp}"/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text=" by "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=username}"/>
+									</InlineUIContainer></TextBlock>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="Top">
+                                <local:ButtonStrip Margin="0,0,0,0" x:Name="buttonStrip"/>
+                            </DockPanel>
+                            <Grid>
+                                <DockPanel x:Name="assetDockPanel" Margin="0">
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="Type" Width="170" ToolTip="{me:Info Body=LinkTypeTextToolTip, Image=/images/EMR_48x48.png, Title='Link Type'}" HorizontalContentAlignment="Right"/>
+                                        <ComboBox x:Name="cmbMapType" SelectedValue="{Binding XPath=Type}" TabIndex="1" SelectedValuePath="ID" DisplayMemberPath="Value" />
+                                    </DockPanel>
+                                    <Grid DockPanel.Dock="Top">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <DockPanel Grid.Column="0">
+                                            <Label Content="Key Name" Width="170" ToolTip="{me:Info Body=KeyNameTextToolTip, Image=/images/EMR_48x48.png, Title='Key Name'}" HorizontalContentAlignment="Right"/>
+                                            <TextBox x:Name="txtKeyName" Text="{Binding XPath=KeyName}" TextWrapping="Wrap" TabIndex="2" SpellCheck.IsEnabled="True"/>
+                                        </DockPanel>
+                                        <DockPanel Grid.Column="1">
+                                            <Label Content="Code System" Width="170" ToolTip="{me:Info Body=CodeSystemTextToolTip, Image=/images/EMR_48x48.png, Title='Code System'}" HorizontalContentAlignment="Right"/>
+                                            <TextBox x:Name="txtCodeSystem" Text="{Binding XPath=CodeSystem}" TextWrapping="Wrap" TabIndex="3" SpellCheck.IsEnabled="False"/>
+                                        </DockPanel>
+                                    </Grid>
+                                    <!--<Grid DockPanel.Dock="Top">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="170" />
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="170" />
+                                            <ColumnDefinition Width="1*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Content="Asset Type" Width="170" ToolTip="{me:Info Body=LinkAssetTypeTextToolTip, Image=/images/EMR_48x48.png, Title='Linked Asset Type'}" HorizontalContentAlignment="Right"/>
+                                        <ComboBox Grid.Column="1" x:Name="cmbMapAssetType" SelectedValue="{Binding XPath=AssetType}" TabIndex="3" SelectedValuePath="ID" DisplayMemberPath="Value" />
+                                        <Label Grid.Column="2" Content="AssetID" Width="170" ToolTip="{me:Info Body=KeyNameTextToolTip, Image=/images/EMR_48x48.png, Title='Linked AssetID'}" HorizontalContentAlignment="Right"/>
+                                        <TextBox Grid.Column="3" x:Name="txtAssetID" Text="{Binding XPath=AssetID}" TabIndex="4" />
+                                    </Grid>-->
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*" />
+                                            <RowDefinition Height="1*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*" />
+                                                <ColumnDefinition Width="1*" />
+                                            </Grid.ColumnDefinitions>
+                                            <DockPanel Grid.Column="0">
+                                                <Label Content="Explanation" Width="170" ToolTip="{me:Info Body=LinkedAssetExplanationTextToolTip, Image=/images/EMR_48x48.png, Title='Explanation'}" HorizontalContentAlignment="Right"/>
+                                                <TextBox x:Name="txtExplanation" Text="{Binding XPath=Explanation}" TextWrapping="Wrap" TabIndex="4" SpellCheck.IsEnabled="True"/>
+                                            </DockPanel>
+                                            <DockPanel Grid.Column="1">
+                                                <Label Content="Codes" Width="170" ToolTip="{me:Info Body=CodesTextToolTip, Image=/images/EMR_48x48.png, Title='Codes'}" HorizontalContentAlignment="Right"/>
+                                                <TextBox x:Name="txtCodes" Text="{Binding XPath=Codes}" TextWrapping="Wrap" TabIndex="5" SpellCheck.IsEnabled="False"/>
+                                            </DockPanel>
+                                        </Grid>
+                                        <DockPanel Grid.Row="1">
+                                            <Label Content="Inbound" Width="170" ToolTip="{me:Info Body=InboundTextToolTip, Image=/images/EMR_48x48.png, Title='Inbound Assets'}" HorizontalContentAlignment="Right"/>
+                                            <DataGrid x:Name="InboundRules" DockPanel.Dock="Left" Width="250" Tag="AssetBuilder.Controls.QuestionAnswer" />
+                                            <Label Content="Outbound" DockPanel.Dock="Left" Width="170" ToolTip="{me:Info Body=OutboundTextToolTip, Image=/images/EMR_48x48.png, Title='Outbound Assets'}" HorizontalContentAlignment="Right"/>
+                                            <DataGrid x:Name="OutboundRules" DockPanel.Dock="Left" Tag="AssetBuilder.Controls.QuestionAnswerValue" />
+                                        </DockPanel>
+                                    </Grid>
+                                </DockPanel>
+                                <local:usageControl Visibility="Hidden" x:Name="usageDockPanel" HorizontalAlignment="Right"/>
+                                <local:nlwControl Visibility="Hidden" x:Name="nlwDockPanel" HorizontalAlignment="Right" />
+                                <local:findControl Visibility="Hidden" x:Name="findDockPanel" HorizontalAlignment="Right" />
+                            </Grid>
+                        </DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFD8DE5A" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="14.667"/>
+    </Style>
+
+    <Style TargetType="{x:Type local:Group}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:assetControl}">
+                    <Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                        <DockPanel x:Name="mainPanel">
+                            <DockPanel.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.004"/>
+                                    <GradientStop Color="#FFF74FC9" Offset="1"/>
+                                </LinearGradientBrush>
+                            </DockPanel.Background>
+                            <DockPanel DockPanel.Dock="Top" Height="28" VerticalAlignment="Center">
+                                <Image Source="/AssetBuilder;Component/images/group_32x32.png"/>
+                                <TextBlock VerticalAlignment="Center"><InlineUIContainer>
+										<TextBlock Text=" Title - "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=GroupID}"/>
+									</InlineUIContainer></TextBlock>
+                                <TextBlock TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"><InlineUIContainer>
+										<TextBlock Text="Last loaded : "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=datetimestamp}"/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text=" by "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=username}"/>
+									</InlineUIContainer></TextBlock>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="Top">
+                                <local:ButtonStrip Margin="0,0,0,0" x:Name="buttonStrip"/>
+                            </DockPanel>
+                            <Grid>
+                                <DockPanel x:Name="assetDockPanel" Margin="0">
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*"/>
+                                                <ColumnDefinition Width="1*"/>
+                                                <!--<ColumnDefinition Width="{DynamicResource InheritanceColumn}"/>
+                                                <ColumnDefinition Width="{DynamicResource LanguageColumn}"/>-->
+                                            </Grid.ColumnDefinitions>
+                                            <DockPanel Grid.Column="0">
+                                                <DockPanel DockPanel.Dock="Top">
+                                                    <Label Content="Type" Width="170" ToolTip="{me:Info Body=GroupTypeToolTip, Image=/images/group_32x32.png, Title='Group Type'}" HorizontalContentAlignment="Right"/>
+                                                    <ComboBox x:Name="cmbGroupType" SelectedValue="{Binding XPath=Type}" TabIndex="1" SelectedValuePath="ID" DisplayMemberPath="Value" />
+                                                </DockPanel>
+                                                <DockPanel DockPanel.Dock="Top">
+                                                    <Label Content="Group Name" Width="170" ToolTip="{me:Info Body=GroupNameTextToolTip, Image=/images/group_32x32.png, Title='Group Name'}" HorizontalContentAlignment="Right"/>
+                                                    <TextBox x:Name="txtGroupName" Text="{Binding XPath=GroupName}" TextWrapping="Wrap" TabIndex="2" />
+                                                </DockPanel>
+                                                <DockPanel DockPanel.Dock="Top">
+                                                    <Label Content="Abbreviation" Width="170" ToolTip="{me:Info Body=GroupAbbreviationTextToolTip, Image=/images/group_32x32.png, Title='Group Abbreviation'}" HorizontalContentAlignment="Right"/>
+                                                    <TextBox x:Name="txtAbbreviation" Text="{Binding XPath=Abbreviation}" TextWrapping="Wrap" TabIndex="2" />
+                                                </DockPanel>
+                                            </DockPanel>
+                                            <DockPanel Grid.Column="1">
+                                                <DockPanel DockPanel.Dock="Top">
+                                                    <Label Content="GroupPoid" Width="170" ToolTip="{me:Info Body=GroupPoidTextToolTip, Image=/images/group_32x32.png, Title='GrouPoid'}" HorizontalContentAlignment="Right"/>
+                                                    <TextBox x:Name="txtGroupPoid" Text="{Binding XPath=GroupPoid}" TextWrapping="Wrap" TabIndex="3" SpellCheck.IsEnabled="False"/>
+                                                </DockPanel>
+                                                <DockPanel DockPanel.Dock="Top">
+                                                    <Label Content="Suffix" Width="170" ToolTip="{me:Info Body=GroupSuffixTextToolTip, Image=/images/group_32x32.png, Title='Group Suffix'}" HorizontalContentAlignment="Right"/>
+                                                    <TextBox x:Name="txtSuffix" Text="{Binding XPath=Suffix}" TextWrapping="Wrap" TabIndex="3" SpellCheck.IsEnabled="False"/>
+                                                </DockPanel>
+                                                <DockPanel DockPanel.Dock="Top" x:Name="eligibility">
+                                                    <Label Content="Allergy Group" Width="170" ToolTip="{me:Info Body=AllergyGroupToolTip, Image=/images/group_32x32.png, Title='Allergy Group'}" HorizontalContentAlignment="Right"/>
+                                                    <CheckBox x:Name="txtEligibilityMask" IsChecked="{Binding Path=IsAllergy}" VerticalAlignment="Center"/>
+                                                </DockPanel>
+                                            </DockPanel>
+                                            <!--<me:inherits Grid.Column="1" x:Name="listGroupName" />
+                                            <TextBox Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" x:Name="txtGroupNameLanguage" Text="{Binding XPath=GroupName}" TextWrapping="Wrap" TabIndex="1" />-->
+                                        </Grid>
+                                    </DockPanel>
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="Members" Width="170" ToolTip="{me:Info Body=GroupMembersTextToolTip, Image=/images/group_32x32.png, Title='Group Members'}" HorizontalContentAlignment="Right"/>
+                                        <DataGrid x:Name="GroupMembers" DockPanel.Dock="Left" Tag="AssetBuilder.Controls.GroupMember" />
+                                    </DockPanel>
+                                </DockPanel>
+                                <local:usageControl Visibility="Hidden" x:Name="usageDockPanel" HorizontalAlignment="Right"/>
+                                <local:nlwControl Visibility="Hidden" x:Name="nlwDockPanel" HorizontalAlignment="Right" />
+                                <local:findControl Visibility="Hidden" x:Name="findDockPanel" HorizontalAlignment="Right" />
+                            </Grid>
+                        </DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFD8DE5A" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="14.667"/>
+    </Style>
+
+    <Style TargetType="{x:Type local:CMAP}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:assetControl}">
+                    <Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                        <DockPanel x:Name="mainPanel">
+                            <DockPanel.Background>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                                    <GradientStop Color="White" Offset="0.004"/>
+                                    <GradientStop Color="#FF2F5DAF" Offset="1"/>
+                                </LinearGradientBrush>
+                            </DockPanel.Background>
+                            <DockPanel DockPanel.Dock="Top" Height="28" VerticalAlignment="Center">
+                                <Image Source="/AssetBuilder;Component/images/Map_32x32.png"/>
+                                <TextBlock VerticalAlignment="Center"><InlineUIContainer>
+										<TextBlock Text=" Conclusion Map - "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=CMapID}"/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=Release}"/>
+									</InlineUIContainer></TextBlock>
+                                <TextBlock TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"><InlineUIContainer>
+										<TextBlock Text="Last loaded : "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=datetimestamp}"/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text=" by "/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Text="{Binding XPath=username}"/>
+									</InlineUIContainer></TextBlock>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="Top">
+                                <local:ButtonStrip Margin="0,0,0,0" x:Name="buttonStrip"/>
+                            </DockPanel>
+                            <Grid>
+                                <DockPanel x:Name="assetDockPanel" Margin="0">
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <Label Content="MapName" Width="170" ToolTip="{me:Info Body=MapNameToolTip, Image=/images/Map_32x32.png, Title='Conclusion Map Name'}" HorizontalContentAlignment="Right"/>
+                                        <TextBox x:Name="txtMapName" Text="{Binding XPath=MapName}" TextWrapping="Wrap" TabIndex="1" />
+                                    </DockPanel>
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <DockPanel Margin="0,12,0,0" x:Name="buttons" Width="170" Visibility="Visible" DockPanel.Dock="Left" LastChildFill="False">
+                                            <DockPanel DockPanel.Dock="Top" Height="28">
+                                                <Button DockPanel.Dock="Right" x:Name="btnAddRule" Margin="1,2,1,2" Width="24" Height="24" FontFamily="MS Gothic" FontSize="18.667" Content="+" Background="{DynamicResource AddBackground}" />
+                                                <Label Content="Conclusion Map" ToolTip="{me:Info Body=ConclusionMapToolTip, Image=/images/Map_32x32.png, Title='Conclusion Map'}" HorizontalContentAlignment="Right"/>
+                                            </DockPanel>
+                                        </DockPanel>
+                                        <Grid>
+                                            <cmap:Map x:Name="MapControl" />
+                                            <TextBox Visibility="Collapsed" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="txtMapData" Text="{Binding XPath=MapData}" TextWrapping="Wrap" TabIndex="1" AcceptsReturn="True"/>
+                                            <!--<me:inherits Grid.Column="1" x:Name="listContent" />
+                                            <TextBox Grid.Column="2" Visibility="{DynamicResource LanguageVisibility}" x:Name="txtContentLanguage" Text="{Binding XPath=Title}" TextWrapping="Wrap" TabIndex="1" SpellCheck.IsEnabled="True"/>-->
+                                        </Grid>
+                                    </DockPanel>
+                                </DockPanel>
+                                <local:usageControl Visibility="Hidden" x:Name="usageDockPanel" HorizontalAlignment="Right"/>
+                                <local:nlwControl Visibility="Hidden" x:Name="nlwDockPanel" HorizontalAlignment="Right" />
+                                <local:findControl Visibility="Hidden" x:Name="findDockPanel" HorizontalAlignment="Right" />
+                            </Grid>
+                        </DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FFD8DE5A" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="14.667"/>
+    </Style>
+
+    <Style TargetType="{x:Type local:ButtonStrip}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:ButtonStrip}">
+                    <Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="170"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <DockPanel Grid.Column="0" HorizontalAlignment="Right">
+                                <Button Visibility="Collapsed" ToolTip="{me:Info Body=btnReleaseConclusionMapToolTip, Image=/images/check32x32.png, Title='Release Conclusion Map'}" x:Name="btnReleaseConclusionMap" Content="Release" Padding="10,0,10,0"  Margin="0,0,5,0"/>
+                                <Button ToolTip="{me:Info Body=btnNaturalLanguageTesterToolTip, Image=/images/check32x32.png, Title='Natural Language Tester'}" x:Name="btnNaturalLanguage" Content="NL Tester" Padding="10,0,10,0"  Margin="0,0,5,0"/>
+                                <Button ToolTip="{me:Info Body=btnAuditToolTip, Image=/images/checklist32x32.png, Title='Add Audit Entry'}" x:Name="btnAudit" Content="Audit" Padding="10,0,10,0"  Margin="0,0,5,0"/>
+                            </DockPanel>
+                            <DockPanel Grid.Column="1" LastChildFill="False">
+                                <Button ToolTip="{me:Info Body=btnAddToolTip, Image=/images/addButton.png, Title=Add}" x:Name="btnAdd" Content="Add" Padding="10,0,10,0"  Margin="0,0,5,0"/>
+                                <Button ToolTip="{me:Info Body=btnEditToolTip, Image=/images/editButton.png, Title=Edit}" x:Name="btnEdit" Content="Edit" Padding="10,0,10,0"  Margin="0,0,5,0"/>
+                                <Button ToolTip="{me:Info Body=btnCloseToolTip, Title=Close}" x:Name="btnClose" Content="Close" Padding="10,0,10,0"  Margin="0,0,5,0"/>
+                                <Button ToolTip="{me:Info Body=btnUsageToolTip, Title=Usage}" x:Name="btnUsage" Content="Usage" Padding="10,0,10,0"  Margin="0,0,5,0"/>
+                                <Button ToolTip="{me:Info Body=btnRefreshToolTip, Title=Refresh}" x:Name="btnRefresh" Content="Refresh" Padding="10,0,10,0"  Margin="0,0,5,0"/>
+                                <Button ToolTip="{me:Info Body=btnDeleteToolTip, Image=/images/deleteButton.png, Title=Delete}" x:Name="btnDelete" Content="Delete" Padding="10,0,10,0"  Margin="0,0,5,0"/>
+                                <Button ToolTip="{me:Info Body=btnDuplicateToolTip, Image=/images/Copy_32x32.png, Title=Duplicate}" x:Name="btnDuplicate" Content="Duplicate" Padding="10,0,10,0"  Margin="0,0,5,0"/>
+                                <Button ToolTip="{me:Info Body=btnDeriveAnswerToolTip, Title=Derive Answer}" x:Name="btnDeriveAnswer" Content="Derive Answer" Padding="10,0,10,0"  Margin="0,0,5,0"/>
+                                <Button ToolTip="{me:Info Body=btnDeriveQuestionToolTip, Title=Derive Question}" x:Name="btnDeriveQuestion" Content="Derive Question" Padding="10,0,10,0"  Margin="0,0,5,0"/>
+                                <Button ToolTip="{me:Info Body=btnCreateAnswerToolTip, Title=Create Answer}" x:Name="btnCreateAnswer" Content="Create Answer" Padding="10,0,10,0"  Margin="0,0,5,0" IsEnabled="False"/>
+                                <Button ToolTip="{me:Info Body=btnPropertiesToolTip, Title=Properties}" x:Name="btnProperties" Content="Properties" Padding="10,0,10,0"  Margin="0,0,5,0" IsEnabled="True"/>
+                                <Button ToolTip="{me:Info Body=btnCancelToolTip, Title=Cancel}" x:Name="btnCancel" Content="Cancel" Padding="10,0,10,0"  Margin="0,0,5,0"/>
+                                <Button ToolTip="{me:Info Body=btnSaveToolTip, Title=Save}" x:Name="btnSave" Content="Save" Padding="10,0,10,0"  Margin="0,0,5,0"/>
+                                <Button ToolTip="{me:Info Body=btnFindToolTip, Image=/images/Equals.png, Title=Find/Replace}" x:Name="btnFind" Content="Find/Replace" Padding="10,0,10,0"  Margin="0,0,5,0"/>
+                                <!--<Button ToolTip="{me:Info Body=btnNLWToolTip, Title=Natural Language}" x:Name="btnNLW" Content="Natural Language" Padding="10,0,10,0"  Margin="0,0,5,0"/>-->
+                                <AssetBuilder_Controls:countIndicator x:Name="PropertyCount" Number="0" VerticalAlignment="Bottom" Height="24" />
+                            </DockPanel>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:assetControl}" >
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:assetControl}" >
+                    <Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:usageControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:usageControl}">
+                    <Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <DockPanel HorizontalAlignment="Right" x:Name="usageDockPanel" LastChildFill="True">
+                                <!--<DockPanel DockPanel.Dock="Top" Height="30" Background="#FFF4F4F4">
+                                <Button DockPanel.Dock="Left" x:Name="btnNLAssets" BorderThickness="0" Padding="5,0,5,0" Content="Assets" ToolTip="{me:Info Body=UsageToggleToolTip, Title=Usage Toggle}"  />
+                                <Button DockPanel.Dock="Left" x:Name="btnUsage" BorderThickness="0" Padding="5,0,5,0" Content="Algos" ToolTip="{me:Info Body=UsageToggleToolTip, Title=Usage Toggle}" Visibility="Collapsed"  />
+                                <Button DockPanel.Dock="Left" x:Name="btnLanguage" BorderThickness="0" Padding="5,0,5,0" Content="Languages" ToolTip="{me:Info Body=UsageToggleToolTip, Title=Usage Toggle}"  />
+                                <Button DockPanel.Dock="Left" x:Name="btnProperties" BorderThickness="0" Padding="5,0,5,0" Content="Properties" ToolTip="{me:Info Body=UsageToggleToolTip, Title=Usage Toggle}"  />
+                                <Button DockPanel.Dock="Right" x:Name="btnClose" BorderThickness="0" Padding="0">
+                                    <Image Source="/AssetBuilder;Component/images/close2.png" />
+                                </Button>
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"><Run Text="Usage"/></TextBlock>
+                            </DockPanel>-->
+                                <DockPanel DockPanel.Dock="Bottom" Height="29" Background="#FFF4F4F4">
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" ><InlineUIContainer>
+										<TextBlock Foreground="Blue"><Run Text="123"/></TextBlock>
+									</InlineUIContainer><InlineUIContainer>
+										<TextBlock><Run Text=")"/></TextBlock>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock><Run Text="AlgoID"/></TextBlock>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Width="20"/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Foreground="Red"><Run Text="456"/></TextBlock>
+									</InlineUIContainer><InlineUIContainer>
+										<TextBlock><Run Text=")"/></TextBlock>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock><Run Text="NodeID"/></TextBlock>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Width="20"/>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock Foreground="Green"><Run Text="789"/></TextBlock>
+									</InlineUIContainer><InlineUIContainer>
+										<TextBlock><Run Text=")"/></TextBlock>
+									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
+										<TextBlock><Run Text="AssetID"/></TextBlock>
+									</InlineUIContainer></TextBlock>
+                                </DockPanel>
+                                <TabControl x:Name="usageTabs" DockPanel.Dock="Top">
+                                    <TabItem x:Name="btnUsage" Header="Algos" />
+                                    <TabItem x:Name="btnNLAssets" Header="Assets" />
+                                    <TabItem x:Name="btnLanguage" Header="Languages" />
+                                    <TabItem x:Name="btnProperties" Header="Properties" />
+                                </TabControl>
+
+                                <!--<TreeView x:Name="usageTreeView" Opacity="0.8"/>-->
+                            </DockPanel>
+                            <Button x:Name="btnClose" BorderThickness="0" Padding="0" Width="24" Height="24" VerticalAlignment="Top" HorizontalAlignment="Right">
+                                <Image Source="/AssetBuilder;Component/images/close2.png" />
+                            </Button>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:nlwControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:nlwControl}">
+                    <Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                        <DockPanel HorizontalAlignment="Right" x:Name="nlwDockPanel">
+                            <DockPanel DockPanel.Dock="Top" Height="30" Background="#FFF4F4F4">
+                                <Button DockPanel.Dock="Right" x:Name="btnClose" BorderThickness="0" Padding="0">
+                                    <Image Source="/AssetBuilder;Component/images/close2.png" />
+                                </Button>
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"><Run Text="Natural Language Wizard"/></TextBlock>
+                            </DockPanel>
+                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                <DockPanel DockPanel.Dock="Bottom" Background="#FFF4F4F4">
+                                    <!--<nlw:NLWControl x:Name="nlwControl" />-->
+                                </DockPanel>
+                            </ScrollViewer>
+                        </DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:findControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:findControl}">
+                    <Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                        <DockPanel HorizontalAlignment="Right" x:Name="findDockPanel">
+                            <DockPanel DockPanel.Dock="Top" Height="30" Background="#FFF4F4F4">
+                                <Button DockPanel.Dock="Right" x:Name="btnClose" BorderThickness="0" Padding="0">
+                                    <Image Source="/AssetBuilder;Component/images/close2.png" />
+                                </Button>
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"><Run Text="Find and Replace"/></TextBlock>
+                            </DockPanel>
+                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                <DockPanel DockPanel.Dock="Bottom" Background="#FFF4F4F4">
+                                    <local:FindReplace x:Name="findReplaceControl" VerticalAlignment="Top" />
+                                </DockPanel>
+                            </ScrollViewer>
+                        </DockPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--<Style TargetType="{x:Type nlw:NumberTextBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type nlw:NumberTextBox}">
+                    <Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="14.667"/>
+    </Style>-->
+
+    <!--<Style TargetType="{x:Type nlw:SaveableRadioButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type nlw:SaveableRadioButton}">
+                    <Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                        <RadioButton IsChecked="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}}" 
+									 Content="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="14.667"/>
+    </Style>-->
+
+    <!--<Style TargetType="{x:Type nlw:SaveableCheckBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type nlw:SaveableCheckBox}">
+                    <Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                        <CheckBox IsChecked="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}}"
+								  Content="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="14.667"/>
+    </Style>-->
+
+    <!--<Style TargetType="{x:Type nlw:SaveableComboBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type nlw:SaveableComboBox}">
+                    <Border Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}">
+                        <ComboBox 
+								  ItemsSource="{Binding ItemsSource, RelativeSource={RelativeSource TemplatedParent}}"
+									SelectedItem="{Binding SelectedItem, RelativeSource={RelativeSource TemplatedParent}}" 
+								  />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="14.667"/>
+    </Style>-->
+
+</ResourceDictionary>

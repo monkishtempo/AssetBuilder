@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <Conditions>
+    <Condition algoid="0" id="0" Name="No condition" ScalingFactor="0" OffsetFormula="0" />
+    <Condition algoid="2606" id="1" Name="Breast Cancer" ScalingFactor="0.0006" OffsetFormula="int((time+200)/210)*(0.02*time)" />
+    <Condition algoid="3757" id="2" Name="Bowel Cancer" ScalingFactor="0.000179" OffsetFormula="int((age+time+200)/245)*Log(Sqr((time - 1) * 0.1))" />
+    <Condition algoid="2609" id="3" Name="Dying of any cause" ScalingFactor="0.000318" OffsetFormula="int((time+200)/210)*(Log(1.09)*time)" />
+    <Condition algoid="2610" id="4" Name="Diabetes" ScalingFactor="0.0005" OffsetFormula="(1-int((age+200)/281))*((int((age+time+200)/280)*(80-age))+(1-int((age+time+200)/280))*time)*Log(1.06)" />
+    <!--<Condition id="4" Name="Diabetes" ScalingFactor="0.0005" OffsetFormula="(1-int((age+200)/266))*((int((age+time+200)/265)*(65-age))+(1-int((age+time+200)/265))*time)*0.019802627" />-->
+    <Condition algoid="2604" id="5" Name="Heart Disease" ScalingFactor="0.0001078" OffsetFormula="int((time+200)/210)*(0.009950331*time)" />
+    <Condition algoid="3882" id="5" Name="Heart Disease" ScalingFactor="0.0001078" OffsetFormula="int((time+200)/210)*(0.042*time)" />
+    <Condition algoid="3756" id="6" Name="Lung Cancer" ScalingFactor="4.43e-006" OffsetFormula="int((time+200)/210)*(0.05 * time)" />
+    <Condition algoid="4073" id="6" Name="Lung Cancer" ScalingFactor="4.43e-006" OffsetFormula="int((time+200)/210)*(0.05 * time)" />
+    <Condition algoid="2603" id="7" Name="Prostate Cancer" ScalingFactor="9.84e-006" OffsetFormula="(time-int((time+age+200)/280)*((time+age)-80))*0.1" />
+    <!--<Condition id="7" Name="Prostate Cancer" ScalingFactor="9.84e-006" OffsetFormula="int((time+200)/210)*(0.1 * time)" />-->
+    <Condition algoid="2605" id="8" Name="Stroke" ScalingFactor="0.00028" OffsetFormula="int((time+200)/210)*(0.045377182*time)" />
+    <Condition OffsetFormula="int((time+200)/210)*(0.02*time)" ScalingFactor="0.0006" Name="Breast Cancer" id="1" algoid="3655" />
+    <Condition OffsetFormula="int((age+time+200)/245)*Log(Sqr((time - 1) * 0.1))" ScalingFactor="0.000179" Name="Bowel Cancer" id="2" algoid="3658" />
+    <Condition OffsetFormula="int((time+200)/210)*(Log(1.09)*time)" ScalingFactor="0.000318" Name="Dying of any cause" id="3" algoid="3659" />
+    <Condition OffsetFormula="(1-int((age+200)/281))*((int((age+time+200)/280)*(80-age))+(1-int((age+time+200)/280))*time)*Log(1.06)" ScalingFactor="0.0005" Name="Diabetes" id="4" algoid="3657" />
+    <Condition OffsetFormula="int((time+200)/210)*(0.042*time)" ScalingFactor="0.0001078" Name="Heart Disease" id="5" algoid="3653" />
+    <Condition OffsetFormula="int((time+200)/210)*(0.05 * time)" ScalingFactor="4.43e-006" Name="Lung Cancer" id="6" algoid="3656" />
+    <Condition OffsetFormula="int((time+200)/210)*(0.04*time)" ScalingFactor="0.0002" Name="Stroke" id="8" algoid="3654" />
+  </Conditions>
+</root>

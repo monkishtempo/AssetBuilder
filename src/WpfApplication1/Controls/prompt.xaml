@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="AssetBuilder.Controls.prompt"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="525" Width="350">
+    <Grid>
+        <GroupBox Header="Source: *" Height="100" Margin="12,12,12,0" Name="grpSource" VerticalAlignment="Top">
+            <Grid>
+                <CheckBox Height="16" Margin="12,12,100,0" Name="chkStaff" VerticalAlignment="Top">Staff</CheckBox>
+                <CheckBox Height="16" Margin="12,32,100,0" Name="chkReviewer" VerticalAlignment="Top">Reviewer</CheckBox>
+                <CheckBox Height="16" Margin="12,52,100,0" Name="chkUser" VerticalAlignment="Top">User</CheckBox>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Type of change: *" Height="160" Margin="12,112,12,0" Name="grpType" VerticalAlignment="Top">
+            <Grid>
+                <CheckBox Height="16" Margin="12,12,12,0" Name="chkNew" VerticalAlignment="Top">New asset</CheckBox>
+                <CheckBox Height="16" Margin="12,32,12,0" Name="chkSpell" VerticalAlignment="Top">Spelling or grammar correction</CheckBox>
+                <CheckBox Height="16" Margin="12,52,12,0" Name="chkClarify" VerticalAlignment="Top">Clarification of meaning</CheckBox>
+                <CheckBox Height="16" Margin="12,72,12,0" Name="chkChange" VerticalAlignment="Top">Change of meaning</CheckBox>
+                <CheckBox Height="16" Margin="12,92,12,0" Name="chkAdditional" VerticalAlignment="Top">Additional information</CheckBox>
+                <CheckBox Height="16" Margin="12,112,12,0" Name="chkOther" VerticalAlignment="Top">Other</CheckBox>
+            </Grid>
+        </GroupBox>
+        <Label Margin="12,274,12,0" Height="28" VerticalAlignment="Top">Reasoning</Label>
+        <TextBox Height="60" Margin="12,300,12,0" Name="txtReasoning" VerticalAlignment="Top" />
+        <Label Margin="12,362,12,0" Height="28" VerticalAlignment="Top">Editor Response</Label>
+        <TextBox Height="60" Margin="12,386,12,0" Name="txtEditor" VerticalAlignment="Top" />
+        <CheckBox Height="16" Margin="12.5,458,0,0" Width="150" Name="chkReference" VerticalAlignment="Top" HorizontalAlignment="Left">Reference(s) added. No.</CheckBox>
+        <TextBox Height="28" Margin="160,0,12,45" Name="txtReference" VerticalAlignment="Bottom" />
+        <Label Margin="12.5,486,11.5,0" Height="28" VerticalAlignment="Top">* Mandatory</Label>
+        <Button x:Name="btnCancel" Margin="0,486,98,0" Height="28" VerticalAlignment="Top" HorizontalAlignment="Right" Width="80" IsCancel="True">Cancel</Button>
+        <Button x:Name="btnOk" Height="28" HorizontalAlignment="Right" Margin="0,486,12,0" VerticalAlignment="Top" Width="80" IsDefault="True">Ok</Button>
+    </Grid>
+</UserControl>

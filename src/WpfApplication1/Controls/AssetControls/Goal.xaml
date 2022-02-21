@@ -1,0 +1,172 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:me="clr-namespace:AssetBuilder"
+	xmlns:controls="clr-namespace:AssetBuilder.Controls"
+	x:Class="AssetBuilder.Goal"
+	x:Name="Window"
+	Title="Goal"
+	MinWidth="640" Height="640" FontSize="14.667">
+	<Window.Resources>
+		<me:BoolConverter x:Key="boolConverter" />
+		<Style TargetType="TextBox">
+			<Style.Triggers>
+				<Trigger Property="Text" Value="">
+					<Setter Property="BorderBrush" Value="Red" />
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+	</Window.Resources>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="200"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<StackPanel>
+			<Label Content="Goals" Margin="8,8,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+			<Button Content="Add a new goal" Click="addGoal" />
+			<ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Auto">
+				<ListBox x:Name="GoalList" SelectionChanged="GoalList_SelectionChanged">
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<Label Content="{Binding Path=Attribute[name].Value}" />
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
+			</ScrollViewer>
+		</StackPanel>
+		<ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Auto">
+			<StackPanel x:Name="LayoutRoot">
+				<Label Content="New Goal" HorizontalAlignment="Left" Margin="8,8,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+				<GroupBox Header="Basic Goal Information" Margin="8,8,0,0" VerticalAlignment="Top" Height="146.96" Padding="8">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+						<StackPanel Margin="0,0,10,0">
+							<Label Content="Goal Name" FontSize="12" FontWeight="Bold" Padding="0,5,5,5"/>
+							<TextBox Text="{Binding Path=Attribute[name].Value}"/>
+							<Label Content="Category" FontSize="12" FontWeight="Bold" Padding="0,5,5,5"/>
+							<TextBox Text="{Binding Path=Attribute[cat].Value}"/>
+						</StackPanel>
+						<StackPanel Grid.Column="1" Margin="10,0,0,0">
+							<Label Content="Graphing Type" FontSize="12" FontWeight="Bold" Padding="0,5,5,5"/>
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition />
+									<ColumnDefinition />
+									<ColumnDefinition />
+								</Grid.ColumnDefinitions>
+								<RadioButton Style="{StaticResource {x:Type ToggleButton}}" Grid.Column="0" Height="64" Width="64" IsChecked="{Binding Path=Attribute[type].Value, Converter={StaticResource boolConverter}, ConverterParameter=1}">
+									<DockPanel>
+										<Image DockPanel.Dock="Top" Source="/AssetBuilder;component/images/linechart_inactive.png" />
+										<TextBlock Height="23" Margin="0,-18,0,0" FontSize="12" TextAlignment="Center">Line Chart</TextBlock>
+									</DockPanel>
+								</RadioButton>
+								<RadioButton Style="{StaticResource {x:Type ToggleButton}}" Grid.Column="1" Height="64" Width="64" IsChecked="{Binding Path=Attribute[type].Value, Converter={StaticResource boolConverter}, ConverterParameter=2}">
+									<DockPanel>
+										<Image DockPanel.Dock="Top" Source="/AssetBuilder;component/images/barchart_inactive.png" />
+										<TextBlock Height="23" Margin="0,-18,0,0" FontSize="12" TextAlignment="Center">Bar Chart</TextBlock>
+									</DockPanel>
+								</RadioButton>
+								<RadioButton Style="{StaticResource {x:Type ToggleButton}}" Grid.Column="2" Height="64" Width="64" IsChecked="{Binding Path=Attribute[type].Value, Converter={StaticResource boolConverter}, ConverterParameter=3}">
+									<DockPanel>
+										<Image DockPanel.Dock="Top" Source="/AssetBuilder;component/images/123_inactive.png" />
+										<TextBlock Height="23" Margin="0,-18,0,0" FontSize="12" TextAlignment="Center">3 Step</TextBlock>
+									</DockPanel>
+								</RadioButton>
+							</Grid>
+						</StackPanel>
+					</Grid>
+				</GroupBox>
+				<GroupBox Header="Conclusions" Margin="8,8,0,0" VerticalAlignment="Top" Padding="8">
+					<StackPanel>
+						<StackPanel>
+							<ItemsControl ItemsSource="{Binding Path=Element[conclusions].Elements[conclusion]}">
+								<ItemsControl.ItemTemplate>
+									<DataTemplate>
+										<TextBox x:Name="txtConc" Margin="0,0,0,8" Text="{Binding Path=Attribute[id].Value}" Loaded="txtConc_Loaded" />
+									</DataTemplate>
+								</ItemsControl.ItemTemplate>
+							</ItemsControl>
+						</StackPanel>
+						<Button Content="Add a conclusion" Click="addElement" CommandParameter="conclusions|conclusion|id" />
+					</StackPanel>
+				</GroupBox>
+				<GroupBox Header="Benifits &amp; Risks" Margin="8,8,0,0" Padding="8">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+						<StackPanel Margin="0,0,10,0">
+							<DockPanel Margin="0,0,0,8">
+								<Label Content="Benefits" FontSize="12" FontWeight="Bold" Padding="0,5,25,5"/>
+								<TextBox Text="{Binding Path=Element[benefits].Attribute[title].Value}" />
+							</DockPanel>
+							<StackPanel>
+								<ItemsControl ItemsSource="{Binding Path=Element[benefits].Elements[benefit]}">
+									<ItemsControl.ItemTemplate>
+										<DataTemplate>
+											<controls:SplitTextBox Margin="0,0,0,8" />
+										</DataTemplate>
+									</ItemsControl.ItemTemplate>
+								</ItemsControl>
+							</StackPanel>
+							<Button Content="Add a new benefit" Click="addElement" CommandParameter="benefits|benefit|title" />
+						</StackPanel>
+						<StackPanel Grid.Column="1" Margin="10,0,0,0">
+							<DockPanel Margin="0,0,0,8">
+								<Label Content="Risks" FontSize="12" FontWeight="Bold" Padding="0,5,25,5"/>
+								<TextBox Text="{Binding Path=Element[Risks].Attribute[title].Value}" />
+							</DockPanel>
+							<StackPanel>
+								<ItemsControl ItemsSource="{Binding Path=Element[Risks].Elements[Risk]}">
+									<ItemsControl.ItemTemplate>
+										<DataTemplate>
+											<controls:SplitTextBox Margin="0,0,0,8" />
+										</DataTemplate>
+									</ItemsControl.ItemTemplate>
+								</ItemsControl>
+							</StackPanel>
+							<Button Content="Add a new risk" Click="addElement" CommandParameter="Risks|Risk|title" />
+						</StackPanel>
+					</Grid>
+				</GroupBox>
+				<GroupBox Header="Setting Targets &amp; Entering Progress" Margin="8,8,0,0" Padding="8">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+						<StackPanel Margin="0,0,10,0">
+							<Label Content="Starting Question" FontSize="12" FontWeight="Bold" Padding="0,5,5,5"/>
+							<TextBox x:Name="txtSQ" Text="{Binding Path=Element[Questions].Element[Question].Element[CurrentQuestion].Element[Text].Value}" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" />
+							<Label Content="Starting Recommendation" FontSize="12" FontWeight="Bold" Padding="0,5,5,5"/>
+							<TextBox x:Name="txtSR" Text="{Binding Path=Element[Questions].Element[Question].Element[CurrentQuestion].Attribute[recommendation].Value}" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" />
+						</StackPanel>
+						<StackPanel Grid.Column="1" Margin="10,0,10,0">
+							<Label Content="Progress Question" FontSize="12" FontWeight="Bold" Padding="0,5,5,5"/>
+							<TextBox x:Name="txtPQ" Text="{Binding Path=Element[Questions].Element[Question].Element[ValueQuestion].Element[Text].Value}" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" />
+							<Label Content="Progress Recommendation" FontSize="12" FontWeight="Bold" Padding="0,5,5,5"/>
+							<TextBox x:Name="txtPR" Text="{Binding Path=Element[Questions].Element[Question].Element[ValueQuestion].Attribute[recommendation].Value}" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" />
+						</StackPanel>
+						<StackPanel Grid.Column="2" Margin="10,0,0,0">
+							<Label Content="Target Question" FontSize="12" FontWeight="Bold" Padding="0,5,5,5"/>
+							<TextBox x:Name="txtTQ" Text="{Binding Path=Element[Questions].Element[Question].Element[TargetQuestion].Element[Text].Value}" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" />
+							<Label Content="Target Recommendation" FontSize="12" FontWeight="Bold" Padding="0,5,5,5"/>
+							<TextBox x:Name="txtTR" Text="{Binding Path=Element[Questions].Element[Question].Element[TargetQuestion].Attribute[recommendation].Value}" TextWrapping="Wrap" TextChanged="TextBox_TextChanged" />
+						</StackPanel>
+					</Grid>
+				</GroupBox>
+				<DockPanel LastChildFill="False">
+					<Button DockPanel.Dock="Right" Content="Save Goal" Margin="8" Width="150" Click="Button_Click" />
+					<Button DockPanel.Dock="Right" Content="Cancel" Margin="8" Width="150" />
+				</DockPanel>
+			</StackPanel>
+		</ScrollViewer>
+		<Canvas x:Name="canvas" Grid.ColumnSpan="2" />
+	</Grid>
+</Window>

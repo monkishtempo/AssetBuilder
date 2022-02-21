@@ -1,0 +1,386 @@
+﻿<con:ABRibbonWindow
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:r="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary" 
+	xmlns:me="clr-namespace:AssetBuilder" 
+	xmlns:con="clr-namespace:AssetBuilder.Controls" 
+    xmlns:s="clr-namespace:System;assembly=mscorlib"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf" mc:Ignorable="d" x:Class="AssetBuilder.Controls.AlgoLoader" 
+	Title="AlgoLoader" Height="800" Width="1200" WindowState="Maximized">
+    <r:RibbonWindow.Resources>
+        <ToolTip x:Key="AlgoToolTip">
+            <StackPanel>
+                <TextBlock Text="{Binding AlgoID}"/>
+                <TextBlock Text="{Binding FileName}"/>
+                <TextBlock Text="{Binding MachineName}"/>
+                <TextBlock Text="{Binding Exclude}"/>
+            </StackPanel>
+        </ToolTip>
+        <ToolTip x:Key="ConsumerAlgoToolTip">
+            <StackPanel>
+                <TextBlock Text="{Binding AlgoID}"/>
+                <TextBlock Text="{Binding FileName}"/>
+                <TextBlock Text="{Binding MachineName}"/>
+                <TextBlock Text="{Binding Exclude}"/>
+                <TextBlock Text="This is a consumer algo"/>
+            </StackPanel>
+        </ToolTip>
+        <ToolTip x:Key="InvalidAlgoToolTip">
+            <StackPanel>
+                <TextBlock Text="{Binding AlgoID}"/>
+                <TextBlock Text="This algo cannot be properly scripted as"/>
+                <TextBlock Text="the XML cannot be located."/>
+                <Rectangle Height="1" HorizontalAlignment="Stretch" Stroke="Blue" Margin="0,6,0,6" StrokeThickness="1" />
+                <TextBlock Text="Note: This can be because the algo was" />
+                <TextBlock Text="loaded using an old version of Visio or" />
+                <TextBlock Text="exported from a previous version of the" />
+                <TextBlock Text="Asset Builder" />
+            </StackPanel>
+        </ToolTip>
+        <r:RibbonButton Loaded="RibbonButton_Loaded" IsEnabled="False" Label="Select Reachable Algos" ToolTip="{me:Info Image=/images/Play-icon.png,Body=SelectReachableAlgosToolTip, Title='Select Reachable Algos'}" LargeImageSource="/images/Play-icon.png" x:Shared="false" Click="button2_Click" x:Key="keySelectReachable" x:Name="rbtSelectReachable" />
+        <con:LoadedAlgos x:Key="loadedAlgos" />
+        <CollectionViewSource IsLiveFilteringRequested="True" x:Key="cvsLoadedAlgos" Source="{StaticResource loadedAlgos}" Filter="CollectionViewSource_Filter" />
+    </r:RibbonWindow.Resources>
+    <DockPanel>
+        <r:Ribbon DockPanel.Dock="Top" x:Name="rbnApplication">
+            <r:Ribbon.ApplicationMenu>
+                <r:RibbonApplicationMenu Visibility="Collapsed"/>
+            </r:Ribbon.ApplicationMenu>
+            <r:Ribbon.CommandBindings>
+                <CommandBinding Command="con:AlgoLoader.cmdAddSource" CanExecute="AddSource_CanExecute" Executed="AddSource_Executed" />
+                <CommandBinding Command="con:AlgoLoader.cmdDeleteSource" CanExecute="DeleteSource_CanExecute" Executed="DeleteSource_Executed" />
+                <CommandBinding Command="con:AlgoLoader.cmdAddTarget" CanExecute="AddTarget_CanExecute" Executed="AddTarget_Executed" />
+                <CommandBinding Command="con:AlgoLoader.cmdDeleteTarget" CanExecute="DeleteTarget_CanExecute" Executed="DeleteTarget_Executed" />
+                <CommandBinding Command="con:AlgoLoader.cmdExport" CanExecute="Export_CanExecute" Executed="Export_Executed" />
+            </r:Ribbon.CommandBindings>
+            <r:RibbonTab Header="Script">
+                <r:RibbonGroup x:Name="grpScript1" Header="Scripting" Visibility="Visible">
+                    <r:RibbonButton IsEnabled="False" Label="Generate Script" ToolTip="{me:Info Image=/images/Script-icon.png,Body=GenerateScriptToolTip, Title='Generate Script'}" LargeImageSource="/images/Script-icon.png" x:Name="rbtGenerateScript" Click="button1_Click" />
+                    <StaticResourceExtension ResourceKey="keySelectReachable"/>
+                    <r:RibbonButton Label="Refresh List" ToolTip="{me:Info Image=/images/Refresh-icon.png,Body=RefreshListToolTip, Title='Refresh List'}" LargeImageSource="/images/Refresh-icon.png" x:Name="rbtRefresh" Click="button4_Click" />
+                    <r:RibbonToggleButton Label="Script Assets" ToolTip="{me:Info Image=/images/Script-assets_32x32.png,Body=ScriptAssetsToolTip, Title='Script Assets'}" LargeImageSource="/images/Script-assets_32x32.png" x:Name="rbtScriptAssets" Click="ScriptAssets_Click" />
+                    <r:RibbonButton Label="Assets From Date" ToolTip="{me:Info Image=/images/Clock_32x32.png,Body=ScriptAssetsToolTip, Title='Assets From Date'}" LargeImageSource="/images/Clock_32x32.png" x:Name="rbtClockAssets" Click="ClockAssets_Click" IsEnabled="False" />
+                </r:RibbonGroup>
+                <r:RibbonGroup x:Name="grpScript2">
+                    <r:RibbonButton IsEnabled="False" Label="Delete Selected Algos" ToolTip="{me:Info Image=/images/Remove-icon.png,Body=DeleteSelectedAlgosToolTip, Title='Delete Selected Algos'}" LargeImageSource="/images/Remove-icon.png" x:Name="rbtDelete" Click="button5_Click" />
+                </r:RibbonGroup>
+                <r:RibbonGroup x:Name="grpScript3" Visibility="Visible">
+                    <r:RibbonButton Label="Copy to Clipboard" ToolTip="{me:Info Image=/images/Copy_32x32.png,Body=CopyScriptToolTip, Title='Copy Script'}" LargeImageSource="/images/Copy_32x32.png" x:Name="rbtCopy" Click="rbtCopy_Click" IsEnabled="False" />
+                    <r:RibbonButton Label="Save Script" ToolTip="{me:Info Image=/images/Save-icon.png,Body=SaveScriptToolTip, Title='Save Script'}" LargeImageSource="/images/Save-icon.png" x:Name="rbtSave" Click="button3_Click" />
+                </r:RibbonGroup>
+                <r:RibbonGroup x:Name="grpScript4">
+                    <StackPanel>
+                        <ComboBox ToolTip="{me:Info Image=/images/Algo.png,Body=SelectAlgoTypeToolTip, Title='Select Algos by Type'}" SelectionChanged="cmbAssessment_SelectionChanged" x:Name="cmbAssessment" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="202" />
+                        <Rectangle Height="1" HorizontalAlignment="Stretch" Stroke="Blue" Margin="0,6,0,6" StrokeThickness="1" />
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox x:Name="chkShowSelectedOnly" Content="Show selected only" ToolTip="{me:Info Title='Show Selected Only',Body=ShowSelectedOnlyToolTip}" HorizontalAlignment="Left" Width="101" Height="19.48" VerticalAlignment="Top" Checked="chkShowSelectedOnly_Checked" Unchecked="chkShowSelectedOnly_Checked"/>
+                            <CheckBox x:Name="chkFilterByType" Content="Filter by type" ToolTip="{me:Info Title='Filter by Type',Body=FilterByTypeToolTip}" HorizontalAlignment="Left" Width="101" Height="19.48" VerticalAlignment="Top" Checked="chkFilterByType_Checked" Unchecked="chkFilterByType_Checked"/>
+                        </StackPanel>
+                    </StackPanel>
+                </r:RibbonGroup>
+                <r:RibbonGroup x:Name="grpScript5" Header="Export" Visibility="Visible">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Width="45" VerticalAlignment="Center">Source:</TextBlock>
+                            <ComboBox Width="150" SelectionChanged="rgSource_SelectionChanged" x:Name="cbSource" ToolTip="{me:Info Title='Source List',Body=TargetToolTip}" IsEditable="True" IsReadOnly="False" LostKeyboardFocus="rgSource_LostFocus" Focusable="True" />
+                            <!--<r:RibbonComboBox x:Name="rtbSource" ToolTip="{me:Info Title='Source List',Body=TargetToolTip}" SelectionBoxWidth="80" IsEditable="True" IsReadOnly="False" LostKeyboardFocus="rgSource_LostFocus" Focusable="True">
+                                <r:RibbonGallery x:Name="rgSource" SelectedValuePath="Content" MaxColumnCount="1" SelectionChanged="rgSource_SelectionChanged">
+                                    <r:RibbonGalleryCategory x:Name="rgcSource">
+                                    </r:RibbonGalleryCategory>
+                                </r:RibbonGallery>
+                            </r:RibbonComboBox>-->
+                            <r:RibbonButton Command="con:AlgoLoader.cmdAddSource" ToolTip="{me:Info Image='/images/Check_32x32.png',Title='Add Source Environment',Body=AddTargetToolTip}" SmallImageSource="/images/Check_16x16.png"/>
+                            <r:RibbonButton Command="con:AlgoLoader.cmdDeleteSource" ToolTip="{me:Info Image='/images/Delete_32x32.png',Title='Delete Source Environment',Body=DeleteTargetToolTip}" SmallImageSource="/images/Delete_16x16.png"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Width="45" VerticalAlignment="Center">Target:</TextBlock>
+                            <ComboBox Width="150" SelectionChanged="rgTarget_SelectionChanged" x:Name="cbTarget" ToolTip="{me:Info Title='Target List',Body=TargetToolTip}" IsEditable="True" IsReadOnly="False" LostKeyboardFocus="rgTarget_LostFocus" Focusable="True" />
+                            <!--<r:RibbonComboBox x:Name="rtbTarget" ToolTip="{me:Info Title='Target List',Body=TargetToolTip}" SelectionBoxWidth="80" IsEditable="True" IsReadOnly="False" LostKeyboardFocus="rgTarget_LostFocus" Focusable="True">
+                                <r:RibbonGallery x:Name="rgTarget" SelectedValuePath="Content" MaxColumnCount="1" SelectionChanged="rgTarget_SelectionChanged">
+                                    <r:RibbonGalleryCategory x:Name="rgcTarget">
+                                    </r:RibbonGalleryCategory>
+                                </r:RibbonGallery>
+                            </r:RibbonComboBox>-->
+                            <r:RibbonButton Command="con:AlgoLoader.cmdAddTarget" ToolTip="{me:Info Image='/images/Check_32x32.png',Title='Add Target Environment',Body=AddTargetToolTip}" SmallImageSource="/images/Check_16x16.png"/>
+                            <r:RibbonButton Command="con:AlgoLoader.cmdDeleteTarget" ToolTip="{me:Info Image='/images/Delete_32x32.png',Title='Delete Target Environment',Body=DeleteTargetToolTip}" SmallImageSource="/images/Delete_16x16.png"/>
+                        </StackPanel>
+                        <r:RibbonButton x:Name="btnExport" Command="con:AlgoLoader.cmdExport" ToolTip="{me:Info Image='/images/Forward-icon_32x32.png',Title='Export Algos',Body=ExportToolTip}" Label="Export" SmallImageSource="/images/Forward-icon_32x32.png" />
+                    </StackPanel>
+                </r:RibbonGroup>
+                <r:RibbonGroup x:Name="grpScript6" Header="Advanced" Visibility="Visible">
+                    <r:RibbonButton IsEnabled="False" Label="Script Without Assets" ToolTip="{me:Info Image=/images/Script-grey.png,Body=ScriptWithoutAssetsToolTip, Title='Generate Script Without Assets'}" LargeImageSource="/images/Script-grey.png" x:Name="rbtScriptWithoutAssets" Click="rbtScriptWithoutAssets_Click" />
+                    <r:RibbonButton IsEnabled="False" Label="Get Algo Xml" ToolTip="{me:Info Image=/images/Script-xml.png,Body=ScriptXmlToolTip, Title='Get Algo Xml'}" LargeImageSource="/images/Script-xml.png" x:Name="rbtScriptXml" Click="rbtScriptXml_Click" />
+                    <r:RibbonButton Visibility="Collapsed" IsEnabled="False" Label="APH Xml" ToolTip="{me:Info Image=/images/Script-xml.png,Body=ScriptXmlToolTip, Title='APH Xml'}" LargeImageSource="/images/Script-xml.png" x:Name="rbtMcKessonXml" Click="rbtMcKessonXml_Click" />
+                </r:RibbonGroup>
+                <r:RibbonGroup x:Name="grpScript7" Visibility="Visible">
+                    <r:RibbonToggleButton Label="Script For Language" ToolTip="{me:Info Image=/images/Globe_32x32.png,Body=ScriptForLanguageToolTip, Title='Script for language'}" LargeImageSource="/images/DisableLanguage32x32.png" x:Name="rbtScriptForLanguage" Click="rbtScriptForLanguage_Click" />
+                </r:RibbonGroup>
+            </r:RibbonTab>
+            <r:RibbonTab Header="Reports" Selector.Selected="Reports_Selected">
+                <r:RibbonGroup>
+                    <StaticResourceExtension ResourceKey="keySelectReachable"/>
+                </r:RibbonGroup>
+                <r:RibbonGroup LargeImageSource="/images/Schedule-icon.png" x:Name="grpReport1">
+                    <r:RibbonGroup.GroupSizeDefinitions>
+                        <r:RibbonGroupSizeDefinition>
+                            <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
+                        </r:RibbonGroupSizeDefinition>
+                    </r:RibbonGroup.GroupSizeDefinitions>
+                    <r:RibbonButton Label="Check Old Report" ToolTip="{me:Info Image=/images/Schedule-icon.png,Body=CheckOldReportToolTip, Title='Check Old Report'}" LargeImageSource="/images/Schedule-icon.png" x:Name="rbtCheckOldReport" Click="rbtReport_Click" CommandParameter="CheckOld|algos|date|year|commentType:" />
+                    <r:RibbonToggleButton Label="Comparison Report" ToolTip="{me:Info Image=/images/Compare_32x32.png,Body=ComparisonReportToolTip, Title='Comparison Report'}" LargeImageSource="/images/Compare_32x32.png" x:Name="rbtComparisonReport" Click="rbtComparisonReport_Click" CommandParameter="" />
+                </r:RibbonGroup>
+                <r:RibbonGroup LargeImageSource="/images/Reconcile_32x32.png" x:Name="grpReport2">
+                    <r:RibbonGroup.GroupSizeDefinitions>
+                        <r:RibbonGroupSizeDefinition>
+                            <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
+                            <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
+                            <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
+                            <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
+                        </r:RibbonGroupSizeDefinition>
+                    </r:RibbonGroup.GroupSizeDefinitions>
+                    <r:RibbonButton Label="Conclusion Report" ToolTip="{me:Info Image=/images/conclusions_32x32.png,Body=ConclusionReportToolTip, Title='Conclusion Report'}" LargeImageSource="/images/conclusions_32x32.png" x:Name="rbtConclusionReport" Click="rbtReport_Click" CommandParameter="Conclusion|algos" />
+                    <r:RibbonMenuButton Label="Conclusion Summary Report" ToolTip="{me:Info Image=/images/concsum_32x32.png,Body=ConclusionSummaryReportTypeToolTip, Title='Conclusion Summary Report'}" LargeImageSource="/images/concsum_32x32.png">
+                        <r:RibbonMenuItem Header="Include Algorithms" x:Name="rbtConclusionSummaryReport" Click="rbtReport_Click" CommandParameter="ConclusionSummary|algos" />
+                        <r:RibbonMenuItem Header="Exclude Algorithms" x:Name="rbtConclusionSummaryReportExcludeAlgos" Click="rbtReport_Click" CommandParameter="ConclusionSummary|algos">
+                            <r:RibbonMenuItem.Tag>
+                                <con:ParamDictionary>
+                                    <s:String x:Key="HideAlgos">w3-hide</s:String>
+                                </con:ParamDictionary>
+                            </r:RibbonMenuItem.Tag>
+                        </r:RibbonMenuItem>
+                        <r:RibbonMenuItem Header="Old version" x:Name="rbtConclusionSummaryReport_Word" Click="rbtReport_Click" CommandParameter="ConclusionSummary_Word|algos" />
+                    </r:RibbonMenuButton>
+                    <r:RibbonMenuButton Label="Question Answer Report" ToolTip="{me:Info Image=/images/qandas_32x32.png,Body=QuestionAnswerReportToolTip, Title='Question Answer Report'}" LargeImageSource="/images/qandas_32x32.png">
+                        <r:RibbonMenuItem Header="Question Report" x:Name="rbtHtmlQuestionReportReport" Click="ContentReport_Click" CommandParameter="QuestionReport" />
+                        <r:RibbonMenuItem Header="Conclusion Report" x:Name="rbtHtmlConclusionReport" Click="ContentReport_Click" CommandParameter="ConclusionReport" />
+                        <r:RibbonMenuItem Header="Full Content Report" x:Name="rbtHtmlContentReport" Click="ContentReport_Click" CommandParameter="ContentReport" />
+                        <r:RibbonMenuItem Header="Old version" x:Name="rbtQuestionAnswerReport" Click="rbtReport_Click" CommandParameter="QuestionAnswer|algos" />
+                    </r:RibbonMenuButton>
+                    <r:RibbonButton Label="Summary Title Report" ToolTip="{me:Info Image=/images/Reconcile_32x32.png,Body=SummaryTitleReportToolTip, Title='Summary Title Report'}" LargeImageSource="/images/Reconcile_32x32.png" x:Name="rbtSummaryTitleReport" Click="rbtReport_Click" CommandParameter="SummaryTitle|algos" />
+                </r:RibbonGroup>
+                <r:RibbonGroup LargeImageSource="/images/reports-icon.png" x:Name="grpReport3">
+                    <r:RibbonGroup.GroupSizeDefinitions>
+                        <r:RibbonGroupSizeDefinition>
+                            <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
+                            <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
+                            <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
+                        </r:RibbonGroupSizeDefinition>
+                    </r:RibbonGroup.GroupSizeDefinitions>
+                    <r:RibbonButton Label="Most Popular Question Answer Report" ToolTip="{me:Info Image=/images/QuestionCount_32x32.png,Body=MostPopularQuestionAnswerReportToolTip, Title='Most Popular Question Answer Report'}" SmallImageSource="/images/QuestionCount_32x32.png" LargeImageSource="/images/QuestionCount_32x32.png" x:Name="rbtMostPopularQuestionAnswerReport" Click="rbtReport_Click" CommandParameter="MostPopularQuestionAnswer|count" />
+                    <r:RibbonButton Label="Most Popular Conclusion Report" ToolTip="{me:Info Image=/images/ConclusionCount_32x32.png,Body=MostPopularConclusionReportToolTip, Title='Most Popular Conclusion Report'}" SmallImageSource="/images/ConclusionCount_32x32.png" LargeImageSource="/images/ConclusionCount_32x32.png" x:Name="rbtMostPopularConclusionReport" Click="rbtReport_Click" CommandParameter="MostPopularConclusion|count" />
+                    <r:RibbonButton Label="Most Popular Conclusion Report" ToolTip="{me:Info Image=/images/ConclusionCount_32x32.png,Body=MostPopularConclusionReportToolTip, Title='Most Popular Conclusion Report'}" SmallImageSource="/images/ConclusionCount_32x32.png" LargeImageSource="/images/ConclusionCount_32x32.png" x:Name="rbtMostPopularConclusionReport2" Click="rbtReport_Click" CommandParameter="MostPopularConclusion|count" />
+                    <r:RibbonMenuButton Label="Other Reports" ToolTip="{me:Info Image=/images/reports-icon.png,Body=OtherReportsToolTip, Title='Other Reports'}" SmallImageSource="/images/reports-icon.png" LargeImageSource="/images/reports-icon.png">
+                        <r:RibbonMenuItem Header="Asset Report" ToolTip="{me:Info Image=/images/AssetReport.png,Body=AssetReportToolTip, Title='Asset Report'}" ImageSource="/images/AssetReport.png" Click="rbtReport_Click" CommandParameter="AssetReport|algos|currentDate"/>
+                        <r:RibbonMenuItem Header="Asset Report with base language" ToolTip="{me:Info Image=/images/AssetReportLanguage.png,Body=AssetReportToolTip, Title='Asset Report'}" ImageSource="/images/AssetReportLanguage.png" Click="rbtReport_Click" CommandParameter="AssetReport|algos|currentDate|Language~"/>
+                        <r:RibbonMenuItem Header="TextAsset Report" ToolTip="{me:Info Image=/images/Text_32x32.png,Body=TextAssetReportToolTip, Title='TextAsset Report'}" ImageSource="/images/Text_32x32.png" Click="rbtReport_Click" CommandParameter="TextAssets|algos|TextAsset"/>
+                        <r:RibbonMenuItem x:Name="McKessonAlgoSummary" Header="APH Algo Summary" ToolTip="{me:Info Image=/images/Reconcile_32x32.png,Body=McKessonAlgoSummaryToolTip, Title='APH Algo Summary'}" ImageSource="/images/Reconcile_32x32.png" Click="rbtReport_Click" CommandParameter="McKessonAlgoSummary|algos|currentDate"/>
+                        <r:RibbonMenuItem x:Name="McKessonAssetReport" Header="APH Asset Report" ToolTip="{me:Info Image=/images/Reconcile_32x32.png,Body=McKessonAssetReportToolTip, Title='APH Asset Report'}" ImageSource="/images/Reconcile_32x32.png" Click="rbtReport_Click" CommandParameter="McKessonAssetReport|algos|currentDate"/>
+                        <r:RibbonMenuItem x:Name="McKessonAlgoSummaryConsumer" Header="APH Algo Summary - Consumer" ToolTip="{me:Info Image=/images/Reconcile_32x32.png,Body=McKessonAlgoSummaryToolTip, Title='APH Algo Summary'}" ImageSource="/images/Reconcile_32x32.png" Click="rbtReport_Click" CommandParameter="McKessonAlgoSummary|algos|currentDate|Consumer:true"/>
+                        <r:RibbonMenuItem x:Name="McKessonAssetReportConsumer" Header="APH Asset Report - Consumer" ToolTip="{me:Info Image=/images/Reconcile_32x32.png,Body=McKessonAssetReportToolTip, Title='APH Asset Report'}" ImageSource="/images/Reconcile_32x32.png" Click="rbtReport_Click" CommandParameter="McKessonAssetReport|algos|currentDate|Consumer:true"/>
+                        <r:RibbonMenuItem x:Name="McKessonSelfcareListing" Header="APH Selfcare Listing" ToolTip="{me:Info Image=/images/Reconcile_32x32.png,Body=McKessonSelfcareListingToolTip, Title='APH Selfcare Listing'}" ImageSource="/images/Reconcile_32x32.png" Click="rbtReport_Click" CommandParameter="McKessonSelfcareListing"/>
+                        <r:RibbonMenuItem Header="Run Named Report" ToolTip="{me:Info Image=/images/reports-icon.png,Body=RunNamedReportToolTip, Title='Run Named Report'}" ImageSource="/images/reports-icon.png" Click="rbtReport_Click" CommandParameter="ReportType|algos|currentDate"/>
+                    </r:RibbonMenuButton>
+                </r:RibbonGroup>
+                <r:RibbonGroup>
+                    <r:RibbonMenuButton Label="AdHoc Reports" ToolTip="{me:Info Image=/images/adhoc.png,Body=AdHocReportsToolTip, Title='AdHoc Reports'}" SmallImageSource="/images/adhoc.png" LargeImageSource="/images/adhoc.png" DropDownOpened="rbtAdHoc_Drop" >
+                        <r:RibbonMenuItem ImageSource="/images/Folder-Open-icon.png" Header="this">
+                            <r:RibbonMenuItem ImageSource="/images/AssetReport.png" Header="test"></r:RibbonMenuItem>
+                        </r:RibbonMenuItem>
+                    </r:RibbonMenuButton>
+                    <!--<r:RibbonButton Label="Run Named Report" ToolTip="{me:Info Image=/images/reports-icon.png,Body=RunNamedReportToolTip, Title='Run Named Report'}" SmallImageSource="/images/reports-icon.png" LargeImageSource="/images/reports-icon.png" x:Name="rbtNamedReport" Click="rbtReport_Click" CommandParameter="ReportType|algos|currentDate" />-->
+                </r:RibbonGroup>
+            </r:RibbonTab>
+            <r:RibbonTab Header="Text" Loaded="LoadEnvironments">
+                <r:RibbonGroup>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Width="45" VerticalAlignment="Center">Source:</TextBlock>
+                            <ComboBox Width="160" x:Name="taSource" ToolTip="{me:Info Title='Source List',Body=TargetToolTip}" IsEditable="False" IsReadOnly="False" SelectionChanged="LanguageRolloutChanged" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Width="45" VerticalAlignment="Center">Target:</TextBlock>
+                            <ComboBox Width="160" x:Name="taTarget" ToolTip="{me:Info Title='Target List',Body=TargetToolTip}" IsEditable="False" IsReadOnly="False" SelectionChanged="LanguageRolloutChanged" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Width="45" VerticalAlignment="Center">Language:</TextBlock>
+                            <TextBox Width="160" x:Name="taLanguage" ToolTip="{me:Info Title='Language',Body=PublishLanguageToolTip}" IsReadOnly="False" TextChanged="LanguageRolloutChanged" />
+                        </StackPanel>
+                    </StackPanel>
+                </r:RibbonGroup>
+                <r:RibbonGroup>
+                    <r:RibbonButton Label="Translation Summary Report" ToolTip="{me:Info Image=/images/AssetReportLanguage.png,Body=ListTranslationsToolTip, Title='Translation Summary Report'}" SmallImageSource="/images/AssetReportLanguage.png" LargeImageSource="/images/AssetReportLanguage.png" x:Name="rbtSummaryTranslations" Click="rbtListTranslations_Click" CommandParameter="Summary" />
+                    <r:RibbonButton IsEnabled="False" Label="Translation Compare Report" ToolTip="{me:Info Image=/images/AssetReportLanguage.png,Body=ListTranslationsToolTip, Title='Translation Compare Report'}" SmallImageSource="/images/AssetReportLanguage.png" LargeImageSource="/images/AssetReportLanguage.png" x:Name="rbtCompareTranslations" Click="rbtListTranslations_Click" CommandParameter="Compare" />
+                    <r:RibbonButton IsEnabled="False" Label="Release Translation" ToolTip="{me:Info Image=/images/AssetReportLanguage.png,Body=ListTranslationsToolTip, Title='Translation Compare Report'}" SmallImageSource="/images/AssetReportLanguage.png" LargeImageSource="/images/AssetReportLanguage.png" x:Name="rbtExecuteTranslations" Click="rbtListTranslations_Click" CommandParameter="Execute" />
+                </r:RibbonGroup>
+            </r:RibbonTab>
+            <r:RibbonTab Header="Tools">
+                <r:RibbonGroup>
+                    <r:RibbonButton Label="Check File Locations" ToolTip="{me:Info Image=/images/Save-icon.png,Body=CheckFileLocationsToolTip, Title='Check File Locations'}" SmallImageSource="/images/Save-icon.png" LargeImageSource="/images/Save-icon.png" x:Name="rbtCheckFileLocations" Click="rbtCheckFileLocations_Click" CommandParameter="CheckFileLocations" />
+                </r:RibbonGroup>
+            </r:RibbonTab>
+        </r:Ribbon>
+        <Grid>
+            <Grid DockPanel.Dock="Top" x:Name="mainGrid">
+                <Grid.Effect>
+                    <BlurEffect x:Name="gridBlur" Radius="0"/>
+                </Grid.Effect>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="23" />
+                    <RowDefinition x:Name="AssetRow" Height="0"/>
+                    <RowDefinition />
+                    <RowDefinition Height="23" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition x:Name="AlgoColumn" Width="500"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition x:Name="AssetColumn" Width="0"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.ColumnSpan="3" x:Name="pnlHeader" VerticalAlignment="Top">
+                    <DockPanel>
+                        <Label Content="Algo IDs" />
+                        <TextBox Height="23" x:Name="txt_Language" Width="170" DockPanel.Dock="Right" Visibility="Collapsed" TabIndex="3" />
+                        <Label x:Name="lbl_Language" Content="Script for language" DockPanel.Dock="Right" Visibility="Collapsed" />
+                        <TextBox DataObject.Pasting="textBox1_Pasting" PreviewTextInput="textBox1_PreviewTextInput" TextChanged="textBox1_TextChanged" Height="23" x:Name="txt_Excluded" MinWidth="170" DockPanel.Dock="Right" TabIndex="2" />
+                        <Label x:Name="lbl_Excluded" Content="Excluded Algo IDs" DockPanel.Dock="Right" />
+                        <TextBox DataObject.Pasting="textBox1_Pasting" PreviewTextInput="textBox1_PreviewTextInput" TextChanged="textBox1_TextChanged" Height="23" x:Name="textBox1" TabIndex="1" />
+                    </DockPanel>
+                </StackPanel>
+                <!--<me:qcat x:Name="qcat1" Grid.Row="1" Grid.Column="1" />-->
+                <DataGrid EnableColumnVirtualization="True" EnableRowVirtualization="True" VirtualizingStackPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling" VirtualizingPanel.ScrollUnit="Item" ItemsSource="{Binding Source={StaticResource cvsLoadedAlgos}}" RowHeight="20" Grid.Row="2" MouseDown="dataGrid1_MouseUp" LayoutUpdated="dataGrid1_LayoutUpdated" Sorting="dataGrid1_Sorting" CanUserAddRows="False" CanUserResizeRows="False" CanUserSortColumns="True" SelectedCellsChanged="dataGrid1_SelectedCellsChanged" MouseDoubleClick="dataGrid1_MouseDoubleClick" Grid.Column="0" Margin="0,0,3,0" AlternationCount="2" AutoGenerateColumns="False" x:Name="dataGrid1">
+                    <DataGrid.Resources>
+                        <Style TargetType="{x:Type DataGrid}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Consumer}" Value="True">
+                                    <Setter Property="AlternatingRowBackground" Value="LightPink" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                        <Style TargetType="{x:Type DataGridCell}">
+                            <Style.Triggers>
+                                <Trigger Property="IsEnabled" Value="True">
+                                    <Setter Property="ToolTip" Value="{StaticResource AlgoToolTip}" />
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="False">
+                                    <Setter Property="BorderBrush" Value="#00FFFFFF" />
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="#FF3399FF" />
+                                    <Setter Property="BorderBrush" Value="#FF3399FF" />
+                                </Trigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding RelativeSource={RelativeSource Mode=Self}, Path=IsSelected}" Value="True" />
+                                        <Condition Binding="{Binding LoadID}" Value="" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Background" Value="Red" />
+                                    <Setter Property="BorderBrush" Value="Red" />
+                                </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding RelativeSource={RelativeSource Mode=Self}, Path=IsSelected}" Value="True" />
+                                        <Condition Binding="{Binding Path=Consumer}" Value="True" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Background" Value="Green" />
+                                    <Setter Property="BorderBrush" Value="Green" />
+                                </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding RelativeSource={RelativeSource Mode=Self}, Path=IsSelected}" Value="True" />
+                                        <Condition Binding="{Binding Path=Exclude}" Value="True" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Background" Value="Orange" />
+                                    <Setter Property="BorderBrush" Value="Orange" />
+                                </MultiDataTrigger>
+                                <DataTrigger Binding="{Binding LoadID}" Value="">
+                                    <Setter Property="ToolTip" Value="{StaticResource InvalidAlgoToolTip}" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Consumer}" Value="True">
+                                    <Setter Property="ToolTip" Value="{StaticResource ConsumerAlgoToolTip}" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                        <Style TargetType="{x:Type DataGridRow}">
+                            <Style.Triggers>
+                                <Trigger Property="AlternationIndex" Value="1">
+                                    <Setter Property="Background" Value="AliceBlue" />
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="False">
+                                    <Setter Property="Visibility" Value="{DynamicResource UnselectedAlgoRow}" />
+                                </Trigger>
+                                <DataTrigger Binding="{Binding LoadID}" Value="">
+                                    <Setter Property="Foreground" Value="Red" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Consumer}" Value="True">
+                                    <Setter Property="Background" Value="#FFDAFFD6" />
+                                </DataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding RelativeSource={RelativeSource Mode=Self}, Path=AlternationIndex}" Value="1" />
+                                        <Condition Binding="{Binding Path=Consumer}" Value="True" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Background" Value="#FFE0FFE0" />
+                                </MultiDataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="AlgoID" Binding="{Binding AlgoID, Mode=OneWay}" Visibility="Collapsed"/>
+                        <DataGridTemplateColumn SortMemberPath="UserName" Width="Auto" ClipboardContentBinding="{Binding UserName}">
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock ToolTip="{me:Info Body=UserNameColumnToolTip, Title=User Name}"><Run Text="User Name"/></TextBlock>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding UserName, Mode=OneWay}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn SortMemberPath="Title" Width="*" ClipboardContentBinding="{Binding Title}">
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock ToolTip="{me:Info Body=TitleColumnToolTip, Title=Title}"><Run Text="Title"/></TextBlock>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Title, Mode=OneWay}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn SortMemberPath="Promoted" SortDirection="Descending" Width="Auto" ClipboardContentBinding="{Binding Promoted}">
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock ToolTip="{me:Info Body=PromotedColumnToolTip, Title=Promoted}"><Run Text="Promoted"/></TextBlock>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Promoted, Mode=OneWay, StringFormat=\{0:dd MMM yyyy HH:mm:ss\}}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <GridSplitter Grid.Row="1" Grid.Column="0" x:Name="separator1" Width="3" />
+                <!-- TextWrapping="Wrap" IsReadOnly="True" TextChanged="txtScript_TextChanged" FontFamily="Consolas" -->
+                <DockPanel Grid.Row="2" Grid.Column="1" LastChildFill="True">
+                    <DockPanel x:Name="FullPanel" x:FieldModifier="public" DockPanel.Dock="Top" />
+                    <Grid>
+                        <TextBox Visibility="Visible" TextWrapping="Wrap" IsReadOnly="True" FontFamily="Consolas" DragDrop.PreviewDragOver="txtScript_PreviewDrop" DragDrop.PreviewDragEnter="txtScript_PreviewDrop" DragDrop.Drop="DropAssets" x:Name="txtScriptTextBox" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+                        <wpf:WebView2 Visibility="Collapsed" DragDrop.PreviewDragOver="txtScript_PreviewDrop" DragDrop.PreviewDragEnter="txtScript_PreviewDrop" DragDrop.Drop="DropAssets" x:Name="txtScript" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+                    </Grid>
+                </DockPanel>
+                <Image IsHitTestVisible="False" x:Name="imgDropAssets" Opacity="0" Source="/images/DropAssets.png" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="None" />
+                <ListBox SelectionMode="Extended" DragDrop.Drop="DropAssets" x:Name="lstAssets" Grid.Row="2" Grid.Column="2" KeyDown="lstAssets_KeyDown"/>
+                <StatusBar Grid.Row="3" Grid.ColumnSpan="3" DockPanel.Dock="Bottom" Height="23" x:Name="stsInfo" VerticalAlignment="Bottom">
+                    <StatusBarItem x:Name="sbiInfo"/>
+                </StatusBar>
+            </Grid>
+            <!--<Canvas IsHitTestVisible="False" DragDrop.Drop="DropAssets" x:Name="dropCanvas" x:FieldModifier="public" Background="Transparent" Visibility="Hidden" AllowDrop="True" />-->
+            <Canvas x:Name="greyCanvas" x:FieldModifier="public" Background="AliceBlue" Visibility="Hidden" Opacity="0.6" />
+            <Grid x:Name="controlGrid" HorizontalAlignment="Center" VerticalAlignment="Center"></Grid>
+        </Grid>
+    </DockPanel>
+</con:ABRibbonWindow>

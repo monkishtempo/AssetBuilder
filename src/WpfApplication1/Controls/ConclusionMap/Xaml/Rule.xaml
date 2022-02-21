@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="ConclusionMap.Controls.Rule"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ConclusionMap.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Border CornerRadius="5" BorderBrush="RoyalBlue" BorderThickness="1" Padding="5" Margin="5">
+            <Grid Background="#FFEDF3F8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <DockPanel Grid.ColumnSpan="2">
+                    <Button Height="24" Margin="5,0" Background="{DynamicResource AddBackground}" Click="AddTrigger" IsEnabled="{Binding Path=DataContext.EditMode, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:Map}}" >+ Trigger</Button>
+                    <Button Height="24" Margin="5,0" Background="{DynamicResource AddBackground}" Click="AddAction" IsEnabled="{Binding Path=DataContext.EditMode, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:Map}}">+ Action</Button>
+                    <Label VerticalContentAlignment="Center" Width="170" HorizontalContentAlignment="Right">Rule name</Label>
+                    <TextBox VerticalContentAlignment="Center" x:Name="RuleName" Height="30" VerticalAlignment="Center" Text="{Binding ruleName}" />
+                </DockPanel>
+                <Border CornerRadius="5" BorderBrush="Green" BorderThickness="1" Padding="5" Margin="5" Grid.Column="0" Grid.Row="2">
+                    <ItemsControl x:Name="Triggers"  ItemsSource="{Binding triggers}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="28" />
+                                    </Grid.ColumnDefinitions>                                
+                                    <local:Trigger />
+                                    <Button Grid.Column="1" IsEnabled="{Binding Path=DataContext.EditMode, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:Map}}" Grid.Row="0" Margin="1,2,1,2" Width="24" Height="24" FontFamily="MS Gothic" FontSize="18.667" Content="-" Background="{DynamicResource DeleteBackground}" Click="DeleteItem" />
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Border>
+                <Border CornerRadius="5" BorderBrush="Brown" BorderThickness="1" Padding="5" Margin="5" Grid.Column="1" Grid.Row="2">
+                    <ItemsControl x:Name="Actions" ItemsSource="{Binding actions}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="28" />
+                                    </Grid.ColumnDefinitions>
+                                    <local:Action />
+                                    <Button Grid.Column="1" IsEnabled="{Binding Path=DataContext.EditMode, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:Map}}" Grid.Row="0" Margin="1,2,1,2" Width="24" Height="24" FontFamily="MS Gothic" FontSize="18.667" Content="-" Background="{DynamicResource DeleteBackground}" Click="DeleteItem" />
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

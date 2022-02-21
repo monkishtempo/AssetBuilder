@@ -1,0 +1,152 @@
+﻿<UserControl x:Class="NaturalLanguageWizard.NLWControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:NaturalLanguageWizard">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="FontSize" Value="14.667" />
+            </Style>
+            <Style TargetType="{x:Type Expander}">
+                <Setter Property="FontSize" Value="14.667" />
+            </Style>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="FontSize" Value="14.667" />
+                <Style.Triggers>
+                    <Trigger Property="Content" Value="Add">
+                        <Setter Property="Margin" Value="0,0,6,6"></Setter>
+                        <Setter Property="Width" Value="96"></Setter>
+                        <Setter Property="VerticalAlignment" Value="Bottom"></Setter>
+                        <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+                    </Trigger>
+                    <Trigger Property="Content" Value="Restore Last">
+                        <Setter Property="Margin" Value="0,6,6,0"></Setter>
+                        <Setter Property="Width" Value="96"></Setter>
+                        <Setter Property="VerticalAlignment" Value="Top"></Setter>
+                        <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+						<Setter Property="Visibility" Value="Collapsed" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="FontSize" Value="14.667" />
+            </Style>
+            <Style TargetType="{x:Type TabItem}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TabItem}">
+                            <Grid>
+                                <Border Name="Border" Margin="0,0,0,0" BorderBrush="#888" BorderThickness="1,1,1,1" CornerRadius="12,12,0,0" >
+                                    <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center" ContentSource="Header" Margin="12,2,12,2" RecognizesAccessKey="True"/>
+                                </Border>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Panel.ZIndex" Value="100" />
+                                    <Setter TargetName="Border" Property="Background" Value="#FFF" />
+                                    <Setter TargetName="Border" Property="BorderThickness" Value="1,1,1,0" />
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="Border" Property="Background" Value="#EEE" />
+                                    <Setter TargetName="Border" Property="BorderBrush" Value="#EEE" />
+                                    <Setter Property="Foreground" Value="#EEE" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+        <DockPanel Name="stackPanel1" FocusManager.IsFocusScope="True">
+            <StackPanel Height="44" DockPanel.Dock="Bottom">
+                <Button Height="30" Name="btnInsert" Width="177" HorizontalAlignment="Right" Margin="0,6,6,6" Click="btnInsert_Click">Insert Natural Language</Button>
+            </StackPanel>
+            <TabControl DockPanel.Dock="Bottom" Height="200">
+                <TabItem Header="Gender" Name="expGender" Background="SkyBlue" ToolTip="Insert text or delimit further entries for just males or females:">
+                    <Border BorderThickness="1" BorderBrush="Black" Background="SkyBlue">
+                        <Grid>
+                            <local:InsertText Description="Insert text:" Margin="6,6,120,6" x:Name="txtGender" VerticalAlignment="Bottom"></local:InsertText>
+                            <RadioButton IsChecked="True" Margin="160,10,0,0" Height="20.677" VerticalAlignment="Top" x:Name="rbtnFemales" Tag="F" Content="Females" />
+                            <RadioButton IsChecked="False" Margin="160,44,0,0" VerticalAlignment="Top" x:Name="rbtnMales" Tag="M" Content="Males" />
+                            <Button Name="btnGender" Click="btnGender_Click" Content="Add" />
+                            <Button Name="btnGenderRestore" Click="btnGenderRestore_Click" IsEnabled="False" Content="Restore Last"></Button>
+                        </Grid>
+                    </Border>
+                </TabItem>
+                <TabItem Header="Age" Name="expAgeRange" Background="SpringGreen" ToolTip="Insert text or delimit further entries for a specific age range:">
+                    <Border BorderThickness="1" BorderBrush="Black" Background="SpringGreen">
+                        <Grid>
+                            <local:InsertText Description="Insert text:" x:Name="txtAgeRange" Margin="6,6,120,6" VerticalAlignment="Bottom"></local:InsertText>
+                            <TextBlock HorizontalAlignment="Left" Margin="6,6,0,0" Name="textBlock3" VerticalAlignment="Top" Width="72" Text="From age:" Height="19.507" />
+                            <TextBox HorizontalAlignment="Left" Margin="84,6,0,0" x:Name="txtFrom" Width="50" Height="24" VerticalAlignment="Top" MaxLength="3" PreviewLostKeyboardFocus="txtAge_PreviewLostKeyboardFocus" PreviewTextInput="txtNumber_PreviewTextInput" KeyDown="txtAge_KeyDown" />
+                            <TextBlock HorizontalAlignment="Left" Margin="6,40,0,0" Name="textBlock4" Width="72" Text="To age:" Height="21.269" VerticalAlignment="Top" />
+                            <TextBox Height="23.27" HorizontalAlignment="Left" Margin="84,40,0,0" x:Name="txtTo" VerticalAlignment="Top" Width="50" MaxLength="3" PreviewLostKeyboardFocus="txtAge_PreviewLostKeyboardFocus" PreviewTextInput="txtNumber_PreviewTextInput" KeyDown="txtAge_KeyDown" />
+                            <RadioButton Margin="160,10,0,0" x:Name="rbtnDays" VerticalAlignment="Top" Tag="d" Content="days" />
+                            <RadioButton Margin="240,10,0,0" x:Name="rbtnWeeks" VerticalAlignment="Top" Tag="w" Content="weeks" />
+                            <RadioButton Margin="160,44,0,0" x:Name="rbtnMonths" VerticalAlignment="Top" Tag="m" Content="months" />
+                            <RadioButton Margin="240,44,0,0" x:Name="rbtnYears" VerticalAlignment="Top" IsChecked="True" Tag="y" Content="years" />
+                            <Button Name="btnAgeRange" Click="btnAgeRange_Click" IsEnabled="False">Add</Button>
+                            <Button Name="btnAgeRangeRestore" Click="btnAgeRangeRestore_Click" IsEnabled="False">Restore Last</Button>
+                        </Grid>
+                    </Border>
+                </TabItem>
+                <TabItem Header="Answer" Name="expAnswer" Background="LightSeaGreen" ToolTip="Insert the answer(s) to a question:">
+                    <Border BorderThickness="1" BorderBrush="Black" Background="LightSeaGreen">
+                        <Grid>
+                            <local:TextPredictor IsFiltered="False" x:Name="tpQuestion" Margin="120,40,6,0" VerticalAlignment="Top" Height="24"/>
+                            <TextBlock HorizontalAlignment="Left" Margin="6,40,0,0" Name="textBlock7" VerticalAlignment="Top" Width="88" Text="Question ID:" />
+                            <Button Name="btnAnswer" Click="btnAnswer_Click" IsEnabled="False">Add</Button>
+                            <GroupBox Margin="0,76,100,6" Name="gpbxFirstLetter" Header="Make first letter of answer:" Visibility="Hidden" HorizontalAlignment="Right" Width="198">
+                                <Grid>
+                                    <RadioButton Margin="20,6,0,0" Name="rbtnUpperCase" IsChecked="True" Tag="u">Upper case</RadioButton>
+                                    <RadioButton Margin="20,32,0,0" Name="rbtnLowerCase" Tag="l">Lower case</RadioButton>
+                                </Grid>
+                            </GroupBox>
+                            <GroupBox Header="If more than one answer, join the last 2 answers with:" Margin="6,76,300,6" Name="gpbxJoin" Visibility="Hidden">
+                                <Grid>
+                                    <RadioButton Margin="20,6,0,0" Name="rbtnOr" IsChecked="True" Tag="lo">...or... (e.g. Sunday, Monday or Tuesday)</RadioButton>
+                                    <RadioButton Margin="20,32,0,0" Name="rbtnAnd" Tag="la">...and... (e.g. Sunday, Monday and Tuesday)</RadioButton>
+                                </Grid>
+                            </GroupBox>
+                            <local:TextPredictor Margin="120,6,108,0" x:Name="tpAlgo" VerticalAlignment="Top" Height="24" AssetSelected="tpAlgo_AssetSelected" />
+                            <TextBlock HorizontalAlignment="Left" Margin="6,6,0,0" Name="textBlock2" Text="Enter Algo ID:" VerticalAlignment="Top" Width="88" Height="19.507" />
+                            <Button Name="btnAnswerRestore" Click="btnAnswerRestore_Click" IsEnabled="False">Restore Last</Button>
+                        </Grid>
+                    </Border>
+                </TabItem>
+                <TabItem Header="Question and Answer" Name="expTest" Background="LightGray" ToolTip="Insert text if a question/answer pair is reached and/or not reached:">
+                    <Border BorderThickness="1" BorderBrush="Black" Background="LightGray">
+                        <Grid>
+                            <local:InsertText Description="if reached:" x:Name="txtPairReached" Margin="6,6,120,40"  VerticalAlignment="Bottom" />
+                            <local:InsertText Description="NOT reached:" x:Name="txtPairNotReached" Margin="6,6,120,6" VerticalAlignment="Bottom" />
+                            <TextBlock HorizontalAlignment="Left" Margin="6,34,0,0" Name="textBlock8" Text="If Question ID:" VerticalAlignment="Top" />
+                            <TextBlock HorizontalAlignment="Left" Margin="6,64,0,0" Name="textBlock9" Text="and Answer ID:" VerticalAlignment="Top" />
+                            <Button Name="btnPair" Click="btnPair_Click" IsEnabled="False">Add</Button>
+                            <ComboBox Margin="120,64,0,0" Height="24" VerticalAlignment="Top" x:Name="cbxPairAnswerID" IsEditable="False" SelectionChanged="cbxPairAnswerID_SelectionChanged" IsEnabled="False" HorizontalAlignment="Left" Width="119.687" />
+                            <TextBlock Margin="250,68,6,0" VerticalAlignment="Top" Height="24" Name="tbkPairAnswerDesc" TextWrapping="Wrap" />
+                            <TextBlock Height="23.324" HorizontalAlignment="Left" Margin="10,5.831,0,0" Name="textBlock1" Text="Enter Algo ID:" VerticalAlignment="Top" Width="91.809" />
+                            <local:TextPredictor x:Name="tpPairAlgo" Margin="120,6,108,0" VerticalAlignment="Top" AssetSelected="tpPairAlgo_AssetSelected" Height="21.96" />
+                            <local:TextPredictor IsFiltered="False"  x:Name="tpPairQuestion" Margin="120,34,6,0"  VerticalAlignment="Top" Height="21.96" />
+                            <Button Name="btnPairRestore" Click="btnPairRestore_Click" IsEnabled="False">Restore Last</Button>
+                        </Grid>
+                    </Border>
+                </TabItem>
+                <TabItem Header="Conclusion" Name="expConc" Background="Teal" ToolTip="Insert text if a conclusion is reached and/or not reached:">
+                    <Border BorderThickness="1" BorderBrush="Black" Background="Teal">
+                        <Grid>
+                            <local:InsertText Description="if reached:" x:Name="txtConclusionReached" Margin="6,6,120,40"  VerticalAlignment="Bottom" />
+                            <local:InsertText Description="NOT reached:" x:Name="txtConclusionNotReached" Margin="6,6,120,6"  VerticalAlignment="Bottom" />
+                            <TextBlock HorizontalAlignment="Left" Margin="6,40,0,0" Name="textBlock12" Text="If Conclusion ID:" Height="24" VerticalAlignment="Top" />
+                            <Button Name="btnConclusion" Click="btnConclusion_Click" IsEnabled="False">Add</Button>
+                            <local:TextPredictor IsFiltered="False" x:Name="tpConclusion" Margin="120,40,6,0" VerticalAlignment="Top" Height="24" />
+                            <TextBlock Height="24" Margin="6,6,0,0" Name="textBlock5" Text="Enter Algo ID:" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                            <local:TextPredictor Margin="120,6,108,0" x:Name="tpConclusionAlgo" VerticalAlignment="Top" AssetSelected="tpConclusionAlgo_AssetSelected" Height="24" />
+                            <Button Name="btnConclusionRestore" Click="btnConclusionRestore_Click" IsEnabled="False">Restore Last</Button>
+                        </Grid>
+                    </Border>
+                </TabItem>
+            </TabControl>
+            <local:ABRichTextBox x:Name="txtInsert" VerticalScrollBarVisibility="Auto" />
+        </DockPanel>
+    </Grid>
+</UserControl>

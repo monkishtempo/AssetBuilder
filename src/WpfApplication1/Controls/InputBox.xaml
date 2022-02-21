@@ -1,0 +1,84 @@
+﻿<Window x:Class="AssetBuilder.Controls.InputBox"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		Title="InputBox" SizeToContent="WidthAndHeight" ResizeMode="NoResize" Loaded="Window_Loaded">
+	<Grid>
+		<StackPanel Name="stackPanel1" VerticalAlignment="Bottom">
+			<Label Content="" Name="lblPromt"/>
+			<Grid Visibility="Collapsed" Name="Comments">
+				<CheckBox Height="16" Margin="12,12,12,0" Name="chkBlank" VerticalAlignment="Top">Blank</CheckBox>
+				<CheckBox Height="16" Margin="12,32,12,0" Name="chkNew" VerticalAlignment="Top">New asset</CheckBox>
+				<CheckBox Height="16" Margin="12,52,12,0" Name="chkSpell" VerticalAlignment="Top">Spelling or grammar correction</CheckBox>
+				<CheckBox Height="16" Margin="12,72,12,0" Name="chkClarify" VerticalAlignment="Top">Clarification of meaning</CheckBox>
+                <CheckBox Height="16" Margin="12,92,12,0" Name="chkChange" VerticalAlignment="Top">Change of meaning</CheckBox>
+                <CheckBox Height="16" Margin="12,112,12,0" Name="chkCategory" VerticalAlignment="Top">Category change</CheckBox>
+                <CheckBox Height="16" Margin="12,132,12,0" Name="chkAdditional" VerticalAlignment="Top">Additional information</CheckBox>
+				<CheckBox Height="16" Margin="12,152,12,0" Name="chkNoApproval" VerticalAlignment="Top">No approval required</CheckBox>
+                <CheckBox Height="16" Margin="12,172,12,0" Name="chkBullet" VerticalAlignment="Top">Bullet change</CheckBox>
+                <CheckBox Height="16" Margin="12,192,12,12" Name="chkOther" VerticalAlignment="Top">Other</CheckBox>
+			</Grid>
+			<Grid Visibility="Collapsed" Name="MergeLanguage">
+				<CheckBox Height="16" Margin="12,12,12,0" Name="chkMerge" CommandParameter="Merge" VerticalAlignment="Top">Merge Language</CheckBox>
+				<CheckBox Height="16" Margin="12,32,12,12" Name="chkSplit" CommandParameter="Split" VerticalAlignment="Top">Show Translation Column</CheckBox>
+			</Grid>
+            <Grid Visibility="Collapsed" Name="TitleFields">
+                <CheckBox Height="16" Margin="12,12,12,0" Name="chkTitle" CommandParameter="0Title" VerticalAlignment="Top">Title</CheckBox>
+            </Grid>
+            <Grid Visibility="Collapsed" Name="AlgoFields">
+				<CheckBox Height="16" Margin="12,12,12,0" Name="chkAlgoExpert" CommandParameter="1Algo_Name" VerticalAlignment="Top">Algo Name</CheckBox>
+				<CheckBox Height="16" Margin="12,32,12,0" Name="chkAlgoLay" VerticalAlignment="Top" CommandParameter="1Word_Merge">Word Merge 1</CheckBox>
+				<CheckBox Height="16" Margin="12,52,12,12" Name="chkAlgoAnswer" VerticalAlignment="Top" CommandParameter="1WM2">Word Merge 2</CheckBox>
+			</Grid>
+			<Grid Visibility="Collapsed" Name="QuestionFields">
+				<CheckBox Height="16" Margin="12,12,12,0" Name="chkQueExpert" VerticalAlignment="Top" CommandParameter="2Expert Statement">Expert</CheckBox>
+				<CheckBox Height="16" Margin="12,32,12,0" Name="chkQueLay" VerticalAlignment="Top" CommandParameter="2Lay Statement">Summary</CheckBox>
+				<CheckBox Height="16" Margin="12,52,12,0" Name="chkQueAnswer" VerticalAlignment="Top" CommandParameter="2Question">Question</CheckBox>
+				<CheckBox Height="16" Margin="12,72,12,12" Name="chkQueExplanation" VerticalAlignment="Top" CommandParameter="2Explanation">Explanation</CheckBox>
+			</Grid>
+			<Grid Visibility="Collapsed" Name="AnswerFields">
+				<CheckBox Height="16" Margin="12,12,12,0" Name="chkAnsExpert" VerticalAlignment="Top" CommandParameter="3Expert Statement">Expert</CheckBox>
+				<CheckBox Height="16" Margin="12,32,12,0" Name="chkAnsLay" VerticalAlignment="Top" CommandParameter="3Lay Statement">Summary</CheckBox>
+				<CheckBox Height="16" Margin="12,52,12,0" Name="chkAnsAnswer" VerticalAlignment="Top" CommandParameter="3Answer">Answer</CheckBox>
+				<CheckBox Height="16" Margin="12,72,12,12" Name="chkAnsExplanation" VerticalAlignment="Top" CommandParameter="3Explanation">Explanation</CheckBox>
+			</Grid>
+			<Grid Visibility="Collapsed" Name="ConclusionFields">
+				<CheckBox Height="16" Margin="12,12,12,0" Name="chkConExpert" VerticalAlignment="Top" CommandParameter="4Expert Statement">Expert</CheckBox>
+				<CheckBox Height="16" Margin="12,32,12,0" Name="chkConLay" VerticalAlignment="Top" CommandParameter="4Lay Statement">Lay</CheckBox>
+				<CheckBox Height="16" Margin="12,52,12,0" Name="chkConExplanation" VerticalAlignment="Top" CommandParameter="4Explanation">Explanation</CheckBox>
+                <CheckBox Height="16" Margin="12,72,12,12" Name="chkConMoreDetail" VerticalAlignment="Top" CommandParameter="4More Detail">More Detail</CheckBox>
+                <CheckBox Height="16" Margin="12,92,12,12" Name="chkConBullets" VerticalAlignment="Top" CommandParameter="4Bullets">Bullets</CheckBox>
+            </Grid>
+			<Grid Visibility="Collapsed" Name="BulletFields">
+				<CheckBox Height="16" Margin="12,12,12,12" Name="chkBulBullet" VerticalAlignment="Top" CommandParameter="5Bullet">Bullet</CheckBox>
+			</Grid>
+            <Grid Visibility="Collapsed" Name="McKessonXml">
+                <Label Content="Release Name" Name="lblReleaseName"/>
+                <TextBox Name="txtReleaseName" MinWidth="200" TextChanged="textBox1_TextChanged" TabIndex="0" Margin="130,0,0,0" />
+                <Label Content="Release Description" Name="lblReleaseDescription" Margin="0,25,0,0"/>
+                <TextBox Name="txtReleaseDescription" MinWidth="200" TextChanged="textBox1_TextChanged" TabIndex="0" Margin="130,25,0,0" />
+                <Label Content="Release User" Name="lblReleaseUser" Margin="0,50,0,0"/>
+                <TextBox Name="txtReleaseUser" MinWidth="200" TextChanged="textBox1_TextChanged" TabIndex="0" Margin="130,50,0,0" />
+                <Label Content="Release Date" Name="lblReleaseDate" Margin="0,75,0,0"/>
+                <TextBox Name="txtReleaseDate" MinWidth="200" TextChanged="textBox1_TextChanged" TabIndex="0" Margin="130,75,0,0" />
+            </Grid>
+            <Grid Name="InputPanel">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label Content="test" Name="lblType"/>
+                <TextBox Name="textBox1" MinWidth="200" TextChanged="textBox1_TextChanged" TabIndex="0" Grid.Column="1"/>
+            </Grid>
+            <Grid Name="InputPanelCheckBox" Visibility="Collapsed">
+                <CheckBox Height="16" Margin="12,12,12,0" Name="chkBox1" Checked="chkBox1_Checked" Unchecked="chkBox1_Checked" VerticalAlignment="Top"></CheckBox>
+            </Grid>
+            <DockPanel HorizontalAlignment="Center">
+				<Button Margin="5" Width="80" Content="Cancel" Name="btnCancel" IsCancel="True" />
+				<Button Margin="5" Width="80" Content="OK" Name="btnOK" IsDefault="True" Click="btnOK_Click" />
+			</DockPanel>
+		</StackPanel>
+	</Grid>
+</Window>

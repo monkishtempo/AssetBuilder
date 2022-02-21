@@ -1,0 +1,101 @@
+﻿<local:TransparentControlWindow x:Class="CurveVisualiser.MainWindow"
+        xmlns:local="clr-namespace:CurveVisualiser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="600" Width="1000" Background="#01000000" AllowsTransparency="True" WindowStyle="None" MouseMove="ResetCursor">
+    <Window.Resources>
+        <Style x:Key="ResizeHandle" TargetType="{x:Type FrameworkElement}">
+            <Setter Property="Rectangle.Fill" Value="Transparent"/>
+            <Setter Property="Line.Stroke" Value="Transparent"/>
+            <EventSetter Event="MouseMove" Handler="ResizeIfPressed"/>
+            <EventSetter Event="PreviewMouseDown" Handler="ResizeIfPressed"/>
+        </Style>
+        <Style x:Key="MoveHandle" TargetType="{x:Type FrameworkElement}">
+            <EventSetter Event="MouseLeftButtonDown" Handler="DragWindow"/>
+            <!--<EventSetter Event="PreviewMouseDown" Handler="MoveIfPressed"/>-->
+        </Style>
+    </Window.Resources>
+    <Grid Name="grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="225"/>
+            <ColumnDefinition Width="292*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.ColumnSpan="2" Background="#FF8796F5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Style="{StaticResource MoveHandle}" Fill="#FF6BADF6" />
+            <DockPanel Grid.Column="1" TextBlock.TextAlignment="Center" Background="#FFE04343" PreviewMouseDown="DockPanel_PreviewMouseDown">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="16">x</TextBlock>
+            </DockPanel>
+        </Grid>
+        <Grid Grid.Row="1" Margin="0" Background="White"></Grid>
+        <Grid Grid.Row="1" Name="controls" Margin="10" Background="#FFD8E6DE">
+            <TextBox Name="MinX" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" GotFocus="TextBox_GotFocus"/>
+            <TextBox Name="MaxX" HorizontalAlignment="Left" Height="23" Margin="75,38,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" GotFocus="TextBox_GotFocus"/>
+            <TextBox Name="MinY" HorizontalAlignment="Left" Height="23" Margin="75,66,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" GotFocus="TextBox_GotFocus"/>
+            <TextBox Name="MaxY" HorizontalAlignment="Left" Height="23" Margin="75,94,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" GotFocus="TextBox_GotFocus"/>
+            <TextBox Name="Pres" HorizontalAlignment="Left" Height="23" Margin="75,150,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" GotFocus="TextBox_GotFocus"/>
+            <Label Content="Min-x" HorizontalAlignment="Right" Margin="0,6,135,0" VerticalAlignment="Top"/>
+            <Label Content="Min-y" HorizontalAlignment="Right" Margin="0,62,135,0" VerticalAlignment="Top"/>
+            <Label Content="Max-x" HorizontalAlignment="Right" Margin="0,34,135,0" VerticalAlignment="Top"/>
+            <Label Content="Max-y" HorizontalAlignment="Right" Margin="0,90,135,0" VerticalAlignment="Top"/>
+            <Label Content="Prescision" HorizontalAlignment="Right" Margin="0,148,135,0" VerticalAlignment="Top"/>
+            <Label Name="pos" Content=" " HorizontalAlignment="Right" Margin="0,0,10,73" RenderTransformOrigin="0.632,0.885" Height="26" VerticalAlignment="Bottom"/>
+            <Button Name="Clear" Content="Clear" HorizontalAlignment="Left" Margin="10,0,0,10" Width="75" Click="Clear_Click" Height="20" VerticalAlignment="Bottom"/>
+            <Button Name="Round" Content="Round" HorizontalAlignment="Left" Margin="90,0,0,10" Width="75" Click="Round_Click" Height="20" VerticalAlignment="Bottom"/>
+            <Label HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top">
+                <TextBlock Name="pointLabel" TextWrapping="WrapWithOverflow"></TextBlock>
+            </Label>
+            <CheckBox Name="Linear" HorizontalAlignment="Left" Margin="75,127,0,0" VerticalAlignment="Top" Checked="Linear_Checked" Unchecked="Linear_Checked"/>
+            <Label Content="Linear" HorizontalAlignment="Right" Margin="0,120,135,0" VerticalAlignment="Top"/>
+            <Slider HorizontalAlignment="Left" Margin="10,0,0,35" Width="185" Height="18" VerticalAlignment="Bottom" Value="100" Maximum="100" LargeChange="10" SmallChange="1" ValueChanged="Slider_ValueChanged"/>
+            <Label Content="Opacity" HorizontalAlignment="Left" Margin="10,0,0,53" Height="26" VerticalAlignment="Bottom"/>
+        </Grid>
+        <Grid Grid.Row="1" Name="opening" Grid.Column="1" Background="#ffffffff"></Grid>
+        <Rectangle Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Width="10" Fill="White"/>
+        <Rectangle Name="RightDragHandle" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Width="10" Margin="0,0,0,0" Style="{StaticResource ResizeHandle}">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    <GradientStop Offset="0"/>
+                    <GradientStop Offset="0.766"/>
+                    <GradientStop Color="#FF001057" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Height="10" Fill="Transparent"/>
+        <Rectangle Grid.Row="1" Name="BottomDragHandle" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="10" Style="{StaticResource ResizeHandle}">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Offset="0"/>
+                    <GradientStop Offset="0.766"/>
+                    <GradientStop Color="#FF001057" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Grid.Row="1" Name="BottomRightDragHandle" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="10" Width="10" Style="{StaticResource ResizeHandle}">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                    <GradientStop Offset="0"/>
+                    <GradientStop Offset="0.766"/>
+                    <GradientStop Color="#FF001057" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image Grid.Row="1" Name="graph" Grid.Column="1" Margin="10" MouseMove="graph_MouseMove" PreviewMouseDown="graph_MouseDown" SizeChanged="graph_SizeChanged" PreviewMouseWheel="graph_PreviewMouseWheel"/>
+        <Rectangle x:Name="LeftDragHandle" Grid.Row="1" Style="{StaticResource ResizeHandle}" HorizontalAlignment="Left" Width="10">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0,0.5" StartPoint="1,0.5">
+                    <GradientStop Offset="0"/>
+                    <GradientStop Offset="0.766"/>
+                    <GradientStop Color="#FF001057" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+    </Grid>
+</local:TransparentControlWindow>

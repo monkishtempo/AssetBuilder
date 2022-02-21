@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Title@ @Subtitle@</title>
+    <meta http-equiv='Content-Type' content='text/html;charset=UTF-8'>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://apps.expert-24.com/Reports/w3codecolor.js"></script>
+    <script type="text/javascript">var PageID = '@PageID@';</script>
+    <style type="text/css">
+        .highlight {
+            background-color: red;
+            color: white;
+        }
+
+        .e24subtext {
+            font-size: smaller;
+            font-style: italic;
+        }
+
+        h4.step {
+            font-weight: bold;
+            color: blue;
+        }
+
+        h4.title {
+            font-weight: bold;
+            color: black;
+        }
+
+        small::after {
+            content: " ";
+        }
+    </style>
+    <script type="text/javascript">
+        function highlight_all(o) {
+            var col = o.getAttribute('spanid');
+            var l = document.getElementsByTagName('span');
+            for (var i = 0; i < l.length; i++) {
+                if (l[i].getAttribute('spanid') == col) {
+                    l[i].setAttribute('oldcolor', l[i].style.color);
+                    l[i].removeAttribute('style');
+                    l[i].className = 'highlight';
+                }
+            }
+        }
+
+        function unhighlight_all(o) {
+            var l = document.getElementsByTagName('span');
+            for (var i = 0; i < l.length; i++) {
+                if (l[i].className == 'highlight') {
+                    l[i].className = '';
+                    l[i].style.color = l[i].getAttribute('oldcolor');
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="w3-container w3-light-grey">
+        <div style="float:right;" class="e24-login">Log in</div>
+        <h2>@Title@</h2>
+        <p>@SubTitle@</p>
+    </div>
+    <span class="w3-right">User: @User@ Date: @Now@</span>
+    <br />
+    @?HasQuestions.RenderQuestions@
+    @?HasConclusions.RenderConclusions@
+    <script type="text/javascript">w3CodeColor();</script>
+</body>
+</html>
+<script type="text/javascript" src="https://apps.expert-24.com/Comment/Script/e24Comment.js"></script>

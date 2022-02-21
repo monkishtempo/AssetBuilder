@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="AssetBuilder.TableGrid.AutoUpdateDataGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:TableGrid="clr-namespace:AssetBuilder.TableGrid" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <DataGrid x:Name="data" x:FieldModifier="public">
+            <DataGrid.Resources>
+                <DataTemplate x:Key="innerGrid">
+                    <TableGrid:AutoUpdateDataGrid x:Name="grid" ItemsSource="{Binding XPath=CodeInXml}" />
+                </DataTemplate>
+            </DataGrid.Resources>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <DataGrid Name="rowDetailsGrid"></DataGrid>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+    </Grid>
+</UserControl>

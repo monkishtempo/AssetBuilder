@@ -1,0 +1,23 @@
+﻿<div class="w3-panel">
+    <div class="w3-card-4">
+        <div class="w3-row w3-border">
+            <div class="w3-container w3-orange">
+                <h2>Asset counts</h2>
+            </div>
+        </div>
+        <div class="w3-container">
+            <div class="w3-half">
+                <ul class="w3-ul">
+                    @Source.AssetType@
+                </ul>
+            </div>
+            <div class="w3-half">
+                <ul class="w3-ul">
+                    @Target.AssetType@
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br />
+</div>
+@?HasDiffs.ShowDiffs@

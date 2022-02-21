@@ -1,0 +1,69 @@
+﻿<con:ABWindow x:Class="RiskCalc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:con="clr-namespace:AssetBuilder.Controls"
+        Title="MainWindow" Height="363" Width="722">
+    <con:ABWindow.Resources>
+        <SolidColorBrush x:Key="NormalBrush" Color="#FFABADB3"/>
+        <SolidColorBrush x:Key="HighlightedBrush" Color="#FF003AFF"/>
+    </con:ABWindow.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="138*"/>
+            <ColumnDefinition Width="254*"/>
+            <ColumnDefinition Width="125*"/>
+        </Grid.ColumnDefinitions>
+        <GridSplitter Grid.Column="0" Width="3" />
+        <GridSplitter Grid.Column="1" Width="3" />
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="279*"/>
+            </Grid.RowDefinitions>
+            <ComboBox Name="DDLAlgo" Margin="10,10,161,0" VerticalAlignment="Top" SelectionChanged="ComboBox_SelectionChanged">
+                <ComboBoxItem Content="Heart Disease 2013" Tag="3882"/>
+            </ComboBox>
+            <ComboBox Name="DDLUserType" Margin="0,10,76,0" Width="75" HorizontalAlignment="Right" VerticalAlignment="Top" SelectionChanged="ComboBox_SelectionChanged" />
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="0,0,3,0">
+                <StackPanel Name="Formulas"/>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <GridSplitter ResizeDirection="Rows" Grid.Row="0" Height="3" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
+            <ScrollViewer Grid.Row="0" Margin="0,0,3,31" VerticalScrollBarVisibility="Auto">
+                <StackPanel Name="Controls" Margin="5" />
+            </ScrollViewer>
+            <Grid Height="28" Margin="0,0,0,3" VerticalAlignment="Bottom">
+                <TextBox Name="ScenarioName" Margin="10,3,130,3" />
+                <Button x:Name="btnSave" Content="Save" Margin="0,3,70,3" HorizontalAlignment="Right" Width="50" Click="btnSave_Click" />
+                <Button x:Name="btnDelete" Content="Delete" Margin="0,3,10,3" HorizontalAlignment="Right" Width="50" Click="btnDelete_Click"/>
+            </Grid>
+            <Image Name="graph" Grid.Row="1" />
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <GridSplitter ResizeDirection="Rows" Grid.Row="0" Height="3" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" />
+            <ScrollViewer Grid.Row="0" Margin="0,0,0,3" VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <RadioButton Name="LogRR" Content="LogRR" Margin="0,0,10,0" Checked="updateControls" Unchecked="updateControls"/>
+                        <RadioButton Content="RR" IsChecked="True"/>
+                    </StackPanel>
+                    <DataGrid Name="Results" RowHeight="20" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" />
+                    <DataGrid Name="Totals" RowHeight="20" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" />
+                    <DataGrid Name="Timings" RowHeight="20" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" />
+                </StackPanel>
+            </ScrollViewer>
+            <ListBox Grid.Row="1" Name="Saved" SelectionChanged="Saved_SelectionChanged" MouseUp="Saved_MouseUp"/>
+        </Grid>
+        <Button x:Name="btnReset" Content="Reset" Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="59" Height="22" Click="btnReset_Click"/>
+
+    </Grid>
+</con:ABWindow>

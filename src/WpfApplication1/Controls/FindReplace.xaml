@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="AssetBuilder.AssetControls.FindReplace"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="405" Width="300">
+    <Grid>
+        <Label Margin="12,12,0,0" Name="label1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120">Find what:</Label>
+        <ComboBox IsEditable="True" Height="25" Margin="12,38,12,0" Name="comboBox1" VerticalAlignment="Top" TextBoxBase.TextChanged="comboBox1_TextChanged" />
+        <Label HorizontalAlignment="Left" Margin="12,67,0,0" Name="label2" VerticalAlignment="Top" Width="120">Replace with:</Label>
+        <ComboBox Height="25" IsEditable="True" Margin="12,93,12,0" Name="comboBox2" VerticalAlignment="Top" />
+        <Label HorizontalAlignment="Left" Margin="12,122,0,0" Name="label3" Width="120" VerticalAlignment="Top" >Look in:</Label>
+        <ComboBox Height="25" IsEditable="True" Margin="12,148,12,0" Name="comboBox3" VerticalAlignment="Top" TextBoxBase.TextChanged="comboBox1_TextChanged" />
+        <GroupBox Header="Find options" Margin="12,177,12,0" Name="groupBox1" Height="98" VerticalAlignment="Top">
+            <Grid>
+                <CheckBox Height="16" Margin="6,6,6,0" Name="checkBox1" VerticalAlignment="Top" Checked="comboBox1_TextChanged" Unchecked="comboBox1_TextChanged">Match case</CheckBox>
+                <CheckBox Margin="6,28,6,0" Name="checkBox2" Height="16" VerticalAlignment="Top" Checked="comboBox1_TextChanged" Unchecked="comboBox1_TextChanged">Match whole word</CheckBox>
+                <CheckBox Height="16" Margin="6,50.04,6,0" Name="checkBox3" VerticalAlignment="Top" Checked="comboBox1_TextChanged" Unchecked="comboBox1_TextChanged">Use wildcards</CheckBox>
+            </Grid>
+        </GroupBox>
+        <Grid VerticalAlignment="Bottom" Height="46" FocusManager.IsFocusScope="True">
+            <Button Height="23" HorizontalAlignment="Left" Margin="12,11,0,0" Name="button1" VerticalAlignment="Top" Width="88" Click="button1_Click">Find Next</Button>
+            <Button Margin="106,11,0,0" Name="button2" Click="button2_Click" HorizontalAlignment="Left" Width="88" Height="23" VerticalAlignment="Top">Replace</Button>
+            <Button HorizontalAlignment="Left" Margin="200,11,0,0" Name="button3" Width="88" Height="23" VerticalAlignment="Top" Click="button3_Click">Replace All</Button>
+        </Grid>
+    </Grid>
+</UserControl>

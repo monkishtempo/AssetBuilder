@@ -1,0 +1,288 @@
+﻿<con:ABRibbonWindow Icon="images/blocks-icon.ico"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:me="clr-namespace:AssetBuilder"
+	xmlns:con="clr-namespace:AssetBuilder.Controls"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:r="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary" 
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DataContext="{d:DesignInstance Type=me:ListItem}"
+                    x:Class="AssetBuilder.Window1" x:Name="mainwindow1"
+	Title="Asset Builder" Height="1000" Width="1200" WindowStyle="ThreeDBorderWindow" Background="White" mc:Ignorable="d" WindowStartupLocation="CenterScreen" KeyUp="RibbonWindow_KeyUp">
+	<!--<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary 
+				   Source="/RibbonControlsLibrary;component/Themes/Office2007Black.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Window.Resources>-->
+	<DockPanel>
+		<r:Ribbon x:Name="rbnApplication" DockPanel.Dock="Top" VerticalAlignment="Top">
+			<r:Ribbon.CommandBindings>
+				<CommandBinding Command="me:Window1.cmdAssetType" Executed="assetType_Click" />
+				<CommandBinding Command="me:Window1.cmdSearchType" Executed="searchType_Click" CanExecute="searchType_CanExecute" />
+				<CommandBinding Command="me:Window1.cmdCut" Executed="Cut_Click" CanExecute="Cut_CanExecute" />
+				<CommandBinding Command="me:Window1.cmdCopy" Executed="Copy_Click" CanExecute="Copy_CanExecute" />
+				<CommandBinding Command="me:Window1.cmdPaste" Executed="Paste_Click" CanExecute="Paste_CanExecute" />
+				<CommandBinding Command="me:Window1.cmdInsert" Executed="insert_Click" CanExecute="insert_CanExecute" />
+				<CommandBinding Command="me:Window1.cmdReport" Executed="report_Click" CanExecute="report_CanExecute" />
+				<CommandBinding Command="me:Window1.cmdService" Executed="Update_WebService" CanExecute="IsNotEditMode" />
+				<CommandBinding Command="me:Window1.cmdCollapse" Executed="Collapse_Executed" />
+				<CommandBinding Command="me:Window1.cmdPriority" Executed="Priority_Executed" />
+				<CommandBinding Command="me:Window1.cmdCategory" Executed="Category_Executed" />
+				<CommandBinding Command="me:Window1.cmdAutoSave" Executed="Change_AutoSave" />
+				<CommandBinding Command="me:Window1.cmdComments" Executed="Change_Comments" />
+				<CommandBinding Command="me:Window1.cmdDisableSpelling" Executed="Change_DisableSpelling" />
+				<CommandBinding Command="me:Window1.cmdValidation" Executed="Change_Validation" />
+				<CommandBinding Command="me:Window1.cmdHTMLValidation" Executed="Change_HTMLValidation" CanExecute="IsValidated" />
+                <CommandBinding Command="me:Window1.cmdAdditionalSettings" Executed="AdditionalSettings" CanExecute="IsNotEditMode" />
+                <CommandBinding Command="me:Window1.cmdUpdateDervivedAssets" Executed="Update_DerivedAssets" />
+                <CommandBinding Command="me:Window1.cmdCheckTransfers" Executed="Check_Transfers" />
+                <CommandBinding Command="me:Window1.cmdGetQuestionData" Executed="Get_Question_Data" CanExecute="SingleQuestionSelected" />
+                <CommandBinding Command="me:Window1.cmdTriageMode" Executed="Change_TriageMode" />
+                <CommandBinding Command="me:Window1.cmdOtherData" Executed="Get_Other_Data" />
+                <CommandBinding Command="me:Window1.cmdUpdateApplication" Executed="Update_Application" CanExecute="IsNotEditMode" />
+                <CommandBinding Command="me:Window1.cmdUpdateGroups" Executed="Update_Groups" CanExecute="IsNotEditMode" />
+				<CommandBinding Command="me:Window1.cmdAlgoManagement" Executed="Algo_Management" />
+				<CommandBinding Command="me:Window1.cmdTranslation" Executed="Change_Translation" CanExecute="CanTranslate" />
+				<CommandBinding Command="me:Window1.cmdShowTranslation" Executed="Change_ShowTranslation" CanExecute="CanTranslate" />
+				<CommandBinding Command="me:Window1.cmdAddLanguage" Executed="AddLanguage_Executed" CanExecute="AddLanguage_CanExecute" />
+				<CommandBinding Command="me:Window1.cmdDeleteLanguage" Executed="DeleteLanguage_Executed" CanExecute="DeleteLanguage_CanExecute" />
+				<CommandBinding Command="me:Window1.cmdEnableLanguageInheritance" Executed="Change_EnableLanguageInheritance" CanExecute="EnableLanguageInheritance_CanExecute" />
+                <CommandBinding Command="me:Window1.cmdAlgoTracker" Executed="AlgoTracker_Executed" />
+                <CommandBinding Command="me:Window1.cmdRiskCalc" Executed="RiskCalc_Executed" />
+                <CommandBinding Command="me:Window1.cmdProperties" Executed="Properties_Executed" />
+                <CommandBinding Command="me:Window1.cmdLaunchHelp" Executed="LaunchHelp_Executed" />
+                <CommandBinding Command="me:Window1.cmdDebugApplication" Executed="Debug_Application" />
+                <CommandBinding Command="me:Window1.cmdCompareVersions" Executed="Compare_Versions" CanExecute="AssetLoaded" />
+                <CommandBinding Command="me:Window1.cmdTableEdit" Executed="TableEdit_Executed" />
+                <CommandBinding Command="me:Window1.cmdCodes" Executed="CodeAssociation_Executed" />
+                <CommandBinding Command="me:Window1.cmdTraversalClient" Executed="TraversalClient_Executed" />
+                <CommandBinding Command="me:Window1.cmdTraversalFinder" Executed="TraversalFinder_Executed" />
+            </r:Ribbon.CommandBindings>
+			<r:Ribbon.QuickAccessToolBar>
+				<r:RibbonQuickAccessToolBar>
+					<r:RibbonButton IsEnabled="False" Label="Undo" ToolTipTitle="Undo" ToolTipDescription="Undo" SmallImageSource="images/Undo-icon-small.png" LargeImageSource="images/Undo-icon.png" CommandManager.Executed="Undo_Click" />
+					<r:RibbonButton IsEnabled="False" Label="Redo" ToolTipTitle="Redo" ToolTipDescription="Redo" SmallImageSource="images/Redo-icon-small.png" LargeImageSource="images/Redo-icon.png" CommandManager.Executed="Redo_Click" />
+				</r:RibbonQuickAccessToolBar>
+			</r:Ribbon.QuickAccessToolBar>
+			<r:Ribbon.Title>Asset Builder - Virtual Expert Toolkit</r:Ribbon.Title>
+			<r:Ribbon.ApplicationMenu>
+				<r:RibbonApplicationMenu
+							Label="Application Button"
+							SmallImageSource="images/blocks-icon.ico"
+							LargeImageSource="images/blocks-icon.ico"
+							ToolTipTitle="Asset Builder">
+					<r:RibbonApplicationMenuItem Header="Exit Asset Builder" Click="Exit_Click" />
+					<r:RibbonApplicationMenuItem Height="400" Visibility="Hidden"/>
+					<!--<DockPanel Height="400" Visibility="Hidden"/>-->
+					<r:RibbonApplicationMenu.AuxiliaryPaneContent>
+						<r:RibbonGallery CanUserFilter="False"
+                          ScrollViewer.VerticalScrollBarVisibility="Auto">
+							<r:RibbonGalleryCategory x:Name="recentAssets" Header="Recent Assets" 
+                                      Background="Transparent">
+								<r:RibbonGalleryCategory.ItemsPanel>
+									<ItemsPanelTemplate>
+										<StackPanel Orientation="Vertical" IsItemsHost="True"/>
+									</ItemsPanelTemplate>
+								</r:RibbonGalleryCategory.ItemsPanel>
+							</r:RibbonGalleryCategory>
+						</r:RibbonGallery>
+					</r:RibbonApplicationMenu.AuxiliaryPaneContent>
+				</r:RibbonApplicationMenu>
+			</r:Ribbon.ApplicationMenu>
+			<r:RibbonTab Header="Assets">
+				<r:RibbonGroup x:Name="assetGroup" x:FieldModifier="public" Header="Asset Types">
+					<r:RibbonToggleButton CommandParameter="1" Label="Algo" ToolTip="{me:Info Image='/images/Algo.png',Title=Algo,Body=AlgoToolTip}" SmallImageSource="images/Algo.png" LargeImageSource="images/Algo.png" Command="me:Window1.cmdAssetType" />
+					<r:RibbonToggleButton IsChecked="True" CommandParameter="2" Label="Question" ToolTip="{me:Info Image='/images/Question.png',Title=Question,Body=QuestionToolTip}" SmallImageSource="images/Question.png" LargeImageSource="images/Question.png" Command="me:Window1.cmdAssetType" />
+					<r:RibbonToggleButton CommandParameter="3" Label="Answer" ToolTip="{me:Info Image='/images/Answer.png',Title=Answer,Body=AnswerToolTip}" SmallImageSource="images/Answer.png" LargeImageSource="images/Answer.png" Command="me:Window1.cmdAssetType" />
+					<r:RibbonToggleButton CommandParameter="4" Label="Conclusion" ToolTip="{me:Info Image='/images/Conclusion.png',Title='Conclusion',Body=ConclusionToolTip}" SmallImageSource="images/Conclusion.png" LargeImageSource="images/Conclusion.png" Command="me:Window1.cmdAssetType" />
+                    <r:RibbonToggleButton CommandParameter="5" Label="Bullet" ToolTip="{me:Info Image='/images/Bullet.png',Title=Bullet,Body=BulletToolTip}" SmallImageSource="images/Bullet.png" LargeImageSource="images/Bullet.png" Command="me:Window1.cmdAssetType" />
+                    <r:RibbonToggleButton x:Name="rtbText" Visibility="Collapsed" x:FieldModifier="public" CommandParameter="12" Label="Text Assets" ToolTip="{me:Info Image='/images/Text_32x32.png',Title='Text Assets',Body=TextAssetToolTip}" SmallImageSource="images/Text_32x32.png" LargeImageSource="images/Text_32x32.png" Command="me:Window1.cmdAssetType" />
+                    <r:RibbonToggleButton x:Name="btnLinkAssets" Visibility="Collapsed" CommandParameter="11" Label="Link Assets" ToolTip="{me:Info Image='/images/EMR_48x48.png',Title=Integration,Body=IntegrationToolTip}" SmallImageSource="images/EMR_48x48.png" LargeImageSource="images/EMR_48x48.png" Command="me:Window1.cmdAssetType" />
+                    <r:RibbonToggleButton x:Name="btnGroup" Visibility="Collapsed" CommandParameter="13" Label="Groups" ToolTip="{me:Info Image='/images/group_32x32.png',Title=Groups,Body=GroupsToolTip}" SmallImageSource="images/group_32x32.png" LargeImageSource="images/group_32x32.png" Command="me:Window1.cmdAssetType" />
+                    <r:RibbonToggleButton x:Name="rtbTimes" x:FieldModifier="public" Visibility="Collapsed" CommandParameter="6" Label="Conclusion Sub Category" ToolTip="{me:Info Image='/images/times.png',Title='Conclusion Sub Category',Body=TimesToolTip}" SmallImageSource="images/times.png" LargeImageSource="images/times.png" Command="me:Window1.cmdAssetType" />
+                    <r:RibbonToggleButton x:Name="rtbTitles" x:FieldModifier="public" Visibility="Collapsed" CommandParameter="0" Label="Title" ToolTip="{me:Info Image='/images/Title_32x32.png',Title=Title,Body=AlgoTitleToolTip}" SmallImageSource="images/Title_32x32.png" LargeImageSource="images/Title_32x32.png" Command="me:Window1.cmdAssetType" />
+                    <r:RibbonToggleButton x:Name="rtbMap" x:FieldModifier="public" Visibility="Collapsed" CommandParameter="15" Label="Conclusion Map" ToolTip="{me:Info Image='/images/Map_32x32.png',Title='Conclusion Map',Body=MapToolTip}" SmallImageSource="images/Map_32x32.png" LargeImageSource="images/Map_32x32.png" Command="me:Window1.cmdAssetType" />
+                </r:RibbonGroup>
+				<r:RibbonGroup x:Name="searchGroup" x:FieldModifier="public" Header="Search">
+					<r:RibbonToggleButton IsChecked="True" CommandParameter="3" Label="Contains" ToolTip="{me:Info Image='/images/Contains.png',Title=Contains,Body=ContainsToolTip}" SmallImageSource="images/Contains.png" LargeImageSource="images/Contains.png" Command="me:Window1.cmdSearchType" />
+					<r:RibbonToggleButton CommandParameter="2" Label="Starts" ToolTip="{me:Info Image='/images/Starts.png',Title=Starts,Body=StartsToolTip}" SmallImageSource="images/Starts.png" LargeImageSource="images/Starts.png" Command="me:Window1.cmdSearchType" />
+					<r:RibbonToggleButton CommandParameter="1" Label="Ends" ToolTip="{me:Info Image='/images/Ends.png',Title=Ends,Body=EndsToolTip}" SmallImageSource="images/Ends.png" LargeImageSource="images/Ends.png" Command="me:Window1.cmdSearchType" />
+					<r:RibbonToggleButton CommandParameter="0" Label="Equals" ToolTip="{me:Info Image='/images/Equals.png',Title=Equals,Body=EqualsToolTip}" SmallImageSource="images/Equals.png" LargeImageSource="images/Equals.png" Command="me:Window1.cmdSearchType" />
+				</r:RibbonGroup>
+				<r:RibbonGroup>
+					<r:RibbonToggleButton x:Name="rtbSearchTranslation" CommandParameter="-1" Label="Search Asset Translations" ToolTip="{me:Info Image='/images/Globe_32x32.png',Title='Search Asset Translations',Body=SearchTranslationToolTip}" SmallImageSource="images/DisableLanguage32x32.png" LargeImageSource="images/DisableLanguage32x32.png" Command="me:Window1.cmdSearchType" />
+				</r:RibbonGroup>
+				<r:RibbonGroup FocusManager.IsFocusScope="True" Header="Clipboard">
+					<r:RibbonButton Command="me:Window1.cmdCut" Label="Cut" ToolTip="{me:Info Image='/images/Cut_32x32.png',Title=Cut,Body=CutToolTip}" SmallImageSource="images/Cut_16x16.png" LargeImageSource="images/Cut_32x32.png" />
+					<r:RibbonButton Command="me:Window1.cmdCopy" Label="Copy" ToolTip="{me:Info Image='/images/Copy_32x32.png',Title=Copy,Body=CopyToolTip}" SmallImageSource="images/Copy_16x16.png" LargeImageSource="images/Copy_32x32.png" />
+					<r:RibbonButton Command="me:Window1.cmdPaste" Label="Paste" ToolTip="{me:Info Image='/images/Paste_32x32.png',Title=Paste,Body=PasteToolTip}" SmallImageSource="images/Paste_16x16.png" LargeImageSource="images/Paste_32x32.png" />
+				</r:RibbonGroup>
+				<r:RibbonGroup FocusManager.IsFocusScope="True" Header="Insert" ToolTip="{me:Info Image='/images/Insert_32x32.png',Title=Insert,Body=InsertToolTip}">
+					<r:RibbonGroup.GroupSizeDefinitions>
+						<r:RibbonGroupSizeDefinition>
+							<r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True"/>
+							<r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True"/>
+							<r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True"/>
+						</r:RibbonGroupSizeDefinition>
+					</r:RibbonGroup.GroupSizeDefinitions>
+					<r:RibbonButton Command="me:Window1.cmdInsert" CommandParameter="1" Label="HyperLink" SmallImageSource="images/HyperLink_32x32.png" LargeImageSource="images/HyperLink_32x32.png" />
+					<r:RibbonButton Command="me:Window1.cmdInsert" CommandParameter="2" Label="YouTube Video" SmallImageSource="images/YouTube_32x32.png" LargeImageSource="images/YouTube_32x32.png" />
+					<r:RibbonButton Command="me:Window1.cmdInsert" CommandParameter="3" Label="Image" SmallImageSource="images/Picture_32x32.png" LargeImageSource="images/Picture_32x32.png" />
+				</r:RibbonGroup>
+                <r:RibbonGroup>
+                    <r:RibbonButton Command="me:Window1.cmdReport" Label="Quick Report" SmallImageSource="images/reports-icon.png" LargeImageSource="images/reports-icon.png" ToolTip="{me:Info Image='/images/reports-icon.png',Title='Quick Report',Body=QuickReportToolTip}" />
+                </r:RibbonGroup>
+                <r:RibbonGroup Visibility="Collapsed">
+                    <r:RibbonButton Command="me:Window1.cmdCodes" Label="Code Association" SmallImageSource="images/reports-icon.png" LargeImageSource="images/reports-icon.png" ToolTip="{me:Info Image='/images/reports-icon.png',Title='Code Association',Body=CodeAssociationToolTip}" />
+                </r:RibbonGroup>
+            </r:RibbonTab>
+			<r:RibbonTab Header="Settings">
+				<r:RibbonGroup>
+					<r:RibbonButton x:Name="btnUpdateWebService" ToolTip="{me:Info Image='/images/Settings_32x32.png',Title='Change Web Service',Body=ChangeWebServiceToolTip}" Command="me:Window1.cmdService" Label="Change Web Service" LargeImageSource="images/Settings_32x32.png" SmallImageSource="images/Settings_16x16.png" />
+                    <r:RibbonButton x:Name="btnAdditionalSettings" ToolTip="{me:Info Image='/images/addSettings_32x32.png',Title='Additional Settings',Body=AdditionalSettingsToolTip}" Command="me:Window1.cmdAdditionalSettings" Label="Additional Settings" LargeImageSource="images/addSettings_32x32.png" SmallImageSource="images/addSettings_32x32.png"/>
+                </r:RibbonGroup>
+				<r:RibbonGroup Header="Asset Settings">
+					<r:RibbonToggleButton x:Name="rtbCollapse" ToolTip="{me:Info Image='/images/NoShowDisabled_32x32.png',Title='Show Disabled',Body=ShowDisabledToolTip}" IsChecked="False" Command="me:Window1.cmdCollapse" Label="Show Disabled" LargeImageSource="images/NoShowDisabled_32x32.png" SmallImageSource="images/NoShowDisabled_32x32.png" />
+					<r:RibbonToggleButton x:Name="rtbPriority" ToolTip="{me:Info Image='/images/NoEnablePriority_32x32.png',Title='Enable Priority Changes',Body=EnablePriorityChangesToolTip}" IsChecked="False" Command="me:Window1.cmdPriority" Label="Enable Priority Changes" LargeImageSource="images/NoEnablePriority_32x32.png" SmallImageSource="images/EnablePriority.png" />
+					<r:RibbonToggleButton x:Name="rtbCategory" ToolTip="{me:Info Image='/images/Disable_Move_32x32.png',Title='Enable Category Changes',Body=EnableCategoryChangesToolTip}" IsChecked="False" Command="me:Window1.cmdCategory" Label="Enable Category Changes" LargeImageSource="images/Disable_Move_32x32.png" SmallImageSource="images/Disable_Move_32x32.png" />
+					<r:RibbonToggleButton x:Name="rtbAutoSave" ToolTip="{me:Info Image='/images/NoAutoSave_32x32.png',Title='Allow AutoSave',Body=AllowAutoSaveToolTip}" Command="me:Window1.cmdAutoSave" Label="Allow AutoSave" LargeImageSource="images/NoAutoSave_32x32.png" SmallImageSource="images/NoAutoSave_16x16.png"/>
+				</r:RibbonGroup>
+				<r:RibbonGroup Header="Validation Settings">
+					<r:RibbonToggleButton x:Name="rtbComments" ToolTip="{me:Info Image='/images/Comment_32x32.png',Title='Prompt for Comments',Body=PromptforCommentsToolTip}" IsChecked="True" Command="me:Window1.cmdComments" Label="Prompt for Comments" LargeImageSource="images/Comment_32x32.png" SmallImageSource="images/Comment_16x16.png"/>
+					<r:RibbonToggleButton x:Name="rtbDisableSpelling" ToolTip="{me:Info Image='/images/DisableSpelling_32x32.png',Title='Enable Spell Check',Body=EnableSpellCheckToolTip}" IsChecked="True" Command="me:Window1.cmdDisableSpelling" Label="Enable Spell Check" LargeImageSource="images/DisableSpelling_32x32.png" SmallImageSource="images/DisableSpelling_16x16.png"/>
+					<r:RibbonToggleButton x:Name="rtbValidation" ToolTip="{me:Info Image='/images/Validation_32x32.png',Title='Enable Validation',Body=EnableValidationToolTip}" IsChecked="True" Command="me:Window1.cmdValidation" Label="Enable Validation" LargeImageSource="images/Validation_32x32.png" SmallImageSource="images/Validation_16x16.png"/>
+					<r:RibbonToggleButton x:Name="rtbHTML" ToolTip="{me:Info Image='/images/HTML_32x32.png',Title='Enable HTML Validation',Body=EnableHTMLValidationToolTip}" IsChecked="True" Command="me:Window1.cmdHTMLValidation" Label="Enable HTML Validation" LargeImageSource="images/EnableHTML_32x32.png" SmallImageSource="images/EnableHTML_32x32.png"/>
+				</r:RibbonGroup>
+                <r:RibbonGroup DataContext="{Binding ElementName=mainwindow1}">
+                    <r:RibbonToggleButton x:Name="rtbEnableLanguageInheritance" ToolTip="{me:Info Image='/images/UK-icon.png',Title='Hide Translation Inheritance',Body=EnableLanguageInheritanceToolTip}" IsChecked="False" Command="me:Window1.cmdEnableLanguageInheritance" Label="Hide Translation Inheritance" LargeImageSource="images/DisableEditTranslation32x32.png" SmallImageSource="images/DisableEditTranslation16x16.png"/>
+                </r:RibbonGroup>
+            </r:RibbonTab>
+			<r:RibbonTab Header="Actions">
+                <r:RibbonGroup Header="Update">
+                    <r:RibbonButton x:Name="btnUpdateDervivedAssets" ToolTip="{me:Info Image='/images/UpdateAssets_32x32.png',Title='Update Derived Assets',Body=UpdateDerivedAssetsToolTip}" Command="me:Window1.cmdUpdateDervivedAssets" Label="Update Derived Assets" LargeImageSource="images/UpdateAssets_32x32.png" SmallImageSource="images/UpdateAssets_16x16.png"/>
+                    <r:RibbonButton x:Name="btnUpdateApplication" ToolTip="{me:Info Image='/images/Synchronize_32x32.png',Title='Update Application',Body=UpdateApplicationToolTip}" IsEnabled="False" Command="me:Window1.cmdUpdateApplication" Label="Update Application" LargeImageSource="images/Synchronize_32x32.png" SmallImageSource="images/Synchronize_16x16.png"/>
+                    <r:RibbonButton x:Name="btnUpdateGroups" ToolTip="{me:Info Image='/images/group_update_32x32.png',Title='Update Groups',Body=UpdateGroupsToolTip}" Command="me:Window1.cmdUpdateGroups" Label="Update Groups" LargeImageSource="images/group_update_32x32.png" SmallImageSource="images/group_update_32x32.png"/>
+                </r:RibbonGroup>
+                <r:RibbonGroup x:Name="hdrMcKesson" Header="McKesson" Visibility="Collapsed">
+                    <r:RibbonButton x:Name="btnCheckTransfers" ToolTip="{me:Info Image='/images/Transfers_32x32.png',Title='Check Transfer Assets',Body=CheckTransfersToolTip}" Command="me:Window1.cmdCheckTransfers" Label="Check Transfer Assets" LargeImageSource="images/Transfers_32x32.png" SmallImageSource="images/Transfers_32x32.png" />
+                    <r:RibbonButton x:Name="btnGetQuestionData" ToolTip="{me:Info Image='/images/Question.png',Title='Get Question Data',Body=GetQuestionDataToolTip}" Command="me:Window1.cmdGetQuestionData" Label="Get Question Data" LargeImageSource="images/Question.png" SmallImageSource="images/Question.png" />
+                    <r:RibbonToggleButton x:Name="rtbTriageMode" ToolTip="{me:Info Image='/images/nurse_32x32.png',Title='Enable Triage Mode',Body=EnableTriageModeToolTip}" IsChecked="False" Command="me:Window1.cmdTriageMode" Label="Enable Triage Mode" LargeImageSource="images/EnableNurse_32x32.png" SmallImageSource="images/EnableNurse_32x32.png"/>
+                </r:RibbonGroup>
+                <r:RibbonGroup>
+                    <r:RibbonMenuButton x:Name="OtherDataMenu" Label="Other Reports" ToolTip="{me:Info Image=/images/reports-icon.png,Body=OtherReportsToolTip, Title='Other Reports'}" SmallImageSource="/images/reports-icon.png" LargeImageSource="/images/reports-icon.png" />
+                    <r:RibbonButton x:Name="btnCompareVersions" ToolTip="{me:Info Image='/images/Compare_32x32.png',Title='Compare Versions',Body=CompareVersionsToolTip}" Command="me:Window1.cmdCompareVersions" Label="Compare Versions" LargeImageSource="images/Compare_32x32.png" SmallImageSource="images/Compare_32x32.png"/>
+                </r:RibbonGroup>
+                <r:RibbonGroup>
+                    <r:RibbonButton x:Name="btnDebugApplication" ToolTip="{me:Info Image='/images/Bug-icon_32x32.png',Title='Debug Application',Body=DebugApplicationToolTip}" Command="me:Window1.cmdDebugApplication" Label="Debug Application" LargeImageSource="images/Bug-icon_32x32.png" SmallImageSource="images/Bug-icon_32x32.png"/>
+                </r:RibbonGroup>
+            </r:RibbonTab>
+			<r:RibbonTab Header="Tools">
+				<r:RibbonGroup>
+					<r:RibbonButton x:Name="btnAlgoManagement" ToolTip="{me:Info Image='/images/algos_32x32.png',Title='Algo Management',Body=AlgoManagementToolTip}" Command="me:Window1.cmdAlgoManagement" IsEnabled="False" Label="Algo Management" LargeImageSource="images/algos_32x32.png" SmallImageSource="images/algos_16x16.png"/>
+				</r:RibbonGroup>
+				<r:RibbonGroup Header="Translation">
+					<r:RibbonGroup.GroupSizeDefinitions>
+						<r:RibbonGroupSizeDefinition>
+							<r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True"/>
+							<r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True"/>
+							<r:RibbonControlSizeDefinition ImageSize="Small" IsLabelVisible="True"/>
+						</r:RibbonGroupSizeDefinition>
+					</r:RibbonGroup.GroupSizeDefinitions>
+					<r:RibbonToggleButton x:Name="rtbTranslation" ToolTip="{me:Info Image='/images/DisableEditTranslation32x32.png',Title='Edit Translation',Body=EditTranslationToolTip}" Command="me:Window1.cmdTranslation" Label="Edit Translation" LargeImageSource="images/DisableEditTranslation32x32.png" SmallImageSource="images/DisableEditTranslation16x16.png"/>
+					<r:RibbonToggleButton x:Name="rtbShowTranslation" ToolTip="{me:Info Image='/images/DisableLanguage32x32.png',Title='Show Translation',Body=ShowTranslationToolTip}" Command="me:Window1.cmdShowTranslation" Label="Show Translation" LargeImageSource="images/DisableLanguage32x32.png" SmallImageSource="images/DisableLanguage16x16.png"/>
+					<r:RibbonControlGroup HorizontalAlignment="Stretch" Height="24" Margin="0,0,0,-14" VerticalAlignment="Bottom">
+						<!--<r:RibbonComboBox x:Name="rtbLanguage" ToolTip="{me:Info Title='Language List',Body=TranslationLanguageToolTip}" SelectionBoxWidth="80" Margin="-24,0,0,0" VerticalAlignment="Center" IsEditable="True" IsReadOnly="False" LostKeyboardFocus="rgLanguage_LostFocus" Focusable="True">
+							<r:RibbonGallery x:Name="rgLanguage" SelectedValuePath="Content" MaxColumnCount="1" SelectionChanged="rgLanguage_SelectionChanged">
+								<r:RibbonGalleryCategory x:Name="rgcLanguage">
+								</r:RibbonGalleryCategory>
+							</r:RibbonGallery>
+						</r:RibbonComboBox>-->
+						<ComboBox x:Name="rtbLanguage" ToolTip="{me:Info Title='Language List',Body=TranslationLanguageToolTip}" Width="80" VerticalAlignment="Center" IsEditable="True" IsReadOnly="False" LostKeyboardFocus="rgLanguage_LostFocus" SelectionChanged="rgLanguage_SelectionChanged" Focusable="True"></ComboBox>
+						<r:RibbonButton Command="me:Window1.cmdAddLanguage" ToolTip="{me:Info Image='/images/Check_32x32.png',Title='Language List',Body=TranslationLanguageToolTip}" SmallImageSource="images/Check_16x16.png"/>
+						<r:RibbonButton Command="me:Window1.cmdDeleteLanguage" ToolTip="{me:Info Image='/images/Delete_32x32.png',Title='Language List',Body=TranslationLanguageToolTip}" SmallImageSource="images/Delete_16x16.png"/>
+					</r:RibbonControlGroup>
+				</r:RibbonGroup>
+				<r:RibbonGroup Header="Default Language">
+						<r:RibbonComboBox x:Name="rtbSpellingLanguage" ToolTip="{me:Info Image=/images/UK-icon.png,Title='Spell Check Language',Body=SpellCheckLanguageToolTip}" SelectionBoxWidth="130" Text="Wibble" VerticalAlignment="Center" IsEditable="True" IsReadOnly="True" Focusable="True">
+						<r:RibbonGallery x:Name="rgSpellingLanguage" SelectedValuePath="Language" MaxColumnCount="1" SelectionChanged="rgSpellingLanguage_SelectionChanged">
+							<r:RibbonGalleryCategory x:Name="rgcSpellingLanguage">
+								<r:RibbonGalleryItem Content="English" Language="en-GB" />
+								<r:RibbonGalleryItem x:Name="DefaultSpellingLanguage" Content="American English" Language="en-US" IsSelected="True" />
+							</r:RibbonGalleryCategory>
+						</r:RibbonGallery>
+						</r:RibbonComboBox>
+				</r:RibbonGroup>
+                <r:RibbonGroup>
+                    <r:RibbonButton Command="me:Window1.cmdAlgoTracker" ToolTip="{me:Info Image=/images/Track.png,Title='Algo Tracker',Body=AlgoTrackerToolTip}" LargeImageSource="images/Track.png" Label="Algo Tracker"/>
+                    <r:RibbonToggleButton x:Name="rtbTraversalClient" Command="me:Window1.cmdTraversalClient" ToolTip="{me:Info Image=/images/Traversal72x72.png,Title='Traversal Client',Body=TraversalClientToolTip}" LargeImageSource="images/Traversal72x72.png" Label="Traversal Client"/>
+                    <r:RibbonToggleButton x:Name="rtbTraversalFinder" Command="me:Window1.cmdTraversalFinder" ToolTip="{me:Info Image=/images/finder.png,Title='Traversal Finder',Body=TraversalFinderToolTip}" LargeImageSource="images/finder.png" Label="Traversal Finder"/>
+                </r:RibbonGroup>
+                <r:RibbonGroup x:Name="btnRiskCalculator">
+                    <r:RibbonButton Command="me:Window1.cmdRiskCalc" ToolTip="{me:Info Image=/images/spreadsheet_32x32.png,Title='Risk Calculator',Body=RiskCalcToolTip}" LargeImageSource="images/spreadsheet_32x32.png" Label="Risk Calculator"/>
+                </r:RibbonGroup>
+                <r:RibbonGroup x:Name="btnProperties">
+                    <r:RibbonButton Command="me:Window1.cmdProperties" ToolTip="{me:Info Image=/images/properties_32x32.png,Title='Properties Editor',Body=btnPropertiesToolTip}" LargeImageSource="images/properties_32x32.png" Label="Properties Editor"/>
+                </r:RibbonGroup>
+                <r:RibbonGroup Name="btnTableEdit">
+					<r:RibbonButton Command="me:Window1.cmdTableEdit" ToolTip="{me:Info Image=/images/Windows-Table-icon.png,Title='Table Edit',Body=TableEditToolTip}" LargeImageSource="images/Windows-Table-icon.png" Label="Table Edit"/>
+				</r:RibbonGroup>
+			</r:RibbonTab>
+			<r:RibbonTab Header="Help">
+				<r:RibbonGroup>
+                    <r:RibbonButton x:Name="btnLaunchHelp" ToolTip="{me:Info Image='/images/Help.png',Title='Launch Help',Body=LaunchHelpToolTip}" Command="me:Window1.cmdLaunchHelp" Label="Launch Help" LargeImageSource="images/Help.png" SmallImageSource="images/Help_16x16.png"/>
+                    <r:RibbonButton x:Name="btnTextError" ToolTip="{me:Info Image='/images/Error_32x32.png',Title='Generate Test Error',Body=GenerateErrorToolTip}" Label="Generate Test Error" LargeImageSource="images/Error_32x32.png" SmallImageSource="images/Error_32x32.png" Click="btnTextError_Click"/>
+                </r:RibbonGroup>
+			</r:RibbonTab>
+		</r:Ribbon>
+		<Grid>
+			<Grid x:Name="mainGrid">
+				<Grid.Effect>
+					<BlurEffect x:Name="gridBlur" Radius="0"/>
+				</Grid.Effect>
+				<Grid.RowDefinitions>
+					<RowDefinition />
+					<RowDefinition Height="2*" x:Name="assetPane" x:FieldModifier="public"/>
+					<RowDefinition Height="37"/>
+				</Grid.RowDefinitions>
+				<Image Grid.Row="2" HorizontalAlignment="Left" Width="170" Source="images/healthhero-logo.png" Stretch="None"/>
+				<DockPanel Grid.Row="2" HorizontalAlignment="Stretch" Margin="170,0,0,0">
+					<DockPanel.Background>
+						<LinearGradientBrush EndPoint="1,1" StartPoint="0,0" MappingMode="RelativeToBoundingBox">
+							<GradientStop Color="#FFF2DEE2" Offset="1"/>
+                            <GradientStop Color="#FFF4616B"/>
+						</LinearGradientBrush>
+					</DockPanel.Background>
+					<Label Margin="4" x:Name="statusBar" x:FieldModifier="public" Foreground="White" FontSize="14.667"></Label>
+                    <DockPanel x:Name="ServerLocationBar" HorizontalAlignment="Right" Background="Blue" DockPanel.Dock="Right">
+                        <TextBlock x:Name="ServerLocationName" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10 0" FontSize="16" FontWeight="Bold" Foreground="White" Text="  LOCATION  " />
+                    </DockPanel>
+                    <DockPanel x:Name="UsernameBar" HorizontalAlignment="Right" DockPanel.Dock="Right">
+                        <TextBlock x:Name="UsernameValue" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10 0" FontSize="16" Foreground="Black" Text="" />
+                    </DockPanel>
+                </DockPanel>
+				<GridSplitter Grid.Row="0" HorizontalAlignment="Stretch" x:Name="gridSplitter1" Height="3" VerticalAlignment="Bottom" Cursor="SizeNS" />
+                <me:qcat Grid.Row="0" HorizontalAlignment="Stretch" Margin="0,0,0,3" x:Name="qcat1"/>
+                <Grid x:Name="assetCanvas" x:FieldModifier="public" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
+				</Grid>
+				<Canvas Grid.RowSpan="3" x:Name="greyCanvas" x:FieldModifier="public" Background="AliceBlue" Opacity="0.6" Visibility="Hidden" />
+			</Grid>
+            <Canvas x:Name="bubbleCanvas" x:FieldModifier="public" />
+            <DockPanel x:Name="listPanel" x:FieldModifier="public" HorizontalAlignment="Right" Visibility="Hidden">
+				<DockPanel.Background>
+					<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+						<GradientStop Color="White" Offset="0"/>
+						<GradientStop Color="#FFF6E4FF" Offset="1"/>
+					</LinearGradientBrush>
+				</DockPanel.Background>
+				<WrapPanel DockPanel.Dock="Bottom">
+					<Button DockPanel.Dock="Left" x:Name="listButtonCancel" ToolTip="{me:Info Image='/images/listButton.png',Title='Cancel List',Body=CancelListToolTip}" Content="Cancel" Padding="5" Margin="5" FontSize="14.667" Click="listButtonCancel_Click" />
+					<Button DockPanel.Dock="Left" x:Name="listButtonOK" ToolTip="{me:Info Image='/images/listButton.png',Title='Create Assets',Body=CreateListToolTip}" Content="Create Assets" Padding="5" Margin="5" FontSize="14.667" Click="listButtonOK_Click"/>
+				</WrapPanel>
+				<TextBox x:Name="listTextBox" FontSize="14.667" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" TextChanged="listTextBox_TextChanged"/>
+			</DockPanel>
+            <DockPanel x:Name="FullPanel" x:FieldModifier="public" />
+        </Grid>
+	</DockPanel>
+</con:ABRibbonWindow>

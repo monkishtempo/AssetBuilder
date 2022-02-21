@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="AssetBuilder.Controls.BulletLine"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DockPanel>
+        <Rectangle x:Name="rect" DockPanel.Dock="Top" Height="0" Fill="DarkGray"></Rectangle>
+        <TextBox x:Name="BPID" x:FieldModifier="public" Width="75" IsReadOnly="True" TextAlignment="Right"></TextBox>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="{DynamicResource NormalColumn}"/>
+				<ColumnDefinition Width="{DynamicResource LanguageColumn}"/>
+			</Grid.ColumnDefinitions>
+			<TextBox TextWrapping="Wrap" Grid.Column="0" x:Name="txtBP_Text" x:FieldModifier="public" IsReadOnly="True"></TextBox>
+			<TextBox TextWrapping="Wrap" Grid.Column="1" Visibility="{DynamicResource LanguageVisibility}" x:Name="txtBP_TextLanguage" x:FieldModifier="public" IsReadOnly="True"></TextBox>
+		</Grid>
+	</DockPanel>
+</UserControl>

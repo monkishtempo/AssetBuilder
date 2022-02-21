@@ -1,0 +1,9457 @@
+﻿<w:body>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRPr="0030286B" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:jc w:val="center"/>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+				<w:u w:val="double"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+				<w:u w:val="double"/>
+			</w:rPr>
+			<w:t>test algo 2</w:t>
+		</w:r>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Never used any kind of tobacco</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.330">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.642">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Ans</w:t>
+			</w:r>
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>w</w:t>
+			</w:r>
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>er</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Used to use tobacco regularly, but not now</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.330">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.645">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Use of some form of tobacco now</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.330">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.646">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Demonstration pathway requested: clinical care pathways</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.3905">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.4692">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Demonstration pathway requested: sample Symptom Assessment: Lower Back Pain</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.3905">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6570">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Living arrangements: lives with spouse, family or friend</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4828">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.4506">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Living arrangements: lives in a residential care home</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4828">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.4507">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Living arrangements: lives alone</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4828">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.4508">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Living arrangements: lives in a nursing home</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4828">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.4509">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Post hip fracture assessment </w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4850">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>No post hip fracture assessment</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4850">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.2">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Multiple choice test</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4966">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>No multiple choice test</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4966">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.2">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Test error message</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.9681">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.7">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Sector: accounting and Finance</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.10412">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.16985">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Sector: admin Office Clerical</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.10412">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.16986">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Sector: automotive</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.10412">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.16987">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Sector: call Centre</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.10412">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.16988">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Sector: catering</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.10412">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.16989">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Sector: construction</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.10412">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.16990">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Sector: childcare</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.10412">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.16991">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Sector: driving Jobs</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.10412">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.16992">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Sector: education and Teaching</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.10412">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.16993">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Sector: engineering</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.10412">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.16994">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Sector: health Medical Doctors Nurses and Care Services</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.10412">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.16995">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Sector: iT Telecomms Tec</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.10412">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.16996">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Sector: legal</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.10412">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.16997">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Sector: management Executive and Graduate</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.10412">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.16998">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Sector: sales Marketing and Retail</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.10412">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.16999">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Sector: media</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.10412">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.17000">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Sector: oil Gas Marine</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.10412">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.17001">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>{001-120yNew confusion or inability}{000-001yInability} to stay alert and awake</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.292">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.585">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Thoughts of killing [him/your]self</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.292">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.4613">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Thoughts of hurting [him/your]self</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.292">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.4614">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Thoughts of hurting someone else</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.292">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.4615">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Memory loss of recent events or conversations</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.292">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.4799">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Other neurological problem or disease</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4655">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.2982">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Stroke</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4655">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6041">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Significant cognitive impairment</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4655">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6417">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Poor lighting</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4805">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6320">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Loose or slippery floor coverings</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4805">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6321">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Flimsy furniture</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4805">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6322">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Untidy floor with things to trip over</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4805">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6323">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Lack of grab bars or supports in the bath or shower</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4805">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6324">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Unknown safety risks in the home environment</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4805">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6548">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Use of anticonvulsants</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4808">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6411">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Use of opioids</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4808">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6412">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Use of corticosteroids</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4808">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6413">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Use of psychotropics (sedatives, sleeping pills, anxiolytics, etc.)</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4808">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6414">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Use of type Ia anti-arrythmics</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4808">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6415">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Arthritis</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4824">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.4714">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Fracture due to a fall in the last year</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4824">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6418">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Previous fracture of spine, hip or wrist</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4824">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6425">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Frequent falls</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4825">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6420">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Gait or balance problems</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4825">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6421">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Muscle weakness </w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4825">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6422">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Foot problems</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4825">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6423">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Multiple select test good answer &lt;c&gt;</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4967">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6714">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Multiple select test bad answer 1</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4967">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6715">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Multiple select test bad answer 2</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4967">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6716">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Multiple select test bad answer 3</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4967">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6717">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Value entry example 1 699 Unknown</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.8791">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.5792">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Value entry example 1 699 Value 1</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.8791">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.14246">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Value entry example 1 699 Value 2</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.8791">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.14247">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Value entry example 1 699 Calculated</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.8791">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.14248">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Value entry examlpe 2 (text) 699 </w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.8792">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.3498">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Value entry examlpe 2 (text) 699 Text enter</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.8792">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.14249">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Value entry examlpe 3 (date) 699 </w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.8793">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.3498">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Value entry examlpe 3 (date) 699 </w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.8793">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.17801">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Body Mass Index (BMI) 699 Obtain value from Height</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.343">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.783">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Body Mass Index (BMI) 699 Obtain value from Current weight</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.343">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.784">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Body Mass Index (BMI) 699 </w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.343">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.785">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Prostate cancer in a grandparent</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.3120">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.807">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Prostate cancer in father</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.3120">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.863">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Prostate cancer in mother</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.3120">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.864">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Prostate cancer in a sister</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.3120">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.865">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Prostate cancer in a brother</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.3120">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.866">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Parkinson's Disease in a grandparent</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.6237">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.807">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Parkinson's Disease in father</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.6237">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.863">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Parkinson's Disease in mother</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.6237">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.864">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Parkinson's Disease in a sister</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.6237">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.865">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Parkinson's Disease in a brother</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.6237">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.866">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Inflammatory bowel disease in a grandparent</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.6341">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.807">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Inflammatory bowel disease in father</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.6341">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.863">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Inflammatory bowel disease in mother</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.6341">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.864">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Inflammatory bowel disease in a sister</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.6341">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.865">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Inflammatory bowel disease in a brother</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.6341">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.866">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Family history of heart attack in a grandparent</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.8772">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.807">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Family history of heart attack in father</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.8772">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.863">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Family history of heart attack in mother</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.8772">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.864">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Family history of heart attack in a sister</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.8772">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.865">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Family history of heart attack in a brother</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.8772">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.866">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of vegetables: 1</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.2827">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1032">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of vegetables: 2</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.2827">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1033">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of vegetables: 3</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.2827">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1034">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of vegetables: 4</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.2827">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1035">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of vegetables: less than 1</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.2827">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.3172">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of vegetables: 5 or more</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.2827">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.3173">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of fruit: 1</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.2828">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1032">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of fruit: 2</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.2828">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1033">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of fruit: 3</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.2828">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1034">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of fruit: 4</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.2828">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1035">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of fruit: less than 1</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.2828">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.3172">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of fruit: 5 or more</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.2828">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.3173">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of fatty foods: 1</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.2844">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1032">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of fatty foods: 2</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.2844">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1033">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of fatty foods: 3</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.2844">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1034">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of fatty foods: 4</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.2844">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1035">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of fatty foods: less than 1</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.2844">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.3172">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of fatty foods: 5 or more</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.2844">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.3173">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of processed foods: 1</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.3425">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1032">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of processed foods: 2</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.3425">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1033">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of processed foods: 3</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.3425">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1034">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of processed foods: 4</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.3425">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1035">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of processed foods: less than 1</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.3425">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.3172">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Servings per day of processed foods: 5 or more</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.3425">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.3173">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Rank your favourite foods fruit 1</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.9982">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1032">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Rank your favourite foods fruit 2</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.9982">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1033">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Rank your favourite foods fruit 3</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.9982">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1034">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Rank your favourite foods fruit 4</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.9982">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1035">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Rank your favourite foods vegetables 1</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.9983">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1032">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Rank your favourite foods vegetables 2</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.9983">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1033">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Rank your favourite foods vegetables 3</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.9983">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1034">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Rank your favourite foods vegetables 4</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.9983">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1035">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Rank your favourite foods meat 1</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.9984">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1032">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Rank your favourite foods meat 2</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.9984">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1033">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Rank your favourite foods meat 3</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.9984">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1034">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Rank your favourite foods meat 4</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.9984">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1035">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Rank your favourite foods fish 1</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.9985">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1032">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Rank your favourite foods fish 2</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.9985">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1033">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Rank your favourite foods fish 3</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.9985">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1034">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Rank your favourite foods fish 4</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.9985">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1035">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Do you need help from another person to do any of the following activities? use the telephone</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11463">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>No do you need help from another person to do any of the following activities? use the telephone</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11463">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.2">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Do you need help from another person to do any of the following activities? do laundry</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11464">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>No do you need help from another person to do any of the following activities? do laundry</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11464">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.2">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Do you need help from another person to do any of the following activities? go shopping for groceries, clothes, etc. (assuming you had transportation)</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11465">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>No do you need help from another person to do any of the following activities? go shopping for groceries, clothes, etc. (assuming you had transportation)</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11465">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.2">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Do you need help from another person to do any of the following activities? prepare meals</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11466">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>No do you need help from another person to do any of the following activities? prepare meals</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11466">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.2">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Do you need help from another person to do any of the following activities? get to places out of walking distance</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11467">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>No do you need help from another person to do any of the following activities? get to places out of walking distance</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11467">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.2">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Do you need help from another person to do any of the following activities? do housework (cleaning, sorting, storing, etc.)</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11468">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>No do you need help from another person to do any of the following activities? do housework (cleaning, sorting, storing, etc.)</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11468">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.2">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Do you currently receive help from a family member, friend, caregiver, or paid service to complete these? {qp11468|1|Do housework (cleaning, sorting, storing, etc.)}</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11471">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>No do you currently receive help from a family member, friend, caregiver, or paid service to complete these? {qp11468|1|Do housework (cleaning, sorting, storing, etc.)}</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11471">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.2">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Do you currently receive help from a family member, friend, caregiver, or paid service to complete these? {qp11464|1|Do laundry}</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11472">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>No do you currently receive help from a family member, friend, caregiver, or paid service to complete these? {qp11464|1|Do laundry}</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11472">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.2">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Do you currently receive help from a family member, friend, caregiver, or paid service to complete these? {qp11467|1|Get to places out of walking distance}</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11473">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>No do you currently receive help from a family member, friend, caregiver, or paid service to complete these? {qp11467|1|Get to places out of walking distance}</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11473">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.2">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Do you currently receive help from a family member, friend, caregiver, or paid service to complete these? {qp11465|1|Go shopping for groceries, clothes, etc. (assuming you had transportation)}</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11474">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>No do you currently receive help from a family member, friend, caregiver, or paid service to complete these? {qp11465|1|Go shopping for groceries, clothes, etc. (assuming you had transportation)}</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11474">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.2">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Do you currently receive help from a family member, friend, caregiver, or paid service to complete these? {qp11466|1|Prepare meals}</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11475">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>No do you currently receive help from a family member, friend, caregiver, or paid service to complete these? {qp11466|1|Prepare meals}</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11475">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.2">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Do you currently receive help from a family member, friend, caregiver, or paid service to complete these? {qp11463|1|Use the telephone}</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11476">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.1">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>No do you currently receive help from a family member, friend, caregiver, or paid service to complete these? {qp11463|1|Use the telephone}</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.11476">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.2">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Property to be mortgaged 699</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4292">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.6">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Property to be mortgaged 699</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4292">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.5483">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Property to be mortgaged 699</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.4292">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.5484">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Body region of the problem whole Body</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.76">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.90">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Body region of the problem head / Neck / Chest</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.76">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.91">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Body region of the problem genitals / Rectal / Urinary</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.76">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.92">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Body region of the problem abdomen</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.76">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.93">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Body region of the problem upper Back</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.76">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.94">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Body region of the problem lower Back</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.76">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.95">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Body region of the problem upper limb</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.76">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.96">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Body region of the problem lower limb</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.76">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.97">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="005A02C4" wsp:rsidRDefault="005A02C4" wsp:rsidP="005A02C4">
+		<w:pPr>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:t>Body region of the problem skin</w:t>
+		</w:r>
+		<w:r wsp:rsidRPr="0030286B">
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:question.76">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Question</w:t>
+			</w:r>
+		</w:hlink>
+		<w:r>
+			<w:rPr>
+				<w:b/>
+				<w:sz w:val="20"/>
+			</w:rPr>
+			<w:tab/>
+		</w:r>
+		<w:hlink w:dest="builder:answer.3845">
+			<w:r wsp:rsidRPr="0030286B">
+				<w:rPr>
+					<w:rStyle w:val="Hyperlink"/>
+					<w:b/>
+					<w:sz w:val="20"/>
+				</w:rPr>
+				<w:t>Answer</w:t>
+			</w:r>
+		</w:hlink>
+	</w:p>
+	<w:p wsp:rsidR="00E518BA" wsp:rsidRPr="005A02C4" wsp:rsidRDefault="00E518BA">
+		<w:pPr>
+			<w:rPr>
+				<w:sz w:val="20"/>
+			</w:rPr>
+		</w:pPr>
+	</w:p>
+	<w:sectPr wsp:rsidR="00E518BA" wsp:rsidRPr="005A02C4" wsp:rsidSect="00F20AC6">
+		<w:pgSz w:w="11906" w:h="16838"/>
+		<w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="708" w:footer="708" w:gutter="0"/>
+		<w:cols w:space="708"/>
+		<w:docGrid w:line-pitch="360"/>
+	</w:sectPr>
+</w:body>

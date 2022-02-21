@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="AssetBuilder.ABToolTip"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 mc:Ignorable="d"
+			 MaxWidth="300">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="38" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Image x:Name="ABImage" x:FieldModifier="public" Grid.Column="0" Source="/images/Help.png" VerticalAlignment="Top" Margin="6,6,0,6"/>
+		<StackPanel Grid.Column="1">
+			<Label Grid.Column="1" x:Name="ABTitle" x:FieldModifier="public" FontWeight="Bold" Margin="6,6,6,0">
+				<TextBlock>[Header]</TextBlock>
+			</Label>
+			<Label Grid.Column="1" Margin="6,0,6,6" x:Name="ABBody" x:FieldModifier="public" Style="{DynamicResource ToolTipStyle}">
+				<TextBlock>[BODY TEXT]</TextBlock>
+			</Label>
+		</StackPanel>
+	</Grid>
+</UserControl>

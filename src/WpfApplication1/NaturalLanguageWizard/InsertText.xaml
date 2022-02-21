@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="NaturalLanguageWizard.InsertText"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:local="clr-namespace:NaturalLanguageWizard"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" VerticalAlignment="Center" VerticalContentAlignment="Center" Height="26">
+    <Grid>        
+        <TextBlock Name="textblock" Text="Insert text:" TextAlignment="Right" Width="104" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="14.667" />
+        <TextBox Margin="114,0,80,0" x:Name="textbox" VerticalAlignment="Top" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" FontSize="14.667"/>
+        <TextBlock Margin="0,0,58,0" Name="textBlock1" Text="Or:" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Right"  FontSize="14.667"/>
+        <CheckBox x:Name="chkNone" FlowDirection="RightToLeft" VerticalContentAlignment="Center" IsEnabled="True" Checked="chkNone_Checked" Unchecked="chkNone_Unchecked" HorizontalAlignment="Right" VerticalAlignment="Center" Content="None" FontSize="14.667"/>
+    </Grid>    
+</UserControl>

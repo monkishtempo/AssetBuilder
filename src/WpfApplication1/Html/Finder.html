@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Traversal Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .mdat-flat-bottom {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    </style>
+    <script>
+        var mdat = { pn: null, en: function (e) { if (e !== undefined && e !== null) { while (e.firstChild) { e.removeChild(e.firstChild); } } }, af: function (content, parent) { if (parent === undefined || parent === null) { if (mdat.pn === null) { mdat.pn = document.getElementsByTagName("body")[0]; } parent = mdat.pn; } var fragment = document.createDocumentFragment(); var tempDiv = document.createElement("div"); if (content !== undefined && content !== "") tempDiv.innerHTML = content; if (tempDiv.firstChild) { while (tempDiv.firstChild) { fragment.appendChild(tempDiv.firstChild); } parent.appendChild(fragment); return parent.lastChild; } tempDiv = null; return null; }, qv: function (k) { var s = window.location.search.substring(1); var kvp = s.split("&"); for (var kv in kvp) if (kvp.hasOwnProperty(kv)) { var data = kvp[kv].split("="); var key = data[0]; if (k.toLowerCase() === key.toLowerCase() && data.length > 1) { return data[1]; } } return undefined; }, rm: function (o, f) { var a = o.indexOf(f); if (a === -1) return o; else { o.splice(a, 1); return o; } }, ad: function (o, f) { var a = o.indexOf(f); if (a !== -1) return o; else { o.push(f); return o; } } };
+        function getID() { return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) { var r = Math.random() * 16 | 0, v = c === "x" ? r : r & 0x3 | 0x8; return v.toString(16); }); }
+        function callData(method, url, data, callback, status, progress) { var xhttp = new XMLHttpRequest(); xhttp.onreadystatechange = function () { if (status !== undefined && status.innerHTML) status.innerHTML = "callback status " + this.readyState; if (this.readyState === 3) { if (progress !== undefined && typeof (progress) === "function") progress(this); } if (this.readyState === 4) { if (status !== undefined && status.innerHTML) status.innerHTML = "executing callback"; if (callback !== undefined && typeof (callback) === "function") callback(this); } }; xhttp.open(method, url, true); if (method === "POST") xhttp.setRequestHeader("Content-type", "application/json"); if (typeof (data) === "object") data = JSON.stringify(data); if (method === "POST" && data !== undefined && data !== null && data !== "") xhttp.send(data); else xhttp.send(); }
+    </script>
+    <script type="text/javascript">
+        var hh = {
+            environments: [],
+            cleared: false
+        };
+
+        function getData(url, tag, callback) {
+            var uuid = getID();
+            if (typeof(hh_scripts) === "undefined") hh_scripts = {};
+            if (hh_scripts[uuid]) return; // a get is already in progress
+            hh_scripts[uuid] = {};
+            var ts = hh_scripts[uuid];
+            ts.script = document.createElement("script");
+            ts.script.type = "text/javascript";
+            ts.script.id = "tempscript";
+            ts.script["data-uuid"] = uuid;
+            ts.callback = callback;
+            ts.tag = tag;
+            if(url.indexOf("?") > -1) url += "&"; else url += "?";
+            url += "callback=getDataCallBack";
+            ts.script.src = url;
+            document.head.appendChild(ts.script);
+        }
+
+        function getDataCallBack(o) {
+            var uuid = document.currentScript["data-uuid"];
+            if(hh_scripts[uuid]) {
+                hh_scripts[uuid].callback(o, hh_scripts[uuid].tag);
+                if(hh_scripts[uuid].script) document.head.removeChild(hh_scripts[uuid].script);
+                hh_scripts[uuid] = undefined;
+                try { delete hh_scripts[uuid]; } catch (e) { }
+            }
+        }
+
+        function process(o, isInput) {
+            if(isInput) o.onkeyup = null;
+            if(o.value.match(/^[0-9A-Fa-f]{8}-([0-9A-Fa-f]{4}-){3}[0-9A-Fa-f]{12}$/)) {
+                hh.cleared = false;
+                for(var i in hh.environments) if (Object.prototype.hasOwnProperty.call(hh.environments, i)) {
+                    var env = hh.environments[i];
+                    getData(env.url.replace("QAReport", "Detail").replace("{TraversalID}", o.value), env, function(res, tag) { matchEnv(res, o.value, tag); });
+                }
+            }
+            else {
+                if(!hh.cleared) clearEnv();
+            }
+        }
+
+        function clearEnv() {
+            var template = "<div class=\"w3-round w3-card\"><header class=\"w3-round-large mdat-flat-bottom w3-red w3-container\"><h5>e.name</h5></header><div class=\"w3-container\"><p>No TraversalID</p></div></div>";
+            for(var i in hh.environments) if(Object.prototype.hasOwnProperty.call(hh.environments, i)) {
+                var env = hh.environments[i];
+                env.div.innerHTML = replaceTemplateProperties(template, env, 'e')
+            }
+            hh.cleared = true;
+        }
+
+        function matchEnv(o, t, e) {
+            var match = "<div class=\"w3-round w3-card\"><header class=\"w3-round-large mdat-flat-bottom w3-green w3-container\"><h5>e.name</h5></header><div class=\"w3-container\"><p><a href=\"e.url\">Report</a></p></div></div>";
+            var nomatch = "<div class=\"w3-round w3-card\"><header class=\"w3-round-large mdat-flat-bottom w3-red w3-container\"><h5>e.name</h5></header><div class=\"w3-container\"><p>Not found</p></div></div>";
+            if(o.Table) {
+                e.div.innerHTML = replaceTemplateProperties(match, e, 'e').replace("{TraversalID}", t);
+            }
+            else {
+                e.div.innerHTML = replaceTemplateProperties(nomatch, e, 'e');
+            }
+        }
+
+        function getEnvironments() {
+            callData("GET", "$$URL$$", "", showEnvironments);
+        }
+
+        function replaceTemplateProperties(template, a, prefix) {
+            for (var o in a) if (a.hasOwnProperty(o)) {
+                if(typeof(a[o]) === "object") {
+                    template = replaceTemplateProperties(template, a[o], prefix + '.' + o);
+                    template = replaceTemplateProperties(template, a[o], prefix + '[' + o + ']');
+                }
+                template = template.split(prefix + '.' + o).join(a[o]);
+                template = template.split(prefix + '[' + o + ']').join(a[o]);
+            }
+            return template;
+        }
+
+        function showEnvironments(o) {
+            var template = "<div class=\"w3-panel w3-col l3 m6 s12\"></div>";
+            if(o.responseText.length > 0 && (o.responseText[0] === "{" || o.responseText[0] === "[" || o.responseText[0] === "\"")) {
+                o = JSON.parse(o.responseText);
+                console.log(o);
+                for(var t in o) if (Object.prototype.hasOwnProperty.call(o, t)) {
+                    for(var r in o[t]) if (Object.prototype.hasOwnProperty.call(o[t], r)) {
+                        var e = o[t][r];
+                        if (e.EnvironmentType === "Traversal Report" || e.EnvironmentType === "QA Report") {
+                            var div = mdat.af(replaceTemplateProperties(template, o[t][r], 'a'), output);
+                            hh.environments.push({ div: div, name: o[t][r]["EnvironmentName"], url: o[t][r]["EnvironmentUrl"] });
+                        }
+                    }
+                }
+            }
+            process(document.getElementById("input"));
+        }
+
+    </script>
+</head>
+<body>
+    <div class="w3-panel">
+        <div class="w3-card-4" style="position:absolute;left:10px;right:10px;top:10px;bottom:10px;">
+            <div style="width:100%;height:100%;">
+                <header class="w3-container w3-blue">
+                    <h2>Traversal Finder</h2>
+                </header>
+                <div class="w3-container">
+                    <p>
+                        <label>TraversalID</label>
+                        <input type="text" class="w3-input" id="input" oninput="process(this, true);" onkeyup="process(this, false);" />
+                    </p>
+                </div>
+                <div class="w3-row" id="output"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    var output = document.getElementById("output");
+    getEnvironments();
+</script>
+
+</html> 
