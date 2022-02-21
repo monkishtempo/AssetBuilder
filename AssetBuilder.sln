@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29230.47
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asset Builder", "src\WpfApplication1\Asset Builder.csproj", "{113F1375-AFB9-4274-881A-91511D893E54}"
 EndProject
@@ -9,8 +9,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "StringCompare", "src\ObjCom
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		ObjCompare\StringCompare.projitems*{113f1375-afb9-4274-881a-91511d893e54}*SharedItemsImports = 4
-		ObjCompare\StringCompare.projitems*{b0ecaa31-6f7b-4759-aee8-613aae1eb843}*SharedItemsImports = 13
+		src\ObjCompare\StringCompare.projitems*{113f1375-afb9-4274-881a-91511d893e54}*SharedItemsImports = 4
+		src\ObjCompare\StringCompare.projitems*{b0ecaa31-6f7b-4759-aee8-613aae1eb843}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
