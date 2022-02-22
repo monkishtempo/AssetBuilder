@@ -24,6 +24,8 @@ stages:
 
 build_job:
   stage: build
+  tags:
+    - "windows"
   #only:
   #  - tags  # the build process will only be started by git tag commits
   script:
