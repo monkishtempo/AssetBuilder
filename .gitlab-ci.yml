@@ -40,7 +40,7 @@ stages:
 
 build-mono:
   stage: build-mono
-  image: mono:latest
+  image: mono:5.18.0
   script:
     - nuget restore ./AssetBuilder.sln
     - msbuild
