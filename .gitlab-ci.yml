@@ -43,7 +43,7 @@ build:
     - >-
         /kaniko/executor
         --context "${CI_PROJECT_DIR}"
-        --dockerfile "docker/Dockerfile"
+        --dockerfile "docker/dockerfile"
         --destination "${CI_REGISTRY_IMAGE}/${API}:${CI_PIPELINE_IID}"
         --destination "${CI_REGISTRY_IMAGE}:latest"
         --build-arg "NUGET_USR"
