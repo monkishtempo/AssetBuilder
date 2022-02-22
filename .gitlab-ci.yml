@@ -20,12 +20,12 @@ variables:
   #NUNIT_PATH: 'C:\Program Files (x86)\NUnit.org\nunit-console\nunit3-console.exe'
 
 stages:
-  - build
+  - build-mono
 
-build_job:
-  stage: build
-  tags:
-    - "windows"
+build-dotnet:
+  stage: build-dotnet
+  #tags:
+  #  - "windows" # specifiy runner tags
   #only:
   #  - tags  # the build process will only be started by git tag commits
   script:
@@ -37,3 +37,13 @@ build_job:
       - '$env:EXE_RELEASE_FOLDER\YourApp.exe'  # saving exe to copy to deploy folder
       #- '$env:MSI_RELEASE_FOLDER\YourApp Setup.msi'  # saving msi to copy to deploy folder
       #- '$env:TEST_FOLDER\'  # saving entire Test project so NUnit can run tests
+
+build-mono:
+  stage: build-mono
+  image: mono:latest
+  script:
+    - nuget restore ./AssetBuilder.sln
+    - msbuild
+        /p:Configuration="Release"
+        /p:Platform="Any CPU"
+        "./AssetBuilder.sln"
