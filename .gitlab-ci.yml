@@ -1,6 +1,3 @@
-stages:
-  - build
-
 variables:
   APP_SERVICE_NAME: 'assetbuilder'
   REGION: 'uks'
@@ -14,42 +11,27 @@ variables:
   NUGET_PWD: $CI_JOB_TOKEN
   VERSION: "${MAJOR_VERSION}.${MINOR_VERSION}.${CI_PIPELINE_IID}"
   CS_ANALYZER_IMAGE: registry.gitlab.com/security-products/container-scanning:4
+  EXE_RELEASE_FOLDER: 'src\WpfApplication1\bin\Release'
+  #MSI_RELEASE_FOLDER: 'Setup\bin\Release'
+  #TEST_FOLDER: 'Tests\bin\Release'
+  #DEPLOY_FOLDER: 'P:\Projects\YourApp\Builds'
+  NUGET_PATH: 'C:\NuGet\nuget.exe'
+  MSBUILD_PATH: 'C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe'
+  #NUNIT_PATH: 'C:\Program Files (x86)\NUnit.org\nunit-console\nunit3-console.exe'
 
-.before_script: &init_kaniko
-  - mkdir -p /kaniko/.docker
-  - echo "{\"auths\":{\"${CI_REGISTRY}\":{\"auth\":\"$(printf "%s:%s" "${CI_REGISTRY_USER}" "${CI_REGISTRY_PASSWORD}" | base64 | tr -d '\n')\"}}}" > /kaniko/.docker/config.json
+stages:
+  - build
 
-.after_script: &echo_variables
-  - echo $CI_REGISTRY
-  - echo $CI_PROJECT_DIR
-  - echo $CI_REGISTRY_IMAGE
-  - echo $CI_PIPELINE_IID
-
-workflow:
-  rules:
-    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
-      when: never
-    - if: '$CI_COMMIT_BRANCH'
-      when: always
-      
-build:
+build_job:
   stage: build
-  image:
-    name: gcr.io/kaniko-project/executor:debug
-    entrypoint: [""]
-  before_script:
-    - *init_kaniko
+  only:
+    - tags  # the build process will only be started by git tag commits
   script:
-    - >-
-        /kaniko/executor
-        --context "${CI_PROJECT_DIR}"
-        --dockerfile "docker/dockerfile"
-        --destination "${CI_REGISTRY_IMAGE}/${API}:${CI_PIPELINE_IID}"
-        --destination "${CI_REGISTRY_IMAGE}:latest"
-        --build-arg "NUGET_USR"
-        --build-arg "NUGET_PWD"
-        --build-arg "VERSION"
-  after_script:
-    - *echo_variables
-  rules: 
-    - when: always
+    - '& "$env:NUGET_PATH" restore'  # restore Nuget dependencies
+    - '& "$env:MSBUILD_PATH" "src\WpfApplication1\Asset Builder.csproj" /p:Configuration=Release'  # build the project
+  artifacts:
+    expire_in: 1 week  # save gitlab server space, we copy the files we need to deploy folder later on
+    paths:
+      - '$env:EXE_RELEASE_FOLDER\YourApp.exe'  # saving exe to copy to deploy folder
+      #- '$env:MSI_RELEASE_FOLDER\YourApp Setup.msi'  # saving msi to copy to deploy folder
+      #- '$env:TEST_FOLDER\'  # saving entire Test project so NUnit can run tests
