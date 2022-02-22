@@ -1,0 +1,55 @@
+stages:
+  - build
+
+variables:
+  APP_SERVICE_NAME: 'assetbuilder'
+  REGION: 'uks'
+  INSTANCE: 'cmp01'
+  FULL_PREFIX: ${APP_SERVICE_NAME}${REGION}${INSTANCE}
+  DEV_PREFIX: 'd${FULL_PREFIX}'
+  PROD_PREFIX: 'p${FULL_PREFIX}'
+  MAJOR_VERSION: 0
+  MINOR_VERSION: 1
+  NUGET_USR: "gitlab-ci-token"
+  NUGET_PWD: $CI_JOB_TOKEN
+  VERSION: "${MAJOR_VERSION}.${MINOR_VERSION}.${CI_PIPELINE_IID}"
+  CS_ANALYZER_IMAGE: registry.gitlab.com/security-products/container-scanning:4
+
+.before_script: &init_kaniko
+  - mkdir -p /kaniko/.docker
+  - echo "{\"auths\":{\"${CI_REGISTRY}\":{\"auth\":\"$(printf "%s:%s" "${CI_REGISTRY_USER}" "${CI_REGISTRY_PASSWORD}" | base64 | tr -d '\n')\"}}}" > /kaniko/.docker/config.json
+
+.after_script: &echo_variables
+  - echo $CI_REGISTRY
+  - echo $CI_PROJECT_DIR
+  - echo $CI_REGISTRY_IMAGE
+  - echo $CI_PIPELINE_IID
+
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
+    - if: '$CI_COMMIT_BRANCH'
+      when: always
+      
+build:
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  before_script:
+    - *init_kaniko
+  script:
+    - >-
+        /kaniko/executor
+        --context "${CI_PROJECT_DIR}"
+        --dockerfile "docker/Dockerfile"
+        --destination "${CI_REGISTRY_IMAGE}/${API}:${CI_PIPELINE_IID}"
+        --destination "${CI_REGISTRY_IMAGE}:latest"
+        --build-arg "NUGET_USR"
+        --build-arg "NUGET_PWD"
+        --build-arg "VERSION"
+  after_script:
+    - *echo_variables
+  rules: 
+    - when: always
