@@ -40,7 +40,7 @@ stages:
 
 build-mono:
   stage: build-mono
-  image: cr.microsoft.com/dotnet/framework/sdk:4.8
+  image: mono:latest
   script:
     - nuget restore ./AssetBuilder.sln
     - msbuild
