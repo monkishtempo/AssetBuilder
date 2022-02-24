@@ -8,6 +8,14 @@ Windows based Asset Builder application. Part of the Toolkit suite.
 
 <https://healthhero.atlassian.net/wiki/spaces/HHE24/pages/3101851684/Asset+Builder>
 
+## PFX Signing
+
+The application uses a pfx temporary strong name key file. On initial check-out and first build you will get an error. To import the file use the key filename and the key ID reported in the error:
+
+* sn -i {filename}.pfx VS_KEY_{key_id}
+
+sn is usually installed as part of a Windows SDK. For example C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\sn.exe
+
 ### CI/CD With Gitlab
 
 Whilst it should be possible to do a .net Framework build using the official Microsoft Windows Framework 4.8 Docker container, it needs to be run from a Windows container (not Linux Container). So far I have not worked out how to (or if you can) get kaniko to use a Windows Container for the build.
