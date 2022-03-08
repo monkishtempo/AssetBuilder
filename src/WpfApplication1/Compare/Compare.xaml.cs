@@ -237,13 +237,12 @@ namespace AssetBuilder.Reports
 
         private string GetTitle(Dictionary<string, string> prms, string v)
         {
-            v += "<b>";
+            v += " : ";
             if (!string.IsNullOrEmpty(prms["T"])) v += $" {prms["T"]}";
             if (!string.IsNullOrEmpty(prms["TL"])) v += $" ({prms["TL"]})";
             if (!string.IsNullOrEmpty(prms["T"]) || !string.IsNullOrEmpty(prms["TL"])) v += " -";
             if (!string.IsNullOrEmpty(prms["S"])) v += $" {prms["S"]}";
             if (!string.IsNullOrEmpty(prms["SL"])) v += $" ({prms["SL"]})";
-            v += "</b>";
             return v;
         }
 
@@ -355,7 +354,7 @@ namespace AssetBuilder.Reports
                     var targetUrl = t.MultID.ToLower().Replace("data.asmx", "TraversalService/");
 
                     AssetBuilder.Reports.LogicCompare lc = new AssetBuilder.Reports.LogicCompare(sourceUrl, targetUrl, MotherAlgoID.Text, LimitAlgos.Text);
-                    lc.Title = $"Logic Compare Report <b>{s.Value} - {t.Value}</b>";
+                    lc.Title = $"Logic Compare Report : {s.Value} - {t.Value}";
                     var report = await lc.GetReport();
                     Loader.PageID = lc.PageID.ToString();
                     Loader.ScriptHtml = report;
