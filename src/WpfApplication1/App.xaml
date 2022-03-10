@@ -2071,6 +2071,60 @@
 				{qt8990} inserts and html table with the child questions and answers of the table question with the asset ID 8990.
                 </TextBlock>
             </StackPanel>
+            <StackPanel x:Key="xxToolTip">
+                <TextBlock>
+                    To insert text based on gender, use the syntax:
+                </TextBlock>
+                <TextBlock Margin="0,6,0,0">
+                    {xx + Text you want to insert if female}
+                </TextBlock>
+                <Rectangle Height="1" HorizontalAlignment="Stretch" Stroke="Blue" Margin="0,6,0,6" StrokeThickness="1" />
+                <TextBlock FontWeight="Bold">
+                    For example
+                </TextBlock>
+                <TextBlock>
+                    {xxYou are female} inserts the phrase "You are female" if the gender is female.
+                </TextBlock>
+                <TextBlock>
+                    {xxYou are female|You are not female} inserts the phrase "You are female" if the gender is female otherwise inserts the phrase "You are not female".
+                </TextBlock>
+            </StackPanel>
+            <StackPanel x:Key="xyToolTip">
+                <TextBlock>
+                    To insert text based on gender, use the syntax:
+                </TextBlock>
+                <TextBlock Margin="0,6,0,0">
+                    {xy + Text you want to insert if male}
+                </TextBlock>
+                <Rectangle Height="1" HorizontalAlignment="Stretch" Stroke="Blue" Margin="0,6,0,6" StrokeThickness="1" />
+                <TextBlock FontWeight="Bold">
+                    For example
+                </TextBlock>
+                <TextBlock>
+                    {xyYou are male} inserts the phrase "You are male" if the gender is male.
+                </TextBlock>
+                <TextBlock>
+                    {xyYou are male|You are not male} inserts the phrase "You are male" if the gender is male otherwise inserts the phrase "You are not male".
+                </TextBlock>
+            </StackPanel>
+            <StackPanel x:Key="xzToolTip">
+                <TextBlock>
+                    To insert text based on gender, use the syntax:
+                </TextBlock>
+                <TextBlock Margin="0,6,0,0">
+                    {xz + Text you want to insert if neither male or female}
+                </TextBlock>
+                <Rectangle Height="1" HorizontalAlignment="Stretch" Stroke="Blue" Margin="0,6,0,6" StrokeThickness="1" />
+                <TextBlock FontWeight="Bold">
+                    For example
+                </TextBlock>
+                <TextBlock>
+                    {xzYou are neither male or female} inserts the phrase "You are neither male or female" if the gender is neither male or female.
+                </TextBlock>
+                <TextBlock>
+                    {xzYou are neither male or female|You are either male or female} inserts the phrase "You are neither male or female" if the gender is neither male or female otherwise inserts the phrase "You are either male or female".
+                </TextBlock>
+            </StackPanel>
             <StackPanel x:Key="ScriptForLanguageToolTip">
                 <TextBlock>
 				Scripting for language can be a dangerous thing to do, and should be done only by experienced users. This will replace all the native primary language text on the target system with the language text selected.

@@ -427,6 +427,8 @@ namespace AssetBuilder.Controls
             {
                 conditionString.Add("Gender|M|", "MALE");
                 conditionString.Add("Gender|F|", "FEMALE");
+                conditionString.Add("Gender|I|", "GENDER COMPLICATED");
+                conditionString.Add("Gender|U|", "GENDER UNKNOWN");
                 if (AddControls)
                 {
                     AddBoldLabelControl("Gender of person of interest", controls);
@@ -1040,6 +1042,28 @@ namespace AssetBuilder.Controls
                     {
                         temp = generateList(temp, "OL", "", apply);
                         s = s.Substring(0, pos[0]--) + temp + s.Substring(pos[1] + 1);
+                    }
+                    else if (clause.StartsWith("x"))
+                    {
+                        var cond = string.Format("Gender|{0}|", s[pos[0] + 2].In('x', 'f') ? 'F' : s[pos[0] + 2].In('y', 'm') ? 'M' : 'U');
+                        if (!res.Contains(cond)) res.Add(cond);
+
+                        var xx = GetSplit(temp.Substring(2), '{', '}', '|');
+                        if (apply < 2 || !conditionString.ContainsKey(cond))
+                        {
+                            
+                            if (clause == "x" + gender.ToString().ToLower()
+                                || clause == "xx" && gender == 'F'
+                                || clause == "xy" && gender == 'M'
+                                || clause == "xz" && gender.NotIn('M', 'F'))
+                                s = s.Substring(0, pos[0]--) + span(xx[0], cond, "red") + s.Substring(pos[1] + 1);
+                            else
+                                s = s.Substring(0, pos[0]--) + (xx.Length > 1 ? span(xx[1], cond, "red") : "") + s.Substring(pos[1] + 1);
+                        }
+                        else
+                        {
+                            s = OutputClause(cond, s, pos, xx, conditionString[cond]);
+                        }
                     }
                     else if (clause == "qp")
                     {
