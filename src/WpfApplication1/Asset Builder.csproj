@@ -716,6 +716,9 @@
     <Resource Include="images\2.png" />
     <Resource Include="images\3.png" />
     <Resource Include="images\flag.png" />
+    <Resource Include="images\Male-Female.png" />
+    <Resource Include="images\Male.png" />
+    <Resource Include="images\Female.png" />
     <Content Include="Reports\ContentReport\TableQuestion.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
