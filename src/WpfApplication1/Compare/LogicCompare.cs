@@ -226,7 +226,7 @@ namespace AssetBuilder.Reports
 			foreach (var algo in nRows)
 				sbs[algo].Append("</div>");
 
-			if (!sbs.Any()) sbs.Add(mv, new StringBuilder("<div class\"w3-container\"><h1>No Algo Changes</h1></div>"));
+			if (!sbs.Any(f => AlgoLimits.Count == 0 || AlgoLimits.Contains(int.Parse(f.Key)))) sbs.Add(mv, new StringBuilder("<div class=\"w3-container\"><h3>No changes reported between environments</h3></div>"));
 			return string.Concat(head, string.Join("", sbs.Where(f => f.Key == mv || AlgoLimits.Count == 0 || AlgoLimits.Contains(int.Parse(f.Key))).OrderBy(f => int.Parse(f.Key)).Select(f => f.Value)), foot);
 		}
 		private Dictionary<string, List<CompareLine>> getAssets(IEnumerable<string> list)
