@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Xml.Linq;
 
 namespace AssetBuilder.Reports
 {
@@ -61,12 +62,20 @@ namespace AssetBuilder.Reports
                 var template = group.Length > 1 ? group[1] : null;
                 if (prop.StartsWith("?"))
                 {
-                    var p = obj.GetType().GetProperty(prop.Substring(1));
-                    var value = p?.GetValue(obj);
-                    if (value is bool) { if ((bool)value) prop = template; else return ""; }
-                    else if (value is string) { if (!string.IsNullOrWhiteSpace(value as string)) prop = template; else return ""; }
-                    else if (value != null) prop = template;
-                    else return "";
+                    if (obj.GetType() == typeof(XElement))
+                    {
+                        if ((obj as XElement).Element(prop.Substring(1)) != null) prop = template;
+                        else return "";
+                    }
+                    else
+                    {
+                        var p = obj.GetType().GetProperty(prop.Substring(1));
+                        var value = p?.GetValue(obj);
+                        if (value is bool) { if ((bool)value) prop = template; else return ""; }
+                        else if (value is string) { if (!string.IsNullOrWhiteSpace(value as string)) prop = template; else return ""; }
+                        else if (value != null) prop = template;
+                        else return "";
+                    }
                 }
 
                 return Replace(s, obj, prms, worker, prop, template, ids);

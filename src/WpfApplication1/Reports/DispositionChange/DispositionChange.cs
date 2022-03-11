@@ -94,6 +94,11 @@ namespace AssetBuilder.Reports
 
             if (b) root.Add(removed);
 
+            if(!root.HasElements)
+            {
+                root.Add(new XElement("NoDispositions", "True"));
+            }
+
             return root;
         }
     }

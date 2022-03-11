@@ -37,6 +37,7 @@ namespace AssetBuilder.Reports
         public string AlternateDescription { get; set; }
         public string Colour { get; set; }
         public List<ReportPayload> Objects { get; set; }
+        public bool NoObjects { get { return !(Objects?.Count > 0); } }
         public Dictionary<string, string> Properties { get; set; }
 
         public DateTime Date { get; set; }
