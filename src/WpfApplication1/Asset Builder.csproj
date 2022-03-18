@@ -230,6 +230,7 @@
       <DependentUpon>ExecuteReportDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Custom\TreeViewSource.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Reports\CompareReport.cs" />
     <Compile Include="Reports\ConclusionSummary\ConclusionSummary.cs" />
     <Compile Include="Reports\ContentReport\Content.cs" />
