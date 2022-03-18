@@ -14,6 +14,8 @@ using System.Xml.Linq;
 using AssetBuilder.Controls;
 using Visio = Microsoft.Office.Interop.Visio;
 using System.Collections.ObjectModel;
+using System.EnterpriseServices;
+using System.Net.Mime;
 using WpfXmlGrid;
 using System.Reflection;
 using AssetBuilder.Controls.AssetControls;
@@ -21,6 +23,7 @@ using Diva.Controls.Simple;
 using StringCompare;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using AssetBuilder.Extensions;
 
 namespace AssetBuilder.AssetControls
 {
@@ -1195,17 +1198,19 @@ namespace AssetBuilder.AssetControls
             Thickness cbt = new Thickness(5, 5, 2, 2);
             foreach (UIElement item in vc)
             {
-                if (item is TextBox)
+                if (item is TextBox tb)
                 {
-                    TextBox tb = item as TextBox;
+                    DataObject.AddPastingHandler(tb, OnPaste);
+
                     tb.SetValue(PaddingProperty, tbt);
                     tb.SetValue(LanguageProperty, Window1.DefaultLanguage);
                     tb.SetValue(BackgroundProperty, FindResource("ReadOnly"));
                     if (tb.Name.EndsWith("Language"))
                     {
-                        tb.DataContext = this.translation;
+                        tb.DataContext = translation;
                         LanguageChildren.Add(tb);
                     }
+
                     Binding b = BindingOperations.GetBinding(tb, TextBox.TextProperty);
                     if (cat.Defaults != null && b != null && b.XPath != null)
                     {
@@ -1324,6 +1329,41 @@ namespace AssetBuilder.AssetControls
                 {
                     iterate((item as Panel).Children);
                 }
+            }
+        }
+
+        /// <summary>
+        /// Intercept the pasting of text into text boxes.
+        /// Apply conversion of selected Unicode characters.
+        /// </summary>
+        /// <param name="sender">The object that is being pasted into</param>
+        /// <param name="e">The pasted data object event arguments</param>
+        private void OnPaste(object sender, DataObjectPastingEventArgs e)
+        {
+            if (!(sender is TextBox tb)) return;
+
+            var sourceTextFormat = DataFormats.UnicodeText;
+            var isText = e.SourceDataObject.GetDataPresent(sourceTextFormat, true);
+            if (isText)
+            {
+                var input = e.DataObject.GetData(sourceTextFormat) as string;
+                var result = input.ReplaceChars();
+
+                if (string.IsNullOrWhiteSpace(result)) return;
+
+                var start = tb.SelectionStart;
+                var length = tb.SelectionLength;
+                var caret = tb.CaretIndex;
+
+                var text = tb.Text.Substring(0, start);
+                text += tb.Text.Substring(start + length);
+
+                var newText = text.Substring(0, tb.CaretIndex) + result;
+                newText += text.Substring(caret);
+                tb.Text = newText;
+                tb.CaretIndex = caret + result.Length;
+
+                e.CancelCommand();
             }
         }
 
