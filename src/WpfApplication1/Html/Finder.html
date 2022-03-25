@@ -9,6 +9,10 @@
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
         }
+		
+		.mdat-error {
+			color: red;
+		}
     </style>
     <script>
         var mdat = { pn: null, en: function (e) { if (e !== undefined && e !== null) { while (e.firstChild) { e.removeChild(e.firstChild); } } }, af: function (content, parent) { if (parent === undefined || parent === null) { if (mdat.pn === null) { mdat.pn = document.getElementsByTagName("body")[0]; } parent = mdat.pn; } var fragment = document.createDocumentFragment(); var tempDiv = document.createElement("div"); if (content !== undefined && content !== "") tempDiv.innerHTML = content; if (tempDiv.firstChild) { while (tempDiv.firstChild) { fragment.appendChild(tempDiv.firstChild); } parent.appendChild(fragment); return parent.lastChild; } tempDiv = null; return null; }, qv: function (k) { var s = window.location.search.substring(1); var kvp = s.split("&"); for (var kv in kvp) if (kvp.hasOwnProperty(kv)) { var data = kvp[kv].split("="); var key = data[0]; if (k.toLowerCase() === key.toLowerCase() && data.length > 1) { return data[1]; } } return undefined; }, rm: function (o, f) { var a = o.indexOf(f); if (a === -1) return o; else { o.splice(a, 1); return o; } }, ad: function (o, f) { var a = o.indexOf(f); if (a !== -1) return o; else { o.push(f); return o; } } };
@@ -48,9 +52,18 @@
                 try { delete hh_scripts[uuid]; } catch (e) { }
             }
         }
+		
+		function autoFix() {
+			var input = document.getElementById('input');
+			input.value = input.value.replace(/[^0-9A-Fa-f-]/g, '');
+			process(input, false);
+			return false;
+		}
 
         function process(o, isInput) {
             if(isInput) o.onkeyup = null;
+			var error = document.getElementById("error");
+			mdat.en(error);
             if(o.value.match(/^[0-9A-Fa-f]{8}-([0-9A-Fa-f]{4}-){3}[0-9A-Fa-f]{12}$/)) {
                 hh.cleared = false;
                 for(var i in hh.environments) if (Object.prototype.hasOwnProperty.call(hh.environments, i)) {
@@ -59,6 +72,39 @@
                 }
             }
             else {
+				if(o.value !== "") {
+					mdat.af("<p>Not a valid guid</p>", error);
+					var split = o.value.replace(/[^0-9A-Fa-f-]/g, '').split('-');
+					var errors = [];
+					if(split.length < 5) errors.push("not enough sections");
+					if(split.length > 5) errors.push("too many sections");
+					if(split.length > 0 && split[0].length !== 8) errors.push("section 1 (time-low) must have exactly 8 digits (4 octets in 2 digit hex)");
+					if(split.length > 1 && split[1].length !== 4) errors.push("section 2 (time-mid) must have exactly 4 digits (2 octets in 2 digit hex)");
+					if(split.length > 2 && split[2].length !== 4) errors.push("section 3 (time-high-and-version) must have exactly 4 digits (2 octets in 2 digit hex)");
+					if(split.length > 3 && split[3].length !== 4) errors.push("section 4 (clock-seq-and-reserved & clock-seq-low) must have exactly 4 digits (2 octets in 2 digit hex)");
+					if(split.length > 4 && split[4].length !== 12) errors.push("section 5 (node) must have exactly 12 digits (6 octets in 2 digit hex)");
+					if(split.length === 0) errors.push("section 1 missing");
+					if(split.length === 1) errors.push("section 2 missing");
+					if(split.length === 2) errors.push("section 3 missing");
+					if(split.length === 3) errors.push("section 4 missing");
+					if(split.length === 4) errors.push("section 5 missing");
+					if(o.value.match(/[^0-9A-Fa-f-]/)) {
+						var set = new Set(o.value.match(/[^0-9A-Fa-f-]/g));
+						var e = "";
+						set.forEach(function (f) {
+							if(e !== "") e += ", ";
+							e += "'" + f + "'";
+						});
+						e = "Invalid characters " + e + " <button class=\"w3-btn w3-green\" onclick=\"autoFix();\" style=\"height:24px; padding:0 5px; line-height:24px; font-size:12px;\">autofix</button>";
+						errors.push(e);
+					}
+					if(errors.length > 0) {
+						var lb = mdat.af("<ul></ul>", error);
+						for(var i=0;i<errors.length;i++) {
+							mdat.af("<li>"+errors[i]+"</li>", lb);
+						}
+					}
+				}
                 if(!hh.cleared) clearEnv();
             }
         }
@@ -129,8 +175,9 @@
                 <div class="w3-container">
                     <p>
                         <label>TraversalID</label>
-                        <input type="text" class="w3-input" id="input" oninput="process(this, true);" onkeyup="process(this, false);" />
+                        <input type="text" class="w3-input" id="input" oninput="process(this, true);" onkeyup="process(this, false);" maxlength="50" />
                     </p>
+					<div id="error" class="mdat-error"></div>
                 </div>
                 <div class="w3-row" id="output"></div>
             </div>
