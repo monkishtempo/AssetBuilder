@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -22,10 +23,9 @@ namespace AssetBuilder.Controls
 			chkSource = new CheckBox[] { chkStaff, chkReviewer, chkUser };
 			chkType = new CheckBox[] { chkNew, chkSpell, chkClarify, chkCategory, chkAdditional, chkNoApproval, chkBullet, chkOther };
 			if (newAsset)
-			{
-				chkStaff.IsChecked = true;
 				chkNew.IsChecked = true;
-			}
+			chkReviewer.IsChecked = true;
+			cmdReviewer.Text = Environment.UserName;
 		}
 
 		void PromptWindow_Loaded(object sender, RoutedEventArgs e)
