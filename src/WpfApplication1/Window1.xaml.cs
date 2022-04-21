@@ -117,6 +117,7 @@ namespace AssetBuilder
         public static bool AllowConclusionMap = false;
         public static bool AllowSaaSIntegration = false;
         public static bool AssetListIcons = false;
+        public static bool AllowExportReport;
         public static int RiskMotherAlgo = 2530;
         public static bool McKesson_Mode = false; // Properties.Settings.Default.McKesson_Mode;
         public static WebView2 TraversalClient;
@@ -519,6 +520,7 @@ namespace AssetBuilder
             AllowRiskCalculator = features.Contains("RiskCalculator");
             AllowSaaSIntegration = features.Contains("SaaSIntegration");
             AssetListIcons = features.Contains("AssetListIcons");
+            AllowExportReport = features.Contains("ExportReport");
             if(AssetListIcons)
             {
                 qcat.AssetFlags = new Dictionary<int, Dictionary<int, int>>

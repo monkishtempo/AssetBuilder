@@ -1,34 +1,32 @@
-﻿using System;
+﻿using AssetBuilder.Classes;
+using AssetBuilder.Properties;
+using AssetBuilder.Reports;
+using Microsoft.Web.WebView2.Core;
+using Microsoft.Win32;
+using Microsoft.Windows.Controls.Ribbon;
+using mshtml;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using System.Xml;
 using System.Xml.Linq;
-using AssetBuilder.Properties;
-using Microsoft.Win32;
-using Microsoft.Windows.Controls.Ribbon;
-using System.Xml.Xsl;
 using System.Xml.XPath;
-using System.Threading.Tasks;
-using System.Collections.ObjectModel;
-using System.Windows.Data;
-using AssetBuilder.Classes;
-using System.Net;
-using System.Diagnostics;
-using mshtml;
-using System.Text.RegularExpressions;
-using System.Windows.Navigation;
-using AssetBuilder.Reports;
-using Microsoft.Web.WebView2.Core;
-using System.Windows.Media;
+using System.Xml.Xsl;
 
 namespace AssetBuilder.Controls
 {
@@ -37,6 +35,8 @@ namespace AssetBuilder.Controls
     /// </summary>
     public partial class AlgoLoader : ABRibbonWindow
     {
+        private const string ExportError = "An error occurred during Export. Export cannot continue.\r\n\r\nPlease contact Toolkit support.";
+
         public static AlgoLoader AlgoLoaderForm = null;
         public static XmlNode KeyWordXml;
         LoadedAlgos loadedAlgos = null;
@@ -653,12 +653,14 @@ namespace AssetBuilder.Controls
             return export;
         }
 
-        private void IncrementVersions()
+        private void IncrementVersions(string[] selectedAlgos)
         {
-            var updatedAlgos = DataAccess.getData("ab_updateAsset", new string[] { "@xml", "<root command=\"listnewalgos\"/>" }).Elements().Select
+            if (!selectedAlgos.Any()) return;
+
+            var updatedAlgos = DataAccess.getData("ab_updateAsset", "@xml", "<root command=\"listnewalgos\"/>").Elements().Select
                 (f => new { AlgoID = f.ElementValue("AlgoID"), NodeID = f.ElementValue("NodeID") });
-            string[] algoids = textBox1.Text.Split(',');
-            foreach (var algoid in algoids)
+
+            foreach (var algoid in selectedAlgos)
             {
                 var match = updatedAlgos.Where(f => f.AlgoID == algoid);
                 if (match.Any()) IncrementVersionInstance(match.First().AlgoID, match.First().NodeID);
@@ -760,11 +762,22 @@ namespace AssetBuilder.Controls
                 {
                     if (export)
                     {
-                        string result = AreYouSure($"{dataGrid1.SelectedItems.Count} Algo(s)");
-                        if (result == "Stop, I don't want to") return;
+                        var result = AreYouSure($"{dataGrid1.SelectedItems.Count} Algo(s)");
+                        if (result == null || result.Equals("Stop, I don't want to", StringComparison.InvariantCultureIgnoreCase)) return;
                     }
+
                     if (Window1.AllowProperties && source == "")
-                        IncrementVersions();
+                    {
+                        var algoIds = textBox1.Text.Split(',');
+                        if (Window1.AllowExportReport)
+                        {
+                            var result = SaveExportData();
+                            if (!result) return;
+                        }
+
+                        IncrementVersions(algoIds);
+                    }
+
                     Data.Data ds = DataAccess.GetDataService();
                     DataAccess.LastCommand = $"{(export ? $"Export Target = '{cbTarget.Text}'," : "Script")} Source = '{source}', Language = '{txt_Language.Text}', Data = '({textBox1.Text})' ";
                     string s;
@@ -823,12 +836,32 @@ namespace AssetBuilder.Controls
             }
         }
 
+        private bool SaveExportData()
+        {
+            var exportData = GetExportData();
+            if (exportData == null || !exportData.IsValid) return false;
+
+            exportData.ExportedAlgos = textBox1.Text;
+            exportData.TargetEnvironment = cbTarget.Text;
+            var success = RecordExport(exportData);
+            if (success) return true;
+
+            ErrorDialog(ExportError);
+            return false;
+        }
+
         private string AreYouSure(string content)
         {
             var message = $"You are about to rollout the following content{(cbSource.Text != "" ? $" from {cbSource.Text} " : "")} to {cbTarget.Text}\r\n\r\n{content}\r\n\r\nAre you sure you want to do this\r\nThis cannot be reversed.";
             var title = "Are you sure?";
             string result = Diva.Controls.Simple.CustomMessageBox.Show(message, title, new[] { "Stop, I don't want to", "I'm sure" }, "Stop, I don't want to", "Stop, I don't want to");
             return result;
+        }
+
+        private string ErrorDialog(string content)
+        {
+            const string title = "Error";
+            return Diva.Controls.Simple.CustomMessageBox.Show(content, title, new[] {"OK"});
         }
 
         private string RemoveAssetsFromScript(string s)
@@ -1815,10 +1848,43 @@ namespace AssetBuilder.Controls
         {
             var c = sender as ICommandSource;
             Uri source = new Uri(new Uri(Settings.Default.WebService), $"TraversalService/AdHoc_Parameters/{c.CommandParameter}");
-            var parameterers = source.AbsoluteUri.GetContent<JNode>();
+            var parameters = source.AbsoluteUri.GetContent<JNode>();
             disableForm(false);
-            var erd = new Custom.ExecuteReportDialog(parameterers) { Loader = this };
+            var erd = new Custom.ExecuteReportDialog(parameters) { Loader = this };
             controlGrid.Children.Add(erd);
+        }
+
+        private static bool RecordExport(ExportRecordData data)
+        {
+            try
+            {
+                var endpoint = new Uri(new Uri(Settings.Default.WebService), "TraversalService/UpdateLoadData");
+                var headers = new[] {
+                    ("Content-Type", "application/json")
+                };
+                var body = new { Data = data };
+                var response = body.PostObject<JNode>(endpoint.AbsoluteUri, headers);
+                return response != null && !response.Keys.Contains("error", StringComparer.InvariantCultureIgnoreCase);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private static ExportRecordData GetExportData()
+        {
+            var input = new InputBox(
+                "Enter export details:", 
+                "Export Report", 
+                "|9", 
+                WindowStartupLocation.CenterScreen)
+                {
+                    ExportReportResponse = new ExportRecordData(Environment.UserName)
+                };
+
+            var result = input.ShowDialog();
+            return result.HasValue ? input.ExportReportResponse : null;
         }
     }
 
