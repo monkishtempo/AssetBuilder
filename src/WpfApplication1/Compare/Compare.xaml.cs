@@ -145,9 +145,14 @@ namespace AssetBuilder.Reports
 
         private async void Run_Click(object sender, RoutedEventArgs e)
         {
+            var preTitle = "Asset Compare Report";
             var disposition = (sender as Button)?.CommandParameter?.ToString() == "Dispositions";
+            if (disposition) preTitle = "Disposition Change Report";
+
             var silent = (sender as Button)?.CommandParameter?.ToString() == "Silent";
-            List<Task<string>> reportResults = new List<Task<string>>();
+            if (silent) preTitle = "Silent Conclusion Comparison Report";
+
+            var reportResults = new List<Task<string>>();
             if (SourceXml == null) reportResults.Add(LoadData(SourceButton, false));
             if (TargetXml == null) reportResults.Add(LoadData(TargetButton, false));
 
@@ -164,12 +169,17 @@ namespace AssetBuilder.Reports
                     { "Subtitle", "" },
                 };
                 InputBox ib = new InputBox("Enter the Title and Subtitle.", "Input required", new[] { "Title", "Subtitle" }, WindowStartupLocation.CenterOwner, new[] { InputBoxValidate.Required, InputBoxValidate.None });
-                ib[0] = disposition ? GetTitle(prms, "Disposition Change Report") : GetTitle(prms, "Asset Compare Report");
+                ib[0] = GetTitle(prms, preTitle);
                 ib.Owner = Loader;
                 //ib.btnOK.IsEnabled = false;
                 //Task.WhenAll(reportResults.ToArray()).ContinueWith(f => ib.btnOK.IsEnabled = true);
                 ib.ShowDialog();
-                if (!ib.DialogResult.HasValue || !ib.DialogResult.Value) return;
+                if (!ib.DialogResult.HasValue || !ib.DialogResult.Value)
+                {
+                    enable();
+                    return;
+                }
+
                 await Task.WhenAll(reportResults.ToArray());
                 //await Task.Run (() => { Task.WaitAll(reportResults.ToArray()); });
                 prms["Title"] = ib[0];
