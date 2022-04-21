@@ -751,6 +751,7 @@ namespace AssetBuilder
         {
             base.OnClosed(e);
             if (NLI != null) NLI.Close();
+            if (Usermanagement.window != null) Usermanagement.window.Close();
         }
 
         qcat qcat2 = null;
@@ -1953,18 +1954,22 @@ namespace AssetBuilder
 
         private void Usermanagement_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            Usermanagement um = new Usermanagement(Window1.UserName);
-
-            if(um != null)
+            Usermanagement um;
+            if (Usermanagement.window != null) um = Usermanagement.window;
+            else
             {
-                um.Title = "Administration: User Management";
-                um.WindowState = WindowState.Maximized;
-                um.ShowDialog();
-                um.Topmost = true;
-                um.Topmost = false;
-                um.Focus();
-            }
+                um = new Usermanagement(Window1.UserName);
 
+                if (um != null)
+                {
+                    um.Title = "Administration: User Management";
+                    um.WindowState = WindowState.Maximized;
+                }
+            }
+            um.Show();
+            um.Topmost = true;
+            um.Topmost = false;
+            um.Focus();
         }
         private void TableEdit_Executed(object sender, ExecutedRoutedEventArgs e)
         {

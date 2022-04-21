@@ -1,32 +1,30 @@
-﻿using AssetBuilder.Properties;
+﻿using AssetBuilder.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace AssetBuilder
 {
     /// <summary>
     /// Interaction logic for Usermanagement.xaml
     /// </summary>
-    public partial class Usermanagement : Window
+    public partial class Usermanagement : ABWindow
     {
         static UM.Uman uman;
+        public static Usermanagement window = null;
 
         private bool pageControlVisibilityEnabled { get; set; }
         private int companyID { get; set; }
         private string CompanySprojOid { get; set; }
         private int UserId { get; set; }
         private string UserSprojOid { get; set; }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            window = null;
+        }
 
         public Usermanagement(string assetbuilderLogin)
         {
@@ -46,6 +44,7 @@ namespace AssetBuilder
             pageControlVisibilityEnabled = true;
             PageControlVisibility(true);
             SecurityDisplay();
+            window = this;
         }
 
 
@@ -118,6 +117,37 @@ namespace AssetBuilder
             }
             public int Roles { get; set; }
             public List<UserRole> userRoles { get; set; }
+
+            public List<UserInfo> GetUsers2(string companySpoid, string userSpoid = "")
+            {
+                List<UserInfo> UserList = new List<UserInfo>();
+                UM.Uman.UserInfo userInfo = new UM.Uman.UserInfo();
+                var users = userInfo.GetUserInfos2(uman.userSecurity, companySpoid: companySpoid);
+
+                foreach (var user in users["Users"])
+                {
+                    var info = new UserInfo
+                    {
+                        Id = user["PK_User_ID"],
+                        Name = user["UName"],
+                        Roles = user["Roles"].Count,
+                        sprojoid = user["SPROJOID"],
+                        Status = UserStatus(user["Orphaned"], user["Active"], user["Roles"].Count),
+                    };
+                    UserList.Add(info);
+                    info.userRoles = users["DBRoles"]
+                        .Select(f => new UserRole
+                        {
+                            Assigned = user["Roles"].Contains(f["PK_Role_ID"]),
+                            Id = f["PK_Role_ID"],
+                            Name = f["Role_Name"],
+                            sprojoid = f["SPROJOID"]
+                        }).ToList();
+                }
+
+                return UserList;
+            }
+
             public List<UserInfo> GetUsers(string companySpoid, string userSpoid = "")
             {
                 List<UserInfo> UserList = new List<UserInfo>();
@@ -521,7 +551,7 @@ namespace AssetBuilder
                 var result = processing.UserSync();
                 var message = result.Message;
 
-                if (result.Success && message == "")
+                if (result.IsSuccess && message == "")
                 {
                     message = "Successfully synchronised users";
                 }
@@ -555,7 +585,7 @@ namespace AssetBuilder
                     var result = processing.DBSetup();
                     var message = result.Message;
 
-                    if (result.Success && message == "")
+                    if (result.IsSuccess && message == "")
                     {
                         message = "Successfully initialised database schema. This module window will now close to for a refresh";
 
@@ -590,7 +620,7 @@ namespace AssetBuilder
         {
             UserInfo userInfo = new UserInfo();
 
-            this.dgvUsers.ItemsSource = userInfo.GetUsers(spoid);
+            this.dgvUsers.ItemsSource = userInfo.GetUsers2(spoid);
         }
         private void PopulateUserRoles(UserInfo userInfo)
         {
@@ -775,7 +805,7 @@ namespace AssetBuilder
                             PKUserID = Convert.ToInt32(processStatus.Value.IntValue);
                         }
 
-                        if (processStatus.Success && PKUserID > 0)
+                        if (processStatus.IsSuccess && PKUserID > 0)
                         {
                             MessageBox.Show(this.txtbUserName.Text.ToUpper() + " successfully added. Please assign user to specific Roles as required.");
 
@@ -786,7 +816,7 @@ namespace AssetBuilder
                         {
                             var mess = processStatus.Message;
 
-                            if (processStatus.Success)
+                            if (processStatus.IsSuccess)
                             {
                                 if(mess == "") { mess = "Successfully added user"; }
                             }

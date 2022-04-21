@@ -42,8 +42,8 @@ namespace AssetBuilder.UM
 
         }
 
-        //private string webbuilderDomain = Settings.Default.WebService;
-        private static string webbuilderDomain = "http://localhost:52636/";
+        private string webbuilderDomain = Settings.Default.WebService;
+        //private static string webbuilderDomain = "http://localhost:52636/";
         private static UserSecurity UserSecurity;
 
         public WebbuilderAPI(UserSecurity userSecurity)
@@ -52,6 +52,7 @@ namespace AssetBuilder.UM
         }
         public T CallWebbuilderAPI<T>(ApiMethods methodName, List<InputParams> inputParams = null) where T: class
         {
+            var then = DateTime.Now;
             var globalparams = "?sessionid=" + UserSecurity.sessionID + "&abname=" + UserSecurity.abUserName + "&windname=" + UserSecurity.windowsUserName;
             var methodParams = "";
 
@@ -66,6 +67,7 @@ namespace AssetBuilder.UM
             var source = new Uri(new Uri(webbuilderDomain), $"UM/" + methodName.ToString() + globalparams + methodParams).AbsoluteUri;
             var jnode = source.GetContent<T>();
 
+            if(typeof(T).FullName == "AssetBuilder.JNode") DataAccess.AddLastCommand(source, jnode as JNode, DateTime.Now - then);
             return jnode;
         }
 
@@ -124,6 +126,19 @@ namespace AssetBuilder.UM
             {
 
             }
+
+            public JNode GetUserInfos2(UserSecurity userSecurity, string companySpoid)
+            {
+                //List<UserInfo> userInfos = new List<UserInfo>();
+                WebbuilderAPI webbuilderAPI = new WebbuilderAPI(userSecurity);
+                List<WebbuilderAPI.InputParams> prms = new List<WebbuilderAPI.InputParams>();
+                prms.Add(new WebbuilderAPI.InputParams("companyid", companySpoid));
+
+                var userInfos = webbuilderAPI.CallWebbuilderAPI<JNode>(WebbuilderAPI.ApiMethods.getusers, prms);
+
+                return userInfos;
+            }
+
             public List<UserInfo> GetUserInfos(UserSecurity userSecurity, string companySpoid)
             {
                 //List<UserInfo> userInfos = new List<UserInfo>();
@@ -199,9 +214,9 @@ namespace AssetBuilder.UM
         public class UserInfoSessionLoginHistory
         {
             public string DomainLoginAccount { get; set; }
-            public DateTime Current { get; set; }
-            public DateTime Previous { get; set; }
-            public DateTime Former { get; set; }
+            public DateTime? Current { get; set; }
+            public DateTime? Previous { get; set; }
+            public DateTime? Former { get; set; }
         }
         public class UserRoleAssignment
         {
@@ -350,7 +365,7 @@ namespace AssetBuilder.UM
 
         public class ProcessStatus
         {
-            public bool Success { get; set; }
+            public bool IsSuccess { get; set; }
             public string Message { get; set; }
             public ProcessStatusValue Value { get; set; }
         }
@@ -396,7 +411,7 @@ namespace AssetBuilder.UM
             {
                 return new ProcessStatus
                 {
-                    Success = false,
+                    IsSuccess = false,
                     Message = "Database has already been initialised"
                 };
             }
@@ -413,7 +428,7 @@ namespace AssetBuilder.UM
             {
                 return new ProcessStatus
                 {
-                    Success = false,
+                    IsSuccess = false,
                     Message = "Database requires initialisation before synchronisation can take place."
                 };
             }

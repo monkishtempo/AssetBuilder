@@ -185,8 +185,8 @@ namespace AssetBuilder.Classes
 
         private static void HighLightShape(Visio.Shape shp, System.Windows.Media.Color TrackingColour)
         {
-            shp.get_Cells("LineWeight").Formula = "5 pt";
-            shp.get_Cells("LineColor").Formula = formulaAdd(shp.get_Cells("LineColor").Formula, TrackingColour);
+            shp.get_Cells("LineWeight").FormulaU = "5 pt";
+            shp.get_Cells("LineColor").FormulaU = formulaAdd(shp.get_Cells("LineColor").Formula, TrackingColour);
         }
 
         static string formulaAdd(string formula, System.Windows.Media.Color TrackingColour)
