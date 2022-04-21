@@ -59,6 +59,7 @@
                 <CommandBinding Command="me:Window1.cmdCodes" Executed="CodeAssociation_Executed" />
                 <CommandBinding Command="me:Window1.cmdTraversalClient" Executed="TraversalClient_Executed" />
                 <CommandBinding Command="me:Window1.cmdTraversalFinder" Executed="TraversalFinder_Executed" />
+                <CommandBinding Command="me:Window1.cmdUserManagement" Executed="Usermanagement_Executed" />
             </r:Ribbon.CommandBindings>
 			<r:Ribbon.QuickAccessToolBar>
 				<r:RibbonQuickAccessToolBar>
@@ -228,6 +229,9 @@
                 <r:RibbonGroup Name="btnTableEdit">
 					<r:RibbonButton Command="me:Window1.cmdTableEdit" ToolTip="{me:Info Image=/images/Windows-Table-icon.png,Title='Table Edit',Body=TableEditToolTip}" LargeImageSource="images/Windows-Table-icon.png" Label="Table Edit"/>
 				</r:RibbonGroup>
+                <r:RibbonGroup Name="btnUserManagement">
+                    <r:RibbonButton Command="me:Window1.cmdUserManagement" ToolTip="{me:Info Image=/images/group_update_32x32.png,Title='User Management', Body=UserManagementToolTip}" Label="User Management" LargeImageSource="images/group_update_32x32.png" />
+                </r:RibbonGroup>
 			</r:RibbonTab>
 			<r:RibbonTab Header="Help">
 				<r:RibbonGroup>

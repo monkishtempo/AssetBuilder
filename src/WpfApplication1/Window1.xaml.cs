@@ -46,6 +46,7 @@ namespace AssetBuilder
     public partial class Window1 : ABRibbonWindow
     {
         private const int RF_TESTMESSAGE = 0xA123;
+
         public static SecurityContext Security { get; set; }
 
         public ObservableCollection<string> AlternateLanguages
@@ -179,6 +180,7 @@ namespace AssetBuilder
             windowTitle = window.Title;
             window.btnAlgoManagement.IsEnabled = UserLevel == UserSecurityLevel.Admin || Security == SecurityContext.Open;
             window.btnTableEdit.IsEnabled = UserLevel == UserSecurityLevel.Admin || Security == SecurityContext.Open;
+            window.btnUserManagement.IsEnabled = UserLevel == UserSecurityLevel.Admin;
             window.rtbAutoSave.IsEnabled = UserLevel != UserSecurityLevel.Reviewer;
             window.btnUpdateDervivedAssets.IsEnabled = UserLevel != UserSecurityLevel.Reviewer;
             window.btnDebugApplication.IsEnabled = UserLevel == UserSecurityLevel.Admin || Security == SecurityContext.Open;
@@ -331,6 +333,7 @@ namespace AssetBuilder
         public static RoutedUICommand cmdCodes = new RoutedUICommand("cmdCodes", "cmdCodes", typeof(Window1));
         public static RoutedUICommand cmdTraversalClient = new RoutedUICommand("cmdTraversalClient", "cmdTraversalClient", typeof(Window1));
         public static RoutedUICommand cmdTraversalFinder = new RoutedUICommand("cmdTraversalFinder", "cmdTraversalFinder", typeof(Window1));
+        public static RoutedUICommand cmdUserManagement = new RoutedUICommand("cmdUserManagement", "cmdUserManagement", typeof(Window1));
 
         public Window1()
         {
@@ -750,6 +753,7 @@ namespace AssetBuilder
         {
             base.OnClosed(e);
             if (NLI != null) NLI.Close();
+            if (Usermanagement.window != null) Usermanagement.window.Close();
         }
 
         qcat qcat2 = null;
@@ -1950,6 +1954,25 @@ namespace AssetBuilder
             FullPanel.Children.Add(c);
         }
 
+        private void Usermanagement_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            Usermanagement um;
+            if (Usermanagement.window != null) um = Usermanagement.window;
+            else
+            {
+                um = new Usermanagement(Window1.UserName);
+
+                if (um != null)
+                {
+                    um.Title = "Administration: User Management";
+                    um.WindowState = WindowState.Maximized;
+                }
+            }
+            um.Show();
+            um.Topmost = true;
+            um.Topmost = false;
+            um.Focus();
+        }
         private void TableEdit_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             TableEdit w;
