@@ -23,4 +23,8 @@
     <ProjectReference Include="..\..\src\WpfApplication1\Asset Builder.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Classes\" />
+  </ItemGroup>
+
 </Project>

@@ -186,6 +186,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\Environment.cs" />
+    <Compile Include="Classes\ExportRecordData.cs" />
     <Compile Include="Classes\HandlerClasses.cs" />
     <Compile Include="Classes\HtmlReport.cs" />
     <Compile Include="Classes\JNode.cs" />
@@ -198,6 +199,8 @@
       <DependentUpon>Compare.xaml</DependentUpon>
     </Compile>
     <Compile Include="Compare\LogicCompare.cs" />
+    <Compile Include="Controls\Adorners\WatermarkAdorner.cs" />
+    <Compile Include="Controls\Adorners\WatermarkService.cs" />
     <Compile Include="Controls\AssetControls\CMAP.cs" />
     <Compile Include="Controls\ConclusionMap\Action.cs" />
     <Compile Include="Controls\ConclusionMap\ActionDefinition.cs" />

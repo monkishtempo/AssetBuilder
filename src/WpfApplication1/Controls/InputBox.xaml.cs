@@ -1,7 +1,10 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using AssetBuilder.Classes;
 
 namespace AssetBuilder.Controls
 {
@@ -10,36 +13,80 @@ namespace AssetBuilder.Controls
 	/// </summary>
 	public partial class InputBox : Window
 	{
-        public string Text { get { return textBox1.Text; } set { textBox1.Text = value; } }
-        private TextBox[] __Texts;
-        private TextBox[] _Texts { get { return __Texts == null ? new[] { textBox1 } : __Texts; } set { __Texts = value; } } 
-        public string[] Texts { get { return _Texts == null ? new[] { textBox1.Text } : _Texts.Select(f => f.Text).ToArray(); } }
         InputBoxValidate[] ibv = new[] { InputBoxValidate.None };
-		Grid[] grds = null;
-		Grid grd = null;
-		bool appendPipe = false;
+        private ExportRecordData _exportRecordData;
+        Grid[] grds = null;
+        Grid grd = null;
+        bool appendPipe = false;
+        private TextBox[] __Texts;
+        private TextBox[] _Texts 
+        { 
+            get { return __Texts == null ? new[] { textBox1 } : __Texts; } 
+            set => __Texts = value;
+        }
+        
+        public string Text { 
+            get => textBox1.Text;
+            set => textBox1.Text = value;
+        }
 
+        public string[] Texts
+        {
+            get { return _Texts == null ? new[] { textBox1.Text } : _Texts.Select(f => f.Text).ToArray(); }
+        }
+        
         public string this[int i]
         {
-            get { return (_Texts.Length > i && i >= 0) ? _Texts[i].Text : null; }
+            get => _Texts.Length > i && i >= 0 ? _Texts[i].Text : null;
             set { if (_Texts.Length > i && i >= 0) _Texts[i].Text = value; }
+        }
+
+        public ExportRecordData ExportReportResponse
+        {
+            get => _exportRecordData;
+            set
+            {
+                _exportRecordData = value;
+
+                // Bindable properties:
+                var jiraBinding = new Binding(nameof(_exportRecordData.JiraReferences)) { Source = _exportRecordData, UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged };
+                var reasonBinding = new Binding(nameof(_exportRecordData.Reason)) { Source = _exportRecordData, UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged };
+                var releaseNoteBinding = new Binding(nameof(_exportRecordData.AlgoReleaseNoteLink)) { Source = _exportRecordData, UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged };
+                
+                txtJiraTickets.SetBinding(TextBox.TextProperty, jiraBinding);
+                txtExportReason.SetBinding(TextBox.TextProperty, reasonBinding);
+                txtAlgoReleaseNotes.SetBinding(TextBox.TextProperty, releaseNoteBinding);
+                
+                // Non-bindable properties:
+                lblExportUser.Content = value.ExportedBy;
+                lblExportDate.Content = value.ExportDateTimeDisplay;
+
+                // Prepare form/validation binding:
+                btnOK.IsEnabled = _exportRecordData.IsValid;
+                _exportRecordData.PropertyChanged += ExportDataPropertyChanged;
+            }
+        }
+
+        private void ExportDataPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (_exportRecordData != null) btnOK.IsEnabled = _exportRecordData.IsValid;
         }
 
         public InputBox(string prompt, string title, string[] type, WindowStartupLocation wsl, InputBoxValidate[] validate = null)
         {
             InitializeComponent();
-            int len = type.Length;
+            var len = type.Length;
             if (len > 1)
             {
                 _Texts = new TextBox[len];
                 _Texts[0] = textBox1;
                 ibv = new InputBoxValidate[len];
-                for (int i = 1; i < len; i++)
+                for (var i = 1; i < len; i++)
                 {
                     InputPanel.RowDefinitions.Add(new RowDefinition());
-                    Label l = new Label { Content = type[i] };
+                    var l = new Label { Content = type[i] };
                     l.SetValue(Grid.RowProperty, i);
-                    TextBox b = new TextBox { MinWidth = 200 };
+                    var b = new TextBox { MinWidth = 200 };
                     b.Tag = i;
                     b.SetValue(Grid.ColumnProperty, 1);
                     b.SetValue(Grid.RowProperty, i);
@@ -65,45 +112,44 @@ namespace AssetBuilder.Controls
         public InputBox(string prompt, string title, string type, WindowStartupLocation wsl, InputBoxValidate validate = InputBoxValidate.None)
 		{
 			InitializeComponent();
-            grds = new Grid[] { Comments, AlgoFields, QuestionFields, AnswerFields, ConclusionFields, BulletFields, MergeLanguage, TitleFields, McKessonXml, InputPanelCheckBox };
+            grds = new[] { Comments, AlgoFields, QuestionFields, AnswerFields, ConclusionFields, BulletFields, MergeLanguage, TitleFields, McKessonXml, ExportReportData, InputPanelCheckBox };
 			if (type.Contains("|"))
 			{
 				if (type.StartsWith("Asset Fields")) appendPipe = true;
 				grd = grds[int.Parse(type.Split('|')[1])];
-				grd.Visibility = System.Windows.Visibility.Visible;
-				InputPanel.Visibility = System.Windows.Visibility.Collapsed;
+				grd.Visibility = Visibility.Visible;
+				InputPanel.Visibility = Visibility.Collapsed;
 				foreach (var item in grd.Children)
 				{
-					if (item is CheckBox)
+					if (item is CheckBox cb)
 					{
-						CheckBox cb = item as CheckBox;
-						cb.Checked += new RoutedEventHandler(cb_Checked);
-						cb.Unchecked += new RoutedEventHandler(cb_Checked);
+                        cb.Checked += cb_Checked;
+						cb.Unchecked += cb_Checked;
                         if (cb.Content != null) cb.IsChecked = true;
                         else cb.Content = type.Split('|')[0];
                     }
 				}
 			}
+
 			lblType.Content = type;
             lblPromt.Content = prompt;
             Title = title;
 			WindowStartupLocation = wsl;
 			ibv[0] = validate;
 			textBox1_TextChanged(textBox1, null);
-		}
+        }
 
 		void cb_Checked(object sender, RoutedEventArgs e)
 		{
-			string s = "";
+			var s = "";
 			if (appendPipe) s = "|";
 			foreach (var item in grd.Children)
 			{
-				if (item is CheckBox)
+				if (item is CheckBox cb)
 				{
-					CheckBox cb = item as CheckBox;
-					if (cb.IsChecked == true)
+                    if (cb.IsChecked == true)
 					{
-						string content = cb.Content.ToString();
+						var content = cb.Content.ToString();
 						if (cb.CommandParameter != null) content = cb.CommandParameter.ToString();
 						if (content == "Blank" || (s != "" && s != "|")) s += "|";
 						if (content != "Blank") s += content;
@@ -117,7 +163,7 @@ namespace AssetBuilder.Controls
 
 		private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
 		{
-            bool enable = true;
+            var enable = true;
             foreach (var t in _Texts)
             {
                 var text = t.Text;
@@ -128,21 +174,20 @@ namespace AssetBuilder.Controls
                     case InputBoxValidate.None:
                         break;
                     case InputBoxValidate.Date:
-                        DateTime dt = DateTime.MinValue;
+                        var dt = DateTime.MinValue;
                         if (!DateTime.TryParse(text, out dt))
                             enable = false;
                         break;
                     case InputBoxValidate.Int:
-                        int x = 0;
+                        var x = 0;
                         if (!int.TryParse(text, out x))
                             enable = false;
                         break;
                     case InputBoxValidate.Required:
                         enable = !string.IsNullOrWhiteSpace(text);
                         break;
-                    default:
-                        break;
                 }
+
                 btnOK.IsEnabled = enable;
             }
         }
