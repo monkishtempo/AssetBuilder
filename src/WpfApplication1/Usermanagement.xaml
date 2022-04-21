@@ -1,0 +1,233 @@
+﻿<Window x:Class="AssetBuilder.Usermanagement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AssetBuilder"
+        mc:Ignorable="d"
+        Title="Usermanagement" Height="1000" Width="1200" WindowStyle="ThreeDBorderWindow" Background="White" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="3">
+            <DockPanel.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="AliceBlue" Offset="1"/>
+                </LinearGradientBrush>
+            </DockPanel.Background>
+            <ToolBarTray DockPanel.Dock="Top">
+                <ToolBar VerticalAlignment="Top">
+                    <Menu DockPanel.Dock="Top">
+                        <MenuItem Header="Admin" FontSize="13">
+                            <MenuItem.Icon>
+                                <Image Source="/images/Admin.png" Height="20"/>
+                            </MenuItem.Icon>
+                            <MenuItem Name="admSync" Header="Sync" Click="MenuItem_Click_Sync" ToolTip="Process to resolve orphaned users and refresh user roles"/>
+                            <Separator />
+                            <MenuItem Name="admInitDBsetup" Header="Initial DB Setup" Click="MenuItem_Click_DBSetup" ToolTip="System Administrators should process this step upon initialization of a new database" />
+                            <Separator />
+                        </MenuItem>
+                    </Menu>
+                </ToolBar>
+            </ToolBarTray>
+        </DockPanel>
+        <!-- content -->
+        <DockPanel Grid.Row="1" Grid.Column="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="250"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+            </Grid>
+            <GroupBox Grid.Row="0" DockPanel.Dock="Top" Header="" BorderThickness="2" BorderBrush="LightBlue" FontSize="15">
+                <StackPanel>
+                    <RadioButton Content="New User" Name="rbNewUser" Checked="rbNewUser_Checked" IsChecked="False" Tag="1" />
+                    <RadioButton Content="My Profile" Name="rbMyProfile" Checked="rbMyProfile_Checked" IsChecked="True" Tag="99"/>
+                    <RadioButton Content="Manage Roles" Name="rbMangeUserRoles" Checked="rbMangeUserRoles_Checked" IsChecked="False" Tag="2"/>
+                    <RadioButton Content="Entity Assignment" Name="rbCompany" Checked="rbCompany_Checked" IsChecked="False" Tag="2"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Grid.Row="1" Name="grpCompany" Header="" BorderThickness="2" BorderBrush="LightBlue" FontSize="15" Visibility="Collapsed">
+                <DataGrid x:Name="dgvCompany" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" SelectionChanged="Companies_SelectionChanged" RowHeaderWidth="0" GridLinesVisibility="None" Background="White" RowBackground="White" BorderThickness="0" Margin="3,3,3,3" ColumnWidth="*">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="sprojoid" Binding="{Binding sprojoid, Mode=OneWay}" Visibility="Collapsed"/>
+                        <DataGridTextColumn Header="Id" Binding="{Binding Id, Mode=OneWay}" Visibility="Collapsed"/>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=OneWay}" Visibility="Visible"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+            <GroupBox Grid.Row="1" Name="grpMyProfile" Header="" BorderThickness="2" BorderBrush="LightBlue" Width="200" HorizontalAlignment="Left" FontSize="15" Visibility="Collapsed">
+                <StackPanel>
+                    <TextBlock>Username:</TextBlock>
+                    <TextBox Name="txtbUserNamePR" IsReadOnly="True" Background="AliceBlue" />
+                    <Line></Line>
+                    <TextBlock><Run Text="Password:"/></TextBlock>
+                    <TextBox x:Name="txtbPasswordPR" InputMethod.InputScope="Password"/>
+                    <Button Background="AliceBlue" Padding="4" FontSize="12" FontWeight="DemiBold" Click="Button_Click_PasswordReset" HorizontalAlignment="Right" Margin="0,10,0,0">Reset Password</Button>
+                </StackPanel>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="1">
+            <GroupBox Name="grpUsers" Header="" BorderThickness="2" BorderBrush="LightBlue" FontSize="15" Visibility="Collapsed">
+                <DataGrid x:Name="dgvUsers" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" RowHeaderWidth="0" SelectionChanged="Users_SelectionChanged" GridLinesVisibility="None" Background="White" RowBackground="White" BorderThickness="0" ColumnWidth="*">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="sprojoid" Binding="{Binding sprojoid, Mode=OneWay}" Visibility="Collapsed"/>
+                        <DataGridTextColumn Header="Id" Binding="{Binding Id, Mode=OneWay}" Visibility="Collapsed"/>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=OneWay}" Visibility="Visible"/>
+                        <DataGridTextColumn Header="Status" Binding="{Binding Status, Mode=OneWay}" Visibility="Visible"/>
+                        <DataGridTextColumn Header="Roles" Binding="{Binding Roles, Mode=OneWay}" Visibility="Visible" Width="100" />
+                        <DataGridTextColumn Header="userRoles" Binding="{Binding userRoles, Mode=OneWay}" Visibility="Collapsed"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+            <GroupBox x:Name="grpNewUser" Header="" BorderThickness="2" BorderBrush="LightBlue" Width="250" HorizontalAlignment="Left" FontSize="15" Visibility="Collapsed">
+                <StackPanel>
+                    <TextBlock >Username:</TextBlock>
+                    <TextBox Name="txtbUserName"  />
+                    <Line></Line>
+                    <TextBlock><Run Text="Password:"/></TextBlock>
+                    <TextBox x:Name="txtbPassword" InputMethod.InputScope="Password"/>
+                    <Button Background="AliceBlue" Padding="4" FontSize="12" FontWeight="DemiBold" Click="Button_Click_NewUser" HorizontalAlignment="Right" Margin="0,10,0,0">Add User</Button>
+                </StackPanel>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="2">
+            <GroupBox x:Name="grpUserRoles" Grid.Row="1" Header="" BorderThickness="2" BorderBrush="LightBlue" FontSize="15" Visibility="Collapsed">
+                <StackPanel>
+                    <DataGrid AutoGenerateColumns="False" x:Name="dgvUserRoles" IsReadOnly="False" SelectionMode="Single" GridLinesVisibility="None" RowHeaderWidth="0" Background="White" RowBackground="White" BorderThickness="0" CanUserAddRows="False" VerticalAlignment="Top" ColumnWidth="*" MinWidth="500">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="sprojoid" Binding="{Binding sprojoid, Mode=OneWay}" Visibility="Collapsed"/>
+                            <DataGridTextColumn Header="Id" Binding="{Binding Id, Mode=OneWay}" Visibility="Collapsed"/>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=OneWay}" Visibility="Visible"/>
+                            <DataGridTemplateColumn Header="Assigned" Width="100">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding Assigned, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Background="AliceBlue" Padding="4" FontSize="12" FontWeight="DemiBold" Click="UpdateUserRoles" Content="Update User Role(s)" Margin="10,0,0,0" HorizontalAlignment="Right"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Grid.Row="1" x:Name="grpCompanyUserMove" Header="" BorderThickness="2" BorderBrush="LightBlue" FontSize="15" Visibility="Collapsed">
+                <StackPanel>
+                    <DataGrid x:Name="dgvCompanyMoveTo" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" GridLinesVisibility="None" RowHeaderWidth="0" Background="White" RowBackground="White" BorderThickness="0" Margin="3,3,3,3" ColumnWidth="*">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="sprojoid" Binding="{Binding sprojoid, Mode=OneWay}" Visibility="Collapsed"/>
+                            <DataGridTextColumn Header="Id" Binding="{Binding Id, Mode=OneWay}" Visibility="Collapsed"/>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=OneWay}" Visibility="Visible"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Background="AliceBlue" Padding="4" FontSize="12" FontWeight="DemiBold" Content="Move User" HorizontalAlignment="Left" Click="Button_Click_MoveUser" Margin="10,10,0,0" Width="80"></Button>
+                </StackPanel>
+            </GroupBox>
+        </DockPanel>
+        <DockPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+            <GroupBox Grid.Row="1" x:Name="grpMyProfileOverview" Header="" BorderThickness="2" BorderBrush="LightBlue" FontSize="15" Visibility="Collapsed">
+                <StackPanel>
+                    <GroupBox Grid.Row="1" Header="Login History" BorderThickness="2" BorderBrush="LightBlue" FontSize="13" Visibility="Visible" Margin="10,10,10,10">
+                        <DataGrid Name="dgvMyProfileOverview_LoginHistory" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" GridLinesVisibility="None" RowHeaderWidth="0" Background="White" RowBackground="White" BorderThickness="0" Margin="3,3,3,3" ColumnWidth="*">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Login Account (Domain)" Binding="{Binding DomainLoginAccount, Mode=OneWay}" Visibility="Visible"/>
+                                <DataGridTextColumn Header="Current" Binding="{Binding Current, Mode=OneWay}" Visibility="Visible"/>
+                                <DataGridTextColumn Header="Previous" Binding="{Binding Previous, Mode=OneWay}" Visibility="Visible"/>
+                                <DataGridTextColumn Header="Former" Binding="{Binding Former, Mode=OneWay}" Visibility="Visible"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </GroupBox>
+                    <GroupBox Grid.Row="1" Header="Current Role Assignment" BorderThickness="2" BorderBrush="LightBlue" FontSize="13" Visibility="Visible" Margin="10,10,10,10">
+                        <DataGrid Name="dgvMyProfileOverview_CurrentRoles" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" GridLinesVisibility="None" RowHeaderWidth="0" Background="White" RowBackground="White" BorderThickness="0" Margin="3,3,3,3" ColumnWidth="*">
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Header="Admin" Width="100" IsReadOnly="True">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <CheckBox IsChecked="{Binding AlgoAdmin, Mode=OneTime}" HorizontalAlignment="Center" IsEnabled="False" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Editor" Width="100" IsReadOnly="True">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <CheckBox IsChecked="{Binding AlgoEditor, Mode=OneTime}" HorizontalAlignment="Center" IsEnabled="False" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Builder" Width="100" IsReadOnly="True">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <CheckBox IsChecked="{Binding AlgoBuilders, Mode=OneTime}" HorizontalAlignment="Center" IsEnabled="False" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Reviewer" Width="100" IsReadOnly="True">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <CheckBox IsChecked="{Binding AlgoReviewers, Mode=OneTime}" HorizontalAlignment="Center" IsEnabled="False" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Translator" Width="100" IsReadOnly="True">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <CheckBox IsChecked="{Binding AlgoTranslator, Mode=OneTime}" HorizontalAlignment="Center" IsEnabled="False" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn Header="Comments" Width="100" IsReadOnly="True">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <CheckBox IsChecked="{Binding Comments, Mode=OneTime}" HorizontalAlignment="Center" IsEnabled="False" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </GroupBox>
+                    <GroupBox Grid.Row="1" Header="Role Assignment History" BorderThickness="2" BorderBrush="LightBlue" FontSize="13" Visibility="Visible" Margin="10,10,10,10">
+                        <DataGrid Name="dgvMyProfileOverview_RoleAudit" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" GridLinesVisibility="None" RowHeaderWidth="0" Background="White" RowBackground="White" BorderThickness="0" Margin="3,3,3,3" ColumnWidth="*">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Modified By" Binding="{Binding ModifiedBy, Mode=OneWay}" Visibility="Visible"/>
+                                <DataGridTextColumn Header="Role" Binding="{Binding Role, Mode=OneWay}" Visibility="Visible"/>
+                                <DataGridTextColumn Header="Add" Binding="{Binding Add, Mode=OneWay}" Visibility="Visible"/>
+                                <DataGridTextColumn Header="Removed" Binding="{Binding Remove, Mode=OneWay}" Visibility="Visible"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </GroupBox>
+                    <GroupBox Grid.Row="1" Header="Audit" BorderThickness="2" BorderBrush="LightBlue" FontSize="13" Visibility="Visible" Margin="10,10,10,10">
+                        <DataGrid Name="dgvMyProfileOverview_Audit" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" GridLinesVisibility="None" RowHeaderWidth="0" Background="White" RowBackground="White" BorderThickness="0" Margin="3,3,3,3" ColumnWidth="*">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Date" Binding="{Binding Date, Mode=OneWay}" Visibility="Visible"/>
+                                <DataGridTextColumn Header="Modified By" Binding="{Binding LastModifiedBy, Mode=OneWay}" Visibility="Visible"/>
+                                <DataGridTextColumn Header="Process" Binding="{Binding ProcessName, Mode=OneWay}" Visibility="Visible"/>
+                                <DataGridTextColumn Header="Summary" Binding="{Binding Summary, Mode=OneWay}" Visibility="Visible"/>
+                                <DataGridTextColumn Header="Detail" Binding="{Binding Detail, Mode=OneWay}" Visibility="Visible"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </GroupBox>
+                    <GroupBox Grid.Row="1" Header="Audit (my processing audit)" BorderThickness="2" BorderBrush="LightBlue" FontSize="13" Visibility="Visible" Margin="10,10,10,10">
+                        <DataGrid Name="dgvMyProfileOverview_MyAudit" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Extended" GridLinesVisibility="None" RowHeaderWidth="0" Background="White" RowBackground="White" BorderThickness="0" Margin="3,3,3,3" ColumnWidth="*" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Date" Binding="{Binding Date, Mode=OneWay}" Visibility="Visible"/>
+                                <DataGridTextColumn Header="User Affected" Binding="{Binding LastModifiedBy, Mode=OneWay}" Visibility="Visible"/>
+                                <DataGridTextColumn Header="Process" Binding="{Binding ProcessName, Mode=OneWay}" Visibility="Visible"/>
+                                <DataGridTextColumn Header="Summary" Binding="{Binding Summary, Mode=OneWay}" Visibility="Visible"/>
+                                <DataGridTextColumn Header="Detail" Binding="{Binding Detail, Mode=OneWay}" Visibility="Visible"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </GroupBox>
+                </StackPanel>
+            </GroupBox>
+        </DockPanel>
+        <!-- content -->
+    </Grid>
+</Window>

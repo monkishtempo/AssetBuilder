@@ -2207,6 +2207,11 @@
 				Allows scripting &amp; editing of database tables used to support the Virtual Expert.
                 </TextBlock>
             </StackPanel>
+            <StackPanel x:Key="UserManagementToolTip">
+                <TextBlock>
+				Use with causion!
+                </TextBlock>
+            </StackPanel>
             <StackPanel x:Key="EnableLanguageInheritanceToolTip">
                 <TextBlock>
 				When enabled (highlighted with green tick), this feature will allow inheritance of text changes in different languages that do not already have alternative text defined for each field.

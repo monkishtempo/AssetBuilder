@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AssetBuilder</RootNamespace>
     <AssemblyName>AssetBuilder</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -19,10 +19,10 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
-    <ManifestCertificateThumbprint>434806BEFDCAABDB88BAC7C4E7F239AE958EA17B</ManifestCertificateThumbprint>
-    <ManifestKeyFile>Asset Builder_12_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestCertificateThumbprint>B4C8BF8D2D5E8B1B4F760FF22C74B8476D769690</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Asset Builder_1_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <StartupObject>AssetBuilder.Program</StartupObject>
     <SignAssembly>true</SignAssembly>
@@ -127,6 +127,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Curve\Curve\bin\Debug\Curve.dll</HintPath>
     </Reference>
+    <Reference Include="dcp7708">
+      <HintPath>..\..\..\..\source\repos\dcp7708\bin\Debug\dcp7708.dll</HintPath>
+    </Reference>
     <Reference Include="ExpertData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fa8096d32abda15e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>_Library\ExpertData.dll</HintPath>
@@ -154,6 +157,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -260,6 +264,10 @@
     </Compile>
     <Compile Include="Reports\HtmlReport.cs" />
     <Compile Include="Reports\XmlReportBase.cs" />
+    <Compile Include="Usermanagement.xaml.cs">
+      <DependentUpon>Usermanagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UM\Uman.cs" />
     <Compile Include="Window2.xaml.cs">
       <DependentUpon>Window2.xaml</DependentUpon>
     </Compile>
@@ -462,6 +470,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Usermanagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="uTextBox.xaml">
       <SubType>Designer</SubType>
@@ -722,6 +734,7 @@
     <Resource Include="images\Male-Female.png" />
     <Resource Include="images\Male.png" />
     <Resource Include="images\Female.png" />
+    <Resource Include="images\Admin.png" />
     <Content Include="Reports\ContentReport\TableQuestion.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1173,62 +1186,62 @@
   <ItemGroup>
     <PublishFile Include="AssetBuilder.pdb">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="ExpertData.pdb">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="RiskCalc\Xml\ConditionOffset.xml">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="RiskCalc\Xml\LifeExpectancy.xml">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="WpfXmlGrid.pdb">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="XmlGrid.pdb">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>

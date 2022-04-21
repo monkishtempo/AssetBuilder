@@ -35,9 +35,6 @@
     <Setting Name="AvailableSources" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="AssetBuilder_Data_Data" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost/webbuilder/data.asmx</Value>
-    </Setting>
     <Setting Name="EncyclopaediaLink" Type="System.String" Scope="User">
       <Value Profile="(Default)">/Encyclopaedia/DisplayArticle</Value>
     </Setting>
@@ -61,6 +58,9 @@
     </Setting>
     <Setting Name="SaaSEndpoint" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AssetBuilder_Data_Data" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/webbuilder/data.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>
