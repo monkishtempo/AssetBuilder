@@ -53,6 +53,8 @@ namespace AssetBuilder.Classes
 
         public string ExportedAlgos { get; set; }
 
+        public string SourceEnvironment { get; set; }
+
         public string TargetEnvironment { get; set; }
         
         public string ExportDateTimeDisplay => _exportDateTime.ToString("dd/MMM/yyyy h:mm:ss tt");
