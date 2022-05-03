@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
@@ -11,12 +12,14 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using System.Xml;
 using System.Windows.Controls.Primitives;
+using System.Windows.Navigation;
 
 namespace AssetBuilder.Controls
 {
     public class NLTest
     {
         private bool nest = true;
+
         public string NLText
         {
             get
@@ -83,7 +86,7 @@ namespace AssetBuilder.Controls
 
 </head><body><div class=""w3-container"" style=""white-space:pre-wrap;"">
 {0}
-</div></body></html>", value));
+</div></body></html>", value.Replace("target=\"_blank\"", "")));
             }
         }
 
@@ -106,7 +109,7 @@ namespace AssetBuilder.Controls
         double fontsize = 14.667;
         static Window browser = null;
         static Window questions = null;
-
+        
         public bool AddControls { get { return controls != null; } }
 
         private NLTest(string s)
@@ -142,6 +145,7 @@ namespace AssetBuilder.Controls
             browser.Content = bgr;
             browser.FontSize = fontsize;
             render = new WebBrowser();
+            render.Navigating += Render_Navigating;
             bgr.Children.Add(render);
             browser.Show();
             browser.Activate();
@@ -183,9 +187,15 @@ namespace AssetBuilder.Controls
             questions.Activate();
 
             process(2);
+        }
 
-            //render.NavigateToString("<html><head></head><body></body></html>");
-
+        private void Render_Navigating(object sender, NavigatingCancelEventArgs e)
+        {
+            if(e.Uri != null && e.Uri.Scheme.In("http", "https"))
+            {
+                Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri) { UseShellExecute = true });
+                e.Cancel = true;
+            }
         }
 
         DispatcherTimer timer;
