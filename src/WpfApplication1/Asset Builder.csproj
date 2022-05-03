@@ -22,7 +22,7 @@
     <ManifestCertificateThumbprint>B4C8BF8D2D5E8B1B4F760FF22C74B8476D769690</ManifestCertificateThumbprint>
     <ManifestKeyFile>Asset Builder_1_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
     <IsWebBootstrapper>true</IsWebBootstrapper>
     <StartupObject>AssetBuilder.Program</StartupObject>
     <SignAssembly>true</SignAssembly>
