@@ -246,7 +246,10 @@ namespace AssetBuilder.Reports
                 //if (name == "Table") continue;
                 if(silent)
                 {
-                    if (name != "Table3" || item.Element("Silent").Value.In("false")) continue;
+                    if (name.In("Table", "Table4", "Table5")) continue;
+                    if (name == "Table1" && item.Element("Question_x0020_Type").Value.NotIn("Calculated", "Counter Set", "Counter Check", "Conclusion Check", "Calculated Question Check", "User/Language Check", "Custom Question", "EMR Lookup", "Dynamic Transfer", "Extended Conclusion Check")) continue;
+                    if (name == "Table2" && item.Element("Answer_x0020_Type").Value.NotIn("Derived from conclusion", "Derived from question", "Value: Calculated", "Conclusion Check", "Value: Sort < > =")) continue;
+                    if (name == "Table3" && item.Element("Silent").Value.NotIn("true")) continue;                    
                 }
                 else
                 {
