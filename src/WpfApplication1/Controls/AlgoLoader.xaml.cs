@@ -842,6 +842,7 @@ namespace AssetBuilder.Controls
             if (exportData == null || !exportData.IsValid) return false;
 
             exportData.ExportedAlgos = textBox1.Text;
+            exportData.SourceEnvironment = cbSource.Text;
             exportData.TargetEnvironment = cbTarget.Text;
             var success = RecordExport(exportData);
             if (success) return true;
