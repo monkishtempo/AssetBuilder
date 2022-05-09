@@ -52,15 +52,15 @@ namespace AssetBuilder.Controls
 		{
 			if (Search != "")
 			{
-				Cat.AssetTypeID = AssetType;
-				Window1.RadioToggle(Cat.form.assetGroup, Cat.AssetTypeID);
+				Cat.AssetTypeId = AssetType;
+				Window1.RadioToggle(Cat.Form.assetGroup, Cat.AssetTypeId);
 				Cat.LoadAssetFromList(AssetID, Search, FromID);
 			}
 			else
 			{
-				Cat.AssetTypeID = -AssetType;
-				Window1.RadioToggle(Cat.form.assetGroup, Cat.AssetTypeID);
-				Cat.fullLoadAsset(AssetID);
+				Cat.AssetTypeId = -AssetType;
+				Window1.RadioToggle(Cat.Form.assetGroup, Cat.AssetTypeId);
+				Cat.FullLoadAsset(AssetID);
 			}
 		}
 	}

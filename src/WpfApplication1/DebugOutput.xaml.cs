@@ -179,9 +179,9 @@ namespace AssetBuilder
         private void rbtShowAsset_Click(object sender, RoutedEventArgs e)
         {
             output.SelectedItem = null;
-            var sb = GetHtml(Window1.window?.qcat1?.loadedAsset?.asset);
+            var sb = GetHtml(Window1.window?.qcat1?.LoadedAsset?.asset);
             webBrowser1.NavigateToString(string.Format("<html><head></head><body>{0}</body></html>", sb.ToString()));
-            string status = string.Format("{0} {1}", Window1.window?.qcat1?.loadedAsset?.assetType.ToString(), Window1.window?.qcat1?.loadedAsset?.AssetID);
+            string status = string.Format("{0} {1}", Window1.window?.qcat1?.LoadedAsset?.assetType.ToString(), Window1.window?.qcat1?.LoadedAsset?.AssetID);
             StatusContent.Text = status;
         }
     }

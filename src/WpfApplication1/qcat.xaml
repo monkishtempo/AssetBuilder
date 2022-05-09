@@ -12,18 +12,13 @@
                     </Trigger>
                 </Style.Triggers>
             </Style>
-            <!--<Style TargetType="{x:Type ListBoxItem}">
-                <Setter Property="ContextMenu">
-                    <Setter.Value>
-                        <ContextMenu>
-                            <MenuItem Command="Copy"
-                                  CommandParameter="{Binding}" />
-                        </ContextMenu>
-                    </Setter.Value>
-                </Setter>
-            </Style>-->
+            <Style x:Key="MultiMatchListItemStyle" TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource ColouredListBoxItem}">
+                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay}" />
+            </Style>
         </ResourceDictionary>
     </UserControl.Resources>
+
     <Grid x:Name="categoryGrid" Loaded="Grid_Loaded">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -88,7 +83,35 @@
                 </TextBlock>
             </Image.ToolTip>
         </Image>
-        <ListBox Style="{DynamicResource ResourceKey=MultiMatchListBox}" Grid.Column="4" Margin="3,28,0,54" x:Name="listBox5" FontSize="14.667" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="loadAsset" MouseUp="listBox5_MouseUp" PreviewMouseDown="listBox5_PreviewMouseDown"  MouseDoubleClick="listBox5_MouseDoubleClick" SelectionMode="Extended" SelectedValuePath="ID" MouseMove="listBox5_MouseMove" Background="{DynamicResource ListBoxBackground}">
+        <ListBox ItemContainerStyle="{StaticResource MultiMatchListItemStyle}"
+                 Grid.Column="4" Margin="3,28,0,54" 
+                 x:Name="listBox5" FontSize="14.667" ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                 SelectionChanged="LoadAsset" 
+                 MouseUp="listBox5_MouseUp" 
+                 PreviewMouseDown="listBox5_PreviewMouseDown"  
+                 MouseDoubleClick="listBox5_MouseDoubleClick" 
+                 SelectionMode="Extended" 
+                 SelectedValuePath="ID" 
+                 MouseMove="listBox5_MouseMove" 
+                 Background="{DynamicResource ListBoxBackground}"
+                 ItemsSource="{Binding AllAssets}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Path=Content}" Grid.Column="0" Height="24"></TextBlock>
+                        <Image Name="MultiMatchIcon" Source="{Binding Path=IconImage}" Width="24" Visibility="Collapsed" Grid.Column="1"></Image>
+                    </Grid>
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Path=IsFlagged}" Value="true">
+                            <Setter TargetName="MultiMatchIcon" Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
             <ListBox.InputBindings>
                 <KeyBinding Key="C" Modifiers="Ctrl" Command="Copy" CommandParameter="20" />
             </ListBox.InputBindings>
@@ -113,39 +136,39 @@
             </ListBox.ContextMenu>
         </ListBox>
         <TextBox Grid.Column="0" Margin="0,0,24,28" x:Name="textBox1" VerticalAlignment="Bottom" FontSize="14.667" TextChanged="tb_TextChanged" Height="24" />
-        <ToggleButton x:Name="filter1" Grid.Column="0" Style="{StaticResource FilterButton}" Checked="filter_CheckedChanged" Unchecked="filter_CheckedChanged" />
+        <ToggleButton x:Name="filter1" Grid.Column="0" Style="{StaticResource FilterButton}" Checked="Filter_CheckedChanged" Unchecked="Filter_CheckedChanged" />
         <TextBox Grid.Column="1" Margin="3,0,24,28" x:Name="textBox2" VerticalAlignment="Bottom" FontSize="14.667" TextChanged="tb_TextChanged" Height="24" />
-        <ToggleButton x:Name="filter2" Grid.Column="1" Style="{StaticResource FilterButton}" Checked="filter_CheckedChanged" Unchecked="filter_CheckedChanged" />
+        <ToggleButton x:Name="filter2" Grid.Column="1" Style="{StaticResource FilterButton}" Checked="Filter_CheckedChanged" Unchecked="Filter_CheckedChanged" />
         <TextBox Grid.Column="2" Margin="3,0,24,28" x:Name="textBox3" VerticalAlignment="Bottom" FontSize="14.667" TextChanged="tb_TextChanged" Height="24" />
-        <ToggleButton x:Name="filter3" Grid.Column="2" Style="{StaticResource FilterButton}" Checked="filter_CheckedChanged" Unchecked="filter_CheckedChanged" />
+        <ToggleButton x:Name="filter3" Grid.Column="2" Style="{StaticResource FilterButton}" Checked="Filter_CheckedChanged" Unchecked="Filter_CheckedChanged" />
         <TextBox Grid.Column="3" Margin="3,0,24,28" x:Name="textBox4" VerticalAlignment="Bottom" FontSize="14.667" TextChanged="tb_TextChanged" Height="24" />
-        <ToggleButton x:Name="filter4" Grid.Column="3" Style="{StaticResource FilterButton}" Checked="filter_CheckedChanged" Unchecked="filter_CheckedChanged" />
+        <ToggleButton x:Name="filter4" Grid.Column="3" Style="{StaticResource FilterButton}" Checked="Filter_CheckedChanged" Unchecked="Filter_CheckedChanged" />
         <TextBox Grid.Column="4" Margin="3,0,24,28" x:Name="textBox5" VerticalAlignment="Bottom" TextChanged="textBox5_TextChanged" FontSize="14.667" Height="24" />
         <Frame Grid.Column="4" ToolTip="{me:Info Title=Search,Body=SearchToolTip,Width=700}" Margin="6,0,6,34" Width="16" HorizontalAlignment="Right" Height="16" VerticalAlignment="Bottom">
             <Frame.Content>
                 <Image x:Name="imgSearch" Source="images/Information_16x16.png" />
             </Frame.Content>
         </Frame>
-        <Button Grid.Column="0" x:Name="btnAdd1" ToolTip="{me:Info Image='/images/addButton.png',Title=Add,Body=AddButtonToolTip}" Height="28" Width="28" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="+" FontFamily="MS Gothic" FontSize="24" CommandParameter="1" Click="addClick" Background="{DynamicResource AddBackground}" />
-        <Button Grid.Column="0" x:Name="btnDelete1" ToolTip="{me:Info Image='/images/deleteButton.png',Title=Delete,Body=DeleteButtonToolTip}" Height="28" Width="28" Margin="32,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="24" Content="-" CommandParameter="1" Click="deleteClick" Background="{DynamicResource DeleteBackground}" />
-        <Button Grid.Column="0" CommandParameter="1" ToolTip="{me:Info Image='/images/clearButton.png',Title=Clear,Body=ClearButtonToolTip}" x:Name="btnClear1" Height="28" Width="28" Margin="64,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="C" Click="cancelClick" Background="{DynamicResource ClearBackground}" />
-        <Button Grid.Column="0" x:Name="btnEdit1" ToolTip="{me:Info Image='/images/editButton.png',Title=Edit,Body=EditButtonToolTip}" Height="28" Width="28" Margin="96,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="E" CommandParameter="1" Click="editClick" Background="{DynamicResource EditBackground}" />
-        <Button Grid.Column="1" x:Name="btnAdd2" ToolTip="{me:Info Image='/images/addButton.png',Title=Add,Body=AddButtonToolTip}" Height="28" Width="28" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="24" Content="+" CommandParameter="2" Click="addClick" Background="{DynamicResource AddBackground}" />
-        <Button Grid.Column="1" x:Name="btnDelete2" ToolTip="{me:Info Image='/images/deleteButton.png',Title=Delete,Body=DeleteButtonToolTip}" Height="28" Width="28" Margin="32,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="24" Content="-" CommandParameter="2" Click="deleteClick" Background="{DynamicResource DeleteBackground}" />
-        <Button Grid.Column="1" x:Name="btnClear2" ToolTip="{me:Info Image='/images/clearButton.png',Title=Clear,Body=ClearButtonToolTip}" Height="28" Width="28" Margin="64,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="C" Click="cancelClick" CommandParameter="2" Background="{DynamicResource ClearBackground}" />
-        <Button Grid.Column="1" x:Name="btnEdit2" ToolTip="{me:Info Image='/images/editButton.png',Title=Edit,Body=EditButtonToolTip}" Height="28" Width="28" Margin="96,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="E" CommandParameter="2" Click="editClick" Background="{DynamicResource EditBackground}" />
-        <Button Grid.Column="2" x:Name="btnAdd3" ToolTip="{me:Info Image='/images/addButton.png',Title=Add,Body=AddButtonToolTip}" Height="28" Width="28" Margin="0,0,0,-1" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="24" Content="+" CommandParameter="3" Click="addClick" Background="{DynamicResource AddBackground}" />
-        <Button Grid.Column="2" x:Name="btnDelete3" ToolTip="{me:Info Image='/images/deleteButton.png',Title=Delete,Body=DeleteButtonToolTip}" Height="28" Width="28" Margin="32,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="24" Content="-" CommandParameter="3" Click="deleteClick" Background="{DynamicResource DeleteBackground}" />
-        <Button Grid.Column="2" x:Name="btnClear3" ToolTip="{me:Info Image='/images/clearButton.png',Title=Clear,Body=ClearButtonToolTip}" Height="28" Width="28" Margin="64,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="C" Click="cancelClick" CommandParameter="3" Background="{DynamicResource ClearBackground}" />
-        <Button Grid.Column="2" x:Name="btnEdit3" ToolTip="{me:Info Image='/images/editButton.png',Title=Edit,Body=EditButtonToolTip}" Height="28" Width="28" Margin="96,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="E" CommandParameter="3" Click="editClick" Background="{DynamicResource EditBackground}" />
-        <Button Grid.Column="3" x:Name="btnAdd4" ToolTip="{me:Info Image='/images/addButton.png',Title=Add,Body=AddButtonToolTip}" Height="28" Width="28" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="24" Content="+" CommandParameter="4" Click="addClick" Background="{DynamicResource AddBackground}" />
-        <Button Grid.Column="3" x:Name="btnDelete4" ToolTip="{me:Info Image='/images/deleteButton.png',Title=Delete,Body=DeleteButtonToolTip}" Height="28" Width="28" Margin="32,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="24" Content="-" CommandParameter="4" Click="deleteClick" Background="{DynamicResource DeleteBackground}" />
-        <Button Grid.Column="3" x:Name="btnClear4" ToolTip="{me:Info Image='/images/clearButton.png',Title=Clear,Body=ClearButtonToolTip}" Height="28" Width="28" Margin="64,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="C" Click="cancelClick" CommandParameter="4" Background="{DynamicResource ClearBackground}" />
-        <Button Grid.Column="3" x:Name="btnEdit4" ToolTip="{me:Info Image='/images/editButton.png',Title=Edit,Body=EditButtonToolTip}" Height="28" Width="28" Margin="96,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="E" CommandParameter="4" Click="editClick" Background="{DynamicResource EditBackground}" />
-        <Button Grid.Column="4" x:Name="btnAdd5" ToolTip="{me:Info Image='/images/addButton.png',Title=Add,Body=AddButtonToolTip}" Height="28" Width="28" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="24" Content="+" CommandParameter="5" Click="addClick" Background="{DynamicResource AddBackground}" />
-        <Button Grid.Column="4" x:Name="btnDelete5" ToolTip="{me:Info Image='/images/deleteButton.png',Title=Delete,Body=DeleteButtonToolTip}" Height="28" Width="28" Margin="32,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="24" Content="-" CommandParameter="5" Click="deleteClick" Background="{DynamicResource DeleteBackground}" />
-        <Button Grid.Column="4" x:Name="btnClear5" ToolTip="{me:Info Image='/images/clearButton.png',Title=Clear,Body=ClearButtonToolTip}" Height="28" Width="28" Margin="64,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="C" Click="cancelClick" CommandParameter="5" Background="{DynamicResource ClearBackground}" />
-        <Button Grid.Column="4" x:Name="btnEdit5" ToolTip="{me:Info Image='/images/editButton.png',Title=Edit,Body=EditButtonToolTip}" Height="28" Width="28" Margin="96,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="E" CommandParameter="5" Click="editClick" Background="{DynamicResource EditBackground}" />
-        <Button Visibility="Visible" Grid.Column="4" x:Name="btnList5" ToolTip="{me:Info Image='/images/listButton.png',Title=List,Body=ListButtonToolTip}" Height="28" Width="28" Margin="128,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="≡" CommandParameter="6" Click="listClick" Background="{DynamicResource ListBackground}" />
+        <Button Grid.Column="0" x:Name="btnAdd1" ToolTip="{me:Info Image='/images/addButton.png',Title=Add,Body=AddButtonToolTip}" Height="28" Width="28" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="+" FontFamily="MS Gothic" FontSize="24" CommandParameter="1" Click="AddClick" Background="{DynamicResource AddBackground}" />
+        <Button Grid.Column="0" x:Name="btnDelete1" ToolTip="{me:Info Image='/images/deleteButton.png',Title=Delete,Body=DeleteButtonToolTip}" Height="28" Width="28" Margin="32,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="24" Content="-" CommandParameter="1" Click="DeleteClick" Background="{DynamicResource DeleteBackground}" />
+        <Button Grid.Column="0" CommandParameter="1" ToolTip="{me:Info Image='/images/clearButton.png',Title=Clear,Body=ClearButtonToolTip}" x:Name="btnClear1" Height="28" Width="28" Margin="64,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="C" Click="CancelClick" Background="{DynamicResource ClearBackground}" />
+        <Button Grid.Column="0" x:Name="btnEdit1" ToolTip="{me:Info Image='/images/editButton.png',Title=Edit,Body=EditButtonToolTip}" Height="28" Width="28" Margin="96,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="E" CommandParameter="1" Click="EditClick" Background="{DynamicResource EditBackground}" />
+        <Button Grid.Column="1" x:Name="btnAdd2" ToolTip="{me:Info Image='/images/addButton.png',Title=Add,Body=AddButtonToolTip}" Height="28" Width="28" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="24" Content="+" CommandParameter="2" Click="AddClick" Background="{DynamicResource AddBackground}" />
+        <Button Grid.Column="1" x:Name="btnDelete2" ToolTip="{me:Info Image='/images/deleteButton.png',Title=Delete,Body=DeleteButtonToolTip}" Height="28" Width="28" Margin="32,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="24" Content="-" CommandParameter="2" Click="DeleteClick" Background="{DynamicResource DeleteBackground}" />
+        <Button Grid.Column="1" x:Name="btnClear2" ToolTip="{me:Info Image='/images/clearButton.png',Title=Clear,Body=ClearButtonToolTip}" Height="28" Width="28" Margin="64,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="C" Click="CancelClick" CommandParameter="2" Background="{DynamicResource ClearBackground}" />
+        <Button Grid.Column="1" x:Name="btnEdit2" ToolTip="{me:Info Image='/images/editButton.png',Title=Edit,Body=EditButtonToolTip}" Height="28" Width="28" Margin="96,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="E" CommandParameter="2" Click="EditClick" Background="{DynamicResource EditBackground}" />
+        <Button Grid.Column="2" x:Name="btnAdd3" ToolTip="{me:Info Image='/images/addButton.png',Title=Add,Body=AddButtonToolTip}" Height="28" Width="28" Margin="0,0,0,-1" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="24" Content="+" CommandParameter="3" Click="AddClick" Background="{DynamicResource AddBackground}" />
+        <Button Grid.Column="2" x:Name="btnDelete3" ToolTip="{me:Info Image='/images/deleteButton.png',Title=Delete,Body=DeleteButtonToolTip}" Height="28" Width="28" Margin="32,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="24" Content="-" CommandParameter="3" Click="DeleteClick" Background="{DynamicResource DeleteBackground}" />
+        <Button Grid.Column="2" x:Name="btnClear3" ToolTip="{me:Info Image='/images/clearButton.png',Title=Clear,Body=ClearButtonToolTip}" Height="28" Width="28" Margin="64,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="C" Click="CancelClick" CommandParameter="3" Background="{DynamicResource ClearBackground}" />
+        <Button Grid.Column="2" x:Name="btnEdit3" ToolTip="{me:Info Image='/images/editButton.png',Title=Edit,Body=EditButtonToolTip}" Height="28" Width="28" Margin="96,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="E" CommandParameter="3" Click="EditClick" Background="{DynamicResource EditBackground}" />
+        <Button Grid.Column="3" x:Name="btnAdd4" ToolTip="{me:Info Image='/images/addButton.png',Title=Add,Body=AddButtonToolTip}" Height="28" Width="28" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="24" Content="+" CommandParameter="4" Click="AddClick" Background="{DynamicResource AddBackground}" />
+        <Button Grid.Column="3" x:Name="btnDelete4" ToolTip="{me:Info Image='/images/deleteButton.png',Title=Delete,Body=DeleteButtonToolTip}" Height="28" Width="28" Margin="32,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="24" Content="-" CommandParameter="4" Click="DeleteClick" Background="{DynamicResource DeleteBackground}" />
+        <Button Grid.Column="3" x:Name="btnClear4" ToolTip="{me:Info Image='/images/clearButton.png',Title=Clear,Body=ClearButtonToolTip}" Height="28" Width="28" Margin="64,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="C" Click="CancelClick" CommandParameter="4" Background="{DynamicResource ClearBackground}" />
+        <Button Grid.Column="3" x:Name="btnEdit4" ToolTip="{me:Info Image='/images/editButton.png',Title=Edit,Body=EditButtonToolTip}" Height="28" Width="28" Margin="96,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="E" CommandParameter="4" Click="EditClick" Background="{DynamicResource EditBackground}" />
+        <Button Grid.Column="4" x:Name="btnAdd5" ToolTip="{me:Info Image='/images/addButton.png',Title=Add,Body=AddButtonToolTip}" Height="28" Width="28" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="24" Content="+" CommandParameter="5" Click="AddClick" Background="{DynamicResource AddBackground}" />
+        <Button Grid.Column="4" x:Name="btnDelete5" ToolTip="{me:Info Image='/images/deleteButton.png',Title=Delete,Body=DeleteButtonToolTip}" Height="28" Width="28" Margin="32,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="24" Content="-" CommandParameter="5" Click="DeleteClick" Background="{DynamicResource DeleteBackground}" />
+        <Button Grid.Column="4" x:Name="btnClear5" ToolTip="{me:Info Image='/images/clearButton.png',Title=Clear,Body=ClearButtonToolTip}" Height="28" Width="28" Margin="64,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="C" Click="CancelClick" CommandParameter="5" Background="{DynamicResource ClearBackground}" />
+        <Button Grid.Column="4" x:Name="btnEdit5" ToolTip="{me:Info Image='/images/editButton.png',Title=Edit,Body=EditButtonToolTip}" Height="28" Width="28" Margin="96,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="E" CommandParameter="5" Click="EditClick" Background="{DynamicResource EditBackground}" />
+        <Button Visibility="Visible" Grid.Column="4" x:Name="btnList5" ToolTip="{me:Info Image='/images/listButton.png',Title=List,Body=ListButtonToolTip}" Height="28" Width="28" Margin="128,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontFamily="MS Gothic" FontSize="18.667" Content="≡" CommandParameter="6" Click="ListClick" Background="{DynamicResource ListBackground}" />
     </Grid>
 </UserControl>

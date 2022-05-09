@@ -15,6 +15,7 @@ using System.Xml.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Threading;
 using AssetBuilder.AssetControls;
+using AssetBuilder.Classes;
 using AssetBuilder.Properties;
 
 namespace AssetBuilder.Controls
@@ -78,8 +79,7 @@ namespace AssetBuilder.Controls
             }
         }
 
-        public static Properties CreateProperties(AssetType assettype, string assetid,
-            bool loadDefault = true)
+        public static Properties CreateProperties(AssetType assettype, string assetid, bool loadDefault = true)
         {
             if (openWindows.ContainsKey(assettype + ":" + assetid))
             {
@@ -104,7 +104,7 @@ namespace AssetBuilder.Controls
                 Type.Text = AssetType.ToString();
                 DataID.Text = assetid.ToString();
             }
-            PropData = new XmlGrid.PropertiesData(datagrid, "<Properties />") { Search = qcat.currentSearch };
+            PropData = new XmlGrid.PropertiesData(datagrid, "<Properties />") { Search = qcat.CurrentSearch };
             if (Window1.IsReviewerOrTranslator)
             {
                 PropData.Properties.AllowEdit = false;
@@ -121,13 +121,13 @@ namespace AssetBuilder.Controls
             XElement defaultData = DataAccess.getData("dsp_GetProperty", new string[] { "@PropertyType", AssetType.ToString(), "@DataID", assetid.ToString() }, true);
             var algos = xn.Elements("Table").Select(f => new { AlgoID = f.Element("AlgoID").Value, Algo = f.Element("Algo_Name").Value }).Distinct();
             var nodes = xn.Elements("Table").Select(f => new { AlgoID = f.Element("AlgoID").Value, PropertyType = f.Element("PropertyType").Value, DataID = f.Element("DataID").Value }).Distinct();
-            Regex regex = new Regex(qcat.currentSearch, RegexOptions.IgnoreCase);
+            Regex regex = new Regex(qcat.CurrentSearch, RegexOptions.IgnoreCase);
 
             var matches = xn.Elements("Table")
-                .Where(f => !string.IsNullOrWhiteSpace(qcat.currentSearch) && (regex.IsMatch(f.Element("PropertyName").Value) || regex.IsMatch(f.Element("PropertyValue").Value)))
+                .Where(f => !string.IsNullOrWhiteSpace(qcat.CurrentSearch) && (regex.IsMatch(f.Element("PropertyName").Value) || regex.IsMatch(f.Element("PropertyValue").Value)))
                 .Select(f => new { AlgoID = f.Element("AlgoID").Value, PropertyType = f.Element("PropertyType").Value, DataID = f.Element("DataID").Value }).Distinct();
             var defaultmatches = defaultData.Elements("Table")
-                .Any(f => !string.IsNullOrWhiteSpace(qcat.currentSearch) && (regex.IsMatch(f.Element("PropertyName").Value) || regex.IsMatch(f.Element("PropertyValue").Value)));
+                .Any(f => !string.IsNullOrWhiteSpace(qcat.CurrentSearch) && (regex.IsMatch(f.Element("PropertyName").Value) || regex.IsMatch(f.Element("PropertyValue").Value)));
 
             TreeViewItem dfault = new TreeViewItem() { Header = "Default", Tag = Tuple.Create(AssetType.ToString(), AssetID.ToString()) };
             dfault.Selected += tNode_Selected;
@@ -137,7 +137,7 @@ namespace AssetBuilder.Controls
             {
                 XElement transferData = DataAccess.getData("dsp_GetProperty", new string[] { "@PropertyType", "Transfer", "@DataID", assetid.ToString() }, true);
                 var transfermatches = defaultData.Elements("Table")
-                    .Any(f => !string.IsNullOrWhiteSpace(qcat.currentSearch) && (regex.IsMatch(f.Element("PropertyName").Value) || regex.IsMatch(f.Element("PropertyValue").Value)));
+                    .Any(f => !string.IsNullOrWhiteSpace(qcat.CurrentSearch) && (regex.IsMatch(f.Element("PropertyName").Value) || regex.IsMatch(f.Element("PropertyValue").Value)));
 
                 TreeViewItem transfer = new TreeViewItem() { Header = "Transfer", Tag = Tuple.Create("Transfer", AssetID.ToString()) };
                 transfer.Selected += tNode_Selected;

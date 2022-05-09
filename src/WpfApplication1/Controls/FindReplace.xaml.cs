@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using AssetBuilder.Controls;
+using AssetBuilder.ViewModels;
 
 namespace AssetBuilder.AssetControls
 {
@@ -76,7 +77,7 @@ namespace AssetBuilder.AssetControls
             foreach (var item in asset.TextChildren)
             {
                 string name = item.Key.Substring(3);
-                qcat.setSearch(comboBox1.Text, (bool)checkBox1.IsChecked, (bool)checkBox2.IsChecked, (bool)checkBox3.IsChecked);
+                qcat.SetSearch(comboBox1.Text, (bool)checkBox1.IsChecked, (bool)checkBox2.IsChecked, (bool)checkBox3.IsChecked);
                 if (selected.Contains(name))
                     NLExtensions.textBox_AdornAndValidate(item.Value, null);
                 else
@@ -120,7 +121,7 @@ namespace AssetBuilder.AssetControls
         {
             bool replace = false;
             TextBox t = getTextBox();
-            if (t != null && Regex.IsMatch(t.SelectedText, qcat.currentSearch, RegexOptions.Multiline | RegexOptions.IgnoreCase) && t.IsReadOnly == false)
+            if (t != null && Regex.IsMatch(t.SelectedText, qcat.CurrentSearch, RegexOptions.Multiline | RegexOptions.IgnoreCase) && t.IsReadOnly == false)
             {
                 replace = true;
                 int ss = t.SelectionStart;
@@ -138,7 +139,7 @@ namespace AssetBuilder.AssetControls
 
         private bool Find()
         {
-            if (qcat.currentSearch == "") return false;
+            if (qcat.CurrentSearch == "") return false;
             TextBox t = getTextBox();
             if (t == null) t = asset.TextChildren.First().Value;
 
@@ -146,7 +147,7 @@ namespace AssetBuilder.AssetControls
             //if (!(bool)checkBox1.IsChecked) ro = ro | RegexOptions.IgnoreCase;
             //string search = qcat.currentSearch;
             //if ((bool)checkBox2.IsChecked) search = @"\b" + search + @"\b";
-            Regex r = new Regex(qcat.currentSearch, ro);
+            Regex r = new Regex(qcat.CurrentSearch, ro);
             bool pass = false;
             int count = (replaceAll ? 1 : 2);
             for (int i = 0; i < count; i++)
@@ -174,7 +175,7 @@ namespace AssetBuilder.AssetControls
 
         private TextBox getTextBox()
         {
-            System.Windows.IInputElement ie = FocusManager.GetFocusedElement(asset.cat.form);
+            System.Windows.IInputElement ie = FocusManager.GetFocusedElement(asset.cat.Form);
 
             if (ie is TextBox && asset.TextChildren.ContainsValue(ie as TextBox))
                 return ie as TextBox;

@@ -196,10 +196,12 @@
     <Compile Include="Classes\ParamDictionary.cs" />
     <Compile Include="Classes\SaaS.cs" />
     <Compile Include="Classes\ScriptDebugger.cs" />
+    <Compile Include="Classes\UsageShape.cs" />
     <Compile Include="Compare\Compare.xaml.cs">
       <DependentUpon>Compare.xaml</DependentUpon>
     </Compile>
     <Compile Include="Compare\LogicCompare.cs" />
+    <Compile Include="Classes\AssetType.cs" />
     <Compile Include="Controls\Adorners\WatermarkAdorner.cs" />
     <Compile Include="Controls\Adorners\WatermarkService.cs" />
     <Compile Include="Controls\AssetControls\CMAP.cs" />
@@ -268,6 +270,10 @@
       <DependentUpon>Usermanagement.xaml</DependentUpon>
     </Compile>
     <Compile Include="UM\Uman.cs" />
+    <Compile Include="ViewModels\AssetAddedEventArgs.cs" />
+    <Compile Include="ViewModels\AssetListViewModel.cs" />
+    <Compile Include="ViewModels\ListItem.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Window2.xaml.cs">
       <DependentUpon>Window2.xaml</DependentUpon>
     </Compile>

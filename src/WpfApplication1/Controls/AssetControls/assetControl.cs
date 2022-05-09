@@ -20,7 +20,9 @@ using Diva.Controls.Simple;
 using StringCompare;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using AssetBuilder.Classes;
 using AssetBuilder.Extensions;
+using AssetBuilder.ViewModels;
 
 namespace AssetBuilder.AssetControls
 {
@@ -204,14 +206,14 @@ namespace AssetBuilder.AssetControls
         private void bs_Audit(object sender, RoutedEventArgs e)
         {
             var a = new AuditTrail();
-            cat.form.disableForm();
-            a.SetValue(Canvas.LeftProperty, (cat.form.Width - a.Width) / 2);
+            cat.Form.disableForm();
+            a.SetValue(Canvas.LeftProperty, (cat.Form.Width - a.Width) / 2);
             a.SetValue(Canvas.TopProperty, 100d);
-            cat.form.bubbleCanvas.Children.Add(a);
+            cat.Form.bubbleCanvas.Children.Add(a);
             a.Cancel.Click += delegate (object o, RoutedEventArgs args)
             {
-                cat.form.bubbleCanvas.Children.Clear();
-                cat.form.enableForm();
+                cat.Form.bubbleCanvas.Children.Clear();
+                cat.Form.enableForm();
             };
             a.OK.Click += delegate (object o, RoutedEventArgs args)
             {
@@ -224,10 +226,10 @@ namespace AssetBuilder.AssetControls
                     "@AuditDataID", AssetID.ToString(),
                     "@AuditText", DataAccess.JsonSerialize(ai)
                 );
-                var li = cat.listBox5.SelectedItem as ListItem;
+                var li = cat.listBox5.SelectedItem as ListItem; // TODO: To ViewModel
                 if (li != null) li.Audit = ai;
-                cat.form.bubbleCanvas.Children.Clear();
-                cat.form.enableForm();
+                cat.Form.bubbleCanvas.Children.Clear();
+                cat.Form.enableForm();
             };
         }
 
@@ -374,14 +376,14 @@ namespace AssetBuilder.AssetControls
 
         void bs_CreateAnswer(object sender, RoutedEventArgs e)
         {
-            XmlDocument doc = cat.getAssetXml("derive", "COPYQUESTION");
+            XmlDocument doc = cat.GetAssetXml("derive", "COPYQUESTION");
             RunUpdate(doc);
         }
 
         private void bs_Properties(object sender, RoutedEventArgs e)
         {
-            var p = Controls.Properties.CreateProperties((AssetType)cat.AssetTypeID, AssetID.Value.ToString());
-            p.Type.Text = ((AssetType)cat.AssetTypeID).ToString();
+            var p = Controls.Properties.CreateProperties((AssetType)cat.AssetTypeId, AssetID.Value.ToString());
+            p.Type.Text = ((AssetType)cat.AssetTypeId).ToString();
             p.DataID.Text = asset.SelectSingleNode("Table/*").InnerText;
             p.Populate();
             p.Show();
@@ -389,13 +391,13 @@ namespace AssetBuilder.AssetControls
 
         void bs_DeriveQuestion(object sender, RoutedEventArgs e)
         {
-            XmlDocument doc = cat.getAssetXml("derive", "VALUEQUESTION");
+            XmlDocument doc = cat.GetAssetXml("derive", "VALUEQUESTION");
             RunUpdate(doc);
         }
 
         void bs_DeriveAnswer(object sender, RoutedEventArgs e)
         {
-            XmlDocument doc = cat.getAssetXml("derive", tableName);
+            XmlDocument doc = cat.GetAssetXml("derive", tableName);
             RunUpdate(doc);
         }
 
@@ -478,7 +480,7 @@ namespace AssetBuilder.AssetControls
         {
             if (Window1.AllowProperties)
                 properties = DataAccess.getData("dsp_GetProperty", new string[] { "@PropertyType", assetType.ToString(), "@DataID", AssetID.ToString() }, true);
-            cat.resetTranslation();
+            cat.ResetTranslation();
             originalAsset = asset.Clone();
             setButtons(true);
             if (assetType == AssetType.Conclusion)
@@ -609,7 +611,7 @@ namespace AssetBuilder.AssetControls
                     TextBlock tb = formattedTextBlock(nodeid, item.VisioID + " (" + item.Count + ")", 0, redBrush);
                     Label l = new Label { Content = tb, Padding = new Thickness(0), Margin = new Thickness(0) };
 
-                    l.Tag = new usageShape { AlgoID = algoid, NodeID = nodeid, ShapeName = item.VisioID, AlgoName = ta, PropertyType = item.PropertyType, DataID = item.DataID };
+                    l.Tag = new UsageShape { AlgoID = algoid, NodeID = nodeid, ShapeName = item.VisioID, AlgoName = ta, PropertyType = item.PropertyType, DataID = item.DataID };
                     l.MouseDoubleClick += new MouseButtonEventHandler(l_MouseDoubleClick);
 
                     l.ContextMenu = menu;
@@ -619,7 +621,7 @@ namespace AssetBuilder.AssetControls
             }
             else
             {
-                XmlDocument doc = cat.getAssetXml("usage", tableName);
+                XmlDocument doc = cat.GetAssetXml("usage", tableName);
                 if (doc.SelectSingleNode(string.Format("/root/{0}[@id={1}]", tableName, usage.ConcatID ?? usage.AssetID)) == null)
                     cat.InsertAsset(tableName, doc.DocumentElement, usage.AssetID);
 
@@ -662,7 +664,7 @@ namespace AssetBuilder.AssetControls
                         string shapename = item.Element("UserName").Value;
                         if (shapename.Contains(" (")) shapename = shapename.Substring(0, shapename.IndexOf(" ("));
                         string instanceAssetType = item.Element("UserName").Value.Contains("Transfer") ? "Transfer" : assetType.ToString();
-                        l.Tag = new usageShape { AlgoID = algoid, NodeID = nodeid, ShapeName = shapename, AlgoName = ta, PropertyType = instanceAssetType + ":" + AssetID, DataID = algoid + ":" + nodeid };
+                        l.Tag = new UsageShape { AlgoID = algoid, NodeID = nodeid, ShapeName = shapename, AlgoName = ta, PropertyType = instanceAssetType + ":" + AssetID, DataID = algoid + ":" + nodeid };
                         l.MouseDoubleClick += new MouseButtonEventHandler(l_MouseDoubleClick);
                         l.ContextMenu = menu;
                     }
@@ -673,7 +675,7 @@ namespace AssetBuilder.AssetControls
 
         private void rn_Click(object sender, RoutedEventArgs e)
         {
-            var us = (usageShape)((Label)((System.Windows.Controls.ContextMenu)((sender as MenuItem).Parent)).PlacementTarget).Tag;
+            var us = (UsageShape)((Label)((System.Windows.Controls.ContextMenu)((sender as MenuItem).Parent)).PlacementTarget).Tag;
             Window1.window.rtbTraversalClient.IsChecked = true;
             Window1.window.Start_TraversalClient(Tuple.Create(us.AlgoID, us.NodeID));
         }
@@ -681,8 +683,8 @@ namespace AssetBuilder.AssetControls
         void mi_Click(object sender, RoutedEventArgs e)
         {
             var l = (Label)((System.Windows.Controls.ContextMenu)((sender as MenuItem).Parent)).PlacementTarget;
-            var us = l.Tag as usageShape;
-            var p = Controls.Properties.CreateProperties((AssetType)cat.AssetTypeID, us.PropertyType.Split(':')[1], false);
+            var us = l.Tag as UsageShape;
+            var p = Controls.Properties.CreateProperties((AssetType)cat.AssetTypeId, us.PropertyType.Split(':')[1], false);
             p.Type.Text = us.PropertyType;
             p.DataID.Text = us.DataID;
             p.Populate();
@@ -692,22 +694,22 @@ namespace AssetBuilder.AssetControls
         void gx_Click(object sender, RoutedEventArgs e)
         {
             Label l = (Label)((System.Windows.Controls.ContextMenu)((sender as MenuItem).Parent)).PlacementTarget;
-            usageShape us = l.Tag as usageShape;
+            UsageShape us = l.Tag as UsageShape;
             GetXml(us.AlgoID);
         }
 
         void tvi_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Window1.TranslationLanguage = (sender as TreeViewItem).Header.ToString();
-            cat.form.ForceLanguage((sender as TreeViewItem).Header.ToString());
+            cat.Form.ForceLanguage((sender as TreeViewItem).Header.ToString());
         }
 
         void l_LoadAsset(object sender, MouseButtonEventArgs e)
         {
             Label l = sender as Label;
             var assetToLoad = Cast(l.Tag, new { ID = "", assetType = 1, Search = "", FromID = "" });
-            cat.AssetTypeID = assetToLoad.assetType;
-            Window1.RadioToggle(cat.form.assetGroup, cat.AssetTypeID);
+            cat.AssetTypeId = assetToLoad.assetType;
+            Window1.RadioToggle(cat.Form.assetGroup, cat.AssetTypeId);
             cat.LoadAssetFromList(assetToLoad.ID, assetToLoad.Search, assetToLoad.FromID);
         }
 
@@ -718,11 +720,11 @@ namespace AssetBuilder.AssetControls
 
         void l_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            usageShape us = (usageShape)(sender as Label).Tag;
+            UsageShape us = (UsageShape)(sender as Label).Tag;
             VisioFindorLoad(us, ref algos, this);
         }
 
-        public static void VisioFindorLoad(usageShape us, ref XElement algos, assetControl @this)
+        public static void VisioFindorLoad(UsageShape us, ref XElement algos, assetControl @this)
         {
             bool visioFound;
             bool shpfound = HighlightVisioShape(us, out visioFound, @this);
@@ -780,7 +782,7 @@ namespace AssetBuilder.AssetControls
             System.Windows.Forms.MessageBox.Show("Xml copied to clipboard", "Message", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
         }
 
-        public static bool HighlightVisioShape(usageShape us, out bool visioFound, assetControl assetcontrol)
+        public static bool HighlightVisioShape(UsageShape us, out bool visioFound, assetControl assetcontrol)
         {
             Visio.Shape shp;
             visioFound = false;
@@ -861,7 +863,7 @@ namespace AssetBuilder.AssetControls
 
         void bs_Add(object sender, RoutedEventArgs e)
         {
-            cat.addNew();
+            cat.AddNew();
         }
 
         void bs_Save(object sender, RoutedEventArgs e)
@@ -906,10 +908,10 @@ namespace AssetBuilder.AssetControls
             if (Window1.DisableComments || asset["Table"]["comment"] == null) return SaveAfterPrompt();
             XmlNode idcolumn = asset.SelectSingleNode("Table/*");
             PromptWindow pw = new PromptWindow(idcolumn.InnerText == "new");
-            pw.Owner = cat.form;
-            cat.form.disableForm();
+            pw.Owner = cat.Form;
+            cat.Form.disableForm();
             bool? res = pw.ShowDialog();
-            cat.form.enableForm();
+            cat.Form.enableForm();
             if (res == true)
             {
                 asset["Table"]["comment"].InnerText = pw.Comment;
@@ -936,7 +938,7 @@ namespace AssetBuilder.AssetControls
             }
             setButtons(false);
             XmlNode idcolumn = asset.SelectSingleNode("Table/*");
-            if (!Window1.EnableLanguageInheritance && cat.form.AlternateLanguages.Count > 0 && idcolumn.InnerText != "new")
+            if (!Window1.EnableLanguageInheritance && cat.Form.AlternateLanguages.Count > 0 && idcolumn.InnerText != "new")
             {
                 Dictionary<string, List<string>> tickedFields = new Dictionary<string, List<string>>();
                 foreach (var item in inheritList)
@@ -950,7 +952,7 @@ namespace AssetBuilder.AssetControls
                 }
                 var changes = originalAsset.SelectNodes("Table/*").OfType<XmlNode>().Where(f => asset["Table"][f.Name].InnerText != f.InnerText);
                 var tf = translationLookup.Where(f => f.Key.Item1 == assetType).ToDictionary(f => f.Key.Item2, f => f.Value);
-                foreach (var language in cat.form.AlternateLanguages)
+                foreach (var language in cat.Form.AlternateLanguages)
                 {
                     XmlNode xlang = DataAccess.getLanguage(asset, language);
                     var inherit = xlang.SelectNodes("*").OfType<XmlNode>()
@@ -1022,20 +1024,20 @@ namespace AssetBuilder.AssetControls
 
         public void reloadAsset(string ID)
         {
-            cat.repopulate(-1);
-            if (ID == "new") cat.lb[4].SelectedItem = cat.selectItem(cat.lb[4], newID);
-            else if (cat.listBox5.SelectedIndex == -1)
+            cat.Repopulate(-1);
+            if (ID == "new") cat.lb[4].SelectedItem = cat.SelectItem(cat.lb[4], newID);
+            else if (cat.listBox5.SelectedIndex == -1) // TODO: To ViewModel
             {
-                cat.loadedAsset = null;
-                cat.loadAsset(ID);
+                cat.LoadedAsset = null;
+                cat.LoadAsset(ID);
             }
         }
 
         void bs_Close(object sender, RoutedEventArgs e)
         {
             NLExtensions.errors.Clear();
-            cat.form.assetCanvas.Children.Clear();
-            cat.loadedAsset = null;
+            cat.Form.assetCanvas.Children.Clear();
+            cat.LoadedAsset = null;
             cat.listBox5.SelectedItem = null;
         }
 
@@ -1051,7 +1053,7 @@ namespace AssetBuilder.AssetControls
             XmlNode idcolumn = originalAsset.SelectSingleNode("Table/*");
             if (idcolumn.InnerText == "new")
             {
-                cat.form.assetCanvas.Children.Clear();
+                cat.Form.assetCanvas.Children.Clear();
                 return;
             }
             asset = originalAsset;
@@ -1257,7 +1259,7 @@ namespace AssetBuilder.AssetControls
                         tb.PreviewDragOver += new DragEventHandler(tb_PreviewDragEnter);
                         tb.PreviewDrop += new DragEventHandler(tb_PreviewDrop);
 
-                        Intel lb = new Intel(tb, cat.form.bubbleCanvas, IntelListMakers.mylistmakers);
+                        Intel lb = new Intel(tb, cat.Form.bubbleCanvas, IntelListMakers.mylistmakers);
                     }
                     if ((bool)tb.GetValue(SpellCheck.IsEnabledProperty) || tb.Name.EndsWith("Language"))
                     {
@@ -1560,7 +1562,7 @@ namespace AssetBuilder.AssetControls
                         if (values.Any())
                         {
                             richPopup p = new richPopup(content, false);
-                            cat.form.assetCanvas.Children.Add(p);
+                            cat.Form.assetCanvas.Children.Add(p);
                             p.IsOpen = true;
                         }
                     }
@@ -1582,11 +1584,11 @@ namespace AssetBuilder.AssetControls
             richPopup p = new richPopup(t);
             p.OpenAsset += delegate
             {
-                cat.AssetTypeID = -at;
-                Window1.RadioToggle(cat.form.assetGroup, cat.AssetTypeID);
-                cat.fullLoadAsset(id);
+                cat.AssetTypeId = -at;
+                Window1.RadioToggle(cat.Form.assetGroup, cat.AssetTypeId);
+                cat.FullLoadAsset(id);
             };
-            cat.form.assetCanvas.Children.Add(p);
+            cat.Form.assetCanvas.Children.Add(p);
             p.IsOpen = true;
         }
 
@@ -1668,7 +1670,7 @@ namespace AssetBuilder.AssetControls
             XmlNode idcolumn = asset.SelectSingleNode("Table/*");
             XmlNode a = asset["Table"];
             idcolumn.InnerText = "new";
-            int[] catids = cat.getCats();
+            int[] catids = cat.GetCats();
 
             //foreach (var item in cats)
             //{
@@ -1718,32 +1720,5 @@ namespace AssetBuilder.AssetControls
             //b.SetValue(Canvas.TopProperty, p.Y);
             //cat.form.bubbleCanvas.Children.Add(b);
         }
-    }
-
-    public enum AssetType
-    {
-        AssetBuilder = -1,
-        Title = 0,
-        Algo,
-        Question,
-        Answer,
-        Conclusion,
-        Bullet,
-        ConclusionCategory,
-        Bullet_Use,
-        Map = 11,
-        TextAsset = 12,
-        Group = 13,
-        ConclusionMap = 15
-    }
-
-    public class usageShape
-    {
-        public string AlgoID { get; set; }
-        public string NodeID { get; set; }
-        public string ShapeName { get; set; }
-        public string AlgoName { get; set; }
-        public string PropertyType { get; set; }
-        public string DataID { get; set; }
     }
 }

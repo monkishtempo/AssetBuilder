@@ -130,9 +130,9 @@ namespace AssetBuilder.Controls
                     }
                 }
             }
-			else if (qcat.currentSearch.Replace(@"\b", "").Replace(@"(?-i)", "") != "")
+			else if (qcat.CurrentSearch.Replace(@"\b", "").Replace(@"(?-i)", "") != "")
 			{
-				Regex r = new Regex(qcat.currentSearch, RegexOptions.Multiline | RegexOptions.IgnoreCase);
+				Regex r = new Regex(qcat.CurrentSearch, RegexOptions.Multiline | RegexOptions.IgnoreCase);
 				foreach (Match match in r.Matches(t.Text))
 				{
 					if (match.Length > 0)

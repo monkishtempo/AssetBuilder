@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Xml.Linq;
+using AssetBuilder.ViewModels;
 
 namespace AssetBuilder.Controls
 {
@@ -23,9 +24,13 @@ namespace AssetBuilder.Controls
 			chkSource = new CheckBox[] { chkStaff, chkReviewer, chkUser };
 			chkType = new CheckBox[] { chkNew, chkSpell, chkClarify, chkCategory, chkAdditional, chkNoApproval, chkBullet, chkOther };
 			if (newAsset)
+			{
+				chkStaff.IsChecked = true;
 				chkNew.IsChecked = true;
-			chkReviewer.IsChecked = true;
-			cmdReviewer.Text = Environment.UserName;
+			}
+
+            chkReviewer.IsChecked = true;
+            cmdReviewer.Text = Environment.UserName;
 		}
 
 		void PromptWindow_Loaded(object sender, RoutedEventArgs e)

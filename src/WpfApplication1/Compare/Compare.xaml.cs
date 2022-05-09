@@ -22,6 +22,7 @@ using System.Windows.Shapes;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using ListItem = AssetBuilder.ViewModels.ListItem;
 
 namespace AssetBuilder.Reports
 {

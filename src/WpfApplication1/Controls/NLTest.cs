@@ -14,6 +14,8 @@ using System.Xml;
 using System.Windows.Controls.Primitives;
 using System.Windows.Navigation;
 
+using ListItem = AssetBuilder.ViewModels.ListItem;
+
 namespace AssetBuilder.Controls
 {
     public class NLTest
