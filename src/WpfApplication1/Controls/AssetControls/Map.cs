@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Xml;
+using AssetBuilder.Classes;
 
 namespace AssetBuilder.AssetControls
 {

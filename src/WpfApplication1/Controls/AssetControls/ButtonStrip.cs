@@ -2,6 +2,7 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using AssetBuilder.Classes;
 
 namespace AssetBuilder.AssetControls
 {

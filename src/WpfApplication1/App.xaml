@@ -109,7 +109,7 @@
             </Style>
             <Style TargetType="Image" BasedOn="{StaticResource LongToolTip}" />
             <Style TargetType="TextBlock" BasedOn="{StaticResource LongToolTip}" />
-            <Style TargetType="ListBoxItem" BasedOn="{StaticResource LongToolTip}">
+            <Style x:Key="ColouredListBoxItem" TargetType="ListBoxItem" BasedOn="{StaticResource LongToolTip}">
                 <Setter Property="ToolTip" Value="{Binding ToolTip}"/>
                 <Setter Property="Background" Value="#FFE0FFE0" />
                 <Setter Property="Template">
@@ -205,24 +205,6 @@
                         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
                     </DataTrigger>
                 </Style.Triggers>
-            </Style>
-            <DataTemplate x:Key="TemplateListBoxItem">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"></ColumnDefinition>
-                        <ColumnDefinition Width="Auto"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="{Binding Path=Content}" Grid.Column="0"></TextBlock>
-                    <Image Name="MultiMatchIcon" Source="{Binding Path=IconImage}" Width="24" Visibility="Collapsed" Grid.Column="1"></Image>
-                </Grid>
-                <DataTemplate.Triggers>
-                    <DataTrigger Binding="{Binding Path=IsFlagged}" Value="true">
-                        <Setter TargetName="MultiMatchIcon" Property="Visibility" Value="Visible"/>
-                    </DataTrigger>
-                </DataTemplate.Triggers>
-            </DataTemplate>
-            <Style x:Key="MultiMatchListBox" TargetType="{x:Type ListBox}">
-                <Setter Property="ItemTemplate" Value="{StaticResource ResourceKey=TemplateListBoxItem}"></Setter>
             </Style>
             <Style TargetType="ComboBoxItem" x:Key="testthis">
                 <Setter Property="Foreground" Value="Red" />

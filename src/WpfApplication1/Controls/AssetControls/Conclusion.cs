@@ -10,7 +10,9 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Xml;
 using System.Xml.Linq;
+using AssetBuilder.Classes;
 using AssetBuilder.Controls;
+using AssetBuilder.ViewModels;
 
 namespace AssetBuilder.AssetControls
 {
@@ -68,7 +70,7 @@ namespace AssetBuilder.AssetControls
 
         void AddBullet(object sender, RoutedEventArgs e)
         {
-            cat.form.changeAssetType(5);
+            cat.Form.changeAssetType(5);
         }
 
 		void RemoveBullet(object sender, RoutedEventArgs e)
@@ -329,8 +331,8 @@ namespace AssetBuilder.AssetControls
 			{
 				BulletUse bl = SelectedBullet;
 
-				cat.AssetTypeID = 5;
-				Window1.RadioToggle(cat.form.assetGroup, cat.AssetTypeID);
+				cat.AssetTypeId = 5;
+				Window1.RadioToggle(cat.Form.assetGroup, cat.AssetTypeId);
 				cat.LoadAssetFromList(bl.BPID.ToString(), "@conclusionid:" + bl.RECID.ToString(), bl.RECID.ToString());
 			}
 		}
@@ -365,7 +367,7 @@ namespace AssetBuilder.AssetControls
 
         public override bool Save(bool toSaas = false)
         {
-            cat.form.clearSubCat();
+            cat.Form.clearSubCat();
             var save = base.Save(false);
 
             if (save && !Window1.EditTranslation)

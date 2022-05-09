@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using System.Windows.Forms;
+using AssetBuilder.Classes;
 
 namespace Diva.Controls.Simple
 {
@@ -39,7 +40,7 @@ namespace Diva.Controls.Simple
                     l.Links[0].LinkData = data[2];
                     l.LinkClicked += delegate(object sender, LinkLabelLinkClickedEventArgs e)
                     {
-                        usageShape us = new usageShape() { AlgoID = data[0], NodeID = data[1], ShapeName = e.Link.LinkData.ToString() };
+                        UsageShape us = new UsageShape { AlgoID = data[0], NodeID = data[1], ShapeName = e.Link.LinkData.ToString() };
                         bool VisioFound;
                         assetControl.HighlightVisioShape(us, out VisioFound, null);
                     };

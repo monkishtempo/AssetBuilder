@@ -3,6 +3,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Xml;
+using AssetBuilder.Classes;
+using AssetBuilder.ViewModels;
 
 namespace AssetBuilder.AssetControls
 {

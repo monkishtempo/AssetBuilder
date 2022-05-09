@@ -356,7 +356,7 @@ namespace AssetBuilder.Controls
         {
             if (!(algos.SelectedItem is AlgoListItem)) return;
             AlgoListItem algo = (AlgoListItem)algos.SelectedItem;
-            usageShape us = new usageShape
+            UsageShape us = new UsageShape
             {
                 AlgoID = algo.ID,
                 AlgoName = algo.Name,
@@ -377,7 +377,7 @@ namespace AssetBuilder.Controls
                 .Where(f => f.Contains(':'))
                 .Select(f => f.Split(':')).Distinct(new KeyEqualityComparer<string[]>(f => f[0].Trim()))
                 .ToDictionary(f => f[0].Trim(), f => f[1].Trim());
-            usageShape us = new usageShape();
+            UsageShape us = new UsageShape();
             if (dict.ContainsKey("Algo")) us.AlgoID = dict["Algo"];
             if (dict.ContainsKey("Node")) us.NodeID = dict["Node"];
             if (!string.IsNullOrWhiteSpace(us.AlgoID) && !string.IsNullOrWhiteSpace(us.NodeID))

@@ -4,6 +4,7 @@ using System.Xml;
 using System.Windows.Controls;
 using System.Xml.Linq;
 using System.Linq;
+using AssetBuilder.Classes;
 
 namespace AssetBuilder.AssetControls
 {
@@ -63,7 +64,7 @@ namespace AssetBuilder.AssetControls
 		void KeywordLabel_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
 		{
 			if (!EditMode) return;
-			XmlDocument doc = cat.getAssetXml("conclusionlist", tableName);
+			XmlDocument doc = cat.GetAssetXml("conclusionlist", tableName);
 			XElement xe = DataAccess.getData("ab_updateAsset", new string[] {
 					"@xml", doc.OuterXml
 			}, false);

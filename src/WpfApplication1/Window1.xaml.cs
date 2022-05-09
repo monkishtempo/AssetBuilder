@@ -37,6 +37,7 @@ using System.Windows.Media;
 using Microsoft.Web.WebView2.Wpf;
 using System.IO;
 using System.Threading.Tasks;
+using ListItem = AssetBuilder.ViewModels.ListItem;
 
 namespace AssetBuilder
 {
@@ -207,11 +208,11 @@ namespace AssetBuilder
                 this.Topmost = false;
                 this.Focus();
                 //if (qcat1.AssetTypeID != AssetTypeID)
-                qcat1.AssetTypeID = -AssetTypeID;
-                if (qcat1.AssetTypeID == AssetTypeID)
+                qcat1.AssetTypeId = -AssetTypeID;
+                if (qcat1.AssetTypeId == AssetTypeID)
                 {
-                    RadioToggle(assetGroup, qcat1.AssetTypeID);
-                    qcat1.fullLoadAsset(AssetID);
+                    RadioToggle(assetGroup, qcat1.AssetTypeId);
+                    qcat1.FullLoadAsset(AssetID);
                 }
             }
             catch (Exception ex)
@@ -355,7 +356,7 @@ namespace AssetBuilder
 
             statusBarLabel = statusBar;
             //cmbWebService.Items.Add(Properties.Settings.Default.WebService);
-            qcat1.form = this;
+            qcat1.Form = this;
             window = this;
             textWrapping = FindResource("TextBlockWrapping") as Style;
 
@@ -417,8 +418,8 @@ namespace AssetBuilder
             if (Program.newVersionAvailable || true) btnUpdateApplication.IsEnabled = true;
             AssetBuilder.Controls.NLInfo nli = new AssetBuilder.Controls.NLInfo();
             NLI = nli;
-            qcat1.InitDicts();
-            qcat1.AssetTypeID = 2;
+            qcat1.InitDictionaries();
+            qcat1.AssetTypeId = 2;
             UsernameValue.Text = Environment.UserName.Replace(".", "");
             //nli.Show();
         }
@@ -459,9 +460,9 @@ namespace AssetBuilder
                 lc_WebServiceChanged(lc, null);
                 if (Security != SecurityContext.Full && lc.txtDisplay.Text == "" && lc.txtPassword.Password == "")
                 {
-                    qcat1.repopulate(1);
+                    qcat1.Repopulate(1);
                     btnCancel_Click(null, null);
-                    qcat1.clearCats();
+                    qcat1.ClearCats();
                     LoggedIn = true;
                     saveSettings();
                     SetFeatures();
@@ -496,8 +497,8 @@ namespace AssetBuilder
                 saveSettings();
                 //qcat1.Dispatcher.Invoke(DispatcherPriority.Render, EmptyDelegate);
                 //qcat1.SetAdorner(null, null);
-                qcat1.repopulate(1);
-                qcat1.clearCats();
+                qcat1.Repopulate(1);
+                qcat1.ClearCats();
                 LoggedIn = true;
                 btnCancel_Click(obj, ev);
                 SetFeatures();
@@ -534,7 +535,7 @@ namespace AssetBuilder
                     { 4, new Dictionary<int, int>() },
                     { 5, new Dictionary<int, int>() }
                 };
-                var sources = new[] { 1, 2 };
+                var sources = new[] { 1, 2 }; // Mother Algos - Dynamic - provided by user
                 foreach (var item in sources)
                 {
                     var source = new Uri(new Uri(Settings.Default.WebService), $"TraversalService/TableOutput/AssetBuilderFunction_AssetsFromMotherAlgo/json/array/{item}").AbsoluteUri;
@@ -581,7 +582,7 @@ namespace AssetBuilder
 
             SetOtherDataReports();
 
-            qcat1.InitDicts();
+            qcat1.InitDictionaries();
         }
 
         private void SetOtherDataReports()
@@ -782,21 +783,21 @@ namespace AssetBuilder
             if (e != null)
             {
                 int asset = int.Parse(e.ToString());
-                if (qcat1.AssetTypeID == 4 && e.ToString() == "5" && qcat1.IsEditing && (qcat1.loadedAsset as AssetControls.Conclusion).bulletsVisible)
+                if (qcat1.AssetTypeId == 4 && e.ToString() == "5" && qcat1.IsEditing && (qcat1.LoadedAsset as AssetControls.Conclusion).bulletsVisible)
                 {
                     qcat1.Visibility = Visibility.Collapsed;
-                    qcat1.clearAdorners();
-                    qcat2 = new qcat { HorizontalAlignment = HorizontalAlignment.Stretch, Margin = new Thickness(0, 0, 0, 3), AssetTypeID = 5 };
-                    qcat2.SearchTypeID = qcat1.SearchTypeID;
-                    qcat2.setButtons(false);
-                    qcat2.loadedAsset = qcat1.loadedAsset;
+                    qcat1.ClearAdorners();
+                    qcat2 = new qcat { HorizontalAlignment = HorizontalAlignment.Stretch, Margin = new Thickness(0, 0, 0, 3), AssetTypeId = 5 };
+                    qcat2.SearchTypeId = qcat1.SearchTypeId;
+                    qcat2.SetButtons(false);
+                    qcat2.LoadedAsset = qcat1.LoadedAsset;
                     mainGrid.Children.Add(qcat2);
                 }
-                else if (qcat1.AssetTypeID != asset)
+                else if (qcat1.AssetTypeId != asset)
                 {
                     rtbAutoSave.IsChecked = false;
                     Change_AutoSave(null, null);
-                    qcat1.AssetTypeID = asset;
+                    qcat1.AssetTypeId = asset;
                 }
             }
             HideBrowsers();
@@ -831,7 +832,7 @@ namespace AssetBuilder
                     rtbSearchTranslation.SmallImageSource = new BitmapImage(new Uri("images/DisableLanguage16x16.png", UriKind.Relative));
                     rtbSearchTranslation.LargeImageSource = new BitmapImage(new Uri("images/DisableLanguage32x32.png", UriKind.Relative));
                 }
-                qcat1.SearchTypeID = qcat1.SearchTypeID;
+                qcat1.SearchTypeId = qcat1.SearchTypeId;
             }
             else
             {
@@ -840,8 +841,8 @@ namespace AssetBuilder
                 if (e.Parameter != null)
                 {
                     int asset = int.Parse(e.Parameter.ToString());
-                    qcat1.SearchTypeID = asset;
-                    if (qcat2 != null) qcat2.SearchTypeID = asset;
+                    qcat1.SearchTypeId = asset;
+                    if (qcat2 != null) qcat2.SearchTypeId = asset;
                 }
             }
         }
@@ -871,16 +872,16 @@ namespace AssetBuilder
 
         private void report_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            e.CanExecute = qcat2 == null && qcat1 != null && qcat1.listBox5.Items.Count > 0;
+            e.CanExecute = qcat2 == null && qcat1 != null && qcat1.listBox5.Items.Count > 0; // TODO: To ViewModel
         }
 
         private void report_Click(object sender, ExecutedRoutedEventArgs e)
         {
-            XmlDocument doc = qcat1.getAssetXml("test", true);
+            XmlDocument doc = qcat1.GetAssetXml("test", true);
             if (Window1.ShowTranslation)
-                Reports.Report.RunReport("AssetReport", new List<string>(new string[] { "AssetReport", "assetxml", doc.OuterXml, "currentDate", "addedColumns:" + qcat1.AssetTypeID, "merge:" }));
+                Reports.Report.RunReport("AssetReport", new List<string>(new string[] { "AssetReport", "assetxml", doc.OuterXml, "currentDate", "addedColumns:" + qcat1.AssetTypeId, "merge:" }));
             else
-                Reports.Report.RunReport("AssetReport", new List<string>(new string[] { "AssetReport", "assetxml", doc.OuterXml, "currentDate", "addedColumns:" + qcat1.AssetTypeID }));
+                Reports.Report.RunReport("AssetReport", new List<string>(new string[] { "AssetReport", "assetxml", doc.OuterXml, "currentDate", "addedColumns:" + qcat1.AssetTypeId }));
         }
 
         private void insertPicture()
@@ -974,7 +975,7 @@ namespace AssetBuilder
                 {
                     lc.btnProperties.Click += new RoutedEventHandler(delegate (object sender, RoutedEventArgs ev)
                     {
-                        AssetBuilder.Controls.Properties.CreateProperties(AssetControls.AssetType.Title, rt.ToString()).Show();
+                        Controls.Properties.CreateProperties(AssetType.Title, rt.ToString()).Show();
                     });
                 }
                 else lc.btnProperties.Visibility = Visibility.Collapsed;
@@ -1015,7 +1016,7 @@ namespace AssetBuilder
             rbnApplication.IsEnabled = false;
             mainGrid.IsEnabled = false;
             gridBlur.Radius = 5d;
-            qcat1.clearAdorners();
+            qcat1.ClearAdorners();
             greyCanvas.Dispatcher.Invoke(DispatcherPriority.Render, EmptyDelegate);
         }
 
@@ -1086,7 +1087,7 @@ namespace AssetBuilder
 
         private void Get_Question_Data(object sender, ExecutedRoutedEventArgs e)
         {
-            var data = DataAccess.getData("abmk_GetQuestionData", "@QuestionID", qcat1.AssetID);
+            var data = DataAccess.getData("abmk_GetQuestionData", "@QuestionID", qcat1.AssetId);
             var items = data.Elements().Select(f => new
             {
                 AlgoName = f.Element("Algo_Name").Value,
@@ -1095,15 +1096,15 @@ namespace AssetBuilder
                 No = f.Element("No").Value,
             });
 
-            displaygridwindow(items, "Question " + qcat1.AssetID + " Data");
+            displaygridwindow(items, "Question " + qcat1.AssetId + " Data");
         }
 
         private void Get_Other_Data(object sender, ExecutedRoutedEventArgs e)
         {
             var otherreport = (OtherReport)e.Parameter;
             string report = otherreport.ReportName;
-            XmlDocument xml = qcat1.getAssetXml(report, qcat1.tables[qcat1.AssetTypeID]);
-            xml.DocumentElement.Attributes.Append(xml.CreateAttribute("search")).Value = qcat.currentSearchSQL;
+            XmlDocument xml = qcat1.GetAssetXml(report, qcat1.TableNames[qcat1.AssetTypeId]);
+            xml.DocumentElement.Attributes.Append(xml.CreateAttribute("search")).Value = qcat.CurrentSearchSql;
             var data = DataAccess.getData(otherreport.Procedure, "@xml", xml.OuterXml);
             var items = new DataTable();
             var xElement = data.Element("Table");
@@ -1262,8 +1263,8 @@ namespace AssetBuilder
                 rtbDisableSpelling.LargeImageSource = new BitmapImage(new Uri("images/NoDisableSpelling_32x32.png", UriKind.Relative));
             }
             DisableSpelling = !(bool)rtbDisableSpelling.IsChecked;
-            if (qcat1.loadedAsset != null)
-                foreach (TextBox item in qcat1.loadedAsset.SpellChildren)
+            if (qcat1.LoadedAsset != null)
+                foreach (TextBox item in qcat1.LoadedAsset.SpellChildren)
                     item.SpellCheck.IsEnabled = !DisableSpelling;
         }
 
@@ -1287,8 +1288,8 @@ namespace AssetBuilder
             }
             else
             {
-                if (qcat1.loadedAsset != null)
-                    foreach (TextBox item in qcat1.loadedAsset.SpellChildren)
+                if (qcat1.LoadedAsset != null)
+                    foreach (TextBox item in qcat1.LoadedAsset.SpellChildren)
                         item.validateTextBox();
             }
         }
@@ -1306,8 +1307,8 @@ namespace AssetBuilder
                 rtbHTML.LargeImageSource = new BitmapImage(new Uri("images/DisableHTML_32x32.png", UriKind.Relative));
             }
             DisableHTMLValidation = !(bool)rtbHTML.IsChecked;
-            if (qcat1.loadedAsset != null)
-                foreach (TextBox item in qcat1.loadedAsset.SpellChildren)
+            if (qcat1.LoadedAsset != null)
+                foreach (TextBox item in qcat1.LoadedAsset.SpellChildren)
                     item.validateTextBox();
         }
 
@@ -1462,9 +1463,9 @@ namespace AssetBuilder
                 rtbTranslation.LargeImageSource = new BitmapImage(new Uri("images/DisableEditTranslation32x32.png", UriKind.Relative));
             }
             EditTranslation = (bool)rtbTranslation.IsChecked;
-            qcat1.setButtons();
+            qcat1.SetButtons();
             qcat1.SetCategoryLanguage();
-            if (qcat1.loadedAsset != null) qcat1.loadedAsset.Refresh();
+            if (qcat1.LoadedAsset != null) qcat1.LoadedAsset.Refresh();
         }
 
         private void Update_WebService(object sender, ExecutedRoutedEventArgs e)
@@ -1506,7 +1507,7 @@ namespace AssetBuilder
         private void Update_Groups(object sender, ExecutedRoutedEventArgs e)
         {
             XElement xn = DataAccess.getData("ab_UpdateAsset", new string[] {
-                "@xml", qcat1.getAssetXml("updategroups").OuterXml
+                "@xml", qcat1.GetAssetXml("updategroups").OuterXml
             }, false);
             if (xn.Name.LocalName == "Error")
                 System.Windows.Forms.MessageBox.Show(string.Format("Groups update failed.\n\n{0}", xn.Value), "Error");
@@ -1527,7 +1528,7 @@ namespace AssetBuilder
                 rtbPriority.LargeImageSource = new BitmapImage(new Uri("images/NoEnablePriority_32x32.png", UriKind.Relative));
             }
             PriorityEnabled = (bool)rtbPriority.IsChecked;
-            qcat1.setButtons();
+            qcat1.SetButtons();
         }
 
         private void Category_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -1543,13 +1544,13 @@ namespace AssetBuilder
                 rtbCategory.LargeImageSource = new BitmapImage(new Uri("images/Disable_Move_32x32.png", UriKind.Relative));
             }
             CategoryEnabled = (bool)rtbCategory.IsChecked;
-            qcat1.setButtons();
-            qcat1.AddContextMenus(qcat1.AssetTypeID);
+            qcat1.SetButtons();
+            qcat1.AddContextMenus(qcat1.AssetTypeId);
         }
 
         private void listButtonCancel_Click(object sender, RoutedEventArgs e)
         {
-            qcat1.closeList();
+            qcat1.CloseList();
         }
 
         private void listButtonOK_Click(object sender, RoutedEventArgs e)
@@ -1570,20 +1571,20 @@ namespace AssetBuilder
             dates.Add(1, new string[] { "Date_Last_Reviewed" });
 
             XmlNode xe = DataAccess.getDataNode("ab_GetAsset", new string[] {
-                "@AssetTypeID", qcat1.AssetTypeID.ToString(),
+                "@AssetTypeID", qcat1.AssetTypeId.ToString(),
                 "@AssetID", "new"
             }, false);
 
             AssetControls.assetControl.setNew(xe, qcat1);
             string[] values = listTextBox.Text.Replace("\r", "").Split('\n');
-            string[] dv = defaultFields[qcat1.AssetTypeID];
+            string[] dv = defaultFields[qcat1.AssetTypeId];
 
-            if (booleans.ContainsKey(qcat1.AssetTypeID))
-                foreach (var field in booleans[qcat1.AssetTypeID])
+            if (booleans.ContainsKey(qcat1.AssetTypeId))
+                foreach (var field in booleans[qcat1.AssetTypeId])
                     AssetControls.assetControl.fixBoolean(xe, field);
 
-            if (dates.ContainsKey(qcat1.AssetTypeID))
-                foreach (var field in dates[qcat1.AssetTypeID])
+            if (dates.ContainsKey(qcat1.AssetTypeId))
+                foreach (var field in dates[qcat1.AssetTypeId])
                     AssetControls.assetControl.fixDate(xe, field);
 
             XmlNode asset = xe["Table"].Clone();
@@ -1607,8 +1608,8 @@ namespace AssetBuilder
             AssetControls.assetControl.RunUpdate(doc);
             //MessageBox.Show(doc.OuterXml);
 
-            qcat1.closeList();
-            qcat1.repopulate(-1);
+            qcat1.CloseList();
+            qcat1.Repopulate(-1);
         }
 
         private void Algo_Management(object sender, ExecutedRoutedEventArgs e)
@@ -1627,7 +1628,7 @@ namespace AssetBuilder
 
         private void Cut_Click(object sender, ExecutedRoutedEventArgs e)
         {
-            System.Windows.IInputElement ie = FocusManager.GetFocusedElement(qcat1.form);
+            System.Windows.IInputElement ie = FocusManager.GetFocusedElement(qcat1.Form);
             if (ie != null)
             {
                 if (ie is TextBox)
@@ -1645,7 +1646,7 @@ namespace AssetBuilder
 
         private void Copy_Click(object sender, ExecutedRoutedEventArgs e)
         {
-            System.Windows.IInputElement ie = FocusManager.GetFocusedElement(qcat1.form);
+            System.Windows.IInputElement ie = FocusManager.GetFocusedElement(qcat1.Form);
             if (ie != null)
             {
                 if (ie is TextBox)
@@ -1679,7 +1680,7 @@ namespace AssetBuilder
 
         private void Paste_Click(object sender, ExecutedRoutedEventArgs e)
         {
-            System.Windows.IInputElement ie = FocusManager.GetFocusedElement(qcat1.form);
+            System.Windows.IInputElement ie = FocusManager.GetFocusedElement(qcat1.Form);
             if (ie != null)
             {
                 if (ie is TextBox)
@@ -1698,7 +1699,7 @@ namespace AssetBuilder
             canInsert = false;
             //insertCommand.IsEnabled = false;
             //insertCommand.ToolTip = "You must first put your cursor in the place where you want to insert something.";
-            System.Windows.IInputElement ie = FocusManager.GetFocusedElement(qcat1.form);
+            System.Windows.IInputElement ie = FocusManager.GetFocusedElement(qcat1.Form);
             if (ie != null && ie is TextBox && !(ie as TextBox).IsReadOnly)
             {
                 TextBox t = ie as TextBox;
@@ -1715,7 +1716,7 @@ namespace AssetBuilder
         private void Copy_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             if (qcat1 == null) return;
-            System.Windows.IInputElement ie = FocusManager.GetFocusedElement(qcat1.form);
+            System.Windows.IInputElement ie = FocusManager.GetFocusedElement(qcat1.Form);
             if (ie != null && ie is Control)
             {
                 if (ie is TextBox)
@@ -1738,7 +1739,7 @@ namespace AssetBuilder
         private void Paste_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             if (qcat1 == null) return;
-            System.Windows.IInputElement ie = FocusManager.GetFocusedElement(qcat1.form);
+            System.Windows.IInputElement ie = FocusManager.GetFocusedElement(qcat1.Form);
             if (ie != null && ie is TextBox && !(ie as TextBox).IsReadOnly)
                 e.CanExecute = true;
         }
@@ -1808,12 +1809,12 @@ namespace AssetBuilder
 
         private void SingleQuestionSelected(object sender, CanExecuteRoutedEventArgs e)
         {
-            if (qcat1 != null && qcat1.AssetTypeID == 2 && qcat1.loadedAsset != null) e.CanExecute = true;
+            if (qcat1 != null && qcat1.AssetTypeId == 2 && qcat1.LoadedAsset != null) e.CanExecute = true;
         }
 
         private void AssetLoaded(object sender, CanExecuteRoutedEventArgs e)
         {
-            if (qcat1 != null && qcat1.AssetTypeID > 0  && qcat1.AssetTypeID < 6 && qcat1.loadedAsset != null) e.CanExecute = true;
+            if (qcat1 != null && qcat1.AssetTypeId > 0  && qcat1.AssetTypeId < 6 && qcat1.LoadedAsset != null) e.CanExecute = true;
         }
 
         private void IsValidated(object sender, CanExecuteRoutedEventArgs e)
@@ -1848,9 +1849,9 @@ namespace AssetBuilder
 
         private void Properties_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            if (qcat1.loadedAsset != null && qcat1.AssetTypeID > 0 && qcat1.loadedAsset.AssetID.HasValue)
+            if (qcat1.LoadedAsset != null && qcat1.AssetTypeId > 0 && qcat1.LoadedAsset.AssetID.HasValue)
             {
-                var props = AssetBuilder.Controls.Properties.CreateProperties((AssetControls.AssetType)qcat1.AssetTypeID, qcat1.loadedAsset.AssetID.Value.ToString());
+                var props = Controls.Properties.CreateProperties((AssetType)qcat1.AssetTypeId, qcat1.LoadedAsset.AssetID.Value.ToString());
                 //props.WindowState = System.Windows.WindowState.Maximized;
                 props.Show();
             }
@@ -1873,7 +1874,7 @@ namespace AssetBuilder
 
         private void listTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            qcat1.updateAdorner(sender as TextBox);
+            qcat1.UpdateAdorner(sender as TextBox);
         }
 
         private void RibbonWindow_KeyUp(object sender, KeyEventArgs e)
@@ -1950,7 +1951,7 @@ namespace AssetBuilder
             HideBrowsers();
             Compare c = await Compare.Create();
             //c.Margin = new Thickness(0);
-            qcat1.form.disableForm();
+            qcat1.Form.disableForm();
             FullPanel.Children.Add(c);
         }
 

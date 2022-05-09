@@ -32,10 +32,10 @@ namespace AssetBuilder.Controls
         private Compare()
         {
             InitializeComponent();
-            typeid = Window1.window.qcat1.AssetTypeID;
+            typeid = Window1.window.qcat1.AssetTypeId;
             var match = AssetType.Items.OfType<ComboBoxItem>().FirstOrDefault(f => f.Tag.ToString() == typeid.ToString());
             if (match != null) AssetType.SelectedItem = match;
-            AssetID.Text = Window1.window.qcat1.AssetID;
+            AssetID.Text = Window1.window.qcat1.AssetId;
 
             Past.SizeChanged += ReAdorn;
             Current.SizeChanged += ReAdorn;
@@ -59,7 +59,7 @@ namespace AssetBuilder.Controls
 
         private Task Populate_OnClick(object sender, RoutedEventArgs e)
         {
-            var cmd = Window1.window.qcat1.getAssetXml("assethistory", Window1.window.qcat1.tables[typeid]);
+            var cmd = Window1.window.qcat1.GetAssetXml("assethistory", Window1.window.qcat1.TableNames[typeid]);
             var res = DataAccess.getData("ab_GetOtherData", "@xml", cmd.OuterXml);
 
             Versions.ItemsSource = res.Elements("Table").Select(f => new VersionItem(f));
