@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -46,6 +47,21 @@ namespace AssetBuilder.Extensions
             }
 
             return new string(chars.ToArray());
+        }
+
+        public static bool Contains(this string str, string substring, StringComparison comp)
+        {
+            if (substring == null)
+            {
+                throw new ArgumentNullException(nameof(substring), "substring cannot be null.");
+            }
+
+            if (!Enum.IsDefined(typeof(StringComparison), comp))
+            {
+                throw new ArgumentException("comp is not a member of StringComparison", nameof(comp));
+            }
+
+            return str.IndexOf(substring, comp) >= 0;
         }
     }
 }
