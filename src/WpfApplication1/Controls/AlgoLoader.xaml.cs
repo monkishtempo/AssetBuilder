@@ -1916,8 +1916,11 @@ namespace AssetBuilder.Controls
 
         private void ABRibbonWindow_Closed(object sender, EventArgs e)
         {
-            _algoStatusViewModel.Dispose();
-            _algoStatusViewModel = null;
+            if (_algoStatusViewModel != null)
+            {
+                _algoStatusViewModel.Dispose();
+                _algoStatusViewModel = null;
+            }
         }
     }
 
