@@ -1619,6 +1619,11 @@
 				You will not be able to move an asset to another category, unless the “Enable Category Changes” is enabled.
                 </TextBlock>
             </StackPanel>
+            <StackPanel x:Key="AlgoReleaseProgressToolTip">
+                <TextBlock>
+                    This is a summary report that contains release status of the selected Algo(s).
+                </TextBlock>
+            </StackPanel>
             <StackPanel x:Key="MostPopularQuestionAnswerReportToolTip">
                 <TextBlock>
 				This is a text report that contains the most popular Question and Answer Instances.
