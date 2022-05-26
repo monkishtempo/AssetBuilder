@@ -154,6 +154,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
@@ -204,6 +205,9 @@
     <Compile Include="Classes\AssetType.cs" />
     <Compile Include="Controls\Adorners\WatermarkAdorner.cs" />
     <Compile Include="Controls\Adorners\WatermarkService.cs" />
+    <Compile Include="Controls\AlgoStatusList.xaml.cs">
+      <DependentUpon>AlgoStatusList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\AssetControls\CMAP.cs" />
     <Compile Include="Controls\ConclusionMap\Action.cs" />
     <Compile Include="Controls\ConclusionMap\ActionDefinition.cs" />
@@ -226,6 +230,7 @@
     <Compile Include="Controls\Custom\AssetBuilderPropertiesEditor.xaml.cs">
       <DependentUpon>AssetBuilderPropertiesEditor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Custom\CheckMark.cs" />
     <Compile Include="Controls\Custom\EditableTextBlock.xaml.cs">
       <DependentUpon>EditableTextBlock.xaml</DependentUpon>
     </Compile>
@@ -235,8 +240,18 @@
     <Compile Include="Controls\Custom\ExecuteReportDialog.xaml.cs">
       <DependentUpon>ExecuteReportDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Custom\Step.xaml.cs">
+      <DependentUpon>Step.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Custom\StepControl.xaml.cs">
+      <DependentUpon>StepControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Custom\Target.cs" />
     <Compile Include="Controls\Custom\TreeViewSource.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Models\AlgoLoadInformation.cs" />
+    <Compile Include="Models\EnvironmentAlgoStatus.cs" />
+    <Compile Include="Models\EnvironmentUrl.cs" />
     <Compile Include="Reports\AssetReport\AssetReport.cs" />
     <Compile Include="Reports\AssetReport\AssetReportContent.cs" />
     <Compile Include="Reports\AssetReport\Objects\Answer.cs" />
@@ -274,12 +289,19 @@
     </Compile>
     <Compile Include="Reports\HtmlReport.cs" />
     <Compile Include="Reports\XmlReportBase.cs" />
+    <Compile Include="Services\AlgoStatusRepository.cs" />
+    <Compile Include="Services\AlgoStatusWebService.cs" />
+    <Compile Include="Services\ICacheService.cs" />
+    <Compile Include="Services\IWebService.cs" />
+    <Compile Include="Services\MemoryCacheService.cs" />
     <Compile Include="Usermanagement.xaml.cs">
       <DependentUpon>Usermanagement.xaml</DependentUpon>
     </Compile>
     <Compile Include="UM\Uman.cs" />
+    <Compile Include="ViewModels\AlgoReleaseStatusViewModel.cs" />
     <Compile Include="ViewModels\AssetAddedEventArgs.cs" />
     <Compile Include="ViewModels\AssetListViewModel.cs" />
+    <Compile Include="ViewModels\AlgoReleaseStatusCollectionViewModel.cs" />
     <Compile Include="ViewModels\ListItem.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Window2.xaml.cs">
@@ -302,6 +324,10 @@
       <Generator>MSBuild:Compile</Generator>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\AlgoStatusList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\AlgoTracker.xaml">
       <SubType>Designer</SubType>
@@ -382,6 +408,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\Custom\ExecuteReportDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Custom\Step.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Custom\StepControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -749,6 +783,8 @@
     <Resource Include="images\Male.png" />
     <Resource Include="images\Female.png" />
     <Resource Include="images\Admin.png" />
+    <Resource Include="images\ReleaseProgress_32x32.png" />
+    <Resource Include="images\ReleaseProgress_64x64.png" />
     <Content Include="Reports\AssetReport\AgreeDisagree.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -1302,6 +1338,9 @@
     <Folder Include="_deploy\" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory">
+      <Version>6.0.1</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.Web.WebView2">
       <Version>1.0.1020.30</Version>
     </PackageReference>

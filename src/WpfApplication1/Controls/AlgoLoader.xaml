@@ -6,7 +6,7 @@
 	xmlns:con="clr-namespace:AssetBuilder.Controls" 
     xmlns:s="clr-namespace:System;assembly=mscorlib"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf" mc:Ignorable="d" x:Class="AssetBuilder.Controls.AlgoLoader" 
-	Title="AlgoLoader" Height="800" Width="1200" WindowState="Maximized">
+	Title="AlgoLoader" Height="800" Width="1200" WindowState="Maximized" Closed="ABRibbonWindow_Closed">
     <r:RibbonWindow.Resources>
         <ToolTip x:Key="AlgoToolTip">
             <StackPanel>
@@ -158,6 +158,14 @@
                         <r:RibbonMenuItem Header="Old version" x:Name="rbtQuestionAnswerReport" Click="rbtReport_Click" CommandParameter="QuestionAnswer|algos" />
                     </r:RibbonMenuButton>
                     <r:RibbonButton Label="Summary Title Report" ToolTip="{me:Info Image=/images/Reconcile_32x32.png,Body=SummaryTitleReportToolTip, Title='Summary Title Report'}" LargeImageSource="/images/Reconcile_32x32.png" x:Name="rbtSummaryTitleReport" Click="rbtReport_Click" CommandParameter="SummaryTitle|algos" />
+                </r:RibbonGroup>
+                <r:RibbonGroup x:Name="AssetReleaseReport" LargeImageSource="/images/ReleaseProgress_64x64.png" Visibility="Collapsed">
+                    <r:RibbonGroup.GroupSizeDefinitions>
+                        <r:RibbonGroupSizeDefinition>
+                            <r:RibbonControlSizeDefinition ImageSize="Large" IsLabelVisible="True" />
+                        </r:RibbonGroupSizeDefinition>
+                    </r:RibbonGroup.GroupSizeDefinitions>
+                    <r:RibbonButton Label="Algo Release Status" ToolTip="{me:Info Image=/images/ReleaseProgress_32x32.png, Body=AlgoReleaseProgressToolTip, Title='Algo Release Progress'}" SmallImageSource="/images/ReleaseProgress_32x32.png" LargeImageSource="/images/ReleaseProgress_64x64.png" x:Name="rbtAlgoReleaseStatus" Click="ShowReleaseStatus_Click" CommandParameter="" />
                 </r:RibbonGroup>
                 <r:RibbonGroup LargeImageSource="/images/reports-icon.png" x:Name="grpReport3">
                     <r:RibbonGroup.GroupSizeDefinitions>
@@ -371,6 +379,7 @@
                     <Grid>
                         <TextBox Visibility="Visible" TextWrapping="Wrap" IsReadOnly="True" FontFamily="Consolas" DragDrop.PreviewDragOver="txtScript_PreviewDrop" DragDrop.PreviewDragEnter="txtScript_PreviewDrop" DragDrop.Drop="DropAssets" x:Name="txtScriptTextBox" ScrollViewer.VerticalScrollBarVisibility="Auto" />
                         <wpf:WebView2 Visibility="Collapsed" DragDrop.PreviewDragOver="txtScript_PreviewDrop" DragDrop.PreviewDragEnter="txtScript_PreviewDrop" DragDrop.Drop="DropAssets" x:Name="txtScript" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+                        <con:AlgoStatusList Visibility="Collapsed" x:Name="AlgoStatusList" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
                     </Grid>
                 </DockPanel>
                 <Image IsHitTestVisible="False" x:Name="imgDropAssets" Opacity="0" Source="/images/DropAssets.png" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Stretch="None" />

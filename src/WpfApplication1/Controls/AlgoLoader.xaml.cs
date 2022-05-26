@@ -38,6 +38,8 @@ namespace AssetBuilder.Controls
     {
         private const string ExportError = "An error occurred during Export. Export cannot continue.\r\n\r\nPlease contact Toolkit support.";
 
+        private AlgoReleaseStatusCollectionViewModel _algoStatusViewModel;
+
         public static AlgoLoader AlgoLoaderForm = null;
         public static XmlNode KeyWordXml;
         LoadedAlgos loadedAlgos = null;
@@ -199,6 +201,7 @@ namespace AssetBuilder.Controls
             ((UIElement)McKessonAlgoSummary).Visibility = Window1.McKesson_Mode ? Visibility.Visible : Visibility.Collapsed;
             ((UIElement)McKessonAssetReport).Visibility = Window1.McKesson_Mode ? Visibility.Visible : Visibility.Collapsed;
             ((UIElement)McKessonSelfcareListing).Visibility = Window1.McKesson_Mode ? Visibility.Visible : Visibility.Collapsed;
+            AssetReleaseReport.Visibility = Window1.AllowReleaseStatusView ? Visibility.Visible : Visibility.Collapsed;
             //txtScript.ObjectForScripting = new ScriptInterface();
         }
 
@@ -1144,6 +1147,28 @@ namespace AssetBuilder.Controls
             }
         }
 
+        private void ShowReleaseStatus_Click(object sender, RoutedEventArgs e)
+        {
+            var algos = textBox1.Text;
+            if (string.IsNullOrEmpty(algos))
+            {
+                MessageBox.Show("Please select the algos required for the report or type the Algo Id in the text box.", "Error", MessageBoxButton.OK, MessageBoxImage.Stop);
+                return;
+            }
+
+            disableForm(false);
+            if (_algoStatusViewModel == null)
+            {
+                _algoStatusViewModel = new AlgoReleaseStatusCollectionViewModel();
+            }
+
+            _algoStatusViewModel.Populate(algos);
+            AlgoStatusList.DataContext = _algoStatusViewModel;
+
+            AlgoStatusList.Visibility = Visibility.Visible;
+            enableForm();
+        }
+
         private void AssetReport_Click(object sender, RoutedEventArgs e)
         {
             disableForm(false);
@@ -1181,7 +1206,7 @@ namespace AssetBuilder.Controls
             string algos = textBox1.Text;
             if (string.IsNullOrEmpty(algos))
             {
-                System.Windows.MessageBox.Show("Please select the algos required for the report or type the algoid in the textbox.", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Stop);
+                MessageBox.Show("Please select the algos required for the report or type the Algo Id in the text box.", "Error", MessageBoxButton.OK, MessageBoxImage.Stop);
                 return;
             }
             disableForm(false);
@@ -1919,6 +1944,15 @@ namespace AssetBuilder.Controls
 
             var result = input.ShowDialog();
             return result.HasValue ? input.ExportReportResponse : null;
+        }
+
+        private void ABRibbonWindow_Closed(object sender, EventArgs e)
+        {
+            if (_algoStatusViewModel != null)
+            {
+                _algoStatusViewModel.Dispose();
+                _algoStatusViewModel = null;
+            }
         }
     }
 
