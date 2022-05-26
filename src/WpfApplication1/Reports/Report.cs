@@ -47,6 +47,135 @@ namespace AssetBuilder.Reports
             { "textassetid", 12 },
         };
 
+        public static void SetUpParameters(string algos, List<string> prms, XsltArgumentList args, List<string> sqlParams, out bool useTraversalService)
+        {
+            useTraversalService = true;
+            if (prms.Count == 0) return;
+            if (prms.Contains("algos") && string.IsNullOrEmpty(algos))
+            {
+                System.Windows.MessageBox.Show("Please select the algos required for the report or type the algoid in the textbox.", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Stop);
+                return;
+            }
+
+            if (prms.Contains("assets") && AlgoLoader.lstAssets.Items.Count == 0)
+            {
+                System.Windows.MessageBox.Show("Please include any assets required for the report.", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Stop);
+                return;
+            }
+
+            if (prms[0] == "Conclusion" && Window1.McKesson_Mode)
+            {
+                args.AddParam("SilentLabel", "", "Self care");
+                args.AddParam("InformationLabel", "", "Watchout condition");
+            }
+
+            for (int i = 0; i < prms.Count; i++)
+            {
+                if (prms[i] != "ReportType" && i == 0) sqlParams.AddRange(new string[] { "@ReportType", prms[0].Replace("_Word", "") });
+                else if (prms[i] == "algos") sqlParams.AddRange(new string[] { "@Algos", algos });
+                else if (prms[i] == "assets")
+                {
+                    Dictionary<string, List<string>> fullAssetList;
+                    //string conclusions;
+                    sqlParams.AddRange(new string[] { "@Assets", AlgoLoader.getAssetXml(out fullAssetList).OuterXml });
+                    args.AddParam("assets", "", string.Join(", ", fullAssetList.Select(f => f.Key + (f.Value.Count > 1 ? "s" : "") + " : " + string.Join(", ", f.Value))));
+                }
+                else if (prms[i] == "assetxml")
+                {
+                    sqlParams.AddRange(new string[] { "@Assets", prms[++i] });
+                }
+                else if (prms[i] == "url")
+                {
+                    useTraversalService = true;
+                    prms[0] = "XmlTable";
+                }
+                else
+                {
+                    string input = "";
+                    string[] inputParams = prompts[""];
+                    if (prompts.ContainsKey(prms[i])) inputParams = prompts[prms[i]];
+                    else if (prms[i].EndsWith(":checkbox")) inputParams = prompts[":checkbox"];
+                    else if (prms[i].EndsWith(":true") || prms[i].EndsWith(":false"))
+                    {
+                        inputParams = null;
+                        input = prms[i].Split(':')[1];
+                        prms[i] = prms[i].Split(':')[0];
+                    }
+
+                    AssetBuilder.Controls.InputBox ib = null;
+
+                    if (inputParams != null)
+                    {
+                        AssetBuilder.Controls.InputBoxValidate ibv;
+                        Enum.TryParse<AssetBuilder.Controls.InputBoxValidate>(inputParams[0], true, out ibv);
+
+                        ib = new Controls.InputBox(
+                            string.Format(inputParams[1], prms[i].Split(':')[0]),
+                            string.Format(inputParams[2], prms[i].Split(':')[0]),
+                            string.Format(inputParams[3], prms[i].Split(':')[0]),
+                            System.Windows.WindowStartupLocation.CenterScreen, ibv);
+
+                        ib.ShowDialog();
+                        if (!ib.DialogResult.HasValue || !ib.DialogResult.Value) return;
+                        if (inputParams[0] == "date")
+                        {
+                            DateTime dt;
+                            if (!DateTime.TryParse(ib.Text, out dt)) return;
+                            input = dt.ToString("yyyy-MM-dd HH:mm:ss");
+                        }
+                        else if (inputParams[0] == "int")
+                        {
+                            int c;
+                            if (!int.TryParse(ib.Text, out c)) return;
+                            input = c.ToString();
+                        }
+                        else input = ib.Text;
+                        if (prms[i] == "ReportType") input = input.Split('|')[0].Replace("_Word", "");
+                        if (!prms[i].Contains(":"))
+                        {
+                            string sqlprefix = "@";
+                            if (prms[i].Contains("~"))
+                            {
+                                sqlprefix = "";
+                                prms[i] = prms[i].Split('~')[0];
+                            }
+                            sqlParams.AddRange(new string[] { sqlprefix + prms[i], input });
+                        }
+                        if (prms[i] == "ReportType")
+                        {
+                            prms[i] = input;
+                            if (ib.Text.Contains('|'))
+                            {
+                                prms.AddRange(ib.Text.Split('|').Skip(1));
+                            }
+                        }
+                        prms[i] = prms[i].Split(':')[0];
+                        if (inputParams[0] == "bool" && ib.Text == prms[i]) input = "true";
+                    }
+                    else if (prms[i] == "year")
+                    {
+                        input = DateTime.Now.Year.ToString();
+                    }
+                    else if (prms[i] == "currentDate")
+                    {
+                        input = DateTime.Now.ToString("MMMM d, yyyy");
+                    }
+                    else if (prms[i] == "TextAsset")
+                    {
+                        sqlParams.AddRange(new string[] { prms[i], "Content" });
+                        input = "Content";
+                    }
+
+                    if (args.GetParam(prms[i], "") != null)
+                    {
+                        input = args.GetParam(prms[i], "") + input;
+                        args.RemoveParam(prms[i], "");
+                    }
+                    if (!prms[i].Contains("/")) args.AddParam(prms[i], "", input);
+                }
+            }
+        }
+
         public static void RunReport(string algos, List<string> prms, string excludedAlgos = "", string excludedAlgoList = "", object Tag = null)
         {
             List<string> sqlParams = new List<string>();
@@ -55,130 +184,7 @@ namespace AssetBuilder.Reports
 
             try
             {
-                if (prms.Count == 0) return;
-                if (prms.Contains("algos") && string.IsNullOrEmpty(algos))
-                {
-                    System.Windows.MessageBox.Show("Please select the algos required for the report or type the algoid in the textbox.", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Stop);
-                    return;
-                }
-
-                if (prms.Contains("assets") && AlgoLoader.lstAssets.Items.Count == 0)
-                {
-                    System.Windows.MessageBox.Show("Please include any assets required for the report.", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Stop);
-                    return;
-                }
-
-                if (prms[0] == "Conclusion" && Window1.McKesson_Mode)
-                {
-                    args.AddParam("SilentLabel", "", "Self care");
-                    args.AddParam("InformationLabel", "", "Watchout condition");
-                }
-
-                for (int i = 0; i < prms.Count; i++)
-                {
-                    if (prms[i] != "ReportType" && i == 0) sqlParams.AddRange(new string[] { "@ReportType", prms[0].Replace("_Word", "") });
-                    else if (prms[i] == "algos") sqlParams.AddRange(new string[] { "@Algos", algos });
-                    else if (prms[i] == "assets")
-                    {
-                        Dictionary<string, List<string>> fullAssetList;
-                        //string conclusions;
-                        sqlParams.AddRange(new string[] { "@Assets", AlgoLoader.getAssetXml(out fullAssetList).OuterXml });
-                        args.AddParam("assets", "", string.Join(", ", fullAssetList.Select(f => f.Key + (f.Value.Count > 1 ? "s" : "") + " : " + string.Join(", ", f.Value))));
-                    }
-                    else if (prms[i] == "assetxml")
-                    {
-                        sqlParams.AddRange(new string[] { "@Assets", prms[++i] });
-                    }
-                    else if (prms[i] == "url")
-                    {
-                        useTraversalService = true;
-                        prms[0] = "XmlTable";
-                    }
-                    else
-                    {
-                        string input = "";
-                        string[] inputParams = prompts[""];
-                        if (prompts.ContainsKey(prms[i])) inputParams = prompts[prms[i]];
-                        else if (prms[i].EndsWith(":checkbox")) inputParams = prompts[":checkbox"];
-                        else if (prms[i].EndsWith(":true") || prms[i].EndsWith(":false"))
-                        {
-                            inputParams = null;
-                            input = prms[i].Split(':')[1];
-                            prms[i] = prms[i].Split(':')[0];
-                        }
-
-                        AssetBuilder.Controls.InputBox ib = null;
-
-                        if (inputParams != null)
-                        {
-                            AssetBuilder.Controls.InputBoxValidate ibv;
-                            Enum.TryParse<AssetBuilder.Controls.InputBoxValidate>(inputParams[0], true, out ibv);
-
-                            ib = new Controls.InputBox(
-                                string.Format(inputParams[1], prms[i].Split(':')[0]),
-                                string.Format(inputParams[2], prms[i].Split(':')[0]),
-                                string.Format(inputParams[3], prms[i].Split(':')[0]),
-                                System.Windows.WindowStartupLocation.CenterScreen, ibv);
-
-                            ib.ShowDialog();
-                            if (!ib.DialogResult.HasValue || !ib.DialogResult.Value) return;
-                            if (inputParams[0] == "date")
-                            {
-                                DateTime dt;
-                                if (!DateTime.TryParse(ib.Text, out dt)) return;
-                                input = dt.ToString("yyyy-MM-dd HH:mm:ss");
-                            }
-                            else if (inputParams[0] == "int")
-                            {
-                                int c;
-                                if (!int.TryParse(ib.Text, out c)) return;
-                                input = c.ToString();
-                            }
-                            else input = ib.Text;
-                            if (prms[i] == "ReportType") input = input.Split('|')[0].Replace("_Word", "");
-                            if (!prms[i].Contains(":"))
-                            {
-                                string sqlprefix = "@";
-                                if (prms[i].Contains("~"))
-                                {
-                                    sqlprefix = "";
-                                    prms[i] = prms[i].Split('~')[0];
-                                }
-                                sqlParams.AddRange(new string[] { sqlprefix + prms[i], input });
-                            }
-                            if (prms[i] == "ReportType")
-                            {
-                                prms[i] = input;
-                                if (ib.Text.Contains('|'))
-                                {
-                                    prms.AddRange(ib.Text.Split('|').Skip(1));
-                                }
-                            }
-                            prms[i] = prms[i].Split(':')[0];
-                            if (inputParams[0] == "bool" && ib.Text == prms[i]) input = "true";
-                        }
-                        else if (prms[i] == "year")
-                        {
-                            input = DateTime.Now.Year.ToString();
-                        }
-                        else if (prms[i] == "currentDate")
-                        {
-                            input = DateTime.Now.ToString("MMMM d, yyyy");
-                        }
-                        else if (prms[i] == "TextAsset")
-                        {
-                            sqlParams.AddRange(new string [] { prms[i], "Content" });
-                            input = "Content";
-                        }
-
-                        if (args.GetParam(prms[i], "") != null)
-                        {
-                            input = args.GetParam(prms[i], "") + input;
-                            args.RemoveParam(prms[i], "");
-                        }
-                        if(!prms[i].Contains("/")) args.AddParam(prms[i], "", input);
-                    }
-                }
+                SetUpParameters(algos, prms, args, sqlParams, out useTraversalService);
             }
             finally
             {

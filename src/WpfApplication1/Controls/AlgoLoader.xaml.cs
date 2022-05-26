@@ -1169,6 +1169,38 @@ namespace AssetBuilder.Controls
             enableForm();
         }
 
+        private void AssetReport_Click(object sender, RoutedEventArgs e)
+        {
+            disableForm(false);
+            var sqlPrms = new List<string>();
+            var useTraversalService = false;
+            var prms = new List<string> { "AssetReport" };
+            if ((bool)rbtScriptAssets.IsChecked) prms.Add("assets");
+            else prms.Add("algos");
+            Report.AlgoLoader = this;
+            Report.SetUpParameters(textBox1.Text, prms, new XsltArgumentList(), sqlPrms, out useTraversalService);
+            if (!sqlPrms.Any()) { enableForm(); return; }
+
+            var xn = DataAccess.getData("ab_Report", sqlPrms.ToArray(), false);
+            XElement xl = null;
+            if (Window1.ShowTranslation)
+            {
+                sqlPrms.AddRange(new[] { "Language", Window1.TranslationLanguage });
+                xl = DataAccess.getData("ab_Report", sqlPrms.ToArray(), false);
+            }
+            var ar = new AssetReportContent(xn, xl);
+            var rep = Reports.AssetReport.CreateReport($"Reports\\AssetReport");
+            rep.Completed += delegate (object obj, Reports.CompletedEventArgs ea)
+            {
+                if (ea.UniqueID == null) ScriptText = ea.Content;
+                else ScriptHtml = ea.Content;
+                PageID = ea.UniqueID;
+                //output.NavigateToString(content);
+                enableForm();
+            };
+            rep.RunReport(ar, "@Layout@");
+        }
+
         private void ContentReport_Click(object sender, RoutedEventArgs e)
         {
             string algos = textBox1.Text;
