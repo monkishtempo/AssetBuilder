@@ -237,6 +237,14 @@
     </Compile>
     <Compile Include="Controls\Custom\TreeViewSource.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Reports\AssetReport\AssetReport.cs" />
+    <Compile Include="Reports\AssetReport\AssetReportContent.cs" />
+    <Compile Include="Reports\AssetReport\Objects\Answer.cs" />
+    <Compile Include="Reports\AssetReport\Objects\Bullet.cs" />
+    <Compile Include="Reports\AssetReport\Objects\Conclusion.cs" />
+    <Compile Include="Reports\AssetReport\Objects\Question.cs" />
+    <Compile Include="Reports\AssetReport\Objects\Algo.cs" />
+    <Compile Include="Reports\AssetReport\Objects\BaseXmlObject.cs" />
     <Compile Include="Reports\CompareReport.cs" />
     <Compile Include="Reports\ConclusionSummary\ConclusionSummary.cs" />
     <Compile Include="Reports\ContentReport\Content.cs" />
@@ -741,6 +749,45 @@
     <Resource Include="images\Male.png" />
     <Resource Include="images\Female.png" />
     <Resource Include="images\Admin.png" />
+    <Content Include="Reports\AssetReport\AgreeDisagree.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AssetReport\Bullet.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AssetReport\Conclusion.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AssetReport\Answer.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AssetReport\Question.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AssetReport\Layout.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AssetReport\Algo.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AssetReport\RenderAnswers.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AssetReport\RenderConclusions.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AssetReport\RenderBullets.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AssetReport\RenderQuestions.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AssetReport\RenderAlgos.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\AssetReport\RenderBody.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Reports\ContentReport\TableQuestion.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

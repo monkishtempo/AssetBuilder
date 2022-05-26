@@ -113,8 +113,8 @@ namespace AssetBuilder
 
         public Window1 Form { get; set; }
 
-        public XmlNode Defaults 
-        { 
+        public XmlNode Defaults
+        {
             get => BuilderDefaults;
             set => BuilderDefaults = value;
         }
@@ -126,7 +126,7 @@ namespace AssetBuilder
         public bool IsEditing { get; set; }
 
         public assetControl LoadedAsset { get; set; }
-        
+
         public int AssetTypeId
         {
             get => _AssetTypeId;
@@ -214,7 +214,7 @@ namespace AssetBuilder
                 {
                     Populate(0, _AssetTypeId, textBox5.Text);
                 }
-                    
+
                 Window1.setStatus("");
             }
         }
@@ -598,7 +598,7 @@ namespace AssetBuilder
 
             if (Form != null) if (AssetTypeId == 4 && !Window1.EditTranslation) btnEdit3.IsEnabled = false; else btnEdit3.IsEnabled = true;
             if (Form != null) if (!Window1.IsReviewerOrEditor && AssetTypeId == 4 && lb[1].SelectedIndex > -1) btnTitle2.Visibility = Visibility.Visible; else btnTitle2.Visibility = Visibility.Collapsed;
-            
+
             if (!Window1.PriorityEnabled)
             {
                 btnUp2.IsEnabled = false;
@@ -742,10 +742,10 @@ namespace AssetBuilder
         {
             Form.listTextBox.Text = "";
             var ta = new TextAdorner(Form.listTextBox, "Please enter each individual \nasset on a new line, then \nclick “Create Assets”.", Colors.LightGray);
-            
+
             if (_textAdorners.ContainsKey(Form.listTextBox.Name)) _textAdorners[Form.listTextBox.Name] = ta;
             else _textAdorners.Add(Form.listTextBox.Name, ta);
-            
+
             var al = Form.listTextBox.clearAdornerLayer();
             al.Add(ta);
             Form.listPanel.Visibility = Visibility.Visible;
@@ -789,7 +789,7 @@ namespace AssetBuilder
                 var f = LoadedAsset.AssetDockPanel;
                 f.BeginAnimation(MarginProperty, da);
             }
-            
+
             BeginAnimation(MarginProperty, da);
             Form.listPanel.Visibility = Visibility.Hidden;
             _listOpen = false;
@@ -995,7 +995,7 @@ namespace AssetBuilder
             {
                 table.Attributes.Append(root.OwnerDocument.CreateAttribute("open")).Value = "True";
             }
-            
+
             table.Attributes.Append(id);
         }
 
@@ -1069,7 +1069,7 @@ namespace AssetBuilder
                 }
             }
         }
-        
+
         #endregion Public Methods
 
         #region Event Handlers
@@ -1227,7 +1227,7 @@ namespace AssetBuilder
             }
             if (box == 5)
             {
-                if (LoadedAsset == null) 
+                if (LoadedAsset == null)
                 {
                     LoadAsset(_assetListViewModel.AllAssets.First(x => x.IsSelected).ID.ToString());
                 }
@@ -1299,7 +1299,7 @@ namespace AssetBuilder
             {
                 var selected = items[0];
                 listBox5.ScrollIntoView(selected);
-                
+
                 if (Keyboard.Modifiers == ModifierKeys.None)
                 {
                     if (AssetTypeId == 0 || AssetTypeId == 12)
@@ -1332,7 +1332,7 @@ namespace AssetBuilder
 
                 return;
             }
-            
+
             if (!_assetListViewModel.AllAssets.Any(i => i.IsSelected)) return;
 
             var id = AssetTypeId == 12 ? ((ListItem)lb[4].SelectedItem).Value : lb[4].SelectedValue.ToString();// TODO: To ViewModel
@@ -1578,9 +1578,9 @@ namespace AssetBuilder
         {
             if (Keyboard.Modifiers != ModifierKeys.None) return;
             if (_clickedAsset == null || Form == null) return;
-            
+
             if (_listOpen) CloseList();
-            
+
             imgGrab.Visibility = _assetListViewModel.AllAssets.Any(x => x.IsSelected) ? Visibility.Visible : Visibility.Hidden;
 
             SetButtons();
@@ -1831,7 +1831,7 @@ namespace AssetBuilder
                     }
                     else
                     {
-                        lb[box -1].Items.Clear();
+                        lb[box - 1].Items.Clear();
                     }
 
                     boxes.Add(box);
@@ -1844,11 +1844,23 @@ namespace AssetBuilder
                         if (desc == "") desc = "<-- blank -->";
                         if (Window1.MultiTextLanguage)
                         {
-                            lb[box - 1].Items.Add(new ListItem
+                            var item = new ListItem
                             {
-                                ID = GetInt(x, "ID"), Value = desc, Priority = priority, CategoryTypeID = catTypeId,
-                                NotInUse = notInUse, Audit = ai
-                            });
+                                ID = GetInt(x, "ID"),
+                                Value = desc,
+                                Priority = priority,
+                                CategoryTypeID = catTypeId,
+                                NotInUse = notInUse,
+                                Audit = ai
+                            };
+                            if (box == 5)
+                            {
+                                _assetListViewModel.AllAssets.Add(item);
+                            }
+                            else
+                            {
+                                lb[box - 1].Items.Add(item);
+                            }
                         }
                         else
                         {
@@ -1860,8 +1872,14 @@ namespace AssetBuilder
                                              || filter[box - 1] && !Window1.SearchTranslation && desc.IndexOf(tb[box - 1].Text, StringComparison.OrdinalIgnoreCase) == -1;
                                 var item = new ListItem
                                 {
-                                    ID = GetInt(x, "ID"), Value = desc, Priority = priority, Language = lang,
-                                    Hidden = hidden, CategoryTypeID = catTypeId, NotInUse = notInUse, Audit = ai
+                                    ID = GetInt(x, "ID"),
+                                    Value = desc,
+                                    Priority = priority,
+                                    Language = lang,
+                                    Hidden = hidden,
+                                    CategoryTypeID = catTypeId,
+                                    NotInUse = notInUse,
+                                    Audit = ai
                                 };
                                 if (box == 5) // listBox5 -> ViewModel
                                 {
@@ -1877,8 +1895,13 @@ namespace AssetBuilder
                                 var hidden = filter[box - 1] && desc.IndexOf(tb[box - 1].Text, StringComparison.OrdinalIgnoreCase) == -1;
                                 var item = new ListItem
                                 {
-                                    ID = GetInt(x, "ID"), Value = desc, Priority = priority,
-                                    Hidden = hidden, CategoryTypeID = catTypeId, NotInUse = notInUse, Audit = ai
+                                    ID = GetInt(x, "ID"),
+                                    Value = desc,
+                                    Priority = priority,
+                                    Hidden = hidden,
+                                    CategoryTypeID = catTypeId,
+                                    NotInUse = notInUse,
+                                    Audit = ai
                                 };
                                 if (box == 5) // listBox5 -> ViewModel
                                 {
@@ -2018,7 +2041,7 @@ namespace AssetBuilder
         {
             var ids = "";
             var s = "";
-            foreach (var item in _assetListViewModel.AllAssets.Where(x => x.IsSelected))
+            foreach (ListItem item in listBox5.SelectedItems)
             {
                 if (ids != "") ids += ",";
                 if (s != "") s += "$$BREAK$$";
@@ -2031,7 +2054,7 @@ namespace AssetBuilder
             {
                 s += "$$BREAK$$";
                 var x = "";
-                foreach (var item in _assetListViewModel.AllAssets.Where(i => i.IsSelected))
+                foreach (ListItem item in listBox5.SelectedItems)
                 {
                     var key = "";
                     var xpathkeys = _properties.Where(f => f.Key.Contains(":XPath:")).Where(f =>
@@ -2172,7 +2195,7 @@ namespace AssetBuilder
             {
 
                 var rr = from rf in xn.Descendants("Failure")
-                    select rf;
+                         select rf;
 
                 var s = "The asset could not be deleted because of the following reasons:\r\n\r\n";
 
