@@ -48,8 +48,8 @@
     <InstallUrl>https://apps.expert-24.com/ABTemp/</InstallUrl>
     <ProductName>Asset Builder</ProductName>
     <PublisherName>Expert-24</PublisherName>
-    <ApplicationRevision>874</ApplicationRevision>
-    <ApplicationVersion>4.7.0.%2a</ApplicationVersion>
+    <ApplicationRevision>875</ApplicationRevision>
+    <ApplicationVersion>4.7.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
