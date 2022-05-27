@@ -46,15 +46,28 @@
             }
         }
 
+        function HH_IDs(ids) {
+            for (let i in ids) if (Object.hasOwnProperty.call(ids, i)) {
+                var p = document.getElementById(i + "s_IDs");
+                if (ids[i].length > 0) p.innerHTML = i.toLowerCase() + ":" + ids[i].join(",");
+                else p.innerHTML = "";
+            }
+        }
+
         function HH_Show(v) {
             var inputs = document.getElementsByTagName("input");
+            var ids = { "Algo": [], "Question": [], "Answer": [], "Conclusion": [], "Bullet": [] };
             for (let i = 0; i < inputs.length; i++) {
                 if (inputs[i].getAttribute("data-value") === v) {
                     var style = "";
+                    var id = inputs[i].getAttribute("data-id");
+                    var split = id.split('-');
                     if (!inputs[i].checked) style = "none";
-                    document.getElementById(inputs[i].getAttribute("data-id")).style.display = style;
+                    else ids[split[0]].push(split[1]);
+                    document.getElementById(id).style.display = style;
                 }
             }
+            HH_IDs(ids);
         }
 
         function HH_ShowDisagree() {
@@ -67,9 +80,20 @@
 
         function HH_ShowAll() {
             var assets = document.getElementsByClassName("hh-asset");
+            var ids = { "Algo": [], "Question": [], "Answer": [], "Conclusion": [], "Bullet": [] };
             for (let i = 0; i < assets.length; i++) {
                 assets[i].style.display = "";
+                var split = assets[i].id.split('-');
+                ids[split[0]].push(split[1]);
             }
+            HH_IDs(ids);
+        }
+
+        function toggle(id) {
+            var header = document.getElementById(id + '_Header');
+            var body = document.getElementById(id + '_Body');
+            header.style.display = header.style.display == '' ? 'none' : '';
+            body.style.display = body.style.display == '' ? 'none' : '';
         }
     </script>
 </head>
