@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -34,11 +35,28 @@ namespace AssetBuilder.Reports
             }
         }
 
-        public void Munge(BaseXmlObject obj, string suffix = "_Language")
+        public IEnumerable<Prop> GetFields(string suffix = "_Language")
         {
             Type type = this.GetType();
             var props = type.GetProperties().Where(f => f.Name.EndsWith(suffix))
-                .Select(f => new { source = type.GetProperty(f.Name.Substring(0, f.Name.Length-suffix.Length)), target = f });
+                .Select(f => new Prop { source = type.GetProperty(f.Name.Substring(0, f.Name.Length - suffix.Length)), target = f });
+            return props;
+        }
+
+        public void NLExpand(string suffix = "_Language")
+        {
+            var props = GetFields();
+            foreach (var prop in props)
+            {
+                var t = prop.source.GetValue(this);
+                t = AssetBuilder.Controls.NLTest.GetNLConditionString((string)t);
+                prop.source.SetValue(this, t);
+            }
+        }
+
+        public void Munge(BaseXmlObject obj, string suffix = "_Language")
+        {
+            var props = GetFields();
             foreach (var prop in props)
             {
                 if (prop.target != null)
@@ -54,6 +72,12 @@ namespace AssetBuilder.Reports
                     }
                 }
             }
+        }
+
+        public class Prop
+        {
+            public PropertyInfo source { get; set; }
+            public PropertyInfo target { get; set; }
         }
     }
 }

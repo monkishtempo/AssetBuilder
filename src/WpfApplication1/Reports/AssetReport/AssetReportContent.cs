@@ -36,6 +36,13 @@ namespace AssetBuilder.Reports
                     AddItemLanguage(item);
                 }
             }
+            else
+            {
+                foreach (var item in objects.SelectMany(f => f.Value.Values))
+                {
+                    item.NLExpand();
+                }
+            }
         }
 
         private void AddItemLanguage(XElement item)

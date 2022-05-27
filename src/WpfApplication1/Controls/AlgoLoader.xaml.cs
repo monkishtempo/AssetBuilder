@@ -1190,6 +1190,10 @@ namespace AssetBuilder.Controls
             }
             var ar = new AssetReportContent(xn, xl);
             var rep = Reports.AssetReport.CreateReport($"Reports\\AssetReport");
+            rep.prms = new Dictionary<string, string>
+            {
+                { "Title", "Asset Report" + (Window1.ShowTranslation ? $" - {Window1.TranslationLanguage}" : "") }
+            };
             rep.Completed += delegate (object obj, Reports.CompletedEventArgs ea)
             {
                 if (ea.UniqueID == null) ScriptText = ea.Content;

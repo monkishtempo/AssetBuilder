@@ -1,12 +1,20 @@
 ﻿<div class="w3-panel">
-    <div class="w3-card-4">
-        <div class="w3-row w3-border">
+    <div class="w3-card-4" id="Algos_Body">
+        <div class="w3-row w3-border" onclick="toggle('Algos');">
             <div class="w3-container w3-blue">
-                <h2>Algos</h2>
+                <h2>Algos <i class="w3-right fa fa-chevron-up" style="margin-top:5px;"></i></h2>
             </div>
         </div>
-        <br/>
+        <br />
         @Algos.Algo@
     </div>
-    <br />
+    <div class="w3-card-4" id="Algos_Header" style="display:none;">
+        <div class="w3-row w3-border" onclick="toggle('Algos');">
+            <div class="w3-container w3-blue">
+                <h2>Algos <i class="w3-right fa fa-chevron-down" style="margin-top:5px;"></i></h2>
+            </div>
+        </div>
+        <br />
+    </div>
+    <p id="Algos_IDs" style="word-break: break-all;"></p>
 </div>
