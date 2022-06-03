@@ -1126,6 +1126,14 @@ namespace AssetBuilder.Controls
                             s = OutputClause(testclause, s, pos, cc.Skip(1), conditionString[testclause]);
                         }
                     }
+                    else if (clause == "tc")
+                    {
+                        s = s.Substring(0, pos[0]--) + s.Substring(pos[1] + 1);
+                    }
+                    else if (clause == "tp")
+                    {
+                        s = s.Substring(0, pos[0]--) + s.Substring(pos[1] + 1);
+                    }
                     else if (int.TryParse(temp.Substring(2), out qid))
                     {
                         if (clause == "nt")

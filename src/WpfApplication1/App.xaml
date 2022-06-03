@@ -1767,32 +1767,46 @@
 				As well as performing a single check on a single conclusion, you can also nest the conclusion checks, so that if one conclusion is true, the system checks that an additional conclusion has been reached and display text or another variable.
                 </TextBlock>
             </StackPanel>
-            <StackPanel x:Key="qcToolTip">
+            <StackPanel x:Key="tcToolTip">
                 <TextBlock Margin="0,0,0,6">
-				You can insert text based on whether the respondent has previously answered a specific question or not, using the syntax:
+				Resets Natural Language context to current Traversal
                 </TextBlock>
                 <TextBlock>
-				{qc + question ID|Text you want to insert if that question has previously been answered}
+				{tc}
                 </TextBlock>
                 <Rectangle Height="1" HorizontalAlignment="Stretch" Stroke="Blue" Margin="0,6,0,6" StrokeThickness="1" />
                 <TextBlock FontWeight="Bold">
 				For example
                 </TextBlock>
                 <TextBlock>
-				{qc9785|Unsure about use of medication} inserts the phrase “Unsure about use of medication” into the report at that point if question 9785 has been answered. If the question has not been answered or the question is a multiple select with no answers selected, no text is displayed.
-                </TextBlock>
-                <TextBlock Margin="0,6">
-				You can also insert different alternative text based on the respondent answering one or more questions, using the syntax:
+				{tc} Ensures all question and conclusion based Natural Language clauses are processed in the contex of the current traversal
                 </TextBlock>
                 <TextBlock>
-				{qc + question ID|Text if the question has been answered|Text if the question has not been answered or is a multiple select question with no answers selected}
+				Note: The {tc} clause is only necessary when using the reciprocal {tp} clause and context is valid for the entire payload
                 </TextBlock>
-                <TextBlock Margin="0,6,0,0">
-				As well as performing a single check on a single question, you can also nest the question checks, so that if one question check is true, the system checks that an additional question has been answered and display text or another variable.
+            </StackPanel>
+            <StackPanel x:Key="tpToolTip">
+                <TextBlock Margin="0,0,0,6">
+				Sets the Natural Language context to a previous Traversal (if found)
+                </TextBlock>
+                <TextBlock>
+				{tp[algoid[|algoid[+ ...]]]} 
                 </TextBlock>
                 <Rectangle Height="1" HorizontalAlignment="Stretch" Stroke="Blue" Margin="0,6,0,6" StrokeThickness="1" />
+                <TextBlock FontWeight="Bold">
+				For example
+                </TextBlock>
                 <TextBlock>
-				Note: The {qc...} syntax used with a multiple select question treats the question as unanswered if no answers are selected.
+				{tp} Ensures all question and conclusion based Natural Language clauses are processed in the contex of the previous traversal with the same start algoid
+                </TextBlock>
+                <TextBlock>
+				{tp1234} Ensures all question and conclusion based Natural Language clauses are processed in the contex of the previous traversal started with algoid 1234
+                </TextBlock>
+                <TextBlock>
+				{tp1234|2345|3456} Ensures all question and conclusion based Natural Language clauses are processed in the contex of the previous traversal started with either algoid 1234, 2345 or 3456
+                </TextBlock>
+                <TextBlock>
+				Note: The {tc} clause is used to reset the context back to the current traversal, context is consistent for the entire node
                 </TextBlock>
             </StackPanel>
             <StackPanel x:Key="laToolTip">

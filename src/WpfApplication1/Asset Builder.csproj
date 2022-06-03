@@ -35,7 +35,7 @@
     <Utf8Output>true</Utf8Output>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>c:\wwwroot\apps_expert-24_com\ABTemp\</PublishUrl>
+    <PublishUrl>c:\wwwroot\lloyds_expert-24_com\AssetBuilder\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -45,10 +45,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://apps.expert-24.com/ABTemp/</InstallUrl>
+    <InstallUrl>https://lloyds.expert-24.com/AssetBuilder/</InstallUrl>
     <ProductName>Asset Builder</ProductName>
     <PublisherName>Expert-24</PublisherName>
-    <ApplicationRevision>875</ApplicationRevision>
+    <ApplicationRevision>879</ApplicationRevision>
     <ApplicationVersion>4.7.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

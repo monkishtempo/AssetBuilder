@@ -39,6 +39,8 @@ namespace AssetBuilder.Controls
                     new IntelItem{ Value = "qs", Display = "qs - Free text from question", ToolTip = new Info{ Width="700", Image="/images/Question.png", Title = "Natural Language - Free text from question", Body="qsToolTip" }.ProvideValue(null) },
                     new IntelItem{ Value = "qt", Display = "qt - Html table from question", ToolTip = new Info{ Width="700", Image="/images/Question.png", Title = "Natural Language - Html table from question", Body="qtToolTip" }.ProvideValue(null) },
                     new IntelItem{ Value = "qv", Display = "qv - Numeric value from question", ToolTip = new Info{ Width="700", Image="/images/Question.png", Title = "Natural Language - Numeric value from question", Body="qvToolTip" }.ProvideValue(null) },
+                    new IntelItem{ Value = "tc", Display = "tc - Reset traversal context", ToolTip = new Info{ Width="700", Image="/images/Algo.png", Title = "Natural Language - Reset traversal context", Body="tcToolTip" }.ProvideValue(null) },
+                    new IntelItem{ Value = "tp", Display = "tp - Switch context to previous traversal", ToolTip = new Info{ Width="700", Image="/images/Algo.png", Title = "Natural Language - Switch context to previous traversal", Body="tpToolTip" }.ProvideValue(null) },
                     new IntelItem{ Value = "xf", Display = "xf - Gender condition is female", ToolTip = new Info{ Width="700", Image="/images/Female.png", Title = "Natural Language - Gender condition is female", Body="xxToolTip" }.ProvideValue(null) },
                     new IntelItem{ Value = "xm", Display = "xm - Gender condition is male", ToolTip = new Info{ Width="700", Image="/images/Male.png", Title = "Natural Language - Gender condition is male", Body="xyToolTip" }.ProvideValue(null) },
                     new IntelItem{ Value = "xx", Display = "xx - Gender condition is female", ToolTip = new Info{ Width="700", Image="/images/Female.png", Title = "Natural Language - Gender condition is female", Body="xxToolTip" }.ProvideValue(null) },
@@ -51,12 +53,14 @@ namespace AssetBuilder.Controls
 { "{gc", new IntelModel { getListMethod = new Intel.GetList(getGroups), endings = pipeEnd }},
 { "{qc", new IntelModel { getListMethod = new Intel.GetList(getQuestions), endings = pipeEnd }},
 { "{qn", new IntelModel { getListMethod = new Intel.GetList(getMultiSelectQuestions), endings = pipeEnd }},
+{ "{tp", new IntelModel { getListMethod = new Intel.GetList(getAlgos), endings = pipeEnd }},
 { "Regex:{q[p]$", new IntelModel { getListMethod = new Intel.GetList(getQuestions), endings = pipeEnd }},
 { "Regex:{q[adstv]$", new IntelModel { getListMethod = new Intel.GetList(getQuestionsBrace), endings = curlyEnd }},
 { "Regex:{q[vsd][0-9]+\\|$", new IntelModel { getListMethod = new Intel.GetList(getAnswers), endings = curlyEnd }},
 { "Regex:{qp[0-9]+\\|$", new IntelModel { getListMethod = new Intel.GetList(getAnswers), endings = pipeEnd }},
 { "Regex:{qp[0-9]+\\|[0-9]*\\|$", new IntelModel { IsStatic=true, getListMethod = new Intel.GetList(getQPHelperText), endings = pipeEnd }},
 { "Regex:{qp[0-9]+\\|[0-9]*\\|.*\\|$", new IntelModel { IsStatic=true, getListMethod = new Intel.GetList(getQPHelperText), endings = pipeEnd }},
+{ "Regex:{tp([0-9]+\\|)+$", new IntelModel { getListMethod = new Intel.GetList(getAlgos), endings = pipeEnd }},
 { "</", new IntelModel { NoDelay = true, append = ">", getListMethod = new Intel.GetList(getOpenElement), endings = greaterThanEnd }},
     };
 
@@ -169,6 +173,11 @@ namespace AssetBuilder.Controls
         static List<IntelItem> getQuestions(string search, TextBox tb)
         {
             return getDataForList(string.Format("%{0}%", search), 2);
+        }
+
+        static List<IntelItem> getAlgos(string search, TextBox tb)
+        {
+            return getDataForList(string.Format("%{0}%", search), 1);
         }
 
         static List<IntelItem> getMultiSelectQuestions(string search, TextBox tb)

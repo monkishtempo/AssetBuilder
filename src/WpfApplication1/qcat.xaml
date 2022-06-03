@@ -28,7 +28,7 @@
             <ColumnDefinition Width="500"/>
         </Grid.ColumnDefinitions>
         <Label Grid.Column="0" Content="Data set" ToolTip="{me:Info Title='Data Set',Body=DataSetToolTip}" HorizontalAlignment="Stretch" FontSize="14.667" Background="#FFF7F9FF"/>
-		<ListBox Grid.Column="0" Margin="0,28,0,54" x:Name="listBox1" HorizontalAlignment="Stretch" SelectionChanged="lb_SelectionChanged" FontSize="14.667" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectedValuePath="ID" DragOver="lb_DragOver" Drop="lb_Drop" AllowDrop="True" MouseDoubleClick="lb_MouseDoubleClick" Background="{DynamicResource ListBoxBackground}" />
+        <ListBox ItemContainerStyle="{StaticResource ColouredListBoxItem}" Grid.Column="0" Margin="0,28,0,54" x:Name="listBox1" HorizontalAlignment="Stretch" SelectionChanged="lb_SelectionChanged" FontSize="14.667" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectedValuePath="ID" DragOver="lb_DragOver" Drop="lb_Drop" AllowDrop="True" MouseDoubleClick="lb_MouseDoubleClick" Background="{DynamicResource ListBoxBackground}" />
         <GridSplitter x:Name="gridSplitter1" Width="3" Grid.Column="1" HorizontalAlignment="Left" />
         <Label Grid.Column="1" Margin="3,0,0,0" Content="Category 1" ToolTip="{me:Info Title='Category 1',Body=Category1ToolTip}" HorizontalAlignment="Stretch" FontSize="14.667" Background="#FFF7F9FF"/>
         <Button x:Name="btnTitle2" CommandParameter="2" Click="btnTitle_Click" Grid.Column="1" Width="24" Height="24" Margin="57,3" HorizontalAlignment="Right" VerticalAlignment="Top" Visibility="Collapsed">
@@ -46,7 +46,7 @@
         <Button x:Name="btnDown2" ToolTip="{me:Info Title='Red Arrow',Body=RedGreenArrowToolTip}" CommandParameter="2" Click="btnDown_Click" Grid.Column="1" Width="24" Height="24" Margin="3" HorizontalAlignment="Right" VerticalAlignment="Top">
             <Image Source="images/down.png"/>
         </Button>
-        <ListBox Grid.Column="1" Margin="3,28,0,54" x:Name="listBox2" SelectionChanged="lb_SelectionChanged" FontSize="14.667" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectedValuePath="ID" DragOver="lb_DragOver" Drop="lb_Drop" AllowDrop="True" MouseDoubleClick="lb_MouseDoubleClick" Background="{DynamicResource ListBoxBackground}" />
+        <ListBox ItemContainerStyle="{StaticResource ColouredListBoxItem}" Grid.Column="1" Margin="3,28,0,54" x:Name="listBox2" SelectionChanged="lb_SelectionChanged" FontSize="14.667" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectedValuePath="ID" DragOver="lb_DragOver" Drop="lb_Drop" AllowDrop="True" MouseDoubleClick="lb_MouseDoubleClick" Background="{DynamicResource ListBoxBackground}" />
         <GridSplitter Grid.Column="2" Margin="0.714,0,0,0" x:Name="gridSplitter2" HorizontalAlignment="Left" Width="3" />
         <Label Grid.Column="2" Margin="3,0,0,0" Content="Sub Category" ToolTip="{me:Info Title='Sub Category',Body=SubCategoryToolTip}" HorizontalAlignment="Stretch" FontSize="14.667" Background="#FFF7F9FF"/>
         <Button x:Name="btnUp3" ToolTip="{me:Info Title='Green Arrow',Body=RedGreenArrowToolTip}" CommandParameter="3" Click="btnUp_Click" Grid.Column="2" Width="24" Height="24" Margin="30,3" HorizontalAlignment="Right" VerticalAlignment="Top">
@@ -55,10 +55,10 @@
         <Button x:Name="btnDown3" ToolTip="{me:Info Title='Red Arrow',Body=RedGreenArrowToolTip}" CommandParameter="3" Click="btnDown_Click" Grid.Column="2" Width="24" Height="24" Margin="3" HorizontalAlignment="Right" VerticalAlignment="Top">
             <Image Source="images/down.png"/>
         </Button>
-		<ListBox Grid.Column="2" Margin="3,28,0,54" x:Name="listBox3" SelectionChanged="lb_SelectionChanged" FontSize="14.667" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectedValuePath="ID" DragOver="lb_DragOver" Drop="lb_Drop" AllowDrop="True" MouseDoubleClick="lb_MouseDoubleClick" Background="{DynamicResource ListBoxBackground}" />
+        <ListBox ItemContainerStyle="{StaticResource ColouredListBoxItem}" Grid.Column="2" Margin="3,28,0,54" x:Name="listBox3" SelectionChanged="lb_SelectionChanged" FontSize="14.667" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectedValuePath="ID" DragOver="lb_DragOver" Drop="lb_Drop" AllowDrop="True" MouseDoubleClick="lb_MouseDoubleClick" Background="{DynamicResource ListBoxBackground}" />
         <GridSplitter Grid.Column="3" HorizontalAlignment="Left" x:Name="gridSplitter3" Width="3" />
         <Label Grid.Column="3" Margin="3,0,0,0" Content="Category 2" ToolTip="{me:Info Title='Category 2',Body=Category2ToolTip}" HorizontalAlignment="Stretch" FontSize="14.667" Background="#FFF7F9FF"/>
-		<ListBox Grid.Column="3" Margin="3,28,0,54" x:Name="listBox4" SelectionChanged="lb_SelectionChanged" FontSize="14.667" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectedValuePath="ID" DragOver="lb_DragOver" Drop="lb_Drop" AllowDrop="True" MouseDoubleClick="lb_MouseDoubleClick" Background="{DynamicResource ListBoxBackground}" />
+        <ListBox ItemContainerStyle="{StaticResource ColouredListBoxItem}" Grid.Column="3" Margin="3,28,0,54" x:Name="listBox4" SelectionChanged="lb_SelectionChanged" FontSize="14.667" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectedValuePath="ID" DragOver="lb_DragOver" Drop="lb_Drop" AllowDrop="True" MouseDoubleClick="lb_MouseDoubleClick" Background="{DynamicResource ListBoxBackground}" />
         <GridSplitter Grid.Column="4" HorizontalAlignment="Left" x:Name="gridSplitter4" Width="3" />
         <Label VerticalAlignment="Top" Grid.Column="4" Margin="3,0,0,0" ToolTip="{me:Info Title='Assets',Body=AssetsToolTip}" HorizontalAlignment="Stretch" FontSize="14.667" Background="#FFF7F9FF">
             <DockPanel>
