@@ -1,0 +1,17 @@
+﻿<div class="w3-container w3-light-grey">
+    <div class="w3-right">
+        <button class="w3-btn w3-orange" onclick="HH_ShowDisagree()">Show Disagree</button>
+        <button class="w3-btn w3-orange" onclick="HH_ShowAgree()">Show Agree</button>
+        <button class="w3-btn w3-orange" onclick="HH_ShowAll()">Show All</button>
+    </div>
+    <h2>@Title@</h2>
+</div>
+<span class="w3-right">User: @User@ Date: @Now@</span>
+<br />
+<div class="w3-container">
+    @?HasAlgos.RenderAlgos@
+    @?HasQuestions.RenderQuestions@
+    @?HasAnswers.RenderAnswers@
+    @?HasConclusions.RenderConclusions@
+    @?HasBullets.RenderBullets@
+</div>
