@@ -1174,7 +1174,7 @@ namespace AssetBuilder.Controls
             disableForm(false);
             var sqlPrms = new List<string>();
             var useTraversalService = false;
-            var prms = new List<string> { "AssetReport" };
+            var prms = new List<string> { ((RibbonMenuItem)sender).GetValue(RibbonMenuItem.CommandParameterProperty).ToString() };
             if ((bool)rbtScriptAssets.IsChecked) prms.Add("assets");
             else prms.Add("algos");
             Report.AlgoLoader = this;
@@ -1189,7 +1189,7 @@ namespace AssetBuilder.Controls
                 xl = DataAccess.getData("ab_Report", sqlPrms.ToArray(), false);
             }
             var ar = new AssetReportContent(xn, xl);
-            var rep = Reports.AssetReport.CreateReport($"Reports\\AssetReport");
+            var rep = Reports.AssetReport.CreateReport($"Reports\\{prms[0]}");
             rep.prms = new Dictionary<string, string>
             {
                 { "Title", "Asset Report" + (Window1.ShowTranslation ? $" - {Window1.TranslationLanguage}" : "") }

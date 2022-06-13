@@ -49,7 +49,7 @@ namespace AssetBuilder.Reports
 
         public static void SetUpParameters(string algos, List<string> prms, XsltArgumentList args, List<string> sqlParams, out bool useTraversalService)
         {
-            useTraversalService = true;
+            useTraversalService = false;
             if (prms.Count == 0) return;
             if (prms.Contains("algos") && string.IsNullOrEmpty(algos))
             {
@@ -71,7 +71,7 @@ namespace AssetBuilder.Reports
 
             for (int i = 0; i < prms.Count; i++)
             {
-                if (prms[i] != "ReportType" && i == 0) sqlParams.AddRange(new string[] { "@ReportType", prms[0].Replace("_Word", "") });
+                if (prms[i] != "ReportType" && i == 0) sqlParams.AddRange(new string[] { "@ReportType", prms[0].Replace("_Word", "").Replace("_Html", "") });
                 else if (prms[i] == "algos") sqlParams.AddRange(new string[] { "@Algos", algos });
                 else if (prms[i] == "assets")
                 {
@@ -130,7 +130,7 @@ namespace AssetBuilder.Reports
                             input = c.ToString();
                         }
                         else input = ib.Text;
-                        if (prms[i] == "ReportType") input = input.Split('|')[0].Replace("_Word", "");
+                        if (prms[i] == "ReportType") input = input.Split('|')[0].Replace("_Word", "").Replace("_Html", "");
                         if (!prms[i].Contains(":"))
                         {
                             string sqlprefix = "@";
