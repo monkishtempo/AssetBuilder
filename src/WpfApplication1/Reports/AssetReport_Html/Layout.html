@@ -49,8 +49,10 @@
         function HH_IDs(ids) {
             for (let i in ids) if (Object.hasOwnProperty.call(ids, i)) {
                 var p = document.getElementById(i + "s_IDs");
-                if (ids[i].length > 0) p.innerHTML = i.toLowerCase() + ":" + ids[i].join(",");
-                else p.innerHTML = "";
+                if (p !== null) {
+                    if (ids[i].length > 0) p.innerHTML = i.toLowerCase() + ":" + ids[i].join(",");
+                    else p.innerHTML = "";
+                }
             }
         }
 
