@@ -1454,6 +1454,10 @@ namespace AssetBuilder
                 DataAccess.getData("ab_UpdateAsset", new[] {
                     "@xml", doc.OuterXml
                 }, true);
+                if(LoadedAsset != null && doc.DocumentElement.SelectSingleNode(string.Format("*[@id={0}]", LoadedAsset.AssetID)) != null)
+                {
+                    LoadedAsset.UpdateCategories(doc.DocumentElement);
+                }
                 Populate(null as ListBox);
             }
 

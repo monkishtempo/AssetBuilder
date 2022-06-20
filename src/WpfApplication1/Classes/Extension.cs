@@ -259,6 +259,21 @@ namespace AssetBuilder
             return HttpUtility.HtmlDecode(xml);
         }
 
+        public static string AttributeValue(this XmlElement element, string attributeName)
+        {
+            var ve = element?.Attributes[attributeName];
+            if (ve == null) return null;
+            return ve?.Value;
+        }
+
+        public static int? AttributeIntValue(this XmlElement element, string attributeName)
+        {
+            int i;
+            var ve = element?.Attributes[attributeName];
+            if (ve != null && int.TryParse(ve.Value, out i)) return i;
+            return null;
+        }
+
         public static string ElementValue(this XElement element, string elementName)
         {
             var ve = element?.Element(elementName);
