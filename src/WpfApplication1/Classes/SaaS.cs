@@ -41,7 +41,7 @@ namespace AssetBuilder
             var sid = split.Length > 1 ? split[1] : id;
             await SaveToSaas(
                 $"TraversalService/TableOutput/Asset_Property/json/object/{type}/{id}/{name}?TextAsset=Bloat",
-                $"api/v1/{Properties.Settings.Default.ClientID}/Properties/{stype}/{sid}/{name}",
+                $"/{Properties.Settings.Default.ClientID}/Properties/{stype}/{sid}/{name}",
                 "value", value == "null" ? "DELETE" : "PUT", algoNode.Length > 1 ? $"?algoId={algoNode[0]}&nodeId={algoNode[1]}" : "");
         }
 
@@ -49,7 +49,7 @@ namespace AssetBuilder
         {
             await SaveToSaas(
                 $"TraversalService/TableOutput/Asset_{type}/json/object/{AssetID}?TextAsset=Bloat",
-                $"api/v1/{Properties.Settings.Default.ClientID}/{type}s/{AssetID}",
+                $"/{Properties.Settings.Default.ClientID}/{type}s/{AssetID}",
                 type.ToLower());
         }
 
@@ -59,20 +59,23 @@ namespace AssetBuilder
             var content = new Uri(Properties.Settings.Default.SaaSEndpoint);
             var endpoint = get;
             var url = new Uri(new Uri(Properties.Settings.Default.WebService), endpoint).AbsoluteUri;
-            var p = new Uri(content, put).AbsoluteUri;
+            var p = content.AbsoluteUri + put;
             var headers = new[] { ("Content-Type", "application/json"), ("Authorization", $"Bearer {token}"), };
             var then = DateTime.Now;
+            var audit = new { user = Environment.UserName, reason = Environment.MachineName + " - Asset Builder " + Window1.windowTitle };
             JNode data = null;
             if (method == "DELETE")
             {
-                data = "".PostObject<JNode>(p + query, headers, method);
+                data = audit.PostObject<JNode>(p + query, headers, method);
             }
             else
             {
                 var a = url.GetContent<JNode>();
                 DataAccess.AddLastCommand(url, a, then - DateTime.Now);
                 then = DateTime.Now;
-                data = a[key].ToJson().PostObject<JNode>(p + query, headers, method);
+                var obj = DataAccess.JsonDeSerialize(a[key].ToJson());
+                obj.Add("auditData", audit);
+                data = obj.PostObject<JNode>(p + query, headers, method);
             }
             DataAccess.AddLastCommand(p, data, then - DateTime.Now);
         }
