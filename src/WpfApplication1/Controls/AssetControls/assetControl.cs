@@ -1025,6 +1025,7 @@ namespace AssetBuilder.AssetControls
                         DataAccess.SetProperty(item.PropertyType, newID.ToString(), item.PropertyName, item.PropertyValue);
                     }
                 }
+                idcolumn.InnerText = xn.SelectSingleNode("Table/*").InnerText;
                 //SetValue(ListBox.SelectedValueProperty, int.Parse(xn.SelectSingleNode("Table/ID").InnerText);
             }
             if (!(this is Conclusion)) reloadAsset(idcolumn.InnerText);

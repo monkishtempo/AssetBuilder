@@ -728,6 +728,10 @@ namespace AssetBuilder
                         prms[1] = doc.OuterXml;
                         xn = DataAccess.getData("ab_UpdateAsset", prms.ToArray(), true);
                         result = ParseDeleteResults(xn);
+                        foreach (XmlElement item in doc.DocumentElement.SelectNodes("Delete"))
+                        {
+                            Task.Run(() => SaaS.Instance.DeleteAssetFromSaas(((AssetType)AssetTypeId).ToString(), item.AttributeIntValue("id")));
+                        }
                     }
                     else result = false;
                 }

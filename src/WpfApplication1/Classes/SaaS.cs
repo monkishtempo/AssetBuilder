@@ -53,12 +53,19 @@ namespace AssetBuilder
                 type.ToLower());
         }
 
+        public async Task DeleteAssetFromSaas(string type, int? AssetID)
+        {
+            await SaveToSaas(
+                null,
+                $"/{Properties.Settings.Default.ClientID}/{type}s/{AssetID}",
+                type.ToLower(), 
+                "DELETE");
+        }
+
         private async Task SaveToSaas(string get, string put, string key, string method = "PUT", string query = "")
         {
             await Task.CompletedTask;
             var content = new Uri(Properties.Settings.Default.SaaSEndpoint);
-            var endpoint = get;
-            var url = new Uri(new Uri(Properties.Settings.Default.WebService), endpoint).AbsoluteUri;
             var p = content.AbsoluteUri + put;
             var headers = new[] { ("Content-Type", "application/json"), ("Authorization", $"Bearer {token}"), };
             var then = DateTime.Now;
@@ -70,6 +77,8 @@ namespace AssetBuilder
             }
             else
             {
+                var endpoint = get;
+                var url = new Uri(new Uri(Properties.Settings.Default.WebService), endpoint).AbsoluteUri;
                 var a = url.GetContent<JNode>();
                 DataAccess.AddLastCommand(url, a, then - DateTime.Now);
                 then = DateTime.Now;
