@@ -106,6 +106,42 @@ namespace AssetBuilder.AssetControls
             get { return DesignerProperties.GetIsInDesignMode(this); }
         }
 
+        public void UpdateCategories(XmlElement elem)
+        {
+            var dataSetId = elem.AttributeIntValue("dataid");
+            var categoryId = elem.AttributeIntValue("catid");
+            var subCategoryId = elem.AttributeIntValue("subcatid");
+            var category2Id = elem.AttributeIntValue("cat2id");
+
+            if (dataSetId.HasValue)
+            {
+                // <Table><AgeID>value</AgeID></Table>
+                var node = asset.SelectSingleNode("/Table/" + cats[0]);
+                if (node != null) node.InnerText = dataSetId.Value.ToString();
+            }
+
+            if (categoryId.HasValue)
+            {
+                // <Table><HistID>value</HistID></Table>
+                var node = asset.SelectSingleNode("/Table/" + cats[1]);
+                if (node != null) node.InnerText = categoryId.Value.ToString();
+            }
+
+            if (subCategoryId.HasValue)
+            {
+                // <Table><Hist_SubID>value</Hist_SubID></Table>
+                var node = asset.SelectSingleNode("/Table/" + cats[2]);
+                if (node != null) node.InnerText = subCategoryId.Value.ToString();
+            }
+
+            if (category2Id.HasValue)
+            {
+                // <Table><BodyID>value</BodyID></Table>
+                var node = asset.SelectSingleNode("/Table/" + cats[3]);
+                if (node != null) node.InnerText = category2Id.Value.ToString();
+            }
+        }
+
         static assetControl()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(assetControl),
