@@ -1015,7 +1015,7 @@ namespace AssetBuilder.AssetControls
         //    var then = DateTime.Now;
         //    var a = url.GetContent<JNode>();
         //    DataAccess.AddLastCommand(url, a, then - DateTime.Now);
-        //    var p = new Uri(content, $"api/v1/{Properties.Settings.Default.ClientID}/{at}s/{AssetID}").AbsoluteUri;
+        //    var p = new Uri(content, $"/{Properties.Settings.Default.ClientID}/{at}s/{AssetID}").AbsoluteUri;
         //    var headers = new[] { ("Content-Type", "application/json"), ("Authorization", $"Bearer {token}"), };
         //    then = DateTime.Now;
         //    var put = a[at.ToLower()].ToJson().PostObject<JNode>(p, headers, "PUT");

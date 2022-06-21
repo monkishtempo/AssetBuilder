@@ -81,7 +81,7 @@ namespace AssetBuilder.AssetControls
                 ("Authorization", $"Bearer {j["access_token"].Value}"),
             };
 
-            var get = new Uri(product, $"api/v1/{c}/conclusionmaps/GetConclusionMapByAssetId/{ConclusionMap.id}").AbsoluteUri.GetContent<JNode>(headers);
+            var get = (product.AbsoluteUri + $"/{c}/conclusionmaps/GetConclusionMapByAssetId/{ConclusionMap.id}").GetContent<JNode>(headers);
             var id = get["id"].Value;
             var verb = " updated";
             var result = "";
@@ -89,13 +89,13 @@ namespace AssetBuilder.AssetControls
             if (id == null)
             {
                 var create = new { name = ConclusionMap.name, assetId = ConclusionMap.id };
-                var t = create.PostObject<JNode>(new Uri(product, $"api/v1/{c}/conclusionmaps").AbsoluteUri, headers);
+                var t = create.PostObject<JNode>(product.AbsoluteUri + $"/{c}/conclusionmaps", headers);
                 id = t["id"].Value;
                 verb = " created";
             }
             if (id != null)
             {
-                var release = ConclusionMap.PostObject<JNode>(new Uri(product, $"api/v1/{c}/conclusionmaps/{id}/releases").AbsoluteUri, headers);
+                var release = ConclusionMap.PostObject<JNode>(product.AbsoluteUri + $"/{c}/conclusionmaps/{id}/releases", headers);
                 result = $"Release {release["releaseNumber"].Value} created on {release["createdDate"].Value}";
                 if (release["status"].Value != null)
                 {
