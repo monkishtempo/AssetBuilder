@@ -212,7 +212,7 @@ namespace AssetBuilder.Controls
             var sa = ValidateText(s, out Dictionary<int, string> tag, out List<string> clauses);
             List<NLFail> ra = new List<NLFail>();
 
-            foreach (var item in sa)
+            foreach (var item in sa.Where(f => !t.Name.EndsWith("Language") || f.Message != "Case doesn't match"))
             {
                 ra.Add(new NLFail { Position = t.getCharRect(item.Start), Message = item.Message, Start = item.Start });
             }

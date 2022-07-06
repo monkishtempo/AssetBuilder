@@ -1063,8 +1063,9 @@ namespace AssetBuilder.Controls
                         var xx = GetSplit(temp.Substring(2), '{', '}', '|');
                         if (apply < 2 || !conditionString.ContainsKey(cond))
                         {
-                            
-                            if (clause == "x" + gender.ToString().ToLower()
+                            if (apply == 0)
+                                s = s.Substring(0, pos[0]--) + (xx.Length > 0 ? xx[0] : "") + (xx.Length > 1 ? xx[1] : "") + s.Substring(pos[1] + 1);
+                            else if (clause == "x" + gender.ToString().ToLower()
                                 || clause == "xx" && gender == 'F'
                                 || clause == "xy" && gender == 'M'
                                 || clause == "xz" && gender.NotIn('M', 'F'))
