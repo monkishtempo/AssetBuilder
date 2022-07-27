@@ -1190,10 +1190,15 @@ namespace AssetBuilder.Controls
             }
             var ar = new AssetReportContent(xn, xl);
             var rep = Reports.AssetReport.CreateReport($"Reports\\{prms[0]}");
-            rep.prms = new Dictionary<string, string>
+            bool proceed;
+            rep.prms = getTitles("Asset Report" + (Window1.ShowTranslation ? $" - {Window1.TranslationLanguage}" : ""), out proceed);
+
+            if (!proceed)
             {
-                { "Title", "Asset Report" + (Window1.ShowTranslation ? $" - {Window1.TranslationLanguage}" : "") }
-            };
+                enableForm();
+                return;
+            }
+
             rep.Completed += delegate (object obj, Reports.CompletedEventArgs ea)
             {
                 if (ea.UniqueID == null) ScriptText = ea.Content;
@@ -1203,6 +1208,21 @@ namespace AssetBuilder.Controls
                 enableForm();
             };
             rep.RunReport(ar, "@Layout@");
+        }
+
+        private Dictionary<string, string> getTitles(string title, out bool proceed)
+        {
+            InputBox ib = new InputBox("Enter the Title and Subtitle.", "Input required", new[] { "Title", "Subtitle" }, WindowStartupLocation.CenterOwner, new[] { InputBoxValidate.Required, InputBoxValidate.None });
+            ib[0] = title;
+            ib.Owner = this;
+            ib.ShowDialog();
+            var prms = new Dictionary<string, string>
+            {
+                { "Title", ib[0] },
+                { "SubTitle", ib[1] }
+            };
+            proceed = ib.DialogResult == true;
+            return prms;
         }
 
         private void ContentReport_Click(object sender, RoutedEventArgs e)
