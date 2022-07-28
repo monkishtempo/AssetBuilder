@@ -201,7 +201,7 @@ namespace AssetBuilder.Reports
                 }
                 else
                 {
-                    CompareReport cr = new CompareReport(prms, Loader) { Folder = @"Compare\Content", AddCommentColumn = Source.SelectedValue == null || string.Compare((Source.SelectedValue as ListItem).MultID, Settings.Default.WebService, true) == 0 };
+                    CompareReport cr = new CompareReport(prms, Loader) { Folder = @"Compare\Content", AddCommentColumn = chkComments.IsChecked ?? false };
                     cr.Started += delegate (object obj, EventArgs ea)
                     {
                         disableAction();
@@ -280,6 +280,8 @@ namespace AssetBuilder.Reports
 
         private void Source_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            chkComments.IsChecked = Source.SelectedValue == null || string.Compare((Source.SelectedValue as ListItem).MultID, Settings.Default.WebService, true) == 0;
+            chkComments.Visibility = (chkComments.IsChecked ?? false) ? Visibility.Visible : Visibility.Hidden;
             SourceXml = null;
         }
 
