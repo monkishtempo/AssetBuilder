@@ -37,6 +37,9 @@ using System.Windows.Media;
 using Microsoft.Web.WebView2.Wpf;
 using System.IO;
 using System.Threading.Tasks;
+using AssetBuilder.UM.ViewModels;
+using AssetBuilder.UM.Views;
+using AssetBuilder.ViewModels;
 using ListItem = AssetBuilder.ViewModels.ListItem;
 
 namespace AssetBuilder
@@ -47,6 +50,8 @@ namespace AssetBuilder
     public partial class Window1 : ABRibbonWindow
     {
         private const int RF_TESTMESSAGE = 0xA123;
+
+        private UserManagementWindow _userManagementWindow;
 
         public static SecurityContext Security { get; set; }
 
@@ -755,8 +760,8 @@ namespace AssetBuilder
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
-            if (NLI != null) NLI.Close();
-            if (Usermanagement.window != null) Usermanagement.window.Close();
+            NLI?.Close();
+            _userManagementWindow?.Close();
         }
 
         qcat qcat2 = null;
@@ -1957,25 +1962,22 @@ namespace AssetBuilder
             FullPanel.Children.Add(c);
         }
 
-        private void Usermanagement_Executed(object sender, ExecutedRoutedEventArgs e)
+        private void UserManagement_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            Usermanagement um;
-            if (Usermanagement.window != null) um = Usermanagement.window;
-            else
+            if (!(_userManagementWindow != null && _userManagementWindow.IsLoaded))
             {
-                um = new Usermanagement(Window1.UserName);
-
-                if (um != null)
-                {
-                    um.Title = "Administration: User Management";
-                    um.WindowState = WindowState.Maximized;
-                }
+                _userManagementWindow = new UserManagementWindow();
             }
-            um.Show();
-            um.Topmost = true;
-            um.Topmost = false;
-            um.Focus();
+            
+            var viewModel = new UserManagementWindowViewModel(UserName);
+            _userManagementWindow.DataContext = viewModel;
+            _userManagementWindow.Show();
+
+            _userManagementWindow.Topmost = true;
+            _userManagementWindow.Topmost = false;
+            _userManagementWindow.Focus();
         }
+
         private void TableEdit_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             TableEdit w;
@@ -1984,7 +1986,7 @@ namespace AssetBuilder
             else
                 w = TableEdit.TableEditForm;
             w.Title = Title;
-            w.WindowState = System.Windows.WindowState.Maximized;
+            w.WindowState = WindowState.Maximized;
             w.Show();
             w.Topmost = true;
             w.Topmost = false;

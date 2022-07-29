@@ -1,0 +1,156 @@
+﻿<UserControl x:Class="AssetBuilder.UM.Views.ProfileView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AssetBuilder.UM.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="750">
+    
+    <UserControl.Resources>
+        <CollectionViewSource
+            x:Key="AssignmentHistory"
+            Source="{Binding Path=RoleAssignmentHistory}">
+        </CollectionViewSource>
+        <CollectionViewSource
+            x:Key="AuditHistory"
+            Source="{Binding Path=RoleAuditHistory}">
+        </CollectionViewSource>
+        <CollectionViewSource
+            x:Key="PersonalAuditHistory"
+            Source="{Binding Path=RolePersonalAuditHistory}">
+        </CollectionViewSource>
+        <Style x:Key="ProfileListItemStyle" TargetType="{x:Type ListViewItem}">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        </Style>
+    </UserControl.Resources>
+
+   <StackPanel>
+       <GroupBox Header="Login History">
+            <Grid Margin="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0"
+                       Content="Login Account (Domain)"/>
+                <TextBox Grid.Row="1" Grid.Column="0"
+                         IsReadOnly="True"
+                         Text="{Binding Path=AccountName, Mode=OneWay}"/>
+                <Label Grid.Row="0" Grid.Column="2"
+                       Content="Current"/>
+                <TextBox Grid.Row="1" Grid.Column="2"
+                         IsReadOnly="True"
+                         Text="{Binding Path=CurrentLogin, Mode=OneWay}"/>
+                <Label Grid.Row="0" Grid.Column="4"
+                       Content="Previous"/>
+                <TextBox Grid.Row="1" Grid.Column="4"
+                         IsReadOnly="True"
+                         Text="{Binding Path=PreviousLogin, Mode=OneWay}"/>
+                <Label Grid.Row="0" Grid.Column="6"
+                       Content="Former"/>
+                <TextBox Grid.Row="1" Grid.Column="6"
+                         IsReadOnly="True"
+                         Text="{Binding Path=FormerLogin, Mode=OneWay}"/>
+            </Grid>
+       </GroupBox>
+       <GroupBox Header="Current Role Assignment">
+           <StackPanel Margin="10" Orientation="Horizontal">
+                <CheckBox IsChecked="{Binding Path=AssignedRoles.AlgoAdmin, Mode=OneWay}" Content="Admin" IsEnabled="False" Padding="10, 0, 10, 0" />
+                <CheckBox IsChecked="{Binding Path=AssignedRoles.AlgoEditor, Mode=OneWay}" Content="Editor" IsEnabled="False" Padding="10, 0, 10, 0" />
+                <CheckBox IsChecked="{Binding Path=AssignedRoles.AlgoBuilders, Mode=OneWay}" Content="Builder" IsEnabled="False" Padding="10, 0, 10, 0" />
+                <CheckBox IsChecked="{Binding Path=AssignedRoles.AlgoReviewers, Mode=OneWay}" Content="Reviewer" IsEnabled="False" Padding="10, 0, 10, 0" />
+                <CheckBox IsChecked="{Binding Path=AssignedRoles.AlgoTranslator, Mode=OneWay}" Content="Translator" IsEnabled="False" Padding="10, 0, 10, 0" />
+                <CheckBox IsChecked="{Binding Path=AssignedRoles.Comments, Mode=OneWay}" Content="Comments" IsEnabled="False" Padding="10, 0, 10, 0" />
+           </StackPanel>
+        </GroupBox>
+       <GroupBox Header="Role Assignment History" Margin="0,10,0,0">
+           <ListView
+                AlternationCount="2"
+                DataContext="{StaticResource AssignmentHistory}"
+                ItemContainerStyle="{StaticResource ProfileListItemStyle}"
+                ItemsSource="{Binding}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn 
+                             Header="Modified By"
+                             DisplayMemberBinding="{Binding Path=ModifiedBy}"/>
+                        <GridViewColumn 
+                            Header="Role"
+                            DisplayMemberBinding="{Binding Path=Role}"/>
+                        <GridViewColumn 
+                            Header="Added"
+                            DisplayMemberBinding="{Binding Path=Added}"/>
+                        <GridViewColumn 
+                            Header="Removed"
+                            DisplayMemberBinding="{Binding Path=Removed}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+       </GroupBox>
+       <GroupBox Header="Audit">
+           <ListView
+               AlternationCount="2"
+               DataContext="{StaticResource AuditHistory}"
+               ItemContainerStyle="{StaticResource ProfileListItemStyle}"
+               ItemsSource="{Binding}">
+               <ListView.View>
+                   <GridView>
+                       <GridViewColumn 
+                           Header="Date"
+                           DisplayMemberBinding="{Binding Path=itemDate}"/>
+                        <GridViewColumn 
+                           Header="Modified By"
+                           DisplayMemberBinding="{Binding Path=ModifiedBy}"/>
+                       <GridViewColumn 
+                           Header="Process"
+                           DisplayMemberBinding="{Binding Path=Process}"/>
+                       <GridViewColumn 
+                           Header="Summary"
+                           DisplayMemberBinding="{Binding Path=Summary}"/>
+                       <GridViewColumn 
+                           Header="Detail"
+                           DisplayMemberBinding="{Binding Path=Detail}"/>
+                   </GridView>
+               </ListView.View>
+           </ListView>
+       </GroupBox>
+       <GroupBox Header="Audit (My Actions)">
+           <ListView
+               AlternationCount="2"
+               DataContext="{StaticResource PersonalAuditHistory}"
+               ItemContainerStyle="{StaticResource ProfileListItemStyle}"
+               ItemsSource="{Binding}">
+               <ListView.View>
+                   <GridView>
+                       <GridViewColumn 
+                           Header="Date"
+                           DisplayMemberBinding="{Binding Path=itemDate}"/>
+                       <GridViewColumn 
+                           Header="Modified By"
+                           DisplayMemberBinding="{Binding Path=ModifiedBy}"/>
+                       <GridViewColumn 
+                           Header="Process"
+                           DisplayMemberBinding="{Binding Path=Process}"/>
+                       <GridViewColumn 
+                           Header="Summary"
+                           DisplayMemberBinding="{Binding Path=Summary}"/>
+                       <GridViewColumn 
+                           Header="Detail"
+                           DisplayMemberBinding="{Binding Path=Detail}"/>
+                   </GridView>
+               </ListView.View>
+           </ListView>
+        </GroupBox>
+    </StackPanel>     
+
+</UserControl>
