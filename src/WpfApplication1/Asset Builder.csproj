@@ -195,9 +195,11 @@
     <Compile Include="Classes\KeyEqualityComparer.cs" />
     <Compile Include="Classes\OtherReport.cs" />
     <Compile Include="Classes\ParamDictionary.cs" />
+    <Compile Include="Classes\RelayCommand.cs" />
     <Compile Include="Classes\SaaS.cs" />
     <Compile Include="Classes\ScriptDebugger.cs" />
     <Compile Include="Classes\UsageShape.cs" />
+    <Compile Include="Classes\UserRoleComparer.cs" />
     <Compile Include="Compare\Compare.xaml.cs">
       <DependentUpon>Compare.xaml</DependentUpon>
     </Compile>
@@ -291,18 +293,56 @@
     <Compile Include="Reports\XmlReportBase.cs" />
     <Compile Include="Services\AlgoStatusRepository.cs" />
     <Compile Include="Services\AlgoStatusWebService.cs" />
+    <Compile Include="Services\DialogService.cs" />
     <Compile Include="Services\ICacheService.cs" />
+    <Compile Include="Services\IDialogService.cs" />
     <Compile Include="Services\IWebService.cs" />
     <Compile Include="Services\MemoryCacheService.cs" />
-    <Compile Include="Usermanagement.xaml.cs">
-      <DependentUpon>Usermanagement.xaml</DependentUpon>
+    <Compile Include="UM\Models\Company.cs" />
+    <Compile Include="UM\Data\ApiMethods.cs" />
+    <Compile Include="UM\Data\InputParams.cs" />
+    <Compile Include="UM\Models\AssetUser.cs" />
+    <Compile Include="UM\Models\UserAddedEventArgs.cs" />
+    <Compile Include="UM\Models\StatusEventArgs.cs" />
+    <Compile Include="UM\Services\IUserManagerRepository.cs" />
+    <Compile Include="UM\Services\ProcessStatus.cs" />
+    <Compile Include="UM\Services\ProcessStatusValue.cs" />
+    <Compile Include="UM\Services\UserManagerRepository.cs" />
+    <Compile Include="UM\UserSecurity.cs" />
+    <Compile Include="UM\ViewModels\EntityAssignmentViewModel.cs" />
+    <Compile Include="UM\ViewModels\ManageRolesViewModel.cs" />
+    <Compile Include="UM\ViewModels\NewUserViewModel.cs" />
+    <Compile Include="UM\ViewModels\UserViewModel.cs" />
+    <Compile Include="UM\Views\EntityAssignmentView.xaml.cs">
+      <DependentUpon>EntityAssignmentView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UM\Uman.cs" />
+    <Compile Include="UM\Views\ManageRolesView.xaml.cs">
+      <DependentUpon>ManageRolesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UM\Views\NewUserView.xaml.cs">
+      <DependentUpon>NewUserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UM\Views\ProfileView.xaml.cs">
+      <DependentUpon>ProfileView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UM\Services\WebbuilderAPI.cs" />
+    <Compile Include="UM\Models\UserAudit.cs" />
+    <Compile Include="UM\Models\UserInfoSessionLoginHistory.cs" />
+    <Compile Include="UM\Views\UserManagementWindow.xaml.cs">
+      <DependentUpon>UserManagementWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UM\Models\UserRoleAssignmentHistory.cs" />
+    <Compile Include="UM\Models\UserRoleAssignment.cs" />
+    <Compile Include="UM\Models\UserRole.cs" />
     <Compile Include="ViewModels\AlgoReleaseStatusViewModel.cs" />
     <Compile Include="ViewModels\AssetAddedEventArgs.cs" />
     <Compile Include="ViewModels\AssetListViewModel.cs" />
     <Compile Include="ViewModels\AlgoReleaseStatusCollectionViewModel.cs" />
+    <Compile Include="ViewModels\CommandViewModel.cs" />
     <Compile Include="ViewModels\ListItem.cs" />
+    <Compile Include="UM\ViewModels\UserManagementWindowViewModel.cs" />
+    <Compile Include="UM\ViewModels\WorkspaceViewModel.cs" />
+    <Compile Include="UM\ViewModels\UserProfileViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Window2.xaml.cs">
       <DependentUpon>Window2.xaml</DependentUpon>
@@ -519,7 +559,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Usermanagement.xaml">
+    <Page Include="UM\Views\EntityAssignmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UM\Views\ManageRolesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UM\Views\NewUserView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UM\Views\ProfileView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UM\Views\UserManagementWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UM\Views\UserManagementResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

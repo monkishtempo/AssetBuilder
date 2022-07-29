@@ -11,14 +11,6 @@ namespace AssetBuilder.ViewModels
     /// </summary>
     public abstract class ViewModelBase : INotifyPropertyChanged, IDisposable
     {
-        #region Constructor
-
-        protected ViewModelBase()
-        {
-        }
-
-        #endregion // Constructor
-
         #region DisplayName
 
         /// <summary>
@@ -79,7 +71,7 @@ namespace AssetBuilder.ViewModels
         {
             VerifyPropertyName(propertyName);
 
-            PropertyChangedEventHandler handler = this.PropertyChanged;
+            PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null)
             {
                 var e = new PropertyChangedEventArgs(propertyName);
@@ -114,7 +106,7 @@ namespace AssetBuilder.ViewModels
         /// </summary>
         ~ViewModelBase()
         {
-            string msg = $"{GetType().Name} ({DisplayName}) ({GetHashCode()}) Finalized";
+            var msg = $"{GetType().Name} ({DisplayName}) ({GetHashCode()}) Finalized";
             Debug.WriteLine(msg);
         }
 #endif

@@ -61,7 +61,7 @@
                 <CommandBinding Command="me:Window1.cmdCodes" Executed="CodeAssociation_Executed" />
                 <CommandBinding Command="me:Window1.cmdTraversalClient" Executed="TraversalClient_Executed" />
                 <CommandBinding Command="me:Window1.cmdTraversalFinder" Executed="TraversalFinder_Executed" />
-                <CommandBinding Command="me:Window1.cmdUserManagement" Executed="Usermanagement_Executed" />
+                <CommandBinding Command="me:Window1.cmdUserManagement" Executed="UserManagement_Executed" />
             </r:Ribbon.CommandBindings>
 			<r:Ribbon.QuickAccessToolBar>
 				<r:RibbonQuickAccessToolBar>

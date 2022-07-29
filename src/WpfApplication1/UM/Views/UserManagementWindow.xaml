@@ -1,0 +1,80 @@
+﻿<Window x:Class="AssetBuilder.UM.Views.UserManagementWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AssetBuilder.UM.Views"
+             mc:Ignorable="d" 
+             MinHeight="600" MinWidth="1000"
+             Height="600" Width="1000"
+             WindowStartupLocation="CenterScreen"
+             Title="{Binding Path=DisplayName}"
+             d:DesignHeight="450" d:DesignWidth="1000">
+    
+    <Window.Resources>
+        <ResourceDictionary Source="UserManagementResources.xaml" />
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <DockPanel DockPanel.Dock="Top" KeyboardNavigation.TabNavigation="None">
+                <DockPanel.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="AliceBlue" Offset="1"/>
+                    </LinearGradientBrush>
+                </DockPanel.Background>
+                <ToolBarTray DockPanel.Dock="Top">
+                    <ToolBar VerticalAlignment="Top">
+                        <Menu DockPanel.Dock="Top">
+                            <MenuItem Header="Admin" FontSize="13">
+                                <MenuItem.Icon>
+                                    <Image Source="/images/Admin.png" Height="20"/>
+                                </MenuItem.Icon>
+                                <MenuItem Name="AdminSync" Header="Sync" Command="{Binding GlobalSyncCommand}" 
+                                          ToolTip="Process to resolve orphaned users and refresh user roles"/>
+                                <Separator />
+                                <MenuItem Name="AdminInitDatabase" Header="Initial DB Setup" Command="{Binding InitDatabase}"
+                                          ToolTip="System Administrators should process this step upon initialization of a new database" />
+                                <Separator />
+                            </MenuItem>
+                        </Menu>
+                    </ToolBar>
+                </ToolBarTray>
+            </DockPanel>
+            <Grid Margin="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="4" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Width="170">
+                    <HeaderedContentControl
+                        Header="Actions"
+                        Style="{StaticResource HccStyle}"
+                        Content="{Binding Path=Commands}"
+                        ContentTemplate="{StaticResource CommandsTemplate}" />
+                </Border>
+                <Border Grid.Column="2">
+                    <HeaderedContentControl
+                        x:Name="WorkspaceContent"
+                        Header="{Binding Path=ActiveWorkspaceName, Mode=OneWay}"
+                        Style="{StaticResource HccStyle}"
+                        Content="{Binding Path=Workspaces}"
+                        ContentTemplate="{StaticResource WorkspacesTemplate}" />
+                </Border>
+            </Grid>
+        </DockPanel>
+        <DockPanel Grid.Row="1">
+            <StatusBar>
+                <StatusBarItem>
+                    <TextBlock Text="{Binding Path=StatusMessage, Mode=OneWay}"/>
+                </StatusBarItem>
+            </StatusBar>
+        </DockPanel>
+    </Grid>
+</Window>
