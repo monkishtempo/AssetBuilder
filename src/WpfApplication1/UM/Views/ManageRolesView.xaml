@@ -24,7 +24,7 @@
                     <ColumnDefinition Width="20" MaxWidth="20" MinWidth="20"/>
                 </Grid.ColumnDefinitions>
                 <Label Grid.Column="0" Content="{Binding Path=Name}"/>
-                <CheckBox Grid.Column="1" IsChecked="{Binding Path=Assigned}"/>
+                <CheckBox Grid.Column="1" IsChecked="{Binding Path=Assigned}" Margin="0, 5,0,0"/>
             </Grid>
         </DataTemplate>
     </UserControl.Resources>
