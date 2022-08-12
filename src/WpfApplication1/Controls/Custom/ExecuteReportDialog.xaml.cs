@@ -3,18 +3,15 @@ using AssetBuilder.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Xml;
+using HorizontalAlignment = System.Windows.HorizontalAlignment;
+using KeyEventArgs = System.Windows.Input.KeyEventArgs;
+using RadioButton = System.Windows.Controls.RadioButton;
+using TextBox = System.Windows.Controls.TextBox;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace AssetBuilder.Controls.Custom
 {
@@ -62,25 +59,44 @@ namespace AssetBuilder.Controls.Custom
             {
                 source += $"/{item.Text}";
             }
-            if (Loader != null)
+
+            if (Loader == null) return;
+
+            Loader.PageID = Guid.NewGuid().ToString();
+            if (textAssetBloat.IsChecked == true) source += "?TextAsset=Bloat";
+
+            var content = source.GetContent<string>();
+            if (ReportType.StartsWith("/csv") || ReportType.StartsWith("/file"))
             {
-                Loader.PageID = Guid.NewGuid().ToString();
-                if (textAssetBloat.IsChecked == true) source += "?TextAsset=Bloat";
-                var content = source.GetContent<string>();
-                if (ReportType.StartsWith("/csv") || ReportType.StartsWith("/file"))
-                {
-                    Loader.ScriptText = content;
-                }
-                else if (ReportType.StartsWith("/xml"))
-                {
-                    XmlDocument doc = new XmlDocument();
-                    doc.LoadXml(content);
-                    Loader.ScriptHtml = $"<!-- PageID='{Loader.PageID}' -->\n" + doc.DocumentElement.Transform("Xml.xsl", null);
-                }
-                else
-                    Loader.ScriptHtml = (string.IsNullOrEmpty(ReportType) ? $"<!-- PageID='{Loader.PageID}' -->\n" : "") + content;
-                Loader.enableForm();
+                Loader.ScriptText = content;
             }
+            else if (ReportType.StartsWith("/xml"))
+            {
+                var doc = new XmlDocument();
+                doc.LoadXml(content);
+                var footer = GetFooter(doc);
+                if (footer != null) doc.DocumentElement?.AppendChild(footer);
+
+                Loader.ScriptHtml = $"<!-- PageID='{Loader.PageID}' -->\n" + doc.DocumentElement.Transform("Xml.xsl", null);
+            }
+            else
+            {
+                content = content.Replace("@GENERATED@", $"Generated: {DateTime.Now:yyyy-MM-ddTHH:mm:ss.fff}");
+                content = content.Replace("@AUTHOR@", $"Author: {Environment.UserName}");
+                content = content.Replace("@REPORT@", $"Report: {Report.TrimStart('$')}");
+                Loader.ScriptHtml = (string.IsNullOrEmpty(ReportType) ? $"<!-- PageID='{Loader.PageID}' -->\n" : "") + content;
+            }
+
+            Loader.enableForm();
+        }
+
+        private XmlElement GetFooter(XmlDocument doc)
+        {
+            var footer = doc.CreateElement("footer");
+            footer.InnerXml = $"<generated>{DateTime.Now:yyyy-MM-ddTHH:mm:ss.fff}</generated>" +
+                              $"<author>{Environment.UserName}</author>" +
+                              $"<report>{Report.TrimStart('$')}</report>";
+            return footer;
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
