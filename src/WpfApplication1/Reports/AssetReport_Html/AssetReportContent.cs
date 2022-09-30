@@ -9,6 +9,7 @@ namespace AssetBuilder.Reports
 {
     internal class AssetReportContent
     {
+        private bool Expand = true;
         Dictionary<string, Dictionary<int, BaseXmlObject>> objects = new Dictionary<string, Dictionary<int, BaseXmlObject>>();
 
         public Dictionary<int, BaseXmlObject>.ValueCollection Algos => objects.ContainsKey("Algo") ? objects["Algo"].Values : null;
@@ -23,8 +24,10 @@ namespace AssetBuilder.Reports
         public bool HasConclusions => Conclusions?.Any() ?? false;
         public bool HasBullets => Bullets?.Any() ?? false;
 
-        public AssetReportContent(XElement baseContent, XElement languageContent)
+        public AssetReportContent(XElement baseContent, XElement languageContent, bool expand = true)
         {
+            this.Expand = expand;
+
             foreach (var item in baseContent.Elements())
             {
                 AddItem(item);
@@ -36,7 +39,7 @@ namespace AssetBuilder.Reports
                     AddItemLanguage(item);
                 }
             }
-            else
+            else if(Expand)
             {
                 foreach (var item in objects.SelectMany(f => f.Value.Values))
                 {
@@ -50,7 +53,7 @@ namespace AssetBuilder.Reports
             BaseXmlObject obj = GetObject(item);
             if (objects.ContainsKey(obj.Type) && objects[obj.Type].ContainsKey(obj.ID)) 
             {
-                objects[obj.Type][obj.ID].Munge(obj);
+                objects[obj.Type][obj.ID].Munge(obj, expand: Expand);
             }
             //objects.
         }

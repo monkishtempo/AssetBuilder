@@ -1174,7 +1174,10 @@ namespace AssetBuilder.Controls
             disableForm(false);
             var sqlPrms = new List<string>();
             var useTraversalService = false;
-            var prms = new List<string> { ((RibbonMenuItem)sender).GetValue(RibbonMenuItem.CommandParameterProperty).ToString() };
+            var split = ((RibbonMenuItem)sender).CommandParameter.ToString().Split('|');
+            var prms = new List<string> { split[0] };
+            var expand = true;
+            if (split.Length > 1 && split[1] == "NoExpand") expand = false;
             if ((bool)rbtScriptAssets.IsChecked) prms.Add("assets");
             else prms.Add("algos");
             Report.AlgoLoader = this;
@@ -1185,10 +1188,10 @@ namespace AssetBuilder.Controls
             XElement xl = null;
             if (Window1.ShowTranslation)
             {
-                sqlPrms.AddRange(new[] { "Language", Window1.TranslationLanguage });
+                sqlPrms.AddRange(new[] { "Language", Window1.TranslationLanguage, "Asterisk", "Unparsed" });
                 xl = DataAccess.getData("ab_Report", sqlPrms.ToArray(), false);
             }
-            var ar = new AssetReportContent(xn, xl);
+            var ar = new AssetReportContent(xn, xl, expand);
             var rep = Reports.AssetReport.CreateReport($"Reports\\{prms[0]}");
             bool proceed;
             rep.prms = getTitles("Asset Report" + (Window1.ShowTranslation ? $" - {Window1.TranslationLanguage}" : ""), out proceed);

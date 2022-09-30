@@ -54,7 +54,7 @@ namespace AssetBuilder.Reports
             }
         }
 
-        public void Munge(BaseXmlObject obj, string suffix = "_Language")
+        public void Munge(BaseXmlObject obj, string suffix = "_Language", bool expand = true)
         {
             var props = GetFields();
             foreach (var prop in props)
@@ -64,10 +64,10 @@ namespace AssetBuilder.Reports
                     var t = prop.source.GetValue(this);
                     var s = prop.source.GetValue(obj);
                     if((string)s != (string)t)
-                        prop.target.SetValue(this, AssetBuilder.Controls.NLTest.GetNLConditionString((string)s));
+                        prop.target.SetValue(this, expand ? AssetBuilder.Controls.NLTest.GetNLConditionString((string)s) : s);
                     if (t != null)
                     {
-                        t = AssetBuilder.Controls.NLTest.GetNLConditionString((string)t);
+                        t = expand ? AssetBuilder.Controls.NLTest.GetNLConditionString((string)t) : t;
                         prop.source.SetValue(this, t);
                     }
                 }

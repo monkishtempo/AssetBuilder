@@ -520,7 +520,7 @@ namespace AssetBuilder
             var sendSearch = "@@@###@@@";
 
             if (!noAssets) sendSearch = ((_SearchTypeID & 1) == 1 ? "%" : "") + searchword + ((_SearchTypeID & 2) == 2 ? "%" : "");
-            if (!searchword.StartsWith("%")) sendSearch = System.Text.RegularExpressions.Regex.Replace(sendSearch, @"(?:\[)", @"[${0}]");
+            if (!searchword.StartsWith("%") && !searchword.StartsWith("Regex:")) sendSearch = System.Text.RegularExpressions.Regex.Replace(sendSearch, @"(?:\[)", @"[${0}]");
 
             CurrentSearchSql = sendSearch;
 
