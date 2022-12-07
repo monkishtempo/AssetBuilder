@@ -49,7 +49,7 @@
     <ProductName>Asset Builder</ProductName>
     <PublisherName>Expert-24</PublisherName>
     <ApplicationRevision>887</ApplicationRevision>
-    <ApplicationVersion>4.7.8.%2a</ApplicationVersion>
+    <ApplicationVersion>4.7.9.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>

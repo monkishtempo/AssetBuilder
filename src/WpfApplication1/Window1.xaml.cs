@@ -990,6 +990,11 @@ namespace AssetBuilder
                 {
                     if (Window1.EditTranslation)
                     {
+                        if(symptom && lc.txtTranslation.Text.Split('|').Where(f => !string.IsNullOrWhiteSpace(f)).Count() != 3)
+                        {
+                            MessageBox.Show("Cannot save title this would be an invalid symptom conclusion title.", "Invalid Title", MessageBoxButton.OK, MessageBoxImage.Stop);
+                            return;
+                        }
                         if (!NLExtensions.validateTextBox(lc.txtTranslation))
                         {
                             MessageBox.Show("Cannot save title because of natural language errors.", "Natural Language Errors", MessageBoxButton.OK, MessageBoxImage.Stop);
@@ -1000,6 +1005,11 @@ namespace AssetBuilder
                     }
                     else
                     {
+                        if (symptom && lc.txtAddress.Text.Split('|').Where(f => !string.IsNullOrWhiteSpace(f)).Count() != 3)
+                        {
+                            MessageBox.Show("Cannot save title this would be an invalid symptom conclusion title.", "Invalid Title", MessageBoxButton.OK, MessageBoxImage.Stop);
+                            return;
+                        }
                         if (!NLExtensions.validateTextBox(lc.txtAddress))
                         {
                             MessageBox.Show("Cannot save title because of natural language errors.", "Natural Language Errors", MessageBoxButton.OK, MessageBoxImage.Stop);
