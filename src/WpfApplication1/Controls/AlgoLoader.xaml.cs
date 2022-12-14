@@ -1734,7 +1734,7 @@ namespace AssetBuilder.Controls
                     {
                         foreach (var value in item)
                         {
-                            var t = string.Format(ue, sc.AbsoluteUri, item.Key, value.Value.Replace("&", "%26"), language).GetContent();
+                            var t = string.Format(ue, sc.AbsoluteUri, item.Key, value.Value.Replace("&", "%26").Replace("#", "%23"), language).GetContent();
                             sourceTasks.Add($"{item.Key}:{value.Value}", t);
                         }
                     }
@@ -1748,7 +1748,7 @@ namespace AssetBuilder.Controls
                         var value = string.Join(":", split.Skip(1));
                         if (language != "TextAssets")
                         {
-                            var t = string.Format(ue, sc.AbsoluteUri, type, value, language).GetContent();
+                            var t = string.Format(ue, sc.AbsoluteUri, type, value.Replace("&", "%26").Replace("#", "%23"), language).GetContent();
                             sourceTasks.Add($"{item}", t);
                         }
                         else tad.Add(new XElement("Delete", new XAttribute("id", value)));
@@ -1760,7 +1760,7 @@ namespace AssetBuilder.Controls
                         {
                             foreach (var value in item)
                             {
-                                targetTasks.Add($"{item.Key}:{value.Value}", string.Format(ue, tc.AbsoluteUri, item.Key, value.Value.Replace("&", "%26"), language).GetContent());
+                                targetTasks.Add($"{item.Key}:{value.Value}", string.Format(ue, tc.AbsoluteUri, item.Key, value.Value.Replace("&", "%26").Replace("#", "%23"), language).GetContent());
                             }
                         }
                         await Task.WhenAll(sourceTasks.Values);
