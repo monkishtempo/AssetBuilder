@@ -55,17 +55,23 @@ namespace AssetBuilder.Controls.Custom
             ReportType = RadioButtons.FirstOrDefault(f => f.Value.IsChecked == true).Key;
             if (!string.IsNullOrWhiteSpace(ReportType)) ReportType = "/" + ReportType;
             var source = new Uri(new Uri(Settings.Default.WebService), $"TraversalService/TableOutput/{Report}{ReportType}").AbsoluteUri;
+            var segments = "";
+            var query = "";
             foreach (var item in Parameters)
             {
-                source += $"/{item.Text}";
+                segments += $"/{item.Text}";
             }
 
             if (Loader == null) return;
 
             Loader.PageID = Guid.NewGuid().ToString();
-            if (textAssetBloat.IsChecked == true) source += "?TextAsset=Bloat";
+            if (textAssetBloat.IsChecked == true) query += "?TextAsset=Bloat";
 
-            var content = source.GetContent<string>();
+            var content = "";
+            if(source.Length + segments.Length + query.Length <= 260)
+                content = source.GetContent<string>();
+            else
+                content = new { segments = segments.Substring(1) }.PostObject<string>(source + query, new[] {("Content-Type", "application/json")});
             if (ReportType.StartsWith("/csv") || ReportType.StartsWith("/file"))
             {
                 Loader.ScriptText = content;

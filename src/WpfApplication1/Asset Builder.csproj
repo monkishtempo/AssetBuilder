@@ -48,8 +48,8 @@
     <InstallUrl>https://apps.expert-24.com/ABTemp/</InstallUrl>
     <ProductName>Asset Builder</ProductName>
     <PublisherName>Expert-24</PublisherName>
-    <ApplicationRevision>888</ApplicationRevision>
-    <ApplicationVersion>4.7.9.%2a</ApplicationVersion>
+    <ApplicationRevision>890</ApplicationRevision>
+    <ApplicationVersion>4.8.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -1087,7 +1087,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Resource Include="Splash2022.png" />
+    <Resource Include="Splash2023.png" />
     <Content Include="Xml.xsl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
