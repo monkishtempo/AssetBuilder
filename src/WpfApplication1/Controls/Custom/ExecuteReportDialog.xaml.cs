@@ -69,7 +69,7 @@ namespace AssetBuilder.Controls.Custom
 
             var content = "";
             if(source.Length + segments.Length + query.Length <= 260)
-                content = source.GetContent<string>();
+                content = (source + segments + query).GetContent<string>();
             else
                 content = new { segments = segments.Substring(1) }.PostObject<string>(source + query, new[] {("Content-Type", "application/json")});
             if (ReportType.StartsWith("/csv") || ReportType.StartsWith("/file"))

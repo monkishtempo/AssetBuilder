@@ -124,7 +124,7 @@ namespace AssetBuilder
                 return;
 			}
 
-			System.Windows.SplashScreen s = new System.Windows.SplashScreen("Splash2023.png");
+			System.Windows.SplashScreen s = new System.Windows.SplashScreen("Splash2024.png");
 			s.Show(true);
 			try
 			{
