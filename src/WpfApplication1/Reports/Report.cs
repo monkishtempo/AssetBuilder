@@ -207,28 +207,7 @@ namespace AssetBuilder.Reports
 
                     if (!string.IsNullOrEmpty(excludedAlgos))
                     {
-                        Dictionary<string, List<Tuple<string, string>>> mapping = new Dictionary<string, List<Tuple<string, string>>>{
-                           {"CheckOld", new List<Tuple<string, string>>(new Tuple<string, string>[] { Tuple.Create("Table2", "Table1"), Tuple.Create("Table4", "Table2"), Tuple.Create("Table6", "Table3"), Tuple.Create("Table8", "Table4") }) },
-                           {"AssetReport", new List<Tuple<string, string>>(new Tuple<string, string>[] { Tuple.Create("Table1", "Table1"), Tuple.Create("Table2", "Table2"), Tuple.Create("Table3", "Table3"), Tuple.Create("Table4", "Table4") }) },
-                           {"Conclusion", new List<Tuple<string, string>>(new Tuple<string, string>[] { Tuple.Create("Table1", "Table3") }) },
-                           {"ConclusionSummary", new List<Tuple<string, string>>(new Tuple<string, string>[] { Tuple.Create("Table1", "Table3") }) },
-                           {"QuestionAnswer", new List<Tuple<string, string>>(new Tuple<string, string>[] { Tuple.Create("Table1", "Table1") }) },
-                        };
-
-                        XElement exclude = DataAccess.getData("ab_report", new string[] {
-                            "@ReportType", "AssetReport",
-                            "@Algos", excludedAlgos
-                        }, false);
-
-                        args.AddParam("excludedAlgoList", "", excludedAlgoList);
-
-                        if (mapping.ContainsKey(sqlParams[1]))
-                        {
-                            foreach (var item in mapping[sqlParams[1]])
-                            {
-                                xn.Elements(item.Item1).Where(f => exclude.Elements(item.Item2).Any(e => e.Elements().First().Value == f.Elements().First().Value)).Remove();
-                            }
-                        }
+                        ExcludeAlgos(excludedAlgos, excludedAlgoList, sqlParams, args, xn);
                     }
                 }
                 if (Window1.ShowTranslation)
@@ -294,6 +273,32 @@ namespace AssetBuilder.Reports
             }
             //firstPage(oTmpDoc, algoNames(xn));
             //firstPage(oTmpDoc2, algoNames(xn));
+        }
+
+        public static void ExcludeAlgos(string excludedAlgos, string excludedAlgoList, List<string> sqlParams, XsltArgumentList args, XElement xn)
+        {
+            Dictionary<string, List<Tuple<string, string>>> mapping = new Dictionary<string, List<Tuple<string, string>>>{
+                           {"CheckOld", new List<Tuple<string, string>>(new Tuple<string, string>[] { Tuple.Create("Table2", "Table1"), Tuple.Create("Table4", "Table2"), Tuple.Create("Table6", "Table3"), Tuple.Create("Table8", "Table4") }) },
+                           {"AssetReport", new List<Tuple<string, string>>(new Tuple<string, string>[] { Tuple.Create("Table1", "Table1"), Tuple.Create("Table2", "Table2"), Tuple.Create("Table3", "Table3"), Tuple.Create("Table4", "Table4") }) },
+                           {"Conclusion", new List<Tuple<string, string>>(new Tuple<string, string>[] { Tuple.Create("Table1", "Table3") }) },
+                           {"ConclusionSummary", new List<Tuple<string, string>>(new Tuple<string, string>[] { Tuple.Create("Table1", "Table3") }) },
+                           {"QuestionAnswer", new List<Tuple<string, string>>(new Tuple<string, string>[] { Tuple.Create("Table1", "Table1") }) },
+                        };
+
+            XElement exclude = DataAccess.getData("ab_report", new string[] {
+                            "@ReportType", "AssetReport",
+                            "@Algos", excludedAlgos
+                        }, false);
+
+            args.AddParam("excludedAlgoList", "", excludedAlgoList);
+
+            if (mapping.ContainsKey(sqlParams[1]))
+            {
+                foreach (var item in mapping[sqlParams[1]])
+                {
+                    xn.Elements(item.Item1).Where(f => exclude.Elements(item.Item2).Any(e => e.Elements().First().Value == f.Elements().First().Value)).Remove();
+                }
+            }
         }
 
         public static Dictionary<string, Word.WdOrientation> orientation = new Dictionary<string, Word.WdOrientation> 

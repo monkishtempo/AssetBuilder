@@ -1181,10 +1181,16 @@ namespace AssetBuilder.Controls
             if ((bool)rbtScriptAssets.IsChecked) prms.Add("assets");
             else prms.Add("algos");
             Report.AlgoLoader = this;
-            Report.SetUpParameters(textBox1.Text, prms, new XsltArgumentList(), sqlPrms, out useTraversalService);
+            var args = new XsltArgumentList();
+            Report.SetUpParameters(textBox1.Text, prms, args, sqlPrms, out useTraversalService);
             if (!sqlPrms.Any()) { enableForm(); return; }
 
             var xn = DataAccess.getData("ab_Report", sqlPrms.ToArray(), false);
+            if (!string.IsNullOrEmpty(excludedAlgos))
+            {
+                Report.ExcludeAlgos(excludedAlgos, excludedAlgoList, sqlPrms, args, xn);
+            }
+
             XElement xl = null;
             if (Window1.ShowTranslation)
             {

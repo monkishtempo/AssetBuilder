@@ -903,7 +903,7 @@ namespace AssetBuilder.Controls
                     {
                         using (WebResponse resp = req.GetResponse())
                         {
-                            using (StreamReader sr = new StreamReader(resp.GetResponseStream(), System.Text.Encoding.Default))
+                            using (StreamReader sr = new StreamReader(resp.GetResponseStream(), System.Text.Encoding.UTF8))
                             {
                                 if (temp.Contains(".html"))
                                     temp = sr.ReadToEnd().Replace("\r", "").Replace("\n", " ");

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Xml.Linq;
 
 namespace AssetBuilder.Reports
@@ -64,10 +65,10 @@ namespace AssetBuilder.Reports
                     var t = prop.source.GetValue(this);
                     var s = prop.source.GetValue(obj);
                     if((string)s != (string)t)
-                        prop.target.SetValue(this, expand ? AssetBuilder.Controls.NLTest.GetNLConditionString((string)s) : s);
+                        prop.target.SetValue(this, expand ? AssetBuilder.Controls.NLTest.GetNLConditionString((string)s) : HttpUtility.HtmlEncode(s));
                     if (t != null)
                     {
-                        t = expand ? AssetBuilder.Controls.NLTest.GetNLConditionString((string)t) : t;
+                        t = expand ? AssetBuilder.Controls.NLTest.GetNLConditionString((string)t) : HttpUtility.HtmlEncode(t);
                         prop.source.SetValue(this, t);
                     }
                 }

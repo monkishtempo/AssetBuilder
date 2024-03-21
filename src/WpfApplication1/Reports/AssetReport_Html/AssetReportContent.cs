@@ -51,9 +51,12 @@ namespace AssetBuilder.Reports
         private void AddItemLanguage(XElement item)
         {
             BaseXmlObject obj = GetObject(item);
-            if (objects.ContainsKey(obj.Type) && objects[obj.Type].ContainsKey(obj.ID)) 
+            if (obj != null)
             {
-                objects[obj.Type][obj.ID].Munge(obj, expand: Expand);
+                if (objects.ContainsKey(obj.Type) && objects[obj.Type].ContainsKey(obj.ID))
+                {
+                    objects[obj.Type][obj.ID].Munge(obj, expand: Expand);
+                }
             }
             //objects.
         }
