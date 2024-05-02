@@ -240,9 +240,14 @@ namespace AssetBuilder.Reports
                 {
                     XmlReportBase xrb;
                     var folder = $"Reports\\{prms[0]}";
-                    if (prms[0] == "ConclusionSummary") xrb = new ConclusionSummary() { Folder = folder };
+                    if (prms[0] == "ConclusionSummary") { xrb = new ConclusionSummary() { Folder = folder }; xrb.prms = new Dictionary<string, string> { { "Title", "Conclusion Summary Report" } }; }
                     else xrb = new XmlReportBase() { Folder = folder };
-                    if (Tag != null & Tag is Dictionary<string, string>) xrb.prms = Tag as Dictionary<string, string>;
+                    if (Tag != null & Tag is Dictionary<string, string>)
+                    {
+                        var merge = Tag as Dictionary<string, string>;
+                        if (xrb.prms != null) foreach ( var key in merge.Keys ) { xrb.prms[key] = merge[key]; }
+                        else xrb.prms = merge;
+                    }
                     xrb.Completed += delegate (object obj, CompletedEventArgs ea)
                     {
                         if (ea.UniqueID == null) AlgoLoader.ScriptText = ea.Content;
