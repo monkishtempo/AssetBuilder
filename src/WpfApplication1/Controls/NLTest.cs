@@ -892,8 +892,8 @@ namespace AssetBuilder.Controls
                 }
                 else if (s[pos[0] + 1] == 'I')
                 {
-                    string domain = DataAccess.Domain;
-                    temp = "<img src=\"" + domain + "/VEImages/" + temp + "\" alt=\"VEImages/" + temp + "\"/>";
+                    string[] alt = temp.Split('#');
+                    temp = "<img src=\"https://clinicaldrop.blob.core.windows.net/images/" + alt[0] + "\" alt=\"" + (alt.Length > 0 ? alt[1] : "") + "\"/>";
                     s = s.Substring(0, pos[0]--) + temp + s.Substring(pos[1] + 1);
                 }
                 else if (s[pos[0] + 1] == 'T')
