@@ -1265,7 +1265,7 @@ namespace AssetBuilder.AssetControls
                             if (!tb.Name.EndsWith("Language"))
                             {
                                 if (len["Type"] != null && (len["Type"].InnerText == "text" || (len["Type"].InnerText == "varchar" && len["Length"] != null && len["Length"].InnerText == "-1")))
-                                    tb.MaxLength = tb.Name.StartsWith("txtMoreDetail") ? 8000 : 4000;
+                                    tb.MaxLength = tb.Name.StartsWith("txtMoreDetail") ? 8000 : 6000;
                                 else if (len["Precision"] != null && len["Type"] != null && len["Type"].InnerText != "datetime" && len["Type"].InnerText != "int")
                                     tb.MaxLength = int.Parse(len["Precision"].InnerText);
                                 //else if (len["Type"] != null && len["Type"].InnerText != "datetime")

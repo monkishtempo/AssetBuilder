@@ -59,7 +59,7 @@ namespace AssetBuilder.Controls.Custom
             var query = "";
             foreach (var item in Parameters)
             {
-                segments += $"/{item.Text}";
+                segments += $"{(char)7}{item.Text}";
             }
 
             if (Loader == null) return;
@@ -68,9 +68,9 @@ namespace AssetBuilder.Controls.Custom
             if (textAssetBloat.IsChecked == true) query += "?TextAsset=Bloat";
 
             var content = "";
-            if(source.Length + segments.Length + query.Length <= 260)
-                content = (source + segments + query).GetContent<string>();
-            else
+            //if(source.Length + segments.Length + query.Length <= 260)
+            //    content = (source + segments + query).GetContent<string>();
+            //else
                 content = new { segments = segments.Substring(1) }.PostObject<string>(source + query, new[] {("Content-Type", "application/json")});
             if (ReportType.StartsWith("/csv") || ReportType.StartsWith("/file"))
             {

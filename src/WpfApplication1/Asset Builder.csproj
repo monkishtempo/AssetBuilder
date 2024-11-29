@@ -35,7 +35,7 @@
     <Utf8Output>true</Utf8Output>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>c:\wwwroot\apps_expert-24_com\ABTemp\</PublishUrl>
+    <PublishUrl>C:\wwwroot\ghc_expert-24_com\AssetBuilder\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -45,11 +45,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://apps.expert-24.com/ABTemp/</InstallUrl>
+    <InstallUrl>https://ghc.expert-24.com/AssetBuilder/</InstallUrl>
     <ProductName>Asset Builder</ProductName>
     <PublisherName>Expert-24</PublisherName>
-    <ApplicationRevision>908</ApplicationRevision>
-    <ApplicationVersion>4.9.8.%2a</ApplicationVersion>
+    <ApplicationRevision>913</ApplicationRevision>
+    <ApplicationVersion>4.9.10.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -781,6 +781,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Asset Builder_1_TemporaryKey.pfx" />
+    <None Include="AssetBuilder.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

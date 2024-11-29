@@ -1246,8 +1246,16 @@ namespace AssetBuilder.Controls
             string command = "";
             if (sender is RibbonMenuItem) command = (sender as RibbonMenuItem).CommandParameter.ToString();
             Reports.Content c = new Reports.Content();
-            if (command == "QuestionReport" || command == "ContentReport") c.QuestionAnswerXml = DataAccess.getData("ab_Report", "@ReportType", "QuestionAnswer", "@Algos", algos);
-            if (command == "ConclusionReport" || command == "ContentReport") c.ConclusionXml = DataAccess.getData("ab_Report", "@ReportType", "Conclusion", "@Algos", algos);
+            {
+                if(Window1.ShowTranslation) c.QuestionAnswerXml = DataAccess.getData("ab_Report", "@ReportType", "QuestionAnswer", "@Algos", algos, "Language", Window1.TranslationLanguage);
+                else c.QuestionAnswerXml = DataAccess.getData("ab_Report", "@ReportType", "QuestionAnswer", "@Algos", algos);
+            }
+            if (command == "ConclusionReport" || command == "ContentReport")
+            {
+            if (command == "QuestionReport" || command == "ContentReport")
+                if (Window1.ShowTranslation) c.ConclusionXml = DataAccess.getData("ab_Report", "@ReportType", "Conclusion", "@Algos", algos, "Language", Window1.TranslationLanguage);
+                else c.ConclusionXml = DataAccess.getData("ab_Report", "@ReportType", "Conclusion", "@Algos", algos);
+            }
             var rep = Reports.ContentReport<Content>.CreateReport($"Reports\\ContentReport");
             rep.Completed += delegate (object obj, Reports.CompletedEventArgs ea)
             {
