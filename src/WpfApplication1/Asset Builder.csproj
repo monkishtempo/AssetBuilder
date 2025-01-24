@@ -35,7 +35,7 @@
     <Utf8Output>true</Utf8Output>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>C:\wwwroot\ghc_expert-24_com\AssetBuilder\</PublishUrl>
+    <PublishUrl>c:\wwwroot\apps_expert-24_com\ABTemp\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -45,11 +45,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://ghc.expert-24.com/AssetBuilder/</InstallUrl>
+    <InstallUrl>https://apps.expert-24.com/ABTemp/</InstallUrl>
     <ProductName>Asset Builder</ProductName>
     <PublisherName>Expert-24</PublisherName>
-    <ApplicationRevision>913</ApplicationRevision>
-    <ApplicationVersion>4.9.10.%2a</ApplicationVersion>
+    <ApplicationRevision>915</ApplicationRevision>
+    <ApplicationVersion>4.9.12.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -1095,7 +1095,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
-    <Resource Include="Splash2024.png" />
+    <Resource Include="Splash2025.png" />
     <Content Include="Xml.xsl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
