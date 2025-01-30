@@ -25,7 +25,7 @@ namespace AssetBuilder
                     var identity = new Uri(Properties.Settings.Default.SaaSIdentity);
                     var getToken = $"grant_type=client_credentials&client_id={c}&client_secret={s}";
                     var then = DateTime.Now;
-                    Token = getToken.PostObject<JNode>(new Uri(identity, "connect/token").AbsoluteUri, new[] { ("Content-Type", "application/x-www-form-urlencoded") });
+                    Token = getToken.PostObject<JNode>(identity.AbsoluteUri, new[] { ("Content-Type", "application/x-www-form-urlencoded") });
                     Expiry = DateTime.Now.AddSeconds(Token["expires_in"]);
                     DataAccess.AddLastCommand(getToken, Token, DateTime.Now - then);
                 }
