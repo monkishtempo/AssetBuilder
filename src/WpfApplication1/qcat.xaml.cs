@@ -1293,7 +1293,7 @@ namespace AssetBuilder
             }
             else
             {
-                imgGrab.Visibility = Visibility.Hidden;
+                imgGrab.Visibility = Visibility.Collapsed;
             }
 
             SetButtons();
@@ -1589,7 +1589,7 @@ namespace AssetBuilder
 
             if (_listOpen) CloseList();
 
-            imgGrab.Visibility = _assetListViewModel.AllAssets.Any(x => x.IsSelected) ? Visibility.Visible : Visibility.Hidden;
+            imgGrab.Visibility = _assetListViewModel.AllAssets.Any(x => x.IsSelected) ? Visibility.Visible : Visibility.Collapsed;
 
             SetButtons();
             listBox5.SelectedItem = _clickedAsset; // TODO: To ViewModel
@@ -1942,7 +1942,7 @@ namespace AssetBuilder
                 assetCount.Foreground = Brushes.Blue;
                 if (!_assetListViewModel.AllAssets.Any()) assetCount.Text = "";
                 else assetCount.Text = " - " + _assetListViewModel.AllAssets.Count;
-                imgWarning.Visibility = Visibility.Hidden;
+                imgWarning.Visibility = Visibility.Collapsed;
                 ShowAll.Visibility = Visibility.Hidden;
             }
 

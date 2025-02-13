@@ -1408,6 +1408,42 @@ namespace AssetBuilder.AssetControls
             asset["Table"][dg.Name].InnerXml = asset["Table"][dg.Name].InnerXml.XmlDecode();
             WpfXmlGrid<T> grid = new WpfXmlGrid<T>(dg, asset["Table"][dg.Name].InnerXml, dg.Name);
             grid.Data.ListChanged += delegate (object sender, ListChangedEventArgs e) { asset["Table"][dg.Name].InnerXml = grid.GetXml().ToString(); };
+            dg.CanUserSortColumns = true;
+            var _lastDirection = ListSortDirection.Ascending;
+            var _lastSortedProperty = string.Empty;
+            dg.Sorting += (s, e) =>
+            {
+                if (e.Column.SortMemberPath == null) return;
+                var propertyName = e.Column.SortMemberPath;
+
+                var datagrid = s as DataGrid;
+                var column = e.Column;
+                var collectionView = CollectionViewSource.GetDefaultView(datagrid.ItemsSource);
+
+                var direction = (_lastSortedProperty == propertyName && _lastDirection == ListSortDirection.Ascending)
+                    ? ListSortDirection.Descending
+                    : ListSortDirection.Ascending;
+
+                e.Column.SortDirection = direction;
+                _lastSortedProperty = propertyName;
+                _lastDirection = direction;
+
+                if (datagrid.ItemsSource is BindingList<T> bindingList)
+                {
+                    var sorted = direction == ListSortDirection.Ascending
+                        ? bindingList.OrderBy(item => TypeDescriptor.GetProperties(typeof(T))[propertyName]?.GetValue(item)).ToList()
+                        : bindingList.OrderByDescending(item => TypeDescriptor.GetProperties(typeof(T))[propertyName]?.GetValue(item)).ToList();
+
+                    // Reinsert into BindingList
+                    bindingList.Clear();
+                    foreach (var item in sorted)
+                    {
+                        bindingList.Add(item);
+                    }
+                }
+                e.Handled = true; // Prevent default sorting
+            };
+
         }
 
         void Data_ListChanged(object sender, ListChangedEventArgs e)

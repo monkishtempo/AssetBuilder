@@ -67,22 +67,26 @@
                 <TextBlock x:Name="ShowAll" Text="Show All" Margin="20,0,0,0" Foreground="Blue" TextDecorations="Underline" MouseDown="ShowAll_MouseDown" Visibility="Hidden"/>
             </DockPanel>
         </Label>
-        <Image x:Name="imgGrab" Visibility="Hidden" Grid.Column="4" Margin="6,6,30,6" Width="16" Source="images/DragMany16x16.png" HorizontalAlignment="Right" Height="16" VerticalAlignment="Top" MouseMove="imgGrab_MouseMove">
-            <Image.ToolTip>
-                <TextBlock>
-					You can use this image to pick up multiple assets for dragging.
-                </TextBlock>
-            </Image.ToolTip>
-        </Image>
-        <Image x:Name="imgWarning" Visibility="Hidden" Grid.Column="4" Margin="6" Width="16" Source="images/Information_16x16.png" HorizontalAlignment="Right" Height="16" VerticalAlignment="Top">
-            <Image.ToolTip>
-                <TextBlock>
-					There are only 100 assets listed in the asset list.
-					<LineBreak/>
-					There may be more. Please refine your search.
-                </TextBlock>
-            </Image.ToolTip>
-        </Image>
+        <DockPanel Grid.Column="4" Height="16" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="6">
+            <!-- Margin="6,6,30,6" -->
+            <CheckBox Style="{StaticResource SliderCheckBoxStyle}" x:Name="hideUnused" x:FieldModifier="public" Content="Hide Unused" HorizontalAlignment="Right"  />
+            <Image x:Name="imgGrab" Margin="6,0,0,0" Visibility="Collapsed" Width="16" Source="images/DragMany16x16.png" Height="16" VerticalAlignment="Top" MouseMove="imgGrab_MouseMove">
+                <Image.ToolTip>
+                    <TextBlock>
+					    You can use this image to pick up multiple assets for dragging.
+                    </TextBlock>
+                </Image.ToolTip>
+            </Image>
+            <Image x:Name="imgWarning" Margin="6,0,0,0" Visibility="Collapsed" Width="16" Source="images/Information_16x16.png" HorizontalAlignment="Right" Height="16" VerticalAlignment="Top">
+                <Image.ToolTip>
+                    <TextBlock>
+					    There are only 100 assets listed in the asset list.
+					    <LineBreak/>
+					    There may be more. Please refine your search.
+                    </TextBlock>
+                </Image.ToolTip>
+            </Image>
+        </DockPanel>
         <ListBox ItemContainerStyle="{StaticResource MultiMatchListItemStyle}"
                  Grid.Column="4" Margin="3,28,0,54" 
                  x:Name="listBox5" FontSize="14.667" ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
