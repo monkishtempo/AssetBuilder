@@ -34,7 +34,7 @@
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="Arial Rounded MT Bold" FontSize="16">x</TextBlock>
             </DockPanel>
         </Grid>
-        <Grid Grid.Row="1" Margin="0" Background="White"></Grid>
+        <Grid Grid.Row="1" Margin="0" Background="#f5f5ff"></Grid>
         <Grid Grid.Row="1" Name="controls" Margin="10" Background="#FFD8E6DE">
             <TextBox Name="MinX" HorizontalAlignment="Left" Height="23" Margin="75,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" GotFocus="TextBox_GotFocus"/>
             <TextBox Name="MaxX" HorizontalAlignment="Left" Height="23" Margin="75,38,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" GotFocus="TextBox_GotFocus"/>
@@ -58,44 +58,12 @@
             <Label Content="Opacity" HorizontalAlignment="Left" Margin="10,0,0,53" Height="26" VerticalAlignment="Bottom"/>
         </Grid>
         <Grid Grid.Row="1" Name="opening" Grid.Column="1" Background="#ffffffff"></Grid>
-        <Rectangle Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Width="10" Fill="White"/>
-        <Rectangle Name="RightDragHandle" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Width="10" Margin="0,0,0,0" Style="{StaticResource ResizeHandle}">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
-                    <GradientStop Offset="0"/>
-                    <GradientStop Offset="0.766"/>
-                    <GradientStop Color="#FF001057" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Height="10" Fill="Transparent"/>
-        <Rectangle Grid.Row="1" Name="BottomDragHandle" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="10" Style="{StaticResource ResizeHandle}">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Offset="0"/>
-                    <GradientStop Offset="0.766"/>
-                    <GradientStop Color="#FF001057" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle Grid.Row="1" Name="BottomRightDragHandle" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="10" Width="10" Style="{StaticResource ResizeHandle}">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
-                    <GradientStop Offset="0"/>
-                    <GradientStop Offset="0.766"/>
-                    <GradientStop Color="#FF001057" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Image Grid.Row="1" Name="graph" Grid.Column="1" Margin="10" MouseMove="graph_MouseMove" PreviewMouseDown="graph_MouseDown" SizeChanged="graph_SizeChanged" PreviewMouseWheel="graph_PreviewMouseWheel"/>
-        <Rectangle x:Name="LeftDragHandle" Grid.Row="1" Style="{StaticResource ResizeHandle}" HorizontalAlignment="Left" Width="10">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0,0.5" StartPoint="1,0.5">
-                    <GradientStop Offset="0"/>
-                    <GradientStop Offset="0.766"/>
-                    <GradientStop Color="#FF001057" Offset="1"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
+
+        <Rectangle x:Name="LeftDragHandle" Grid.Row="1" Style="{StaticResource ResizeHandle}" HorizontalAlignment="Left" Width="10" Fill="#f5f5ff" />
+        <Rectangle Name="RightDragHandle" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Width="10" Margin="0,0,0,0" Style="{StaticResource ResizeHandle}" Fill="#f5f5ff" />
+        <Rectangle Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Height="10" Fill="#f5f5ff"/>
+        <Rectangle Grid.Row="1" Name="BottomDragHandle" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="10" Style="{StaticResource ResizeHandle}" Fill="#f5f5ff" />
+        <Rectangle Grid.Row="1" Name="BottomRightDragHandle" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="10" Width="10" Style="{StaticResource ResizeHandle}" Fill="#f5f5ff" />
+        <Image Stretch="Fill" Grid.Row="1" Name="graph" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Margin="0,10,10,10" MouseMove="graph_MouseMove" PreviewMouseDown="graph_MouseDown" SizeChanged="graph_SizeChanged" PreviewMouseWheel="graph_PreviewMouseWheel"/>
     </Grid>
 </local:TransparentControlWindow>

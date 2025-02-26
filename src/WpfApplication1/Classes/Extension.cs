@@ -214,19 +214,32 @@ namespace AssetBuilder
             return (value / scale) * (end - begin) + begin;
         }
 
-        public static Rect DrawText(DrawingContext dc, string s, double X, double Y, TextAlignment align, VerticalAlignment vAlign, double pixelsPerDip, Brush brush = null)
+        public static Rect DrawText(DrawingContext dc, string s, double X, double Y, TextAlignment align, VerticalAlignment vAlign, double pixelsPerDip, Brush brush = null, double fontSize = 32, double ratioX = 1, double ratioY = 1)
         {
-            FormattedText ft = new FormattedText(s, CultureInfo.CurrentCulture, System.Windows.FlowDirection.LeftToRight, new Typeface("Verdana"), 32, brush ?? Brushes.Black, pixelsPerDip);
+            FormattedText ft = new FormattedText(s, CultureInfo.CurrentCulture, System.Windows.FlowDirection.LeftToRight, new Typeface("Verdana"), fontSize, brush ?? Brushes.Black, pixelsPerDip);
             ft.TextAlignment = align;
 
+            bool isr = ratioX != 1 || ratioY != 1;
+            double fh = ft.Height;
+            double fw = ft.Width;
             double vo = 0;
             double to = 0;
-            if (vAlign == VerticalAlignment.Bottom) vo = ft.Height;
-            else if (vAlign == VerticalAlignment.Center) vo = (ft.Height / 2);
-            if (align == TextAlignment.Center) to = ft.Width / 2;
-            else if (align == TextAlignment.Right) to = ft.Width;
+            if(isr) { fh = fh * ratioY; fw = fw * ratioX; }
+            if (vAlign == VerticalAlignment.Bottom) vo = fh;
+            else if (vAlign == VerticalAlignment.Center) vo = (fh / 2);
+            if (align == TextAlignment.Center) to = fw / 2;
+            else if (align == TextAlignment.Right) to = fw;
 
-            dc.DrawText(ft, new Point(X, Y - vo));
+            if (isr)
+            {
+                dc.PushTransform(new ScaleTransform(1 * ratioX, 1 * ratioY, X, Y - vo));
+                dc.DrawText(ft, new Point(X, Y - vo));
+                dc.Pop();
+            }
+            else
+            {
+                dc.DrawText(ft, new Point(X, Y - vo));
+            }
             return new Rect(X - to, Y - vo, ft.Width, ft.Height);
         }
 

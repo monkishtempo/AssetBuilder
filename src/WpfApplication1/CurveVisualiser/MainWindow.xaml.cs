@@ -147,16 +147,22 @@ namespace CurveVisualiser
             }
         }
 
-        double xc = 1000;
-        double yc = 500;
-        double xd = 100;
-        double yd = 50;
-
+        double xc = 2000;
+        double yc = 1000;
+        double xd = 200;
+        double yd = 100;
+        double os = 175;
+        double ot = 50;
+        double oe = 100;
+        double ob = 100;
         double minx = 0;
         double miny = 0;
         double maxx = 0;
         double maxy = 0;
         double pres = 0;
+        double psx = 10;
+        double psy = 10;
+        double fs = 32;
         Pen linePen = new Pen(Brushes.Green, 3);
         List<Rect> labels = new List<Rect>();
         bool setlabels = true;
@@ -176,8 +182,29 @@ namespace CurveVisualiser
 
             double square = Math.Max((maxx - minx) / 10, (maxy - miny) / 10);
 
-            xc = (Width / 632) * 1000;
-            yc = ((Height - 50) / (Width - 245)) * xc;
+            var ratioX = 2000d / (Width - 235);
+            var ratioY = 1000d / (Height - 40);
+            os = 60 * ratioX;
+            oe = 40 * ratioX;
+            ot = 20 * ratioY;
+            ob = 40 * ratioY;
+            xc = (2000d - os - oe);
+            yc = (1000d - ot - ob);
+            psx = 5 * ratioX;
+            psy = 5 * ratioY;
+            fs = 14;
+            //xc = (Width / 632) * 1000;
+            //yc = ((Height - 50) / (Width - 245)) * xc;
+
+
+            //os = (-175.0 / 632) * Width; 
+            //ot = (-50.0 / 632) * Height;  
+            //oe = (275.0 / 632) * Width;  
+            //ob = (125.0 / 632) * Height;
+
+            //xc = xc + (oe - os);
+            //yc = yc + (ob - ot);
+
             xd = xc / 10;
             yd = yc / 10;
 
@@ -189,11 +216,11 @@ namespace CurveVisualiser
             // the DrawingGroup. 
             using (DrawingContext dc = dGroup.Open())
             {
-                dc.DrawRectangle(new SolidColorBrush(Color.FromArgb(0, 0, 0, 0)), null, new Rect(-175, -50, xc + 275, yc + 125));
+                dc.DrawRectangle(new SolidColorBrush(Color.FromArgb(10, 0, 0, 255)), null, new Rect(-os, -ot, 2000, 1000));
                 if (setlabels)
                     labels.Clear();
                 currentLabel = -1;
-                //dc.DrawRectangle(new SolidColorBrush(Color.FromArgb(0, 0, 0, 0)), null, new Rect(0, 0, xc, yc));
+                dc.DrawRectangle(new SolidColorBrush(Color.FromArgb(10, 255, 0, 0)), null, new Rect(0, 0, xc, yc));
                 // Draw grid
                 for (int i = 0; i < 11; i++)
                 {
@@ -203,18 +230,18 @@ namespace CurveVisualiser
                     string yl = OutputNumber(i * ((maxy - miny) / 10) + miny);
                     if (setlabels)
                     {
-                        labels.Add(Extension.DrawText(dc, xl, i * xd, yc + 20, TextAlignment.Center, System.Windows.VerticalAlignment.Top, pixelsPerDip));
-                        labels.Add(Extension.DrawText(dc, yl, -20, (10 - i) * yd, TextAlignment.Right, System.Windows.VerticalAlignment.Center, pixelsPerDip));
+                        labels.Add(Extension.DrawText(dc, xl, i * xd, yc + (fs / 2), TextAlignment.Center, System.Windows.VerticalAlignment.Top, pixelsPerDip, fontSize: fs, ratioX: ratioX, ratioY: ratioY));
+                        labels.Add(Extension.DrawText(dc, yl, -fs, (10 - i) * yd, TextAlignment.Right, System.Windows.VerticalAlignment.Center, pixelsPerDip, fontSize: fs, ratioX: ratioX, ratioY: ratioY));
                     }
                     else
                     {
                         bool nearLabel = false;
                         nearLabel = insideRect(scalePoint, labels[i * 2]);
                         if (nearLabel) currentLabel = i;
-                        Extension.DrawText(dc, xl, i * xd, yc + 20, TextAlignment.Center, System.Windows.VerticalAlignment.Top, pixelsPerDip, nearLabel ? Brushes.Green : Brushes.Black);
+                        Extension.DrawText(dc, xl, i * xd, yc + (fs / 2), TextAlignment.Center, System.Windows.VerticalAlignment.Top, pixelsPerDip, nearLabel ? Brushes.Green : Brushes.Black, fs, ratioX, ratioY);
                         nearLabel = insideRect(scalePoint, labels[i * 2 + 1]);
                         if (nearLabel) currentLabel = i;
-                        Extension.DrawText(dc, yl, -20, (10 - i) * yd, TextAlignment.Right, System.Windows.VerticalAlignment.Center, pixelsPerDip, nearLabel ? Brushes.Green : Brushes.Black);
+                        Extension.DrawText(dc, yl, -fs, (10 - i) * yd, TextAlignment.Right, System.Windows.VerticalAlignment.Center, pixelsPerDip, nearLabel ? Brushes.Green : Brushes.Black, fs, ratioX, ratioY);
                     }
                 }
 
@@ -269,7 +296,7 @@ namespace CurveVisualiser
                         brush = Brushes.Green;
                         currentPoint = points.IndexOf(item);
                     }
-                    if (px >= 0 && px <= xc & py >= 0 && py <= yc) dc.DrawEllipse(brush, shapeOutlinePen, new Point(px, py), 10, 10);
+                    if (px >= 0 && px <= xc & py >= 0 && py <= yc) dc.DrawEllipse(brush, shapeOutlinePen, new Point(px, py), psx, psy);
                 }
             }
 
@@ -301,7 +328,7 @@ namespace CurveVisualiser
                 double py = Extension.Scale(item.Y - miny, maxy - miny, yc, 0);
                 double gx = Extension.Scale(graphPos.Value.X - minx, maxx - minx, 0, xc);
                 double gy = Extension.Scale(graphPos.Value.Y - miny, maxy - miny, yc, 0);
-                if (Math.Abs(px - gx) < 10 && Math.Abs(py - gy) < 10) return true;
+                if (Math.Abs(px - gx) < psx && Math.Abs(py - gy) < psy) return true;
             }
             return false;
         }

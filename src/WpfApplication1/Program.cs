@@ -136,8 +136,6 @@ namespace AssetBuilder
 				}
 			}
 			catch { }
-			//App a = new App();
-			//a.Run(new Window1());
 			bool ok = true;
 			//var m = new Mutex(true, "AssetBuilderMutex", out ok);
 			if (!ok && !System.Diagnostics.Debugger.IsAttached)
@@ -146,7 +144,8 @@ namespace AssetBuilder
 				return;
 			}
 			App a = new App();
-			a.InitializeComponent();
+            //a.Run(new CurveVisualiser.MainWindow(new System.Windows.Controls.TextBox()));
+            a.InitializeComponent();
 			a.Run();
 		}
 
