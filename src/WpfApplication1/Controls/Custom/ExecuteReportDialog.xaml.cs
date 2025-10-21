@@ -55,12 +55,8 @@ namespace AssetBuilder.Controls.Custom
             ReportType = RadioButtons.FirstOrDefault(f => f.Value.IsChecked == true).Key;
             if (!string.IsNullOrWhiteSpace(ReportType)) ReportType = "/" + ReportType;
             var source = new Uri(new Uri(Settings.Default.WebService), $"TraversalService/TableOutput/{Report}{ReportType}").AbsoluteUri;
-            var segments = "";
+            var segments = string.Join($"{(char)7}", Parameters.Select(f => f.Text));
             var query = "";
-            foreach (var item in Parameters)
-            {
-                segments += $"{(char)7}{item.Text}";
-            }
 
             if (Loader == null) return;
 
@@ -71,7 +67,7 @@ namespace AssetBuilder.Controls.Custom
             //if(source.Length + segments.Length + query.Length <= 260)
             //    content = (source + segments + query).GetContent<string>();
             //else
-                content = new { segments = segments.Substring(1) }.PostObject<string>(source + query, new[] {("Content-Type", "application/json")});
+                content = new { segments = segments }.PostObject<string>(source + query, new[] {("Content-Type", "application/json")});
             if (ReportType.StartsWith("/csv") || ReportType.StartsWith("/file"))
             {
                 Loader.ScriptText = content;

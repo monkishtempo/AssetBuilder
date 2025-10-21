@@ -7,15 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asset Builder", "src\WpfApp
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "StringCompare", "src\ObjCompare\StringCompare.shproj", "{B0ECAA31-6F7B-4759-AEE8-613AAE1EB843}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{563323E2-600D-4E81-8F5A-6E9E056D1B5E}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Asset Builder.Tests", "tests\WpfApplication1.Tests\Asset Builder.Tests.csproj", "{9AB58856-9295-474B-8BBD-7BAE45B2A766}"
-EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		src\ObjCompare\StringCompare.projitems*{113f1375-afb9-4274-881a-91511d893e54}*SharedItemsImports = 4
-		src\ObjCompare\StringCompare.projitems*{b0ecaa31-6f7b-4759-aee8-613aae1eb843}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
@@ -37,26 +29,15 @@ Global
 		{113F1375-AFB9-4274-881A-91511D893E54}.Release|x64.Build.0 = Release|Any CPU
 		{113F1375-AFB9-4274-881A-91511D893E54}.Release|x86.ActiveCfg = Release|x86
 		{113F1375-AFB9-4274-881A-91511D893E54}.Release|x86.Build.0 = Release|x86
-		{9AB58856-9295-474B-8BBD-7BAE45B2A766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9AB58856-9295-474B-8BBD-7BAE45B2A766}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9AB58856-9295-474B-8BBD-7BAE45B2A766}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{9AB58856-9295-474B-8BBD-7BAE45B2A766}.Debug|x64.Build.0 = Debug|Any CPU
-		{9AB58856-9295-474B-8BBD-7BAE45B2A766}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{9AB58856-9295-474B-8BBD-7BAE45B2A766}.Debug|x86.Build.0 = Debug|Any CPU
-		{9AB58856-9295-474B-8BBD-7BAE45B2A766}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9AB58856-9295-474B-8BBD-7BAE45B2A766}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9AB58856-9295-474B-8BBD-7BAE45B2A766}.Release|x64.ActiveCfg = Release|Any CPU
-		{9AB58856-9295-474B-8BBD-7BAE45B2A766}.Release|x64.Build.0 = Release|Any CPU
-		{9AB58856-9295-474B-8BBD-7BAE45B2A766}.Release|x86.ActiveCfg = Release|Any CPU
-		{9AB58856-9295-474B-8BBD-7BAE45B2A766}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{9AB58856-9295-474B-8BBD-7BAE45B2A766} = {563323E2-600D-4E81-8F5A-6E9E056D1B5E}
-	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BEF9BFA6-6757-40D7-B99A-F7B0EF4D0DF0}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		src\ObjCompare\StringCompare.projitems*{113f1375-afb9-4274-881a-91511d893e54}*SharedItemsImports = 4
+		src\ObjCompare\StringCompare.projitems*{b0ecaa31-6f7b-4759-aee8-613aae1eb843}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

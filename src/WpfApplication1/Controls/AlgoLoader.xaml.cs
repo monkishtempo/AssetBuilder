@@ -169,7 +169,11 @@ namespace AssetBuilder.Controls
         {
             InitializeComponent();
             var core = CoreWebView2Environment.CreateAsync().Result;
-            txtScript.EnsureCoreWebView2Async(core);
+            try
+            {
+                txtScript.EnsureCoreWebView2Async(core);
+            }
+            catch { }
             txtScript.NavigationStarting += TxtScript_NavigationStarting;
             //txtScript.NavigationCompleted += delegate (object sender, CoreWebView2NavigationCompletedEventArgs e)
             //{
@@ -866,7 +870,7 @@ namespace AssetBuilder.Controls
         private string ErrorDialog(string content)
         {
             const string title = "Error";
-            return Diva.Controls.Simple.CustomMessageBox.Show(content, title, new[] {"OK"});
+            return Diva.Controls.Simple.CustomMessageBox.Show(content, title, new[] { "OK" });
         }
 
         private string RemoveAssetsFromScript(string s)
@@ -975,7 +979,7 @@ namespace AssetBuilder.Controls
         {
             bool ansi = SQLScript.StartsWith("<Release ");
             bool xml = SQLScript.StartsWith("<");
-            bool json = SQLScript.IndexOfAny(new char[] { '[', '{' } ) == 0;
+            bool json = SQLScript.IndexOfAny(new char[] { '[', '{' }) == 0;
             Encoding e = ansi ? Encoding.GetEncoding(1252) /* 28591 */ : Encoding.GetEncoding(1200);
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.RestoreDirectory = true;
@@ -1246,13 +1250,13 @@ namespace AssetBuilder.Controls
             string command = "";
             if (sender is RibbonMenuItem) command = (sender as RibbonMenuItem).CommandParameter.ToString();
             Reports.Content c = new Reports.Content();
+            if (command == "QuestionReport" || command == "ContentReport")
             {
-                if(Window1.ShowTranslation) c.QuestionAnswerXml = DataAccess.getData("ab_Report", "@ReportType", "QuestionAnswer", "@Algos", algos, "Language", Window1.TranslationLanguage);
+                if (Window1.ShowTranslation) c.QuestionAnswerXml = DataAccess.getData("ab_Report", "@ReportType", "QuestionAnswer", "@Algos", algos, "Language", Window1.TranslationLanguage);
                 else c.QuestionAnswerXml = DataAccess.getData("ab_Report", "@ReportType", "QuestionAnswer", "@Algos", algos);
             }
             if (command == "ConclusionReport" || command == "ContentReport")
             {
-            if (command == "QuestionReport" || command == "ContentReport")
                 if (Window1.ShowTranslation) c.ConclusionXml = DataAccess.getData("ab_Report", "@ReportType", "Conclusion", "@Algos", algos, "Language", Window1.TranslationLanguage);
                 else c.ConclusionXml = DataAccess.getData("ab_Report", "@ReportType", "Conclusion", "@Algos", algos);
             }
@@ -1820,7 +1824,7 @@ namespace AssetBuilder.Controls
                                 var value = string.Join(":", split.Skip(1));
                                 if (language == "TextAssets")
                                 {
-                                    if(elem.Element("Table")?.Element("TextAssetID") != null) elem.Element("Table").Element("TextAssetID").Value = "new";
+                                    if (elem.Element("Table")?.Element("TextAssetID") != null) elem.Element("Table").Element("TextAssetID").Value = "new";
                                     targetTasks.Add($"{item.Key}", te.AbsoluteUri.PostSoapContent("getData", new[] { "procedure", "args.string", "args.string", "args.string", "args.string" }, new[] { "ab_updateasset", "@xml", elem.ToString().XmlEncode(), "@AssetTypeID", "12" }));
                                 }
                                 else
@@ -1832,7 +1836,7 @@ namespace AssetBuilder.Controls
                         foreach (var item in targetTasks)
                         {
                             XElement elem = XElement.Parse(item.Value.Result.Replace("<root>", "<root xmlns=\"\">").Replace("<NewDataSet>", "<NewDataSet xmlns=\"\">"));
-                            if(elem.Name.LocalName == "Envelope") elem = elem.XPathSelectElement("*/*/*/*");
+                            if (elem.Name.LocalName == "Envelope") elem = elem.XPathSelectElement("*/*/*/*");
                             var split = item.Key.Split(':');
                             var type = split[0];
                             var value = string.Join(":", split.Skip(1));
@@ -1914,13 +1918,13 @@ namespace AssetBuilder.Controls
             b.Items.Clear();
             Uri source = new Uri(new Uri(Settings.Default.WebService), "TraversalService/AdHoc_List");
             var reports = source.AbsoluteUri.GetContent<JNode>();
-            if(reports["reports"] != null)
+            if (reports["reports"] != null)
             {
                 var folder = new BitmapImage(new Uri("/images/Folder-Open-icon.png", UriKind.Relative));
                 var report = new BitmapImage(new Uri("/images/AssetReport.png", UriKind.Relative));
                 var menus = new Dictionary<string, RibbonMenuItem>();
                 foreach (var item in reports["reports"]
-                    .Where(f => 
+                    .Where(f =>
                            f.Value.StartsWith("AssetBuilder_")
                         || f.Value.StartsWith("$")
                         || f.Value.StartsWith($"{Environment.UserName.Replace(".", "")}", StringComparison.InvariantCultureIgnoreCase)
@@ -1941,7 +1945,7 @@ namespace AssetBuilder.Controls
                     m.Click += RunReport;
                     container.Items.Add(m);
                 }
-            }            
+            }
         }
 
         private void RunReport(object sender, RoutedEventArgs e)
@@ -1975,13 +1979,13 @@ namespace AssetBuilder.Controls
         private static ExportRecordData GetExportData()
         {
             var input = new InputBox(
-                "Enter export details:", 
-                "Export Report", 
-                "|9", 
+                "Enter export details:",
+                "Export Report",
+                "|9",
                 WindowStartupLocation.CenterScreen)
-                {
-                    ExportReportResponse = new ExportRecordData(Environment.UserName)
-                };
+            {
+                ExportReportResponse = new ExportRecordData(Environment.UserName)
+            };
 
             var result = input.ShowDialog();
             return result.HasValue ? input.ExportReportResponse : null;

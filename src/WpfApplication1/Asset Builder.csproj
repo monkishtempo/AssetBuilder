@@ -35,7 +35,7 @@
     <Utf8Output>true</Utf8Output>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>c:\wwwroot\APH\AssetBuilder\</PublishUrl>
+    <PublishUrl>c:\wwwroot\apps_expert-24_com\ABTemp\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -45,11 +45,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://aph.expert-24.com/AssetBuilder/</InstallUrl>
+    <InstallUrl>https://apps.expert-24.com/ABTemp/</InstallUrl>
     <ProductName>Asset Builder</ProductName>
     <PublisherName>Expert-24</PublisherName>
-    <ApplicationRevision>918</ApplicationRevision>
-    <ApplicationVersion>4.11.1.%2a</ApplicationVersion>
+    <ApplicationRevision>933</ApplicationRevision>
+    <ApplicationVersion>4.11.6.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -118,11 +118,14 @@
     <OutputPath>bin\x64\Release\</OutputPath>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <TargetZone>Internet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
-  </PropertyGroup>
-  <PropertyGroup>
-    <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CryptoExtension, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -1351,6 +1354,16 @@
       <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
+    <PublishFile Include="Curve.pdb">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
     <PublishFile Include="ExpertData.pdb">
       <Visible>False</Visible>
       <Group>
@@ -1407,10 +1420,16 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Caching.Memory">
-      <Version>9.0.2</Version>
+      <Version>9.0.10</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Web.WebView2">
-      <Version>1.0.3065.39</Version>
+      <Version>1.0.3537.50</Version>
+    </PackageReference>
+    <PackageReference Include="System.Buffers">
+      <Version>4.6.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Numerics.Vectors">
+      <Version>4.6.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

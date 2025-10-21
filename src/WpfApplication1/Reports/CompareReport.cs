@@ -225,7 +225,7 @@ namespace AssetBuilder.Reports
                         var algoid = item.Element("AlgoID")?.Value;
                         var nodeid = item.Element("NodeID")?.Value;
                         var target = targets[$"{props[key]}_{pid}"];
-                        var propname = item.Element("PropertyName")?.Value ?? "";
+                        var propname = "_" + (item.Element("PropertyName")?.Value ?? "");
                         if (algoid != null && nodeid != null) propname += $"_{algoid}_{nodeid}";
                         var propvalue = item.Element("PropertyValue")?.Value ?? "";
                         target.Add(new XElement(propname, propvalue));
@@ -266,7 +266,7 @@ namespace AssetBuilder.Reports
                         var propkey = $"{props[key]}_{pid}";
                         var algoid = item.Element("AlgoID")?.Value;
                         var nodeid = item.Element("NodeID")?.Value;
-                        var propname = item.Element("PropertyName")?.Value ?? "";
+                        var propname = "_" + (item.Element("PropertyName")?.Value ?? "");
                         if (algoid != null && nodeid != null) propname += $"_{algoid}_{nodeid}";
                         var propvalue = item.Element("PropertyValue")?.Value ?? "";
                         var devtext = propvalue;
