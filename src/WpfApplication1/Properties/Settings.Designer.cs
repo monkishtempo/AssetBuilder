@@ -257,5 +257,17 @@ namespace AssetBuilder.Properties {
                 this["TextAssetLocation"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool PromtForComments {
+            get {
+                return ((bool)(this["PromtForComments"]));
+            }
+            set {
+                this["PromtForComments"] = value;
+            }
+        }
     }
 }

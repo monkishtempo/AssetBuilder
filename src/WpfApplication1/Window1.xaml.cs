@@ -365,6 +365,11 @@ namespace AssetBuilder
             qcat1.Form = this;
             window = this;
             textWrapping = FindResource("TextBlockWrapping") as Style;
+            if(!Settings.Default.PromtForComments)
+            {
+                rtbComments.IsChecked = false;
+                Change_Comments(null, null);
+            }
 
             RecentAssets = recentAssets;
             try
@@ -1265,6 +1270,11 @@ namespace AssetBuilder
                 rtbComments.LargeImageSource = new BitmapImage(new Uri("images/DisableComment_32x32.png", UriKind.Relative));
             }
             DisableComments = !(bool)rtbComments.IsChecked;
+            if (sender != null)
+            {
+                Settings.Default.PromtForComments = !DisableComments;
+                saveSettings();
+            }
         }
 
         private void Change_DisableSpelling(object sender, ExecutedRoutedEventArgs e)

@@ -62,5 +62,8 @@
     <Setting Name="TextAssetLocation" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://apps.expert-24.com/webbuilder/TextAssets/</Value>
     </Setting>
+    <Setting Name="PromtForComments" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
