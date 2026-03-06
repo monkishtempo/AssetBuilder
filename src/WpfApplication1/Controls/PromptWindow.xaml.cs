@@ -22,7 +22,7 @@ namespace AssetBuilder.Controls
 			InitializeComponent();
 			this.Loaded += new RoutedEventHandler(PromptWindow_Loaded);
 			chkSource = new CheckBox[] { chkStaff, chkReviewer, chkUser };
-			chkType = new CheckBox[] { chkNew, chkSpell, chkClarify, chkCategory, chkAdditional, chkNoApproval, chkBullet, chkOther };
+			chkType = new CheckBox[] { chkNew, chkSpell, chkClarify, chkCategory, chkAdditional, chkNoApproval, chkBullet, chkLinks, chkOther };
 			if (newAsset)
 			{
 				chkStaff.IsChecked = true;
