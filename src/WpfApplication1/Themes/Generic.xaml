@@ -26,7 +26,8 @@
                                 <TextBlock VerticalAlignment="Center"><InlineUIContainer>
 										<TextBlock Text=" Algo - "/>
 									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
-										<TextBlock Text="{Binding XPath=AlgoID}"/>
+                                        <TextBox Text="{Binding XPath=AlgoID}" IsReadOnly="True" BorderThickness="0" Background="Transparent" IsTabStop="False"/>
+										<!--<TextBlock Text="{Binding XPath=AlgoID}"/>-->
 									</InlineUIContainer></TextBlock>
                                 <TextBlock TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"><InlineUIContainer>
 										<TextBlock Text="Last edited : "/>
@@ -153,7 +154,8 @@
                                 <TextBlock VerticalAlignment="Center"><InlineUIContainer>
 										<TextBlock Text=" Question - "/>
 									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
-										<TextBlock Text="{Binding XPath=QuestionID}"/>
+                                        <TextBox Text="{Binding XPath=QuestionID}" IsReadOnly="True" BorderThickness="0" Background="Transparent" IsTabStop="False"/>
+										<!--<TextBlock Text="{Binding XPath=QuestionID}"/>-->
 									</InlineUIContainer></TextBlock>
                                 <TextBlock TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"><InlineUIContainer>
 										<TextBlock Text="Last edited : "/>
@@ -312,7 +314,8 @@
                                 <TextBlock VerticalAlignment="Center"><InlineUIContainer>
 										<TextBlock Text=" Answer - "/>
 									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
-										<TextBlock Text="{Binding XPath=AnsID}"/>
+                                        <TextBox Text="{Binding XPath=AnsID}" IsReadOnly="True" BorderThickness="0" Background="Transparent" IsTabStop="False"/>
+										<!--<TextBlock Text="{Binding XPath=AnsID}"/>-->
 									</InlineUIContainer></TextBlock>
                                 <TextBlock TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"><InlineUIContainer>
 										<TextBlock Text="Last edited : "/>
@@ -492,7 +495,8 @@
                                 <TextBlock VerticalAlignment="Center"><InlineUIContainer>
 										<TextBlock Text=" Conclusion - "/>
 									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
-										<TextBlock Text="{Binding XPath=RecID}"/>
+                                        <TextBox Text="{Binding XPath=RecID}" IsReadOnly="True" BorderThickness="0" Background="Transparent" IsTabStop="False"/>
+										<!--<TextBlock Text="{Binding XPath=RecID}"/>-->
 									</InlineUIContainer></TextBlock>
                                 <TextBlock TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"><InlineUIContainer>
 										<TextBlock Text="Last edited : "/>
@@ -708,7 +712,8 @@
                                 <TextBlock VerticalAlignment="Center"><InlineUIContainer>
 										<TextBlock Text=" Bullet - "/>
 									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
-										<TextBlock Text="{Binding XPath=BPID}"/>
+                                        <TextBox Text="{Binding XPath=BPID}" IsReadOnly="True" BorderThickness="0" Background="Transparent" IsTabStop="False"/>
+										<!--<TextBlock Text="{Binding XPath=BPID}"/>-->
 									</InlineUIContainer></TextBlock>
                                 <TextBlock TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"><InlineUIContainer>
 										<TextBlock Text="Last edited : "/>
@@ -779,7 +784,8 @@
                                 <TextBlock VerticalAlignment="Center"><InlineUIContainer>
 										<TextBlock Text=" Title - "/>
 									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
-										<TextBlock Text="{Binding XPath=TITLEID}"/>
+                                        <TextBox Text="{Binding XPath=TITLEID}" IsReadOnly="True" BorderThickness="0" Background="Transparent" IsTabStop="False"/>
+										<!--<TextBlock Text="{Binding XPath=TITLEID}"/>-->
 									</InlineUIContainer></TextBlock>
                                 <TextBlock TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"><InlineUIContainer>
 										<TextBlock Text="Last loaded : "/>
@@ -850,7 +856,8 @@
                                 <TextBlock VerticalAlignment="Center"><InlineUIContainer>
 										<TextBlock Text=" TextAsset - "/>
 									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
-										<TextBlock Text="{Binding XPath=TextAssetID}"/>
+                                        <TextBox Text="{Binding XPath=TextAssetID}" IsReadOnly="True" BorderThickness="0" Background="Transparent" IsTabStop="False"/>
+										<!--<TextBlock Text="{Binding XPath=TextAssetID}"/>-->
 									</InlineUIContainer></TextBlock>
                                 <TextBlock TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"><InlineUIContainer>
 										<TextBlock Text="Last loaded : "/>
@@ -924,7 +931,8 @@
                                 <TextBlock VerticalAlignment="Center"><InlineUIContainer>
 										<TextBlock Text=" Title - "/>
 									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
-										<TextBlock Text="{Binding XPath=MapID}"/>
+                                        <TextBox Text="{Binding XPath=MapID}" IsReadOnly="True" BorderThickness="0" Background="Transparent" IsTabStop="False"/>
+										<!--<TextBlock Text="{Binding XPath=MapID}"/>-->
 									</InlineUIContainer></TextBlock>
                                 <TextBlock TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"><InlineUIContainer>
 										<TextBlock Text="Last loaded : "/>
@@ -1037,7 +1045,8 @@
                                 <TextBlock VerticalAlignment="Center"><InlineUIContainer>
 										<TextBlock Text=" Title - "/>
 									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
-										<TextBlock Text="{Binding XPath=GroupID}"/>
+                                        <TextBox Text="{Binding XPath=GroupID}" IsReadOnly="True" BorderThickness="0" Background="Transparent" IsTabStop="False"/>
+										<!--<TextBlock Text="{Binding XPath=GroupID}"/>-->
 									</InlineUIContainer></TextBlock>
                                 <TextBlock TextAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"><InlineUIContainer>
 										<TextBlock Text="Last loaded : "/>
@@ -1138,7 +1147,8 @@
                                 <TextBlock VerticalAlignment="Center"><InlineUIContainer>
 										<TextBlock Text=" Conclusion Map - "/>
 									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
-										<TextBlock Text="{Binding XPath=CMapID}"/>
+                                        <TextBox Text="{Binding XPath=CMapID}" IsReadOnly="True" BorderThickness="0" Background="Transparent" IsTabStop="False"/>
+										<!--<TextBlock Text="{Binding XPath=CMapID}"/>-->
 									</InlineUIContainer><Run Text=" "/><InlineUIContainer>
 										<TextBlock Text="{Binding XPath=Release}"/>
 									</InlineUIContainer></TextBlock>
