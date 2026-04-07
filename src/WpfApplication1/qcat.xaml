@@ -69,7 +69,7 @@
         </Label>
         <DockPanel Grid.Column="4" Height="16" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="6">
             <!-- Margin="6,6,30,6" -->
-            <CheckBox Style="{StaticResource SliderCheckBoxStyle}" x:Name="hideUnused" x:FieldModifier="public" Content="Hide Unused" HorizontalAlignment="Right"  />
+            <CheckBox Style="{StaticResource SliderCheckBoxStyle}" x:Name="hideUnused" x:FieldModifier="public" IsThreeState="True" HorizontalAlignment="Right" />
             <Image x:Name="imgGrab" Margin="6,0,0,0" Visibility="Collapsed" Width="16" Source="images/DragMany16x16.png" Height="16" VerticalAlignment="Top" MouseMove="imgGrab_MouseMove">
                 <Image.ToolTip>
                     <TextBlock>
