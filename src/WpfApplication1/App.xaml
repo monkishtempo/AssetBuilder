@@ -158,6 +158,13 @@
                                     </MultiDataTrigger.Conditions>
                                     <Setter Property="Visibility" Value="Collapsed" />
                                 </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding NotInUse}" Value="0" />
+                                        <Condition Binding="{Binding IsChecked, ElementName=hideUnused}" Value="{x:Null}" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </MultiDataTrigger>
                                 <!--<MultiTrigger>
                                     <MultiTrigger.Conditions>
                                         <Condition Property="IsSelected" Value="true"/>
@@ -523,44 +530,35 @@
                 </Style.Resources>
             </Style>
             <Style x:Key="SliderCheckBoxStyle" TargetType="CheckBox">
+                <Setter Property="Content" Value="All Assets" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="CheckBox">
                             <DockPanel>
                                 <TextBlock Margin="0,0,6,0" Text="{TemplateBinding Content}" />
-                                <Grid Width="32" Height="16">
+                                <Grid Width="48" Height="16">
                                     <Canvas>
-                                        <Border x:Name="SwitchSlider" Width="32" Height="16" CornerRadius="10" Background="#ddd" />
+                                        <Border x:Name="SwitchSlider" Width="48" Height="16" CornerRadius="10" Background="#ddd" />
                                         <Border x:Name="SwitchThumb" Canvas.Left="1" Canvas.Top="1" Width="14" Height="14" CornerRadius="8" Background="White" BorderBrush="#ccc" BorderThickness="1" />
                                     </Canvas>
                                 </Grid>
                             </DockPanel>
 
                             <ControlTemplate.Triggers>
-                                <Trigger x:Name="CheckedTrigger" Property="IsChecked" Value="True">
-                                    <Trigger.EnterActions>
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <DoubleAnimation Storyboard.TargetName="SwitchThumb"
-                                                     Storyboard.TargetProperty="(Canvas.Left)"
-                                                     To="17" Duration="0:0:0.2" />
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </Trigger.EnterActions>
-                                    <Trigger.ExitActions>
-                                        <BeginStoryboard>
-                                            <Storyboard>
-                                                <DoubleAnimation Storyboard.TargetName="SwitchThumb"
-                                                     Storyboard.TargetProperty="(Canvas.Left)"
-                                                     To="1" Duration="0:0:0.2" />
-                                            </Storyboard>
-                                        </BeginStoryboard>
-                                    </Trigger.ExitActions>
-                                    <Setter TargetName="SwitchSlider" Property="Background" Value="#00cc00" />
-                                </Trigger>
-
-                                <Trigger x:Name="UnCheckedTrigger" Property="IsChecked" Value="False">
+                                <Trigger Property="IsChecked" Value="False">
                                     <Setter TargetName="SwitchSlider" Property="Background" Value="#ddd" />
+                                    <Setter TargetName="SwitchThumb" Property="Canvas.Left" Value="1" />
+                                    <Setter Property="Content" Value="All Assets" />
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter TargetName="SwitchSlider" Property="Background" Value="#00cc00" />
+                                    <Setter TargetName="SwitchThumb" Property="Canvas.Left" Value="17" />
+                                    <Setter Property="Content" Value="Used Assets" />
+                                </Trigger>
+                                <Trigger Property="IsChecked" Value="{x:Null}">
+                                    <Setter TargetName="SwitchSlider" Property="Background" Value="#ffc04d" />
+                                    <Setter TargetName="SwitchThumb" Property="Canvas.Left" Value="33" />
+                                    <Setter Property="Content" Value="Unused Assets" />
                                 </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
